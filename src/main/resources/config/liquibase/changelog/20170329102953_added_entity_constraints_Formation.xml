@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Formation.
+    -->
+    <changeSet id="20170329102953-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="demandeformation_id"
+                                 baseTableName="formation"
+                                 constraintName="fk_formation_demandeformation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="demande_formation"/>
+
+        <addForeignKeyConstraint baseColumnNames="formationcomp_id"
+                                 baseTableName="formation"
+                                 constraintName="fk_formation_formationcomp_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="formation_comp"/>
+
+        <addForeignKeyConstraint baseColumnNames="formateur_id"
+                                 baseTableName="formation"
+                                 constraintName="fk_formation_formateur_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="formateur"/>
+
+        <addForeignKeyConstraint baseColumnNames="nature_formation_id"
+                                 baseTableName="formation"
+                                 constraintName="fk_formation_nature_formation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="natureformation"/>
+
+        <addForeignKeyConstraint baseColumnNames="fichierjoint_id"
+                                 baseTableName="formation"
+                                 constraintName="fk_formation_fichierjoint_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fichierjoint"/>
+
+        <addForeignKeyConstraint baseColumnNames="critereevaluation_id"
+                                 baseTableName="formation"
+                                 constraintName="fk_formation_critereevaluation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="critereevaluation"/>
+
+        <addForeignKeyConstraint baseColumnNames="jour_id"
+                                 baseTableName="formation"
+                                 constraintName="fk_formation_jour_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jour"/>
+
+    </changeSet>
+</databaseChangeLog>

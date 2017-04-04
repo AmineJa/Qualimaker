@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "natureAbs" : {
+            "home": {
+                "title": "NatureAbs",
+                "createLabel": "Créer un nouveau Nature Abs",
+                "createOrEditLabel": "Créer ou éditer un Nature Abs",
+                "search": "Recherche pour Nature Abs"
+            },
+            "created": "Un nouveau Nature Abs a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Nature Abs avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Nature Abs avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Nature Abs {{ id }} ?"
+            },
+            "detail": {
+                "title": "Nature Abs"
+            },
+            "nature": "Nature"
+        }
+    }
+}

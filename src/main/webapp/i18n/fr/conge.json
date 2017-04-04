@@ -1,0 +1,26 @@
+{
+    "qualiMakerApp": {
+        "conge" : {
+            "home": {
+                "title": "Conges",
+                "createLabel": "Créer un nouveau Conge",
+                "createOrEditLabel": "Créer ou éditer un Conge",
+                "search": "Recherche pour Conge"
+            },
+            "created": "Un nouveau Conge a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Conge avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Conge avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Conge {{ id }} ?"
+            },
+            "detail": {
+                "title": "Conge"
+            },
+            "statut": "Statut",
+            "dateD": "Date D",
+            "dateF": "Date F",
+            "employe": "Employe",
+            "typeconge": "Typeconge"
+        }
+    }
+}

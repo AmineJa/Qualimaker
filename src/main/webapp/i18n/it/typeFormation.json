@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "typeFormation" : {
+            "home": {
+                "title": "TypeFormations",
+                "createLabel": "Genera un nuovo Type Formation",
+                "createOrEditLabel": "Genera o modifica un Type Formation",
+                "search": "Cerca Type Formation"
+            },
+            "created": "&Egrave; stato generato un nuovo Type Formation con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Type Formation identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Type Formation con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Type Formation {{ id }}?"
+            },
+            "detail": {
+                "title": "Type Formation"
+            },
+            "libelle": "Libelle"
+        }
+    }
+}

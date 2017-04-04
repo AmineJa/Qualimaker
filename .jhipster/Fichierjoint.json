@@ -1,0 +1,19 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "commentaire",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170329102953",
+    "entityTableName": "fichierjoint",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "anne",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valeurmax",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "seuilPol",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "competence",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "polyvalence",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "critere",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170329102953",
+    "entityTableName": "evaluation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

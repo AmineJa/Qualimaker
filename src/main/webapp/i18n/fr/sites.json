@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "sites" : {
+            "home": {
+                "title": "Sites",
+                "createLabel": "Créer un nouveau Sites",
+                "createOrEditLabel": "Créer ou éditer un Sites",
+                "search": "Recherche pour Sites"
+            },
+            "created": "Un nouveau Sites a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Sites avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Sites avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Sites {{ id }} ?"
+            },
+            "detail": {
+                "title": "Sites"
+            },
+            "nom": "Nom"
+        }
+    }
+}

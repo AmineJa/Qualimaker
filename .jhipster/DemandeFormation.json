@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "empploye",
+            "otherEntityName": "employe",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "theme",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateDemande",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datesouhaite",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "nombresjours",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "justification",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170329102953",
+    "entityTableName": "demande_formation",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

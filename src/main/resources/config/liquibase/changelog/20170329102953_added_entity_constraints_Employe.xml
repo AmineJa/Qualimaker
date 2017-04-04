@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Employe.
+    -->
+    <changeSet id="20170329102953-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="carriere_id"
+                                 baseTableName="employe"
+                                 constraintName="fk_employe_carriere_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="carriere"/>
+
+        <addForeignKeyConstraint baseColumnNames="site_id"
+                                 baseTableName="employe"
+                                 constraintName="fk_employe_site_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sites"/>
+
+        <addForeignKeyConstraint baseColumnNames="groupe_id"
+                                 baseTableName="employe"
+                                 constraintName="fk_employe_groupe_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="groupe"/>
+
+        <addForeignKeyConstraint baseColumnNames="abscence_id"
+                                 baseTableName="employe"
+                                 constraintName="fk_employe_abscence_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="abscence"/>
+
+        <addForeignKeyConstraint baseColumnNames="service_id"
+                                 baseTableName="employe"
+                                 constraintName="fk_employe_service_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="serviice"/>
+
+        <addForeignKeyConstraint baseColumnNames="employes_id"
+                                 baseTableName="employe_formation"
+                                 constraintName="fk_employe_formation_employes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employe"/>
+        <addForeignKeyConstraint baseColumnNames="formations_id"
+                                 baseTableName="employe_formation"
+                                 constraintName="fk_employe_formation_formations_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="formation"/>
+        
+        <addForeignKeyConstraint baseColumnNames="employes_id"
+                                 baseTableName="employe_fonction"
+                                 constraintName="fk_employe_fonction_employes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employe"/>
+        <addForeignKeyConstraint baseColumnNames="fonctions_id"
+                                 baseTableName="employe_fonction"
+                                 constraintName="fk_employe_fonction_fonctions_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fonction"/>
+        
+    </changeSet>
+</databaseChangeLog>

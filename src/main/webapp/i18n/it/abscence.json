@@ -1,0 +1,27 @@
+{
+    "qualiMakerApp": {
+        "abscence" : {
+            "home": {
+                "title": "Abscences",
+                "createLabel": "Genera un nuovo Abscence",
+                "createOrEditLabel": "Genera o modifica un Abscence",
+                "search": "Cerca Abscence"
+            },
+            "created": "&Egrave; stato generato un nuovo Abscence con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Abscence identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Abscence con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Abscence {{ id }}?"
+            },
+            "detail": {
+                "title": "Abscence"
+            },
+            "justifier": "Justifier",
+            "dateD": "Date D",
+            "dateF": "Date F",
+            "etat": "Etat",
+            "integre": "Integre",
+            "commentaire": "Commentaire"
+        }
+    }
+}

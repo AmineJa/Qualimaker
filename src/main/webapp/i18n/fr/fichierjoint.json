@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "fichierjoint" : {
+            "home": {
+                "title": "Fichierjoints",
+                "createLabel": "Créer un nouveau Fichierjoint",
+                "createOrEditLabel": "Créer ou éditer un Fichierjoint",
+                "search": "Recherche pour Fichierjoint"
+            },
+            "created": "Un nouveau Fichierjoint a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Fichierjoint avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Fichierjoint avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Fichierjoint {{ id }} ?"
+            },
+            "detail": {
+                "title": "Fichierjoint"
+            },
+            "nom": "Nom",
+            "commentaire": "Commentaire"
+        }
+    }
+}

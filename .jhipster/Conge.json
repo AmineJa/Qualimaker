@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "employe",
+            "otherEntityName": "employe",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "typeconge",
+            "otherEntityName": "typeConge",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "statut",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateD",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateF",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170329102953",
+    "entityTableName": "conge",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

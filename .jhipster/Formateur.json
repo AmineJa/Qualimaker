@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "typeformateur",
+            "otherEntityName": "typeFormateur",
+            "otherEntityRelationshipName": "formateur"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prenom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cv",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170329102953",
+    "entityTableName": "formateur",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

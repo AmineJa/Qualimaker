@@ -1,0 +1,42 @@
+{
+    "qualiMakerApp": {
+        "formation" : {
+            "home": {
+                "title": "Formations",
+                "createLabel": "Create a new Formation",
+                "createOrEditLabel": "Create or edit a Formation",
+                "search": "Search for Formation"
+            },
+            "created": "A new Formation is created with identifier {{ param }}",
+            "updated": "A Formation is updated with identifier {{ param }}",
+            "deleted": "A Formation is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Formation {{ id }}?"
+            },
+            "detail": {
+                "title": "Formation"
+            },
+            "theme": "Theme",
+            "titre": "Titre",
+            "dateD": "Date D",
+            "dateF": "Date F",
+            "lieu": "Lieu",
+            "objectif": "Objectif",
+            "contenu": "Contenu",
+            "coutMat": "Cout Mat",
+            "coutImat": "Cout Imat",
+            "reccurence": "Reccurence",
+            "periode": "Periode",
+            "finaprs": "Finaprs",
+            "termina": "Termina",
+            "demandeformation": "Demandeformation",
+            "formationcomp": "Formationcomp",
+            "formateur": "Formateur",
+            "natureFormation": "Nature Formation",
+            "fichierjoint": "Fichierjoint",
+            "critereevaluation": "Critereevaluation",
+            "jour": "Jour",
+            "employe": "Employe"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "qualiMakerApp": {
+        "formateur" : {
+            "home": {
+                "title": "Formateurs",
+                "createLabel": "Créer un nouveau Formateur",
+                "createOrEditLabel": "Créer ou éditer un Formateur",
+                "search": "Recherche pour Formateur"
+            },
+            "created": "Un nouveau Formateur a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Formateur avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Formateur avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Formateur {{ id }} ?"
+            },
+            "detail": {
+                "title": "Formateur"
+            },
+            "nom": "Nom",
+            "prenom": "Prenom",
+            "cv": "Cv",
+            "typeformateur": "Typeformateur"
+        }
+    }
+}

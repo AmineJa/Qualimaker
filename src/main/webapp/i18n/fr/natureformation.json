@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "natureformation" : {
+            "home": {
+                "title": "Natureformations",
+                "createLabel": "Créer un nouveau Natureformation",
+                "createOrEditLabel": "Créer ou éditer un Natureformation",
+                "search": "Recherche pour Natureformation"
+            },
+            "created": "Un nouveau Natureformation a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Natureformation avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Natureformation avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Natureformation {{ id }} ?"
+            },
+            "detail": {
+                "title": "Natureformation"
+            },
+            "libelle": "Libelle"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "critereevaluation" : {
+            "home": {
+                "title": "Critereevaluations",
+                "createLabel": "Créer un nouveau Critereevaluation",
+                "createOrEditLabel": "Créer ou éditer un Critereevaluation",
+                "search": "Recherche pour Critereevaluation"
+            },
+            "created": "Un nouveau Critereevaluation a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Critereevaluation avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Critereevaluation avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Critereevaluation {{ id }} ?"
+            },
+            "detail": {
+                "title": "Critereevaluation"
+            },
+            "critere": "Critere",
+            "categorie": "Categorie"
+        }
+    }
+}

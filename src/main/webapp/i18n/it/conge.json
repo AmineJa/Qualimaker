@@ -1,0 +1,26 @@
+{
+    "qualiMakerApp": {
+        "conge" : {
+            "home": {
+                "title": "Conges",
+                "createLabel": "Genera un nuovo Conge",
+                "createOrEditLabel": "Genera o modifica un Conge",
+                "search": "Cerca Conge"
+            },
+            "created": "&Egrave; stato generato un nuovo Conge con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Conge identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Conge con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Conge {{ id }}?"
+            },
+            "detail": {
+                "title": "Conge"
+            },
+            "statut": "Statut",
+            "dateD": "Date D",
+            "dateF": "Date F",
+            "employe": "Employe",
+            "typeconge": "Typeconge"
+        }
+    }
+}

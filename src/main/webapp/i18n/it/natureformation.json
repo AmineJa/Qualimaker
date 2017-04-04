@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "natureformation" : {
+            "home": {
+                "title": "Natureformations",
+                "createLabel": "Genera un nuovo Natureformation",
+                "createOrEditLabel": "Genera o modifica un Natureformation",
+                "search": "Cerca Natureformation"
+            },
+            "created": "&Egrave; stato generato un nuovo Natureformation con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Natureformation identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Natureformation con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Natureformation {{ id }}?"
+            },
+            "detail": {
+                "title": "Natureformation"
+            },
+            "libelle": "Libelle"
+        }
+    }
+}

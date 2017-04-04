@@ -1,0 +1,28 @@
+{
+    "qualiMakerApp": {
+        "demandeFormation" : {
+            "home": {
+                "title": "DemandeFormations",
+                "createLabel": "Genera un nuovo Demande Formation",
+                "createOrEditLabel": "Genera o modifica un Demande Formation",
+                "search": "Cerca Demande Formation"
+            },
+            "created": "&Egrave; stato generato un nuovo Demande Formation con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Demande Formation identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Demande Formation con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Demande Formation {{ id }}?"
+            },
+            "detail": {
+                "title": "Demande Formation"
+            },
+            "theme": "Theme",
+            "dateDemande": "Date Demande",
+            "datesouhaite": "Datesouhaite",
+            "nombresjours": "Nombresjours",
+            "description": "Description",
+            "justification": "Justification",
+            "empploye": "Empploye"
+        }
+    }
+}

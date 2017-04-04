@@ -1,0 +1,99 @@
+
+<div>
+    <h2><span data-translate="qualiMakerApp.formation.detail.title">Formation</span> {{vm.formation.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="qualiMakerApp.formation.theme">Theme</span></dt>
+        <dd>
+            <span>{{vm.formation.theme}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.titre">Titre</span></dt>
+        <dd>
+            <span>{{vm.formation.titre}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.dateD">Date D</span></dt>
+        <dd>
+            <span>{{vm.formation.dateD | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.dateF">Date F</span></dt>
+        <dd>
+            <span>{{vm.formation.dateF | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.lieu">Lieu</span></dt>
+        <dd>
+            <span>{{vm.formation.lieu}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.objectif">Objectif</span></dt>
+        <dd>
+            <span>{{vm.formation.objectif}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.contenu">Contenu</span></dt>
+        <dd>
+            <span>{{vm.formation.contenu}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.coutMat">Cout Mat</span></dt>
+        <dd>
+            <span>{{vm.formation.coutMat}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.coutImat">Cout Imat</span></dt>
+        <dd>
+            <span>{{vm.formation.coutImat}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.reccurence">Reccurence</span></dt>
+        <dd>
+            <span>{{vm.formation.reccurence}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.periode">Periode</span></dt>
+        <dd>
+            <span>{{vm.formation.periode}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.finaprs">Finaprs</span></dt>
+        <dd>
+            <span>{{vm.formation.finaprs}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.termina">Termina</span></dt>
+        <dd>
+            <span>{{vm.formation.termina}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.demandeformation">Demandeformation</span></dt>
+        <dd>
+            <a ui-sref="demande-formation-detail({id:vm.formation.demandeformation.id})">{{vm.formation.demandeformation.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.formationcomp">Formationcomp</span></dt>
+        <dd>
+            <a ui-sref="formation-comp-detail({id:vm.formation.formationcomp.id})">{{vm.formation.formationcomp.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.formateur">Formateur</span></dt>
+        <dd>
+            <a ui-sref="formateur-detail({id:vm.formation.formateur.id})">{{vm.formation.formateur.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.natureFormation">Nature Formation</span></dt>
+        <dd>
+            <a ui-sref="natureformation-detail({id:vm.formation.natureFormation.id})">{{vm.formation.natureFormation.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.fichierjoint">Fichierjoint</span></dt>
+        <dd>
+            <a ui-sref="fichierjoint-detail({id:vm.formation.fichierjoint.id})">{{vm.formation.fichierjoint.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.critereevaluation">Critereevaluation</span></dt>
+        <dd>
+            <a ui-sref="critereevaluation-detail({id:vm.formation.critereevaluation.id})">{{vm.formation.critereevaluation.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.jour">Jour</span></dt>
+        <dd>
+            <a ui-sref="jour-detail({id:vm.formation.jour.id})">{{vm.formation.jour.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="formation-detail.edit({id:vm.formation.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

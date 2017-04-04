@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "sites" : {
+            "home": {
+                "title": "Sites",
+                "createLabel": "Genera un nuovo Sites",
+                "createOrEditLabel": "Genera o modifica un Sites",
+                "search": "Cerca Sites"
+            },
+            "created": "&Egrave; stato generato un nuovo Sites con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Sites identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Sites con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Sites {{ id }}?"
+            },
+            "detail": {
+                "title": "Sites"
+            },
+            "nom": "Nom"
+        }
+    }
+}

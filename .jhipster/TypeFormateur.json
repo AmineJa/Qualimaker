@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "formateur",
+            "otherEntityName": "formateur",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "libelle",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170329102953",
+    "entityTableName": "type_formateur",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

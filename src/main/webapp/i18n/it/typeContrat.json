@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "typeContrat" : {
+            "home": {
+                "title": "TypeContrats",
+                "createLabel": "Genera un nuovo Type Contrat",
+                "createOrEditLabel": "Genera o modifica un Type Contrat",
+                "search": "Cerca Type Contrat"
+            },
+            "created": "&Egrave; stato generato un nuovo Type Contrat con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Type Contrat identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Type Contrat con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Type Contrat {{ id }}?"
+            },
+            "detail": {
+                "title": "Type Contrat"
+            },
+            "type": "Type",
+            "carriere": "Carriere"
+        }
+    }
+}

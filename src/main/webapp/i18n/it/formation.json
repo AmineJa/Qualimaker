@@ -1,0 +1,42 @@
+{
+    "qualiMakerApp": {
+        "formation" : {
+            "home": {
+                "title": "Formations",
+                "createLabel": "Genera un nuovo Formation",
+                "createOrEditLabel": "Genera o modifica un Formation",
+                "search": "Cerca Formation"
+            },
+            "created": "&Egrave; stato generato un nuovo Formation con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Formation identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Formation con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Formation {{ id }}?"
+            },
+            "detail": {
+                "title": "Formation"
+            },
+            "theme": "Theme",
+            "titre": "Titre",
+            "dateD": "Date D",
+            "dateF": "Date F",
+            "lieu": "Lieu",
+            "objectif": "Objectif",
+            "contenu": "Contenu",
+            "coutMat": "Cout Mat",
+            "coutImat": "Cout Imat",
+            "reccurence": "Reccurence",
+            "periode": "Periode",
+            "finaprs": "Finaprs",
+            "termina": "Termina",
+            "demandeformation": "Demandeformation",
+            "formationcomp": "Formationcomp",
+            "formateur": "Formateur",
+            "natureFormation": "Nature Formation",
+            "fichierjoint": "Fichierjoint",
+            "critereevaluation": "Critereevaluation",
+            "jour": "Jour",
+            "employe": "Employe"
+        }
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "qualiMakerApp": {
+        "employe" : {
+            "home": {
+                "title": "Employes",
+                "createLabel": "Genera un nuovo Employe",
+                "createOrEditLabel": "Genera o modifica un Employe",
+                "search": "Cerca Employe"
+            },
+            "created": "&Egrave; stato generato un nuovo Employe con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Employe identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Employe con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Employe {{ id }}?"
+            },
+            "detail": {
+                "title": "Employe"
+            },
+            "nom": "Nom",
+            "prenom": "Prenom",
+            "dateN": "Date N",
+            "cin": "Cin",
+            "sexe": "Sexe",
+            "adress": "Adress",
+            "gsm": "Gsm",
+            "lieuNais": "Lieu Nais",
+            "telMais": "Tel Mais",
+            "teleph": "Teleph",
+            "delivrele": "Delivrele",
+            "delivrea": "Delivrea",
+            "email": "Email",
+            "matricule": "Matricule",
+            "email2": "Email 2",
+            "grade": "Grade",
+            "rib": "Rib",
+            "nsc": "Nsc",
+            "competence": "Competence",
+            "diplome": "Diplome",
+            "experience": "Experience",
+            "aptphy": "Aptphy",
+            "image": "Image",
+            "cv": "Cv",
+            "carriere": "Carriere",
+            "conge": "Conge",
+            "site": "Site",
+            "groupe": "Groupe",
+            "abscence": "Abscence",
+            "service": "Service",
+            "formation": "Formation",
+            "fonction": "Fonction"
+        }
+    }
+}

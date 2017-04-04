@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity DemandeFormation.
+    -->
+    <changeSet id="20170329102953-1" author="jhipster">
+        <createTable tableName="demande_formation">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="theme" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="date_demande" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="datesouhaite" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nombresjours" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="description" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="justification" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="empploye_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="demande_formation" columnName="date_demande" columnDataType="datetime"/>
+        <dropDefaultValue tableName="demande_formation" columnName="datesouhaite" columnDataType="datetime"/>
+        
+    </changeSet>
+</databaseChangeLog>

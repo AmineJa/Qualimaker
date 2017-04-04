@@ -1,0 +1,29 @@
+{
+    "qualiMakerApp": {
+        "carriere" : {
+            "home": {
+                "title": "Carrieres",
+                "createLabel": "Créer un nouveau Carriere",
+                "createOrEditLabel": "Créer ou éditer un Carriere",
+                "search": "Recherche pour Carriere"
+            },
+            "created": "Un nouveau Carriere a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Carriere avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Carriere avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Carriere {{ id }} ?"
+            },
+            "detail": {
+                "title": "Carriere"
+            },
+            "nom": "Nom",
+            "etat": "Etat",
+            "integre": "Integre",
+            "debutINt": "Debut I Nt",
+            "finINT": "Fin INT",
+            "dateRec": "Date Rec",
+            "fichCont": "Fich Cont",
+            "typeContrat": "Type Contrat"
+        }
+    }
+}

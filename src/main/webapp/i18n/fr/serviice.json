@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "serviice" : {
+            "home": {
+                "title": "Serviices",
+                "createLabel": "Créer un nouveau Serviice",
+                "createOrEditLabel": "Créer ou éditer un Serviice",
+                "search": "Recherche pour Serviice"
+            },
+            "created": "Un nouveau Serviice a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Serviice avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Serviice avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Serviice {{ id }} ?"
+            },
+            "detail": {
+                "title": "Serviice"
+            },
+            "nom": "Nom"
+        }
+    }
+}

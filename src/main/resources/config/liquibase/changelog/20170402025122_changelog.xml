@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+   <changeSet author="Jaouadi-Amine (generated)" id="1491101515542-1">
+      <addForeignKeyConstraint baseColumnNames="formateur_id"
+                               baseTableName="type_formateur"
+                               constraintName="FK9gopbpus2yxu9ubu0v9p66a7e"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="formateur"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1491101515542-2">
+      <addForeignKeyConstraint baseColumnNames="programme_id"
+                               baseTableName="jour"
+                               constraintName="FKjfi05xo521btjhdorqkb6vt2t"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="programme"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1491101515542-3">
+      <addForeignKeyConstraint baseColumnNames="formation_id"
+                               baseTableName="evaluation_formation"
+                               constraintName="FKl8k4sfvm5mbalhe1ip2yl99t4"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="formation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1491101515542-4">
+      <addForeignKeyConstraint baseColumnNames="type_contrat_id"
+                               baseTableName="carriere"
+                               constraintName="FKqwyg91go86g8grp0m71m44piw"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="type_contrat"/>
+   </changeSet>
+</databaseChangeLog>

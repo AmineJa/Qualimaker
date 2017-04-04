@@ -1,0 +1,29 @@
+{
+    "qualiMakerApp": {
+        "carriere" : {
+            "home": {
+                "title": "Carrieres",
+                "createLabel": "Genera un nuovo Carriere",
+                "createOrEditLabel": "Genera o modifica un Carriere",
+                "search": "Cerca Carriere"
+            },
+            "created": "&Egrave; stato generato un nuovo Carriere con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Carriere identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Carriere con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Carriere {{ id }}?"
+            },
+            "detail": {
+                "title": "Carriere"
+            },
+            "nom": "Nom",
+            "etat": "Etat",
+            "integre": "Integre",
+            "debutINt": "Debut I Nt",
+            "finINT": "Fin INT",
+            "dateRec": "Date Rec",
+            "fichCont": "Fich Cont",
+            "typeContrat": "Type Contrat"
+        }
+    }
+}

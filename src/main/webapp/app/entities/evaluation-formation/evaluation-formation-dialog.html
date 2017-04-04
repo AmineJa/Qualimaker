@@ -1,0 +1,151 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEvaluationFormationLabel" data-translate="qualiMakerApp.evaluationFormation.home.createOrEditLabel">Create or edit a Evaluation Formation</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.evaluationFormation.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.evaluationFormation.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.matricuel" for="field_matricuel">Matricuel</label>
+            <input type="number" class="form-control" name="matricuel" id="field_matricuel"
+                    ng-model="vm.evaluationFormation.matricuel"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.effectue" for="field_effectue">Effectue</label>
+            <input type="number" class="form-control" name="effectue" id="field_effectue"
+                    ng-model="vm.evaluationFormation.effectue"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.afroid" for="field_afroid">Afroid</label>
+            <input type="number" class="form-control" name="afroid" id="field_afroid"
+                    ng-model="vm.evaluationFormation.afroid"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.achaud" for="field_achaud">Achaud</label>
+            <input type="number" class="form-control" name="achaud" id="field_achaud"
+                    ng-model="vm.evaluationFormation.achaud"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.evaluerpar" for="field_evaluerpar">Evaluerpar</label>
+            <input type="text" class="form-control" name="evaluerpar" id="field_evaluerpar"
+                    ng-model="vm.evaluationFormation.evaluerpar"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.refaire" for="field_refaire">Refaire</label>
+            <input type="number" class="form-control" name="refaire" id="field_refaire"
+                    ng-model="vm.evaluationFormation.refaire"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.dateprevu" for="field_dateprevu">Dateprevu</label>
+            <input type="text" class="form-control" name="dateprevu" id="field_dateprevu"
+                    ng-model="vm.evaluationFormation.dateprevu"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.efficace" for="field_efficace">Efficace</label>
+                <input type="checkbox" name="efficace" id="field_efficace"
+                          ng-model="vm.evaluationFormation.efficace"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.commentaire" for="field_commentaire">Commentaire</label>
+            <input type="text" class="form-control" name="commentaire" id="field_commentaire"
+                    ng-model="vm.evaluationFormation.commentaire"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.methodologie" for="field_methodologie">Methodologie</label>
+            <input type="number" class="form-control" name="methodologie" id="field_methodologie"
+                    ng-model="vm.evaluationFormation.methodologie"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.competece" for="field_competece">Competece</label>
+            <input type="number" class="form-control" name="competece" id="field_competece"
+                    ng-model="vm.evaluationFormation.competece"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.supportcours" for="field_supportcours">Supportcours</label>
+            <input type="number" class="form-control" name="supportcours" id="field_supportcours"
+                    ng-model="vm.evaluationFormation.supportcours"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.animation" for="field_animation">Animation</label>
+            <input type="number" class="form-control" name="animation" id="field_animation"
+                    ng-model="vm.evaluationFormation.animation"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.lieu" for="field_lieu">Lieu</label>
+            <input type="number" class="form-control" name="lieu" id="field_lieu"
+                    ng-model="vm.evaluationFormation.lieu"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.respecthoraire" for="field_respecthoraire">Respecthoraire</label>
+            <input type="number" class="form-control" name="respecthoraire" id="field_respecthoraire"
+                    ng-model="vm.evaluationFormation.respecthoraire"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.contnucours" for="field_contnucours">Contnucours</label>
+            <input type="number" class="form-control" name="contnucours" id="field_contnucours"
+                    ng-model="vm.evaluationFormation.contnucours"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.traveauxp" for="field_traveauxp">Traveauxp</label>
+            <input type="number" class="form-control" name="traveauxp" id="field_traveauxp"
+                    ng-model="vm.evaluationFormation.traveauxp"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.objectif" for="field_objectif">Objectif</label>
+            <input type="number" class="form-control" name="objectif" id="field_objectif"
+                    ng-model="vm.evaluationFormation.objectif"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.duree" for="field_duree">Duree</label>
+            <input type="number" class="form-control" name="duree" id="field_duree"
+                    ng-model="vm.evaluationFormation.duree"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.ambiace" for="field_ambiace">Ambiace</label>
+            <input type="number" class="form-control" name="ambiace" id="field_ambiace"
+                    ng-model="vm.evaluationFormation.ambiace"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.evaluationFormation.formation" for="field_formation">Formation</label>
+            <select class="form-control" id="field_formation" name="formation" ng-model="vm.evaluationFormation.formation" ng-options="formation as formation.id for formation in vm.formations track by formation.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

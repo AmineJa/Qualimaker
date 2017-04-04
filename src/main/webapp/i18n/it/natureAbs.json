@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "natureAbs" : {
+            "home": {
+                "title": "NatureAbs",
+                "createLabel": "Genera un nuovo Nature Abs",
+                "createOrEditLabel": "Genera o modifica un Nature Abs",
+                "search": "Cerca Nature Abs"
+            },
+            "created": "&Egrave; stato generato un nuovo Nature Abs con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Nature Abs identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Nature Abs con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Nature Abs {{ id }}?"
+            },
+            "detail": {
+                "title": "Nature Abs"
+            },
+            "nature": "Nature"
+        }
+    }
+}

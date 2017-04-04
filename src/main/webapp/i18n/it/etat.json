@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "etat" : {
+            "home": {
+                "title": "Etats",
+                "createLabel": "Genera un nuovo Etat",
+                "createOrEditLabel": "Genera o modifica un Etat",
+                "search": "Cerca Etat"
+            },
+            "created": "&Egrave; stato generato un nuovo Etat con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Etat identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Etat con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Etat {{ id }}?"
+            },
+            "detail": {
+                "title": "Etat"
+            },
+            "libelle": "Libelle"
+        }
+    }
+}

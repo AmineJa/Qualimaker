@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "typeConge" : {
+            "home": {
+                "title": "TypeConges",
+                "createLabel": "Créer un nouveau Type Conge",
+                "createOrEditLabel": "Créer ou éditer un Type Conge",
+                "search": "Recherche pour Type Conge"
+            },
+            "created": "Un nouveau Type Conge a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Type Conge avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Type Conge avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Type Conge {{ id }} ?"
+            },
+            "detail": {
+                "title": "Type Conge"
+            },
+            "type": "Type"
+        }
+    }
+}

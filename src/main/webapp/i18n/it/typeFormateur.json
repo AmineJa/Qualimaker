@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "typeFormateur" : {
+            "home": {
+                "title": "TypeFormateurs",
+                "createLabel": "Genera un nuovo Type Formateur",
+                "createOrEditLabel": "Genera o modifica un Type Formateur",
+                "search": "Cerca Type Formateur"
+            },
+            "created": "&Egrave; stato generato un nuovo Type Formateur con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Type Formateur identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Type Formateur con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Type Formateur {{ id }}?"
+            },
+            "detail": {
+                "title": "Type Formateur"
+            },
+            "libelle": "Libelle",
+            "formateur": "Formateur"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "programme",
+            "otherEntityName": "programme",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "jour"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "jour",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170329102953",
+    "entityTableName": "jour",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

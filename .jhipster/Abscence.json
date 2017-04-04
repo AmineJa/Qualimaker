@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "justifier",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dateD",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateF",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "etat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "integre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "commentaire",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170329102953",
+    "entityTableName": "abscence",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

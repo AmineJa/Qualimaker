@@ -1,0 +1,46 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "typeContrat",
+            "otherEntityName": "typeContrat",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "etat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "integre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "debutINt",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "finINT",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateRec",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "fichCont",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170329102953",
+    "entityTableName": "carriere",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

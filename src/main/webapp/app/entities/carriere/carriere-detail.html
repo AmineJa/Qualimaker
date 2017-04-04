@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="qualiMakerApp.carriere.detail.title">Carriere</span> {{vm.carriere.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="qualiMakerApp.carriere.nom">Nom</span></dt>
+        <dd>
+            <span>{{vm.carriere.nom}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.carriere.etat">Etat</span></dt>
+        <dd>
+            <span>{{vm.carriere.etat}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.carriere.integre">Integre</span></dt>
+        <dd>
+            <span>{{vm.carriere.integre}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.carriere.debutINt">Debut I Nt</span></dt>
+        <dd>
+            <span>{{vm.carriere.debutINt | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.carriere.finINT">Fin INT</span></dt>
+        <dd>
+            <span>{{vm.carriere.finINT | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.carriere.dateRec">Date Rec</span></dt>
+        <dd>
+            <span>{{vm.carriere.dateRec | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.carriere.fichCont">Fich Cont</span></dt>
+        <dd>
+            <span>{{vm.carriere.fichCont}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.carriere.typeContrat">Type Contrat</span></dt>
+        <dd>
+            <a ui-sref="type-contrat-detail({id:vm.carriere.typeContrat.id})">{{vm.carriere.typeContrat.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="carriere-detail.edit({id:vm.carriere.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

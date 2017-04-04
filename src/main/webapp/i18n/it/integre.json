@@ -1,0 +1,25 @@
+{
+    "qualiMakerApp": {
+        "integre" : {
+            "home": {
+                "title": "Integres",
+                "createLabel": "Genera un nuovo Integre",
+                "createOrEditLabel": "Genera o modifica un Integre",
+                "search": "Cerca Integre"
+            },
+            "created": "&Egrave; stato generato un nuovo Integre con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Integre identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Integre con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Integre {{ id }}?"
+            },
+            "detail": {
+                "title": "Integre"
+            },
+            "dateD": "Date D",
+            "dateF": "Date F",
+            "pointfort": "Pointfort",
+            "poitaibl": "Poitaibl"
+        }
+    }
+}

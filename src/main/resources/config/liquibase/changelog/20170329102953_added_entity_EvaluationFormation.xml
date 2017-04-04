@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity EvaluationFormation.
+    -->
+    <changeSet id="20170329102953-1" author="jhipster">
+        <createTable tableName="evaluation_formation">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="matricuel" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="effectue" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="afroid" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="achaud" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="evaluerpar" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="refaire" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dateprevu" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="efficace" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="commentaire" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="methodologie" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="competece" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="supportcours" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="animation" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="lieu" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="respecthoraire" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contnucours" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="traveauxp" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="objectif" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="duree" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ambiace" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="formation_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+</databaseChangeLog>

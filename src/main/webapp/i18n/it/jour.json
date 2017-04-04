@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "jour" : {
+            "home": {
+                "title": "Jours",
+                "createLabel": "Genera un nuovo Jour",
+                "createOrEditLabel": "Genera o modifica un Jour",
+                "search": "Cerca Jour"
+            },
+            "created": "&Egrave; stato generato un nuovo Jour con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Jour identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Jour con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Jour {{ id }}?"
+            },
+            "detail": {
+                "title": "Jour"
+            },
+            "jour": "Jour",
+            "programme": "Programme"
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "qualiMakerApp": {
+        "evaluationFormation" : {
+            "home": {
+                "title": "EvaluationFormations",
+                "createLabel": "Créer un nouveau Evaluation Formation",
+                "createOrEditLabel": "Créer ou éditer un Evaluation Formation",
+                "search": "Recherche pour Evaluation Formation"
+            },
+            "created": "Un nouveau Evaluation Formation a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Evaluation Formation avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Evaluation Formation avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Evaluation Formation {{ id }} ?"
+            },
+            "detail": {
+                "title": "Evaluation Formation"
+            },
+            "matricuel": "Matricuel",
+            "effectue": "Effectue",
+            "afroid": "Afroid",
+            "achaud": "Achaud",
+            "evaluerpar": "Evaluerpar",
+            "refaire": "Refaire",
+            "dateprevu": "Dateprevu",
+            "efficace": "Efficace",
+            "commentaire": "Commentaire",
+            "methodologie": "Methodologie",
+            "competece": "Competece",
+            "supportcours": "Supportcours",
+            "animation": "Animation",
+            "lieu": "Lieu",
+            "respecthoraire": "Respecthoraire",
+            "contnucours": "Contnucours",
+            "traveauxp": "Traveauxp",
+            "objectif": "Objectif",
+            "duree": "Duree",
+            "ambiace": "Ambiace",
+            "formation": "Formation"
+        }
+    }
+}

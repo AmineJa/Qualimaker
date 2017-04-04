@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "typeConge" : {
+            "home": {
+                "title": "TypeConges",
+                "createLabel": "Genera un nuovo Type Conge",
+                "createOrEditLabel": "Genera o modifica un Type Conge",
+                "search": "Cerca Type Conge"
+            },
+            "created": "&Egrave; stato generato un nuovo Type Conge con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Type Conge identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Type Conge con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Type Conge {{ id }}?"
+            },
+            "detail": {
+                "title": "Type Conge"
+            },
+            "type": "Type"
+        }
+    }
+}

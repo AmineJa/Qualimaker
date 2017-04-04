@@ -1,0 +1,103 @@
+
+<div>
+    <h2><span data-translate="qualiMakerApp.evaluationFormation.detail.title">Evaluation Formation</span> {{vm.evaluationFormation.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.matricuel">Matricuel</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.matricuel}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.effectue">Effectue</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.effectue}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.afroid">Afroid</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.afroid}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.achaud">Achaud</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.achaud}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.evaluerpar">Evaluerpar</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.evaluerpar}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.refaire">Refaire</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.refaire}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.dateprevu">Dateprevu</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.dateprevu}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.efficace">Efficace</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.efficace}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.commentaire">Commentaire</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.commentaire}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.methodologie">Methodologie</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.methodologie}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.competece">Competece</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.competece}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.supportcours">Supportcours</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.supportcours}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.animation">Animation</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.animation}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.lieu">Lieu</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.lieu}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.respecthoraire">Respecthoraire</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.respecthoraire}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.contnucours">Contnucours</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.contnucours}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.traveauxp">Traveauxp</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.traveauxp}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.objectif">Objectif</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.objectif}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.duree">Duree</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.duree}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.ambiace">Ambiace</span></dt>
+        <dd>
+            <span>{{vm.evaluationFormation.ambiace}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.evaluationFormation.formation">Formation</span></dt>
+        <dd>
+            <a ui-sref="formation-detail({id:vm.evaluationFormation.formation.id})">{{vm.evaluationFormation.formation.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="evaluation-formation-detail.edit({id:vm.evaluationFormation.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Employe.
+    -->
+    <changeSet id="20170329102953-1" author="jhipster">
+        <createTable tableName="employe">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nom" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="prenom" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="date_n" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="cin" type="double">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="sexe" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="adress" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="gsm" type="double">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="lieu_nais" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tel_mais" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="teleph" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="delivrele" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="delivrea" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="matricule" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="email_2" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="grade" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="rib" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nsc" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="competence" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="diplome" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="experience" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="aptphy" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="image" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="image_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cv" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="cv_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="carriere_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>
+            <column name="site_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="groupe_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="abscence_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="service_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="employe" columnName="date_n" columnDataType="datetime"/>
+        <dropDefaultValue tableName="employe" columnName="delivrele" columnDataType="datetime"/>
+        
+        <createTable tableName="employe_formation">
+            <column name="formations_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="employes_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="employes_id, formations_id" tableName="employe_formation"/>
+        
+        <createTable tableName="employe_fonction">
+            <column name="fonctions_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="employes_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="employes_id, fonctions_id" tableName="employe_fonction"/>
+        
+    </changeSet>
+</databaseChangeLog>

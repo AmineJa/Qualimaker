@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "domaineCompetence" : {
+            "home": {
+                "title": "DomaineCompetences",
+                "createLabel": "Genera un nuovo Domaine Competence",
+                "createOrEditLabel": "Genera o modifica un Domaine Competence",
+                "search": "Cerca Domaine Competence"
+            },
+            "created": "&Egrave; stato generato un nuovo Domaine Competence con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Domaine Competence identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Domaine Competence con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Domaine Competence {{ id }}?"
+            },
+            "detail": {
+                "title": "Domaine Competence"
+            },
+            "libelle": "Libelle"
+        }
+    }
+}

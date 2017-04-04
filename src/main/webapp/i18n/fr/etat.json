@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "etat" : {
+            "home": {
+                "title": "Etats",
+                "createLabel": "Créer un nouveau Etat",
+                "createOrEditLabel": "Créer ou éditer un Etat",
+                "search": "Recherche pour Etat"
+            },
+            "created": "Un nouveau Etat a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Etat avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Etat avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Etat {{ id }} ?"
+            },
+            "detail": {
+                "title": "Etat"
+            },
+            "libelle": "Libelle"
+        }
+    }
+}

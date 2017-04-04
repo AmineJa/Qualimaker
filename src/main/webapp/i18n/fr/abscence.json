@@ -1,0 +1,27 @@
+{
+    "qualiMakerApp": {
+        "abscence" : {
+            "home": {
+                "title": "Abscences",
+                "createLabel": "Créer un nouveau Abscence",
+                "createOrEditLabel": "Créer ou éditer un Abscence",
+                "search": "Recherche pour Abscence"
+            },
+            "created": "Un nouveau Abscence a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Abscence avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Abscence avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Abscence {{ id }} ?"
+            },
+            "detail": {
+                "title": "Abscence"
+            },
+            "justifier": "Justifier",
+            "dateD": "Date D",
+            "dateF": "Date F",
+            "etat": "Etat",
+            "integre": "Integre",
+            "commentaire": "Commentaire"
+        }
+    }
+}

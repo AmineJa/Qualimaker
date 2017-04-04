@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "fichierjoint" : {
+            "home": {
+                "title": "Fichierjoints",
+                "createLabel": "Genera un nuovo Fichierjoint",
+                "createOrEditLabel": "Genera o modifica un Fichierjoint",
+                "search": "Cerca Fichierjoint"
+            },
+            "created": "&Egrave; stato generato un nuovo Fichierjoint con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Fichierjoint identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Fichierjoint con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Fichierjoint {{ id }}?"
+            },
+            "detail": {
+                "title": "Fichierjoint"
+            },
+            "nom": "Nom",
+            "commentaire": "Commentaire"
+        }
+    }
+}

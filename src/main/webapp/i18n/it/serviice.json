@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "serviice" : {
+            "home": {
+                "title": "Serviices",
+                "createLabel": "Genera un nuovo Serviice",
+                "createOrEditLabel": "Genera o modifica un Serviice",
+                "search": "Cerca Serviice"
+            },
+            "created": "&Egrave; stato generato un nuovo Serviice con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Serviice identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Serviice con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Serviice {{ id }}?"
+            },
+            "detail": {
+                "title": "Serviice"
+            },
+            "nom": "Nom"
+        }
+    }
+}

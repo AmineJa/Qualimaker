@@ -1,0 +1,53 @@
+{
+    "qualiMakerApp": {
+        "employe" : {
+            "home": {
+                "title": "Employes",
+                "createLabel": "Créer un nouveau Employe",
+                "createOrEditLabel": "Créer ou éditer un Employe",
+                "search": "Recherche pour Employe"
+            },
+            "created": "Un nouveau Employe a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Employe avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Employe avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Employe {{ id }} ?"
+            },
+            "detail": {
+                "title": "Employe"
+            },
+            "nom": "Nom :",
+            "prenom": "Prénom :",
+            "dateN": "Date de Naissance :",
+            "cin": "CIN :",
+            "sexe": "Sexe :",
+            "adress": "Adresse :",
+            "gsm": "GSM:",
+            "lieuNais": "Lieux de Naissace :",
+            "telMais": "Téléphone de Maison :",
+            "teleph": "Téléphone :",
+            "delivrele": "Delivré le :",
+            "delivrea": "Delivré à :",
+            "email": "Email :",
+            "matricule": "Matricule :",
+            "email2": "Email 2 :",
+            "grade": "Grade :",
+            "rib": "RIB :",
+            "nsc": "Nsc :",
+            "competence": "Competence",
+            "diplome": "Diplome",
+            "experience": "Experience",
+            "aptphy": "Aptitude physique ",
+            "image": "Image",
+            "cv": "Cv",
+            "carriere": "Carrière",
+            "conge": "Conge",
+            "site": "Site",
+            "groupe": "Groupe",
+            "abscence": "Abscence",
+            "service": "Service",
+            "formation": "Formation",
+            "fonction": "Fonction"
+        }
+    }
+}

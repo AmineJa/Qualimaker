@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "formationComp" : {
+            "home": {
+                "title": "FormationComps",
+                "createLabel": "Créer un nouveau Formation Comp",
+                "createOrEditLabel": "Créer ou éditer un Formation Comp",
+                "search": "Recherche pour Formation Comp"
+            },
+            "created": "Un nouveau Formation Comp a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Formation Comp avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Formation Comp avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Formation Comp {{ id }} ?"
+            },
+            "detail": {
+                "title": "Formation Comp"
+            },
+            "commentaire": "Commentaire"
+        }
+    }
+}

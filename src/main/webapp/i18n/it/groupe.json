@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "groupe" : {
+            "home": {
+                "title": "Groupes",
+                "createLabel": "Genera un nuovo Groupe",
+                "createOrEditLabel": "Genera o modifica un Groupe",
+                "search": "Cerca Groupe"
+            },
+            "created": "&Egrave; stato generato un nuovo Groupe con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Groupe identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Groupe con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Groupe {{ id }}?"
+            },
+            "detail": {
+                "title": "Groupe"
+            },
+            "nom": "Nom"
+        }
+    }
+}

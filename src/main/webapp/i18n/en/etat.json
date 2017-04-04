@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "etat" : {
+            "home": {
+                "title": "Etats",
+                "createLabel": "Create a new Etat",
+                "createOrEditLabel": "Create or edit a Etat",
+                "search": "Search for Etat"
+            },
+            "created": "A new Etat is created with identifier {{ param }}",
+            "updated": "A Etat is updated with identifier {{ param }}",
+            "deleted": "A Etat is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Etat {{ id }}?"
+            },
+            "detail": {
+                "title": "Etat"
+            },
+            "libelle": "Libelle"
+        }
+    }
+}

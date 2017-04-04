@@ -1,0 +1,28 @@
+{
+    "qualiMakerApp": {
+        "demandeFormation" : {
+            "home": {
+                "title": "DemandeFormations",
+                "createLabel": "Créer un nouveau Demande Formation",
+                "createOrEditLabel": "Créer ou éditer un Demande Formation",
+                "search": "Recherche pour Demande Formation"
+            },
+            "created": "Un nouveau Demande Formation a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Demande Formation avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Demande Formation avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Demande Formation {{ id }} ?"
+            },
+            "detail": {
+                "title": "Demande Formation"
+            },
+            "theme": "Theme",
+            "dateDemande": "Date Demande",
+            "datesouhaite": "Datesouhaite",
+            "nombresjours": "Nombresjours",
+            "description": "Description",
+            "justification": "Justification",
+            "empploye": "Empploye"
+        }
+    }
+}

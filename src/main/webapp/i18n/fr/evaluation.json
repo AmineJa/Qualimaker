@@ -1,0 +1,29 @@
+{
+    "qualiMakerApp": {
+        "evaluation" : {
+            "home": {
+                "title": "Evaluations",
+                "createLabel": "Créer un nouveau Evaluation",
+                "createOrEditLabel": "Créer ou éditer un Evaluation",
+                "search": "Recherche pour Evaluation"
+            },
+            "created": "Un nouveau Evaluation a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Evaluation avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Evaluation avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Evaluation {{ id }} ?"
+            },
+            "detail": {
+                "title": "Evaluation"
+            },
+            "anne": "Anne",
+            "description": "Description",
+            "valeurmax": "Valeurmax",
+            "seuilPol": "Seuil Pol",
+            "date": "Date",
+            "competence": "Competence",
+            "polyvalence": "Polyvalence",
+            "critere": "Critere"
+        }
+    }
+}

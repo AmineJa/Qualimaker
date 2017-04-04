@@ -1,0 +1,23 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "employee",
+            "otherEntityName": "employe",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "fonction"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170329102953",
+    "entityTableName": "fonction",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

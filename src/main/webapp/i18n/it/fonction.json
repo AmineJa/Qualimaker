@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "fonction" : {
+            "home": {
+                "title": "Fonctions",
+                "createLabel": "Genera un nuovo Fonction",
+                "createOrEditLabel": "Genera o modifica un Fonction",
+                "search": "Cerca Fonction"
+            },
+            "created": "&Egrave; stato generato un nuovo Fonction con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Fonction identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Fonction con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Fonction {{ id }}?"
+            },
+            "detail": {
+                "title": "Fonction"
+            },
+            "nom": "Nom",
+            "employee": "Employee"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "domaineCompetence" : {
+            "home": {
+                "title": "DomaineCompetences",
+                "createLabel": "Créer un nouveau Domaine Competence",
+                "createOrEditLabel": "Créer ou éditer un Domaine Competence",
+                "search": "Recherche pour Domaine Competence"
+            },
+            "created": "Un nouveau Domaine Competence a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Domaine Competence avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Domaine Competence avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Domaine Competence {{ id }} ?"
+            },
+            "detail": {
+                "title": "Domaine Competence"
+            },
+            "libelle": "Libelle"
+        }
+    }
+}

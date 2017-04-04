@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "formationComp" : {
+            "home": {
+                "title": "FormationComps",
+                "createLabel": "Genera un nuovo Formation Comp",
+                "createOrEditLabel": "Genera o modifica un Formation Comp",
+                "search": "Cerca Formation Comp"
+            },
+            "created": "&Egrave; stato generato un nuovo Formation Comp con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Formation Comp identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Formation Comp con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Formation Comp {{ id }}?"
+            },
+            "detail": {
+                "title": "Formation Comp"
+            },
+            "commentaire": "Commentaire"
+        }
+    }
+}

@@ -1,0 +1,131 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "demandeformation",
+            "otherEntityName": "demandeFormation",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "formation"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "formationcomp",
+            "otherEntityName": "formationComp",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "formation"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "formateur",
+            "otherEntityName": "formateur",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "formation"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "natureFormation",
+            "otherEntityName": "natureformation",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "fichierjoint",
+            "otherEntityName": "fichierjoint",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "critereevaluation",
+            "otherEntityName": "critereevaluation",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "jour",
+            "otherEntityName": "jour",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "employe",
+            "otherEntityName": "employe",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "formation"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "theme",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "titre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dateD",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dateF",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "lieu",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "objectif",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contenu",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "coutMat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "coutImat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reccurence",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "periode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "finaprs",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "termina",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170329102953",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "formation",
+    "pagination": "pagination"
+}

@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "carriere",
+            "otherEntityName": "carriere",
+            "otherEntityRelationshipName": "typeContrat"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170329102953",
+    "entityTableName": "type_contrat",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

@@ -1,0 +1,25 @@
+{
+    "qualiMakerApp": {
+        "formateur" : {
+            "home": {
+                "title": "Formateurs",
+                "createLabel": "Genera un nuovo Formateur",
+                "createOrEditLabel": "Genera o modifica un Formateur",
+                "search": "Cerca Formateur"
+            },
+            "created": "&Egrave; stato generato un nuovo Formateur con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Formateur identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Formateur con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Formateur {{ id }}?"
+            },
+            "detail": {
+                "title": "Formateur"
+            },
+            "nom": "Nom",
+            "prenom": "Prenom",
+            "cv": "Cv",
+            "typeformateur": "Typeformateur"
+        }
+    }
+}

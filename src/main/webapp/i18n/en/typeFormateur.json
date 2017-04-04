@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "typeFormateur" : {
+            "home": {
+                "title": "Type Formateurs",
+                "createLabel": "Create a new Type Formateur",
+                "createOrEditLabel": "Create or edit a Type Formateur",
+                "search": "Search for Type Formateur"
+            },
+            "created": "A new Type Formateur is created with identifier {{ param }}",
+            "updated": "A Type Formateur is updated with identifier {{ param }}",
+            "deleted": "A Type Formateur is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Type Formateur {{ id }}?"
+            },
+            "detail": {
+                "title": "Type Formateur"
+            },
+            "libelle": "Libelle",
+            "formateur": "Formateur"
+        }
+    }
+}

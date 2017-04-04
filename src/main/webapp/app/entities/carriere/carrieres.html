@@ -1,0 +1,93 @@
+<div>
+    <h2 data-translate="qualiMakerApp.carriere.home.title">Carrieres</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="carriere.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="qualiMakerApp.carriere.home.createLabel">
+                        Create new Carriere
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'qualiMakerApp.carriere.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="nom"><span data-translate="qualiMakerApp.carriere.nom">Nom</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="etat"><span data-translate="qualiMakerApp.carriere.etat">Etat</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="integre"><span data-translate="qualiMakerApp.carriere.integre">Integre</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="debutINt"><span data-translate="qualiMakerApp.carriere.debutINt">Debut I Nt</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="finINT"><span data-translate="qualiMakerApp.carriere.finINT">Fin INT</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dateRec"><span data-translate="qualiMakerApp.carriere.dateRec">Date Rec</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="fichCont"><span data-translate="qualiMakerApp.carriere.fichCont">Fich Cont</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="typeContrat.id"><span data-translate="qualiMakerApp.carriere.typeContrat">Type Contrat</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="carriere in vm.carrieres track by carriere.id">
+                    <td><a ui-sref="carriere-detail({id:carriere.id})">{{carriere.id}}</a></td>
+                    <td>{{carriere.nom}}</td>
+                    <td>{{carriere.etat}}</td>
+                    <td>{{carriere.integre}}</td>
+                    <td>{{carriere.debutINt | date:'medium'}}</td>
+                    <td>{{carriere.finINT | date:'medium'}}</td>
+                    <td>{{carriere.dateRec | date:'medium'}}</td>
+                    <td>{{carriere.fichCont}}</td>
+                    <td>
+                        <a ui-sref="type-contrat-detail({id:carriere.typeContrat.id})">{{carriere.typeContrat.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="carriere-detail({id:carriere.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="carriere.edit({id:carriere.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="carriere.delete({id:carriere.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

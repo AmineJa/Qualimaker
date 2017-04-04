@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "programme" : {
+            "home": {
+                "title": "Programmes",
+                "createLabel": "Genera un nuovo Programme",
+                "createOrEditLabel": "Genera o modifica un Programme",
+                "search": "Cerca Programme"
+            },
+            "created": "&Egrave; stato generato un nuovo Programme con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Programme identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Programme con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Programme {{ id }}?"
+            },
+            "detail": {
+                "title": "Programme"
+            },
+            "matin": "Matin",
+            "apresmidi": "Apresmidi"
+        }
+    }
+}

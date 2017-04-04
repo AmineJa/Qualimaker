@@ -1,0 +1,29 @@
+{
+    "qualiMakerApp": {
+        "evaluation" : {
+            "home": {
+                "title": "Evaluations",
+                "createLabel": "Genera un nuovo Evaluation",
+                "createOrEditLabel": "Genera o modifica un Evaluation",
+                "search": "Cerca Evaluation"
+            },
+            "created": "&Egrave; stato generato un nuovo Evaluation con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Evaluation identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Evaluation con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Evaluation {{ id }}?"
+            },
+            "detail": {
+                "title": "Evaluation"
+            },
+            "anne": "Anne",
+            "description": "Description",
+            "valeurmax": "Valeurmax",
+            "seuilPol": "Seuil Pol",
+            "date": "Date",
+            "competence": "Competence",
+            "polyvalence": "Polyvalence",
+            "critere": "Critere"
+        }
+    }
+}

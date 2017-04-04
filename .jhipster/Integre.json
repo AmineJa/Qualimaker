@@ -1,0 +1,27 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "dateD",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateF",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "pointfort",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "poitaibl",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170329102953",
+    "entityTableName": "integre",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}
