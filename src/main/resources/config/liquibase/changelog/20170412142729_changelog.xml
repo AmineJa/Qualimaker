@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-1">
+      <dropForeignKeyConstraint baseTableName="employe" constraintName="fk1hwjrhcxmnat5y5vpq3m4wa60"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-2">
+      <dropForeignKeyConstraint baseTableName="jhi_user_authority"
+                                constraintName="fk290okww5jujghp4el5i7mgwu0"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-3">
+      <dropForeignKeyConstraint baseTableName="jhi_persistent_audit_evt_data"
+                                constraintName="fk2ehnyx2si4tjd2nt4q7y40v8m"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-4">
+      <dropForeignKeyConstraint baseTableName="demande_formation"
+                                constraintName="fk2itrqi2s1ycvh392ia23mncmd"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-5">
+      <dropForeignKeyConstraint baseTableName="conge" constraintName="fk4jp58hutdm1vxrrkicmrj4ymg"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-6">
+      <dropForeignKeyConstraint baseTableName="jhi_user_authority"
+                                constraintName="fk4psxl0jtx6nr7rhqbynr6itoc"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-7">
+      <dropForeignKeyConstraint baseTableName="type_formateur"
+                                constraintName="fk9gopbpus2yxu9ubu0v9p66a7e"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-8">
+      <dropForeignKeyConstraint baseTableName="employe" constraintName="fk_employe_carriere_id"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-9">
+      <dropForeignKeyConstraint baseTableName="employe_fonction"
+                                constraintName="fk_employe_fonction_employes_id"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-10">
+      <dropForeignKeyConstraint baseTableName="employe_fonction"
+                                constraintName="fk_employe_fonction_fonctions_id"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-11">
+      <dropForeignKeyConstraint baseTableName="employe_formation"
+                                constraintName="fk_employe_formation_employes_id"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-12">
+      <dropForeignKeyConstraint baseTableName="employe" constraintName="fk_employe_groupe_id"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-13">
+      <dropForeignKeyConstraint baseTableName="employe" constraintName="fk_employe_service_id"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-14">
+      <dropForeignKeyConstraint baseTableName="formation"
+                                constraintName="fk_formation_critereevaluation_id"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-15">
+      <dropForeignKeyConstraint baseTableName="formation" constraintName="fk_formation_fichierjoint_id"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-16">
+      <dropForeignKeyConstraint baseTableName="formation"
+                                constraintName="fk_formation_formationcomp_id"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-17">
+      <dropForeignKeyConstraint baseTableName="formation" constraintName="fk_formation_jour_id"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-18">
+      <dropForeignKeyConstraint baseTableName="employe_formation"
+                                constraintName="fka6hncirbyc9oxt270al0ltf0m"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-19">
+      <dropForeignKeyConstraint baseTableName="formation" constraintName="fkdnj87nt2fnhdcd00ryovre4m8"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-20">
+      <dropForeignKeyConstraint baseTableName="demande_formation"
+                                constraintName="fkew6dwgdhjncesfun3qgnt7f5p"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-21">
+      <dropForeignKeyConstraint baseTableName="formation" constraintName="fkfj0edolot5hw17ekowwnf0i1v"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-22">
+      <dropForeignKeyConstraint baseTableName="jour" constraintName="fkjfi05xo521btjhdorqkb6vt2t"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-23">
+      <dropForeignKeyConstraint baseTableName="evaluation_formation"
+                                constraintName="fkl8k4sfvm5mbalhe1ip2yl99t4"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-24">
+      <dropForeignKeyConstraint baseTableName="conge" constraintName="fklqg9rybgeokq9ibtk7ymycjeq"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-25">
+      <dropForeignKeyConstraint baseTableName="formation" constraintName="fkmlog36qmiuc2wtkspxhkg52dc"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-26">
+      <dropForeignKeyConstraint baseTableName="jhi_persistent_token"
+                                constraintName="fkmogh0vmv89yg5kofe6n3t77ud"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-27">
+      <dropForeignKeyConstraint baseTableName="carriere" constraintName="fkqwyg91go86g8grp0m71m44piw"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-28">
+      <dropForeignKeyConstraint baseTableName="employe" constraintName="fkta44gd8ts47t36rjmda1mhkgs"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-29">
+      <dropUniqueConstraint constraintName="employe_carriere_id_key" tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-30">
+      <dropUniqueConstraint constraintName="formation_demandeformation_id_key"
+                            tableName="formation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-31">
+      <dropUniqueConstraint constraintName="formation_formateur_id_key" tableName="formation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-32">
+      <dropUniqueConstraint constraintName="formation_formationcomp_id_key" tableName="formation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-33">
+      <dropUniqueConstraint constraintName="jhi_user_email_key" tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-34">
+      <dropUniqueConstraint constraintName="jhi_user_login_key" tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-35">
+      <dropUniqueConstraint constraintName="jour_programme_id_key" tableName="jour"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-36">
+      <dropTable tableName="abscence"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-37">
+      <dropTable tableName="carriere"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-38">
+      <dropTable tableName="conge"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-39">
+      <dropTable tableName="critereevaluation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-40">
+      <dropTable tableName="demande_formation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-41">
+      <dropTable tableName="domaine_competence"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-42">
+      <dropTable tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-43">
+      <dropTable tableName="employe_fonction"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-44">
+      <dropTable tableName="employe_formation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-45">
+      <dropTable tableName="etat"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-46">
+      <dropTable tableName="etat_demande"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-47">
+      <dropTable tableName="evaluation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-48">
+      <dropTable tableName="evaluation_formation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-49">
+      <dropTable tableName="fichierjoint"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-50">
+      <dropTable tableName="fonction"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-51">
+      <dropTable tableName="formateur"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-52">
+      <dropTable tableName="formation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-53">
+      <dropTable tableName="formation_comp"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-54">
+      <dropTable tableName="groupe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-55">
+      <dropTable tableName="integre"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-56">
+      <dropTable tableName="jhi_authority"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-57">
+      <dropTable tableName="jhi_persistent_audit_event"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-58">
+      <dropTable tableName="jhi_persistent_audit_evt_data"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-59">
+      <dropTable tableName="jhi_persistent_token"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-60">
+      <dropTable tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-61">
+      <dropTable tableName="jhi_user_authority"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-62">
+      <dropTable tableName="jour"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-63">
+      <dropTable tableName="nature_abs"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-64">
+      <dropTable tableName="natureformation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-65">
+      <dropTable tableName="programme"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-66">
+      <dropTable tableName="serviice"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-67">
+      <dropTable tableName="sites"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-68">
+      <dropTable tableName="type_conge"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-69">
+      <dropTable tableName="type_contrat"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-70">
+      <dropTable tableName="type_formateur"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-71">
+      <dropTable tableName="type_formation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492007263793-72">
+      <dropSequence sequenceName="hibernate_sequence"/>
+   </changeSet>
+</databaseChangeLog>

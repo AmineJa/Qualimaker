@@ -4,7 +4,7 @@ describe('Controller Tests', function() {
 
     describe('Formateur Management Detail Controller', function() {
         var $scope, $rootScope;
-        var MockEntity, MockPreviousState, MockFormateur, MockTypeFormateur;
+        var MockEntity, MockPreviousState, MockFormateur;
         var createController;
 
         beforeEach(inject(function($injector) {
@@ -13,7 +13,6 @@ describe('Controller Tests', function() {
             MockEntity = jasmine.createSpy('MockEntity');
             MockPreviousState = jasmine.createSpy('MockPreviousState');
             MockFormateur = jasmine.createSpy('MockFormateur');
-            MockTypeFormateur = jasmine.createSpy('MockTypeFormateur');
             
 
             var locals = {
@@ -21,8 +20,7 @@ describe('Controller Tests', function() {
                 '$rootScope': $rootScope,
                 'entity': MockEntity,
                 'previousState': MockPreviousState,
-                'Formateur': MockFormateur,
-                'TypeFormateur': MockTypeFormateur
+                'Formateur': MockFormateur
             };
             createController = function() {
                 $injector.get('$controller')("FormateurDetailController", locals);

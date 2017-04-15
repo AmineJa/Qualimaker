@@ -5,15 +5,17 @@
         .module('qualiMakerApp')
         .controller('FormationDialogController', FormationDialogController);
 
-    FormationDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Formation', 'DemandeFormation', 'FormationComp', 'Formateur', 'Natureformation', 'Fichierjoint', 'Critereevaluation', 'Jour', 'Employe'];
+    FormationDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'DataUtils', 'entity', 'Formation', 'DemandeFormation', 'FormationComp', 'Formateur', 'Natureformation', 'Fichierjoint', 'Critereevaluation', 'Jour', 'Employe'];
 
-    function FormationDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, Formation, DemandeFormation, FormationComp, Formateur, Natureformation, Fichierjoint, Critereevaluation, Jour, Employe) {
+    function FormationDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, DataUtils, entity, Formation, DemandeFormation, FormationComp, Formateur, Natureformation, Fichierjoint, Critereevaluation, Jour, Employe) {
         var vm = this;
 
         vm.formation = entity;
         vm.clear = clear;
         vm.datePickerOpenStatus = {};
         vm.openCalendar = openCalendar;
+        vm.byteSize = DataUtils.byteSize;
+        vm.openFile = DataUtils.openFile;
         vm.save = save;
         vm.demandeformations = DemandeFormation.query({filter: 'formation-is-null'});
         $q.all([vm.formation.$promise, vm.demandeformations.$promise]).then(function() {
@@ -77,6 +79,18 @@
 
         vm.datePickerOpenStatus.dateD = false;
         vm.datePickerOpenStatus.dateF = false;
+        vm.datePickerOpenStatus.daterec = false;
+
+        vm.setFichjoint = function ($file, formation) {
+            if ($file) {
+                DataUtils.toBase64($file, function(base64Data) {
+                    $scope.$apply(function() {
+                        formation.fichjoint = base64Data;
+                        formation.fichjointContentType = $file.type;
+                    });
+                });
+            }
+        };
 
         function openCalendar (date) {
             vm.datePickerOpenStatus[date] = true;

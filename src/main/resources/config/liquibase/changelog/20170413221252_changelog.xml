@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+   <changeSet author="Jaouadi-Amine (generated)" id="1492121597866-1">
+      <addColumn tableName="demande_formation">
+         <column name="etat_d" type="varchar(255)">
+            <constraints nullable="false"/>
+         </column>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492121597866-2">
+      <addNotNullConstraint columnDataType="float8" columnName="cin" tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492121597866-3">
+      <addNotNullConstraint columnDataType="bytea" columnName="date_n" tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492121597866-4">
+      <addNotNullConstraint columnDataType="bytea" columnName="daterec" tableName="formation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492121597866-5">
+      <addNotNullConstraint columnDataType="varchar(255)"
+                            columnName="email"
+                            tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492121597866-6">
+      <addNotNullConstraint columnDataType="float8" columnName="gsm" tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492121597866-7">
+      <addNotNullConstraint columnDataType="varchar(255)" columnName="nom" tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492121597866-8">
+      <addNotNullConstraint columnDataType="varchar(255)"
+                            columnName="prenom"
+                            tableName="employe"/>
+   </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "etatDemande" : {
+            "home": {
+                "title": "EtatDemandes",
+                "createLabel": "Genera un nuovo Etat Demande",
+                "createOrEditLabel": "Genera o modifica un Etat Demande",
+                "search": "Cerca Etat Demande"
+            },
+            "created": "&Egrave; stato generato un nuovo Etat Demande con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Etat Demande identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Etat Demande con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Etat Demande {{ id }}?"
+            },
+            "detail": {
+                "title": "Etat Demande"
+            },
+            "etat": "Etat"
+        }
+    }
+}

@@ -9,11 +9,16 @@
         {
             "fieldName": "commentaire",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "fichejoint",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
         }
     ],
     "changelogDate": "20170329102953",
-    "entityTableName": "fichierjoint",
     "dto": "no",
-    "pagination": "no",
-    "service": "no"
+    "service": "no",
+    "entityTableName": "fichierjoint",
+    "pagination": "no"
 }

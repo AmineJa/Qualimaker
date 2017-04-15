@@ -106,6 +106,8 @@
                             return {
                                 nom: null,
                                 commentaire: null,
+                                fichejoint: null,
+                                fichejointContentType: null,
                                 id: null
                             };
                         }

@@ -14,7 +14,10 @@
         </dd>
         <dt><span data-translate="qualiMakerApp.formateur.cv">Cv</span></dt>
         <dd>
-            <span>{{vm.formateur.cv}}</span>
+            <div ng-if="vm.formateur.cv">
+                <a ng-click="vm.openFile(vm.formateur.cvContentType, vm.formateur.cv)" data-translate="entity.action.open">open</a>
+                {{vm.formateur.cvContentType}}, {{vm.byteSize(vm.formateur.cv)}}
+            </div>
         </dd>
     </dl>
 

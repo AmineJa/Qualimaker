@@ -67,7 +67,7 @@ class FichierjointGatlingTest extends Simulation {
             .exec(http("Create new fichierjoint")
             .post("/api/fichierjoints")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "nom":"SAMPLE_TEXT", "commentaire":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "nom":"SAMPLE_TEXT", "commentaire":"SAMPLE_TEXT", "fichejoint":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_fichierjoint_url"))).exitHereIfFailed
             .pause(10)

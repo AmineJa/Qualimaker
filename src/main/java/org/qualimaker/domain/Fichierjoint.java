@@ -30,6 +30,13 @@ public class Fichierjoint implements Serializable {
     @Column(name = "commentaire")
     private String commentaire;
 
+    @Lob
+    @Column(name = "fichejoint")
+    private byte[] fichejoint;
+
+    @Column(name = "fichejoint_content_type")
+    private String fichejointContentType;
+
     public Long getId() {
         return id;
     }
@@ -64,6 +71,32 @@ public class Fichierjoint implements Serializable {
         this.commentaire = commentaire;
     }
 
+    public byte[] getFichejoint() {
+        return fichejoint;
+    }
+
+    public Fichierjoint fichejoint(byte[] fichejoint) {
+        this.fichejoint = fichejoint;
+        return this;
+    }
+
+    public void setFichejoint(byte[] fichejoint) {
+        this.fichejoint = fichejoint;
+    }
+
+    public String getFichejointContentType() {
+        return fichejointContentType;
+    }
+
+    public Fichierjoint fichejointContentType(String fichejointContentType) {
+        this.fichejointContentType = fichejointContentType;
+        return this;
+    }
+
+    public void setFichejointContentType(String fichejointContentType) {
+        this.fichejointContentType = fichejointContentType;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -90,6 +123,8 @@ public class Fichierjoint implements Serializable {
             "id=" + id +
             ", nom='" + nom + "'" +
             ", commentaire='" + commentaire + "'" +
+            ", fichejoint='" + fichejoint + "'" +
+            ", fichejointContentType='" + fichejointContentType + "'" +
             '}';
     }
 }

@@ -1,156 +1,3 @@
-<!--<div>
-    <h2 data-translate="qualiMakerApp.employe.home.title">Employes</h2>
-    <jhi-alert></jhi-alert>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="employe.new" >
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <span class="hidden-xs-down"  data-translate="qualiMakerApp.employe.home.createLabel">
-                        Create new Employe
-                    </span>
-                </button>
-            </div>
-            <div class="col-xs-8 no-padding-right">
-                <form name="searchForm" class="form-inline">
-                    <div class="input-group pull-right" >
-                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'qualiMakerApp.employe.home.search' | translate }}">
-                        <span  class="input-group-btn width-min" >
-                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
-                            <button class="btn btn-info" ng-click="vm.clear()">
-                                <span class="glyphicon glyphicon-trash"></span>
-                            </button>
-                        </span>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <br/>
-    <div class="table-responsive">
-        <table class="jh-table table table-striped">
-            <thead>
-                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
-                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="nom"><span data-translate="qualiMakerApp.employe.nom">Nom</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="prenom"><span data-translate="qualiMakerApp.employe.prenom">Prenom</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dateN"><span data-translate="qualiMakerApp.employe.dateN">Date N</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="cin"><span data-translate="qualiMakerApp.employe.cin">Cin</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="sexe"><span data-translate="qualiMakerApp.employe.sexe">Sexe</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="adress"><span data-translate="qualiMakerApp.employe.adress">Adress</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="gsm"><span data-translate="qualiMakerApp.employe.gsm">Gsm</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="lieuNais"><span data-translate="qualiMakerApp.employe.lieuNais">Lieu Nais</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="telMais"><span data-translate="qualiMakerApp.employe.telMais">Tel Mais</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="teleph"><span data-translate="qualiMakerApp.employe.teleph">Teleph</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="delivrele"><span data-translate="qualiMakerApp.employe.delivrele">Delivrele</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="delivrea"><span data-translate="qualiMakerApp.employe.delivrea">Delivrea</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="email"><span data-translate="qualiMakerApp.employe.email">Email</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="matricule"><span data-translate="qualiMakerApp.employe.matricule">Matricule</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="email2"><span data-translate="qualiMakerApp.employe.email2">Email 2</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="grade"><span data-translate="qualiMakerApp.employe.grade">Grade</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="rib"><span data-translate="qualiMakerApp.employe.rib">Rib</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="nsc"><span data-translate="qualiMakerApp.employe.nsc">Nsc</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="competence"><span data-translate="qualiMakerApp.employe.competence">Competence</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="diplome"><span data-translate="qualiMakerApp.employe.diplome">Diplome</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="experience"><span data-translate="qualiMakerApp.employe.experience">Experience</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="aptphy"><span data-translate="qualiMakerApp.employe.aptphy">Aptphy</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="image"><span data-translate="qualiMakerApp.employe.image">Image</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="cv"><span data-translate="qualiMakerApp.employe.cv">Cv</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="carriere.id"><span data-translate="qualiMakerApp.employe.carriere">Carriere</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="site.id"><span data-translate="qualiMakerApp.employe.site">Site</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="groupe.id"><span data-translate="qualiMakerApp.employe.groupe">Groupe</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="abscence.id"><span data-translate="qualiMakerApp.employe.abscence">Abscence</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="service.id"><span data-translate="qualiMakerApp.employe.service">Service</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="employe in vm.employes track by employe.id">
-                    <td><a ui-sref="employe-detail({id:employe.id})">{{employe.id}}</a></td>
-                    <td>{{employe.nom}}</td>
-                    <td>{{employe.prenom}}</td>
-                    <td>{{employe.dateN | date:'medium'}}</td>
-                    <td>{{employe.cin}}</td>
-                    <td data-translate="{{'qualiMakerApp.Sexe.' + employe.sexe}}">{{employe.sexe}}</td>
-                    <td>{{employe.adress}}</td>
-                    <td>{{employe.gsm}}</td>
-                    <td>{{employe.lieuNais}}</td>
-                    <td>{{employe.telMais}}</td>
-                    <td>{{employe.teleph}}</td>
-                    <td>{{employe.delivrele | date:'medium'}}</td>
-                    <td>{{employe.delivrea}}</td>
-                    <td>{{employe.email}}</td>
-                    <td>{{employe.matricule}}</td>
-                    <td>{{employe.email2}}</td>
-                    <td>{{employe.grade}}</td>
-                    <td>{{employe.rib}}</td>
-                    <td>{{employe.nsc}}</td>
-                    <td>{{employe.competence}}</td>
-                    <td>{{employe.diplome}}</td>
-                    <td>{{employe.experience}}</td>
-                    <td>{{employe.aptphy}}</td>
-                    <td>
-                        <a ng-if="employe.image" ng-click="vm.openFile(employe.imageContentType, employe.image)">
-                            <img data-ng-src="{{'data:' + employe.imageContentType + ';base64,' + employe.image}}" style="max-height: 30px;" alt="employe image"/>
-                        </a>
-                        <span ng-if="employe.image">{{employe.imageContentType}}, {{vm.byteSize(employe.image)}}</span>
-                    </td>
-                    <td>
-                        <a ng-if="employe.cv" ng-click="vm.openFile(employe.cvContentType, employe.cv)" data-translate="entity.action.open">open</a>
-                        <span ng-if="employe.cv">{{employe.cvContentType}}, {{vm.byteSize(employe.cv)}}</span>
-                    </td>
-                    <td>
-                        <a ui-sref="carriere-detail({id:employe.carriere.id})">{{employe.carriere.id}}</a>
-                    </td>
-                    <td>
-                        <a ui-sref="sites-detail({id:employe.site.id})">{{employe.site.id}}</a>
-                    </td>
-                    <td>
-                        <a ui-sref="groupe-detail({id:employe.groupe.id})">{{employe.groupe.id}}</a>
-                    </td>
-                    <td>
-                        <a ui-sref="abscence-detail({id:employe.abscence.id})">{{employe.abscence.id}}</a>
-                    </td>
-                    <td>
-                        <a ui-sref="serviice-detail({id:employe.service.id})">{{employe.service.id}}</a>
-                    </td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="employe-detail({id:employe.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="employe.edit({id:employe.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="employe.delete({id:employe.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="text-center">
-        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
-        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
-    </div>
-</div>
-
--->
 
 <div class="well">
 
@@ -215,13 +62,14 @@
                         <div class="widget-body no-padding">
                             <jhi-alert></jhi-alert>
                             <div class="container-fluid">
+                                <h2></h2>
                                 <div class="row">
                                     <div class="col-xs-4 no-padding-left">
-                                        <button class="btn btn-primary" ui-sref="employe.new" >
+                                        <button class="btn btn-default" ui-sref="employe.new" >
                                             <span class="glyphicon glyphicon-plus"></span>
                                             <span class="hidden-xs-down"  data-translate="qualiMakerApp.employe.home.createLabel">
-                        Create new Employe
-                    </span>
+                                        Create new Employe
+                                    </span>
                                         </button>
                                     </div>
                                     <div class="col-xs-8 no-padding-right">
@@ -257,7 +105,7 @@
                                         <th jh-sort-by="dateN"><span data-translate="qualiMakerApp.employe.dateN"><i class="fa fa-fw fa-calendar txt-color-blue hidden-md hidden-sm hidden-xs"></i>Date N</span> <span class="glyphicon glyphicon-sort"></span></th>
                                         <th jh-sort-by="sexe"><span data-translate="qualiMakerApp.employe.sexe">Sexe</span> <span class="glyphicon glyphicon-sort"></span></th>
                                         <th jh-sort-by="gsm"><span data-translate="qualiMakerApp.employe.gsm"><i class="fa fa-fw fa-mobile txt-color-blue hidden-md hidden-sm hidden-xs"></i>Gsm</span> <span class="glyphicon glyphicon-sort"></span></th>
-                                         <th></th>
+                                        <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -275,25 +123,25 @@
                                             <div class="btn-group flex-btn-group-container">
                                                 <div class="row">
                                                     <div class="col-sm-12">
-                                                <button type="submit"
-                                                        ui-sref="employe-detail({id:employe.id})"
-                                                        class="btn btn-info btn-sm  btn-xl">
-                                                    <span class="glyphicon glyphicon-eye-open"></span>
-                                                    <span class="hidden-sm-down"></span>
-                                                </button>
+                                                        <button type="submit"
+                                                                ui-sref="employe-detail({id:employe.id})"
+                                                                class="btn btn-info btn-sm  btn-xl">
+                                                            <span class="glyphicon glyphicon-eye-open"></span>
+                                                            <span class="hidden-sm-down"></span>
+                                                        </button>
 
-                                                <button type="submit"
-                                                        ui-sref="employe.edit({id:employe.id})"
-                                                        class="btn btn-primary btn-sm  btn-xl">
-                                                    <span class="glyphicon glyphicon-pencil"></span>
-                                                    <span class="hidden-sm-down" ></span>
-                                                </button>
-                                                <button type="submit"
-                                                        ui-sref="employe.delete({id:employe.id})"
-                                                        class="btn btn-xs btn-danger btn-sm  btn-xl">
-                                                    <span class="glyphicon glyphicon-remove-circle"></span>
-                                                    <span class="hidden-sm-down" ></span>
-                                                </button>
+                                                        <button type="submit"
+                                                                ui-sref="employe.edit({id:employe.id})"
+                                                                class="btn btn-primary btn-sm  btn-xl">
+                                                            <span class="glyphicon glyphicon-pencil"></span>
+                                                            <span class="hidden-sm-down" ></span>
+                                                        </button>
+                                                        <button type="submit"
+                                                                ui-sref="employe.delete({id:employe.id})"
+                                                                class="btn btn-xs btn-danger btn-sm  btn-xl">
+                                                            <span class="glyphicon glyphicon-remove-circle"></span>
+                                                            <span class="hidden-sm-down" ></span>
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>

@@ -5,9 +5,9 @@
         .module('qualiMakerApp')
         .controller('FormationController', FormationController);
 
-    FormationController.$inject = ['$state', 'Formation', 'FormationSearch', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];
+    FormationController.$inject = ['$state', 'DataUtils', 'Formation', 'FormationSearch', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];
 
-    function FormationController($state, Formation, FormationSearch, ParseLinks, AlertService, paginationConstants, pagingParams) {
+    function FormationController($state, DataUtils, Formation, FormationSearch, ParseLinks, AlertService, paginationConstants, pagingParams) {
 
         var vm = this;
 
@@ -21,6 +21,8 @@
         vm.loadAll = loadAll;
         vm.searchQuery = pagingParams.search;
         vm.currentSearch = pagingParams.search;
+        vm.openFile = DataUtils.openFile;
+        vm.byteSize = DataUtils.byteSize;
 
         loadAll();
 

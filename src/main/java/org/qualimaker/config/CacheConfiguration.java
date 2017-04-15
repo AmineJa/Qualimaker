@@ -76,6 +76,8 @@ public class CacheConfiguration {
             cm.createCache(org.qualimaker.domain.TypeContrat.class.getName() + ".carrieres", jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.TypeFormateur.class.getName(), jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.TypeFormation.class.getName(), jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.EtatDemande.class.getName(), jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.EtatDemande.class.getName() + ".demandeFormations", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

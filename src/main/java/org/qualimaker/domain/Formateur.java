@@ -1,14 +1,11 @@
 package org.qualimaker.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -33,13 +30,12 @@ public class Formateur implements Serializable {
     @Column(name = "prenom")
     private String prenom;
 
+    @Lob
     @Column(name = "cv")
-    private String cv;
+    private byte[] cv;
 
-    @OneToMany(mappedBy = "formateur")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<TypeFormateur> typeformateurs = new HashSet<>();
+    @Column(name = "cv_content_type")
+    private String cvContentType;
 
     public Long getId() {
         return id;
@@ -75,42 +71,30 @@ public class Formateur implements Serializable {
         this.prenom = prenom;
     }
 
-    public String getCv() {
+    public byte[] getCv() {
         return cv;
     }
 
-    public Formateur cv(String cv) {
+    public Formateur cv(byte[] cv) {
         this.cv = cv;
         return this;
     }
 
-    public void setCv(String cv) {
+    public void setCv(byte[] cv) {
         this.cv = cv;
     }
 
-    public Set<TypeFormateur> getTypeformateurs() {
-        return typeformateurs;
+    public String getCvContentType() {
+        return cvContentType;
     }
 
-    public Formateur typeformateurs(Set<TypeFormateur> typeFormateurs) {
-        this.typeformateurs = typeFormateurs;
+    public Formateur cvContentType(String cvContentType) {
+        this.cvContentType = cvContentType;
         return this;
     }
 
-    public Formateur addTypeformateur(TypeFormateur typeFormateur) {
-        this.typeformateurs.add(typeFormateur);
-        typeFormateur.setFormateur(this);
-        return this;
-    }
-
-    public Formateur removeTypeformateur(TypeFormateur typeFormateur) {
-        this.typeformateurs.remove(typeFormateur);
-        typeFormateur.setFormateur(null);
-        return this;
-    }
-
-    public void setTypeformateurs(Set<TypeFormateur> typeFormateurs) {
-        this.typeformateurs = typeFormateurs;
+    public void setCvContentType(String cvContentType) {
+        this.cvContentType = cvContentType;
     }
 
     @Override
@@ -140,6 +124,7 @@ public class Formateur implements Serializable {
             ", nom='" + nom + "'" +
             ", prenom='" + prenom + "'" +
             ", cv='" + cv + "'" +
+            ", cvContentType='" + cvContentType + "'" +
             '}';
     }
 }

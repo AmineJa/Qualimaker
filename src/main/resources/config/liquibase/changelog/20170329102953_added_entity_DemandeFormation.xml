@@ -45,6 +45,10 @@
                 <constraints nullable="true" />
             </column>
 
+            <column name="etat_d" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
             <column name="empploye_id" type="bigint">
                 <constraints nullable="true" />
             </column>

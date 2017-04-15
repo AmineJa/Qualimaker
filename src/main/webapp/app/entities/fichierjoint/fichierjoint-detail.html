@@ -12,6 +12,13 @@
         <dd>
             <span>{{vm.fichierjoint.commentaire}}</span>
         </dd>
+        <dt><span data-translate="qualiMakerApp.fichierjoint.fichejoint">Fichejoint</span></dt>
+        <dd>
+            <div ng-if="vm.fichierjoint.fichejoint">
+                <a ng-click="vm.openFile(vm.fichierjoint.fichejointContentType, vm.fichierjoint.fichejoint)" data-translate="entity.action.open">open</a>
+                {{vm.fichierjoint.fichejointContentType}}, {{vm.byteSize(vm.fichierjoint.fichejoint)}}
+            </div>
+        </dd>
     </dl>
 
     <button type="submit"

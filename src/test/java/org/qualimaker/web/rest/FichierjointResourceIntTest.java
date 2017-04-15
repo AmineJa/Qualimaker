@@ -20,6 +20,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Base64Utils;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -43,6 +44,11 @@ public class FichierjointResourceIntTest {
 
     private static final String DEFAULT_COMMENTAIRE = "AAAAAAAAAA";
     private static final String UPDATED_COMMENTAIRE = "BBBBBBBBBB";
+
+    private static final byte[] DEFAULT_FICHEJOINT = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_FICHEJOINT = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_FICHEJOINT_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_FICHEJOINT_CONTENT_TYPE = "image/png";
 
     @Autowired
     private FichierjointRepository fichierjointRepository;
@@ -85,7 +91,9 @@ public class FichierjointResourceIntTest {
     public static Fichierjoint createEntity(EntityManager em) {
         Fichierjoint fichierjoint = new Fichierjoint()
             .nom(DEFAULT_NOM)
-            .commentaire(DEFAULT_COMMENTAIRE);
+            .commentaire(DEFAULT_COMMENTAIRE)
+            .fichejoint(DEFAULT_FICHEJOINT)
+            .fichejointContentType(DEFAULT_FICHEJOINT_CONTENT_TYPE);
         return fichierjoint;
     }
 
@@ -112,6 +120,8 @@ public class FichierjointResourceIntTest {
         Fichierjoint testFichierjoint = fichierjointList.get(fichierjointList.size() - 1);
         assertThat(testFichierjoint.getNom()).isEqualTo(DEFAULT_NOM);
         assertThat(testFichierjoint.getCommentaire()).isEqualTo(DEFAULT_COMMENTAIRE);
+        assertThat(testFichierjoint.getFichejoint()).isEqualTo(DEFAULT_FICHEJOINT);
+        assertThat(testFichierjoint.getFichejointContentType()).isEqualTo(DEFAULT_FICHEJOINT_CONTENT_TYPE);
 
         // Validate the Fichierjoint in Elasticsearch
         Fichierjoint fichierjointEs = fichierjointSearchRepository.findOne(testFichierjoint.getId());
@@ -149,7 +159,9 @@ public class FichierjointResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(fichierjoint.getId().intValue())))
             .andExpect(jsonPath("$.[*].nom").value(hasItem(DEFAULT_NOM.toString())))
-            .andExpect(jsonPath("$.[*].commentaire").value(hasItem(DEFAULT_COMMENTAIRE.toString())));
+            .andExpect(jsonPath("$.[*].commentaire").value(hasItem(DEFAULT_COMMENTAIRE.toString())))
+            .andExpect(jsonPath("$.[*].fichejointContentType").value(hasItem(DEFAULT_FICHEJOINT_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].fichejoint").value(hasItem(Base64Utils.encodeToString(DEFAULT_FICHEJOINT))));
     }
 
     @Test
@@ -164,7 +176,9 @@ public class FichierjointResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(fichierjoint.getId().intValue()))
             .andExpect(jsonPath("$.nom").value(DEFAULT_NOM.toString()))
-            .andExpect(jsonPath("$.commentaire").value(DEFAULT_COMMENTAIRE.toString()));
+            .andExpect(jsonPath("$.commentaire").value(DEFAULT_COMMENTAIRE.toString()))
+            .andExpect(jsonPath("$.fichejointContentType").value(DEFAULT_FICHEJOINT_CONTENT_TYPE))
+            .andExpect(jsonPath("$.fichejoint").value(Base64Utils.encodeToString(DEFAULT_FICHEJOINT)));
     }
 
     @Test
@@ -187,7 +201,9 @@ public class FichierjointResourceIntTest {
         Fichierjoint updatedFichierjoint = fichierjointRepository.findOne(fichierjoint.getId());
         updatedFichierjoint
             .nom(UPDATED_NOM)
-            .commentaire(UPDATED_COMMENTAIRE);
+            .commentaire(UPDATED_COMMENTAIRE)
+            .fichejoint(UPDATED_FICHEJOINT)
+            .fichejointContentType(UPDATED_FICHEJOINT_CONTENT_TYPE);
 
         restFichierjointMockMvc.perform(put("/api/fichierjoints")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -200,6 +216,8 @@ public class FichierjointResourceIntTest {
         Fichierjoint testFichierjoint = fichierjointList.get(fichierjointList.size() - 1);
         assertThat(testFichierjoint.getNom()).isEqualTo(UPDATED_NOM);
         assertThat(testFichierjoint.getCommentaire()).isEqualTo(UPDATED_COMMENTAIRE);
+        assertThat(testFichierjoint.getFichejoint()).isEqualTo(UPDATED_FICHEJOINT);
+        assertThat(testFichierjoint.getFichejointContentType()).isEqualTo(UPDATED_FICHEJOINT_CONTENT_TYPE);
 
         // Validate the Fichierjoint in Elasticsearch
         Fichierjoint fichierjointEs = fichierjointSearchRepository.findOne(testFichierjoint.getId());
@@ -259,7 +277,9 @@ public class FichierjointResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(fichierjoint.getId().intValue())))
             .andExpect(jsonPath("$.[*].nom").value(hasItem(DEFAULT_NOM.toString())))
-            .andExpect(jsonPath("$.[*].commentaire").value(hasItem(DEFAULT_COMMENTAIRE.toString())));
+            .andExpect(jsonPath("$.[*].commentaire").value(hasItem(DEFAULT_COMMENTAIRE.toString())))
+            .andExpect(jsonPath("$.[*].fichejointContentType").value(hasItem(DEFAULT_FICHEJOINT_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].fichejoint").value(hasItem(Base64Utils.encodeToString(DEFAULT_FICHEJOINT))));
     }
 
     @Test

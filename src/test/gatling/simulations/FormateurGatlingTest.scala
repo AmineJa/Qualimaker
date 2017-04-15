@@ -67,7 +67,7 @@ class FormateurGatlingTest extends Simulation {
             .exec(http("Create new formateur")
             .post("/api/formateurs")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "nom":"SAMPLE_TEXT", "prenom":"SAMPLE_TEXT", "cv":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "nom":"SAMPLE_TEXT", "prenom":"SAMPLE_TEXT", "cv":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_formateur_url"))).exitHereIfFailed
             .pause(10)

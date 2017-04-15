@@ -194,6 +194,12 @@
                                     <span data-translate="global.menu.entities.typeFormation">Type Formation</span>
                                 </a>
                             </li>
+                        <li ui-sref-active="active">
+                                <a ui-sref="etat-demande" ng-click="vm.collapseNavbar()">
+                                    <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
+                                    <span data-translate="global.menu.entities.etatDemande">Etat Demande</span>
+                                </a>
+                            </li>
                         <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
               <!--      </ul>
                 </li>
@@ -741,6 +747,25 @@
                                     <span >Postes</span>
                                 </a>
                             </li>
+                            <li ui-sref-active="active">
+                                <a ui-sref="jour" ng-click="vm.collapseNavbar()">
+                                    <span class="fa fa-graduation-cap"></span>&nbsp;
+                                    <span >Jour</span>
+                                </a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a ui-sref="programme" ng-click="vm.collapseNavbar()">
+                                    <span class="fa fa-graduation-cap"></span>&nbsp;
+                                    <span >Programme</span>
+                                </a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a ui-sref="fichierjoint" ng-click="vm.collapseNavbar()">
+                                    <span class="fa fa-graduation-cap"></span>&nbsp;
+                                    <span >Fiches Joint</span>
+                                </a>
+                            </li>
+
 
                             <li>
                                 <a href="#"><i class="fa fa-lg fa-fw fa-list-ol"></i> <span class="menu-item-parent">Types</span></a>

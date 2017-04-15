@@ -47,7 +47,10 @@
                     <td><a ui-sref="formateur-detail({id:formateur.id})">{{formateur.id}}</a></td>
                     <td>{{formateur.nom}}</td>
                     <td>{{formateur.prenom}}</td>
-                    <td>{{formateur.cv}}</td>
+                    <td>
+                        <a ng-if="formateur.cv" ng-click="vm.openFile(formateur.cvContentType, formateur.cv)" data-translate="entity.action.open">open</a>
+                        <span ng-if="formateur.cv">{{formateur.cvContentType}}, {{vm.byteSize(formateur.cv)}}</span>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

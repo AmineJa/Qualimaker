@@ -72,6 +72,33 @@
             <column name="termina" type="boolean">
                 <constraints nullable="true" />
             </column>
+
+            <column name="interne" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="externe" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="formateurexterne" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="daterec" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="occerence" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fichjoint" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="fichjoint_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <column name="demandeformation_id" type="bigint">
                 <constraints unique="true" nullable="true" />
             </column>            <column name="formationcomp_id" type="bigint">
@@ -99,6 +126,7 @@
         </createTable>
         <dropDefaultValue tableName="formation" columnName="date_d" columnDataType="datetime"/>
         <dropDefaultValue tableName="formation" columnName="date_f" columnDataType="datetime"/>
+        <dropDefaultValue tableName="formation" columnName="daterec" columnDataType="datetime"/>
         
     </changeSet>
 </databaseChangeLog>

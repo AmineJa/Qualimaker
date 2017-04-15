@@ -20,6 +20,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Base64Utils;
 
 import javax.persistence.EntityManager;
 import java.time.Instant;
@@ -82,6 +83,26 @@ public class FormationResourceIntTest {
     private static final Boolean DEFAULT_TERMINA = false;
     private static final Boolean UPDATED_TERMINA = true;
 
+    private static final Boolean DEFAULT_INTERNE = false;
+    private static final Boolean UPDATED_INTERNE = true;
+
+    private static final Boolean DEFAULT_EXTERNE = false;
+    private static final Boolean UPDATED_EXTERNE = true;
+
+    private static final String DEFAULT_FORMATEUREXTERNE = "AAAAAAAAAA";
+    private static final String UPDATED_FORMATEUREXTERNE = "BBBBBBBBBB";
+
+    private static final ZonedDateTime DEFAULT_DATEREC = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
+    private static final ZonedDateTime UPDATED_DATEREC = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
+
+    private static final Double DEFAULT_OCCERENCE = 1D;
+    private static final Double UPDATED_OCCERENCE = 2D;
+
+    private static final byte[] DEFAULT_FICHJOINT = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_FICHJOINT = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_FICHJOINT_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_FICHJOINT_CONTENT_TYPE = "image/png";
+
     @Autowired
     private FormationRepository formationRepository;
 
@@ -134,7 +155,14 @@ public class FormationResourceIntTest {
             .reccurence(DEFAULT_RECCURENCE)
             .periode(DEFAULT_PERIODE)
             .finaprs(DEFAULT_FINAPRS)
-            .termina(DEFAULT_TERMINA);
+            .termina(DEFAULT_TERMINA)
+            .interne(DEFAULT_INTERNE)
+            .externe(DEFAULT_EXTERNE)
+            .formateurexterne(DEFAULT_FORMATEUREXTERNE)
+            .daterec(DEFAULT_DATEREC)
+            .occerence(DEFAULT_OCCERENCE)
+            .fichjoint(DEFAULT_FICHJOINT)
+            .fichjointContentType(DEFAULT_FICHJOINT_CONTENT_TYPE);
         return formation;
     }
 
@@ -172,6 +200,13 @@ public class FormationResourceIntTest {
         assertThat(testFormation.getPeriode()).isEqualTo(DEFAULT_PERIODE);
         assertThat(testFormation.isFinaprs()).isEqualTo(DEFAULT_FINAPRS);
         assertThat(testFormation.isTermina()).isEqualTo(DEFAULT_TERMINA);
+        assertThat(testFormation.isInterne()).isEqualTo(DEFAULT_INTERNE);
+        assertThat(testFormation.isExterne()).isEqualTo(DEFAULT_EXTERNE);
+        assertThat(testFormation.getFormateurexterne()).isEqualTo(DEFAULT_FORMATEUREXTERNE);
+        assertThat(testFormation.getDaterec()).isEqualTo(DEFAULT_DATEREC);
+        assertThat(testFormation.getOccerence()).isEqualTo(DEFAULT_OCCERENCE);
+        assertThat(testFormation.getFichjoint()).isEqualTo(DEFAULT_FICHJOINT);
+        assertThat(testFormation.getFichjointContentType()).isEqualTo(DEFAULT_FICHJOINT_CONTENT_TYPE);
 
         // Validate the Formation in Elasticsearch
         Formation formationEs = formationSearchRepository.findOne(testFormation.getId());
@@ -271,6 +306,24 @@ public class FormationResourceIntTest {
 
     @Test
     @Transactional
+    public void checkDaterecIsRequired() throws Exception {
+        int databaseSizeBeforeTest = formationRepository.findAll().size();
+        // set the field null
+        formation.setDaterec(null);
+
+        // Create the Formation, which fails.
+
+        restFormationMockMvc.perform(post("/api/formations")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(formation)))
+            .andExpect(status().isBadRequest());
+
+        List<Formation> formationList = formationRepository.findAll();
+        assertThat(formationList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllFormations() throws Exception {
         // Initialize the database
         formationRepository.saveAndFlush(formation);
@@ -292,7 +345,14 @@ public class FormationResourceIntTest {
             .andExpect(jsonPath("$.[*].reccurence").value(hasItem(DEFAULT_RECCURENCE.booleanValue())))
             .andExpect(jsonPath("$.[*].periode").value(hasItem(DEFAULT_PERIODE.toString())))
             .andExpect(jsonPath("$.[*].finaprs").value(hasItem(DEFAULT_FINAPRS.booleanValue())))
-            .andExpect(jsonPath("$.[*].termina").value(hasItem(DEFAULT_TERMINA.booleanValue())));
+            .andExpect(jsonPath("$.[*].termina").value(hasItem(DEFAULT_TERMINA.booleanValue())))
+            .andExpect(jsonPath("$.[*].interne").value(hasItem(DEFAULT_INTERNE.booleanValue())))
+            .andExpect(jsonPath("$.[*].externe").value(hasItem(DEFAULT_EXTERNE.booleanValue())))
+            .andExpect(jsonPath("$.[*].formateurexterne").value(hasItem(DEFAULT_FORMATEUREXTERNE.toString())))
+            .andExpect(jsonPath("$.[*].daterec").value(hasItem(sameInstant(DEFAULT_DATEREC))))
+            .andExpect(jsonPath("$.[*].occerence").value(hasItem(DEFAULT_OCCERENCE.doubleValue())))
+            .andExpect(jsonPath("$.[*].fichjointContentType").value(hasItem(DEFAULT_FICHJOINT_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].fichjoint").value(hasItem(Base64Utils.encodeToString(DEFAULT_FICHJOINT))));
     }
 
     @Test
@@ -318,7 +378,14 @@ public class FormationResourceIntTest {
             .andExpect(jsonPath("$.reccurence").value(DEFAULT_RECCURENCE.booleanValue()))
             .andExpect(jsonPath("$.periode").value(DEFAULT_PERIODE.toString()))
             .andExpect(jsonPath("$.finaprs").value(DEFAULT_FINAPRS.booleanValue()))
-            .andExpect(jsonPath("$.termina").value(DEFAULT_TERMINA.booleanValue()));
+            .andExpect(jsonPath("$.termina").value(DEFAULT_TERMINA.booleanValue()))
+            .andExpect(jsonPath("$.interne").value(DEFAULT_INTERNE.booleanValue()))
+            .andExpect(jsonPath("$.externe").value(DEFAULT_EXTERNE.booleanValue()))
+            .andExpect(jsonPath("$.formateurexterne").value(DEFAULT_FORMATEUREXTERNE.toString()))
+            .andExpect(jsonPath("$.daterec").value(sameInstant(DEFAULT_DATEREC)))
+            .andExpect(jsonPath("$.occerence").value(DEFAULT_OCCERENCE.doubleValue()))
+            .andExpect(jsonPath("$.fichjointContentType").value(DEFAULT_FICHJOINT_CONTENT_TYPE))
+            .andExpect(jsonPath("$.fichjoint").value(Base64Utils.encodeToString(DEFAULT_FICHJOINT)));
     }
 
     @Test
@@ -352,7 +419,14 @@ public class FormationResourceIntTest {
             .reccurence(UPDATED_RECCURENCE)
             .periode(UPDATED_PERIODE)
             .finaprs(UPDATED_FINAPRS)
-            .termina(UPDATED_TERMINA);
+            .termina(UPDATED_TERMINA)
+            .interne(UPDATED_INTERNE)
+            .externe(UPDATED_EXTERNE)
+            .formateurexterne(UPDATED_FORMATEUREXTERNE)
+            .daterec(UPDATED_DATEREC)
+            .occerence(UPDATED_OCCERENCE)
+            .fichjoint(UPDATED_FICHJOINT)
+            .fichjointContentType(UPDATED_FICHJOINT_CONTENT_TYPE);
 
         restFormationMockMvc.perform(put("/api/formations")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -376,6 +450,13 @@ public class FormationResourceIntTest {
         assertThat(testFormation.getPeriode()).isEqualTo(UPDATED_PERIODE);
         assertThat(testFormation.isFinaprs()).isEqualTo(UPDATED_FINAPRS);
         assertThat(testFormation.isTermina()).isEqualTo(UPDATED_TERMINA);
+        assertThat(testFormation.isInterne()).isEqualTo(UPDATED_INTERNE);
+        assertThat(testFormation.isExterne()).isEqualTo(UPDATED_EXTERNE);
+        assertThat(testFormation.getFormateurexterne()).isEqualTo(UPDATED_FORMATEUREXTERNE);
+        assertThat(testFormation.getDaterec()).isEqualTo(UPDATED_DATEREC);
+        assertThat(testFormation.getOccerence()).isEqualTo(UPDATED_OCCERENCE);
+        assertThat(testFormation.getFichjoint()).isEqualTo(UPDATED_FICHJOINT);
+        assertThat(testFormation.getFichjointContentType()).isEqualTo(UPDATED_FICHJOINT_CONTENT_TYPE);
 
         // Validate the Formation in Elasticsearch
         Formation formationEs = formationSearchRepository.findOne(testFormation.getId());
@@ -446,7 +527,14 @@ public class FormationResourceIntTest {
             .andExpect(jsonPath("$.[*].reccurence").value(hasItem(DEFAULT_RECCURENCE.booleanValue())))
             .andExpect(jsonPath("$.[*].periode").value(hasItem(DEFAULT_PERIODE.toString())))
             .andExpect(jsonPath("$.[*].finaprs").value(hasItem(DEFAULT_FINAPRS.booleanValue())))
-            .andExpect(jsonPath("$.[*].termina").value(hasItem(DEFAULT_TERMINA.booleanValue())));
+            .andExpect(jsonPath("$.[*].termina").value(hasItem(DEFAULT_TERMINA.booleanValue())))
+            .andExpect(jsonPath("$.[*].interne").value(hasItem(DEFAULT_INTERNE.booleanValue())))
+            .andExpect(jsonPath("$.[*].externe").value(hasItem(DEFAULT_EXTERNE.booleanValue())))
+            .andExpect(jsonPath("$.[*].formateurexterne").value(hasItem(DEFAULT_FORMATEUREXTERNE.toString())))
+            .andExpect(jsonPath("$.[*].daterec").value(hasItem(sameInstant(DEFAULT_DATEREC))))
+            .andExpect(jsonPath("$.[*].occerence").value(hasItem(DEFAULT_OCCERENCE.doubleValue())))
+            .andExpect(jsonPath("$.[*].fichjointContentType").value(hasItem(DEFAULT_FICHJOINT_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].fichjoint").value(hasItem(Base64Utils.encodeToString(DEFAULT_FICHJOINT))));
     }
 
     @Test

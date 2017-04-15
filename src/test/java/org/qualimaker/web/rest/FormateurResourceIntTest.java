@@ -20,6 +20,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Base64Utils;
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -44,8 +45,10 @@ public class FormateurResourceIntTest {
     private static final String DEFAULT_PRENOM = "AAAAAAAAAA";
     private static final String UPDATED_PRENOM = "BBBBBBBBBB";
 
-    private static final String DEFAULT_CV = "AAAAAAAAAA";
-    private static final String UPDATED_CV = "BBBBBBBBBB";
+    private static final byte[] DEFAULT_CV = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_CV = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_CV_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_CV_CONTENT_TYPE = "image/png";
 
     @Autowired
     private FormateurRepository formateurRepository;
@@ -89,7 +92,8 @@ public class FormateurResourceIntTest {
         Formateur formateur = new Formateur()
             .nom(DEFAULT_NOM)
             .prenom(DEFAULT_PRENOM)
-            .cv(DEFAULT_CV);
+            .cv(DEFAULT_CV)
+            .cvContentType(DEFAULT_CV_CONTENT_TYPE);
         return formateur;
     }
 
@@ -117,6 +121,7 @@ public class FormateurResourceIntTest {
         assertThat(testFormateur.getNom()).isEqualTo(DEFAULT_NOM);
         assertThat(testFormateur.getPrenom()).isEqualTo(DEFAULT_PRENOM);
         assertThat(testFormateur.getCv()).isEqualTo(DEFAULT_CV);
+        assertThat(testFormateur.getCvContentType()).isEqualTo(DEFAULT_CV_CONTENT_TYPE);
 
         // Validate the Formateur in Elasticsearch
         Formateur formateurEs = formateurSearchRepository.findOne(testFormateur.getId());
@@ -155,7 +160,8 @@ public class FormateurResourceIntTest {
             .andExpect(jsonPath("$.[*].id").value(hasItem(formateur.getId().intValue())))
             .andExpect(jsonPath("$.[*].nom").value(hasItem(DEFAULT_NOM.toString())))
             .andExpect(jsonPath("$.[*].prenom").value(hasItem(DEFAULT_PRENOM.toString())))
-            .andExpect(jsonPath("$.[*].cv").value(hasItem(DEFAULT_CV.toString())));
+            .andExpect(jsonPath("$.[*].cvContentType").value(hasItem(DEFAULT_CV_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].cv").value(hasItem(Base64Utils.encodeToString(DEFAULT_CV))));
     }
 
     @Test
@@ -171,7 +177,8 @@ public class FormateurResourceIntTest {
             .andExpect(jsonPath("$.id").value(formateur.getId().intValue()))
             .andExpect(jsonPath("$.nom").value(DEFAULT_NOM.toString()))
             .andExpect(jsonPath("$.prenom").value(DEFAULT_PRENOM.toString()))
-            .andExpect(jsonPath("$.cv").value(DEFAULT_CV.toString()));
+            .andExpect(jsonPath("$.cvContentType").value(DEFAULT_CV_CONTENT_TYPE))
+            .andExpect(jsonPath("$.cv").value(Base64Utils.encodeToString(DEFAULT_CV)));
     }
 
     @Test
@@ -195,7 +202,8 @@ public class FormateurResourceIntTest {
         updatedFormateur
             .nom(UPDATED_NOM)
             .prenom(UPDATED_PRENOM)
-            .cv(UPDATED_CV);
+            .cv(UPDATED_CV)
+            .cvContentType(UPDATED_CV_CONTENT_TYPE);
 
         restFormateurMockMvc.perform(put("/api/formateurs")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -209,6 +217,7 @@ public class FormateurResourceIntTest {
         assertThat(testFormateur.getNom()).isEqualTo(UPDATED_NOM);
         assertThat(testFormateur.getPrenom()).isEqualTo(UPDATED_PRENOM);
         assertThat(testFormateur.getCv()).isEqualTo(UPDATED_CV);
+        assertThat(testFormateur.getCvContentType()).isEqualTo(UPDATED_CV_CONTENT_TYPE);
 
         // Validate the Formateur in Elasticsearch
         Formateur formateurEs = formateurSearchRepository.findOne(testFormateur.getId());
@@ -269,7 +278,8 @@ public class FormateurResourceIntTest {
             .andExpect(jsonPath("$.[*].id").value(hasItem(formateur.getId().intValue())))
             .andExpect(jsonPath("$.[*].nom").value(hasItem(DEFAULT_NOM.toString())))
             .andExpect(jsonPath("$.[*].prenom").value(hasItem(DEFAULT_PRENOM.toString())))
-            .andExpect(jsonPath("$.[*].cv").value(hasItem(DEFAULT_CV.toString())));
+            .andExpect(jsonPath("$.[*].cvContentType").value(hasItem(DEFAULT_CV_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].cv").value(hasItem(Base64Utils.encodeToString(DEFAULT_CV))));
     }
 
     @Test

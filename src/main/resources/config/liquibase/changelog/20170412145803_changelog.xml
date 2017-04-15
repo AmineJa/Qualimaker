@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+   <changeSet author="Jaouadi-Amine (generated)" id="1492009137149-1">
+      <addColumn tableName="demande_formation">
+         <column name="etat_d" type="varchar(255)">
+            <constraints nullable="false"/>
+         </column>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492009137149-2">
+      <dropForeignKeyConstraint baseTableName="demande_formation"
+                                constraintName="fk2itrqi2s1ycvh392ia23mncmd"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492009137149-3">
+      <dropColumn columnName="a" tableName="demande_formation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492009137149-4">
+      <dropColumn columnName="etat_demande_id" tableName="demande_formation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492009137149-5">
+      <addNotNullConstraint columnDataType="float8" columnName="cin" tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492009137149-6">
+      <addNotNullConstraint columnDataType="bytea" columnName="date_n" tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492009137149-7">
+      <addNotNullConstraint columnDataType="bytea" columnName="daterec" tableName="formation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492009137149-8">
+      <addNotNullConstraint columnDataType="varchar(255)"
+                            columnName="email"
+                            tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492009137149-9">
+      <addNotNullConstraint columnDataType="float8" columnName="gsm" tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492009137149-10">
+      <addNotNullConstraint columnDataType="varchar(255)" columnName="nom" tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1492009137149-11">
+      <addNotNullConstraint columnDataType="varchar(255)"
+                            columnName="prenom"
+                            tableName="employe"/>
+   </changeSet>
+</databaseChangeLog>

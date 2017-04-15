@@ -107,6 +107,7 @@
                                 nom: null,
                                 prenom: null,
                                 cv: null,
+                                cvContentType: null,
                                 id: null
                             };
                         }

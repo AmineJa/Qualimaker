@@ -46,6 +46,7 @@
                 }],
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('demandeFormation');
+                    $translatePartialLoader.addPart('eD');
                     $translatePartialLoader.addPart('global');
                     return $translate.refresh();
                 }]
@@ -68,6 +69,7 @@
             resolve: {
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('demandeFormation');
+                    $translatePartialLoader.addPart('eD');
                     return $translate.refresh();
                 }],
                 entity: ['$stateParams', 'DemandeFormation', function($stateParams, DemandeFormation) {
@@ -130,6 +132,7 @@
                                 nombresjours: null,
                                 description: null,
                                 justification: null,
+                                etatD: null,
                                 id: null
                             };
                         }

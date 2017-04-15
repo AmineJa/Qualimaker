@@ -5,13 +5,15 @@
         .module('qualiMakerApp')
         .controller('FichierjointController', FichierjointController);
 
-    FichierjointController.$inject = ['Fichierjoint', 'FichierjointSearch'];
+    FichierjointController.$inject = ['DataUtils', 'Fichierjoint', 'FichierjointSearch'];
 
-    function FichierjointController(Fichierjoint, FichierjointSearch) {
+    function FichierjointController(DataUtils, Fichierjoint, FichierjointSearch) {
 
         var vm = this;
 
         vm.fichierjoints = [];
+        vm.openFile = DataUtils.openFile;
+        vm.byteSize = DataUtils.byteSize;
         vm.clear = clear;
         vm.search = search;
         vm.loadAll = loadAll;

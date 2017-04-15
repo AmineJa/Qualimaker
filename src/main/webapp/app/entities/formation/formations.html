@@ -1,3 +1,152 @@
+<!--<div>
+    <h2 data-translate="qualiMakerApp.formation.home.title">Formations</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="formation.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="qualiMakerApp.formation.home.createLabel">
+                        Create new Formation
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'qualiMakerApp.formation.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="theme"><span data-translate="qualiMakerApp.formation.theme">Theme</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="titre"><span data-translate="qualiMakerApp.formation.titre">Titre</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dateD"><span data-translate="qualiMakerApp.formation.dateD">Date D</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dateF"><span data-translate="qualiMakerApp.formation.dateF">Date F</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="lieu"><span data-translate="qualiMakerApp.formation.lieu">Lieu</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="objectif"><span data-translate="qualiMakerApp.formation.objectif">Objectif</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="contenu"><span data-translate="qualiMakerApp.formation.contenu">Contenu</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="coutMat"><span data-translate="qualiMakerApp.formation.coutMat">Cout Mat</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="coutImat"><span data-translate="qualiMakerApp.formation.coutImat">Cout Imat</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reccurence"><span data-translate="qualiMakerApp.formation.reccurence">Reccurence</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="periode"><span data-translate="qualiMakerApp.formation.periode">Periode</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="finaprs"><span data-translate="qualiMakerApp.formation.finaprs">Finaprs</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="termina"><span data-translate="qualiMakerApp.formation.termina">Termina</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="interne"><span data-translate="qualiMakerApp.formation.interne">Interne</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="externe"><span data-translate="qualiMakerApp.formation.externe">Externe</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="formateurexterne"><span data-translate="qualiMakerApp.formation.formateurexterne">Formateurexterne</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="daterec"><span data-translate="qualiMakerApp.formation.daterec">Daterec</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="occerence"><span data-translate="qualiMakerApp.formation.occerence">Occerence</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="fichjoint"><span data-translate="qualiMakerApp.formation.fichjoint">Fichjoint</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="demandeformation.id"><span data-translate="qualiMakerApp.formation.demandeformation">Demandeformation</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="formationcomp.id"><span data-translate="qualiMakerApp.formation.formationcomp">Formationcomp</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="formateur.id"><span data-translate="qualiMakerApp.formation.formateur">Formateur</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="natureFormation.id"><span data-translate="qualiMakerApp.formation.natureFormation">Nature Formation</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="fichierjoint.id"><span data-translate="qualiMakerApp.formation.fichierjoint">Fichierjoint</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="critereevaluation.id"><span data-translate="qualiMakerApp.formation.critereevaluation">Critereevaluation</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="jour.id"><span data-translate="qualiMakerApp.formation.jour">Jour</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="formation in vm.formations track by formation.id">
+                    <td><a ui-sref="formation-detail({id:formation.id})">{{formation.id}}</a></td>
+                    <td>{{formation.theme}}</td>
+                    <td>{{formation.titre}}</td>
+                    <td>{{formation.dateD | date:'medium'}}</td>
+                    <td>{{formation.dateF | date:'medium'}}</td>
+                    <td>{{formation.lieu}}</td>
+                    <td>{{formation.objectif}}</td>
+                    <td>{{formation.contenu}}</td>
+                    <td>{{formation.coutMat}}</td>
+                    <td>{{formation.coutImat}}</td>
+                    <td>{{formation.reccurence}}</td>
+                    <td>{{formation.periode}}</td>
+                    <td>{{formation.finaprs}}</td>
+                    <td>{{formation.termina}}</td>
+                    <td>{{formation.interne}}</td>
+                    <td>{{formation.externe}}</td>
+                    <td>{{formation.formateurexterne}}</td>
+                    <td>{{formation.daterec | date:'medium'}}</td>
+                    <td>{{formation.occerence}}</td>
+                    <td>
+                        <a ng-if="formation.fichjoint" ng-click="vm.openFile(formation.fichjointContentType, formation.fichjoint)" data-translate="entity.action.open">open</a>
+                        <span ng-if="formation.fichjoint">{{formation.fichjointContentType}}, {{vm.byteSize(formation.fichjoint)}}</span>
+                    </td>
+                    <td>
+                        <a ui-sref="demande-formation-detail({id:formation.demandeformation.id})">{{formation.demandeformation.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="formation-comp-detail({id:formation.formationcomp.id})">{{formation.formationcomp.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="formateur-detail({id:formation.formateur.id})">{{formation.formateur.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="natureformation-detail({id:formation.natureFormation.id})">{{formation.natureFormation.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="fichierjoint-detail({id:formation.fichierjoint.id})">{{formation.fichierjoint.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="critereevaluation-detail({id:formation.critereevaluation.id})">{{formation.critereevaluation.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="jour-detail({id:formation.jour.id})">{{formation.jour.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="formation-detail({id:formation.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="formation.edit({id:formation.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="formation.delete({id:formation.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>
+-->
+
+
+
+<!--
 <div>
     <h2 data-translate="qualiMakerApp.formation.home.title">Formations</h2>
     <jhi-alert></jhi-alert>
@@ -49,6 +198,11 @@
                     <th jh-sort-by="periode"><span data-translate="qualiMakerApp.formation.periode">Periode</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="finaprs"><span data-translate="qualiMakerApp.formation.finaprs">Finaprs</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="termina"><span data-translate="qualiMakerApp.formation.termina">Termina</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="interne"><span data-translate="qualiMakerApp.formation.interne">Interne</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="externe"><span data-translate="qualiMakerApp.formation.externe">Externe</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="formateurexterne"><span data-translate="qualiMakerApp.formation.formateurexterne">Formateurexterne</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="daterec"><span data-translate="qualiMakerApp.formation.daterec">Daterec</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="occerence"><span data-translate="qualiMakerApp.formation.occerence">Occerence</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="demandeformation.id"><span data-translate="qualiMakerApp.formation.demandeformation">Demandeformation</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="formationcomp.id"><span data-translate="qualiMakerApp.formation.formationcomp">Formationcomp</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="formateur.id"><span data-translate="qualiMakerApp.formation.formateur">Formateur</span> <span class="glyphicon glyphicon-sort"></span></th>
@@ -75,6 +229,11 @@
                     <td>{{formation.periode}}</td>
                     <td>{{formation.finaprs}}</td>
                     <td>{{formation.termina}}</td>
+                    <td>{{formation.interne}}</td>
+                    <td>{{formation.externe}}</td>
+                    <td>{{formation.formateurexterne}}</td>
+                    <td>{{formation.daterec | date:'medium'}}</td>
+                    <td>{{formation.occerence}}</td>
                     <td>
                         <a ui-sref="demande-formation-detail({id:formation.demandeformation.id})">{{formation.demandeformation.id}}</a>
                     </td>
@@ -125,5 +284,393 @@
     <div class="text-center">
         <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
         <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>
+-->
+
+
+
+
+
+
+
+<!--
+<div>
+    <h2 data-translate="qualiMakerApp.formation.home.title">Formations</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="formation.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="qualiMakerApp.formation.home.createLabel">
+                        Create new Formation
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'qualiMakerApp.formation.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="theme"><span data-translate="qualiMakerApp.formation.theme">Theme</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="titre"><span data-translate="qualiMakerApp.formation.titre">Titre</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dateD"><span data-translate="qualiMakerApp.formation.dateD">Date D</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dateF"><span data-translate="qualiMakerApp.formation.dateF">Date F</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="lieu"><span data-translate="qualiMakerApp.formation.lieu">Lieu</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="objectif"><span data-translate="qualiMakerApp.formation.objectif">Objectif</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="contenu"><span data-translate="qualiMakerApp.formation.contenu">Contenu</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="coutMat"><span data-translate="qualiMakerApp.formation.coutMat">Cout Mat</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="coutImat"><span data-translate="qualiMakerApp.formation.coutImat">Cout Imat</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reccurence"><span data-translate="qualiMakerApp.formation.reccurence">Reccurence</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="periode"><span data-translate="qualiMakerApp.formation.periode">Periode</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="finaprs"><span data-translate="qualiMakerApp.formation.finaprs">Finaprs</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="termina"><span data-translate="qualiMakerApp.formation.termina">Termina</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="interne"><span data-translate="qualiMakerApp.formation.interne">Interne</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="externe"><span data-translate="qualiMakerApp.formation.externe">Externe</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="formateurexterne"><span data-translate="qualiMakerApp.formation.formateurexterne">Formateurexterne</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="daterec"><span data-translate="qualiMakerApp.formation.daterec">Daterec</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="occerence"><span data-translate="qualiMakerApp.formation.occerence">Occerence</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="demandeformation.id"><span data-translate="qualiMakerApp.formation.demandeformation">Demandeformation</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="formationcomp.id"><span data-translate="qualiMakerApp.formation.formationcomp">Formationcomp</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="formateur.id"><span data-translate="qualiMakerApp.formation.formateur">Formateur</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="natureFormation.id"><span data-translate="qualiMakerApp.formation.natureFormation">Nature Formation</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="fichierjoint.id"><span data-translate="qualiMakerApp.formation.fichierjoint">Fichierjoint</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="critereevaluation.id"><span data-translate="qualiMakerApp.formation.critereevaluation">Critereevaluation</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="jour.id"><span data-translate="qualiMakerApp.formation.jour">Jour</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="formation in vm.formations track by formation.id">
+                    <td><a ui-sref="formation-detail({id:formation.id})">{{formation.id}}</a></td>
+                    <td>{{formation.theme}}</td>
+                    <td>{{formation.titre}}</td>
+                    <td>{{formation.dateD | date:'medium'}}</td>
+                    <td>{{formation.dateF | date:'medium'}}</td>
+                    <td>{{formation.lieu}}</td>
+                    <td>{{formation.objectif}}</td>
+                    <td>{{formation.contenu}}</td>
+                    <td>{{formation.coutMat}}</td>
+                    <td>{{formation.coutImat}}</td>
+                    <td>{{formation.reccurence}}</td>
+                    <td>{{formation.periode}}</td>
+                    <td>{{formation.finaprs}}</td>
+                    <td>{{formation.termina}}</td>
+                    <td>{{formation.interne}}</td>
+                    <td>{{formation.externe}}</td>
+                    <td>{{formation.formateurexterne}}</td>
+                    <td>{{formation.daterec | date:'medium'}}</td>
+                    <td>{{formation.occerence}}</td>
+                    <td>
+                        <a ui-sref="demande-formation-detail({id:formation.demandeformation.id})">{{formation.demandeformation.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="formation-comp-detail({id:formation.formationcomp.id})">{{formation.formationcomp.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="formateur-detail({id:formation.formateur.id})">{{formation.formateur.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="natureformation-detail({id:formation.natureFormation.id})">{{formation.natureFormation.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="fichierjoint-detail({id:formation.fichierjoint.id})">{{formation.fichierjoint.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="critereevaluation-detail({id:formation.critereevaluation.id})">{{formation.critereevaluation.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="jour-detail({id:formation.jour.id})">{{formation.jour.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="formation-detail({id:formation.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="formation.edit({id:formation.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="formation.delete({id:formation.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>
+-->
+
+
+
+
+<div class="well">
+
+    <!-- RIBBON -->
+    <!-- END RIBBON -->
+
+    <!-- MAIN CONTENT -->
+    <div id="content">
+
+        <div class="row">
+            <div >
+                <h1 class="page-title txt-color-blueDark">
+                    <i class="fa fa-group fa-fw "></i>
+                    G.R.H
+                    <span>>
+								 formation
+							</span>
+                </h1>
+            </div>
+        </div>
+
+        <!-- widget grid -->
+        <section id="widget-grid" class="">
+
+            <!-- row -->
+            <div class="row">
+
+                <!-- NEW WIDGET START -->
+
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-redLight" id="wid-id-41" data-widget-editbutton="false">
+                    <!-- widget options:
+                            usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                            data-widget-colorbutton="false"
+                            data-widget-editbutton="false"
+                            data-widget-togglebutton="false"
+                            data-widget-deletebutton="false"
+                            data-widget-fullscreenbutton="false"
+                            data-widget-custombutton="false"
+                            data-widget-collapsed="true"
+                            data-widget-sortable="false"
+
+                            -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Liste des  formations </h2>
+
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+
+                        </div>
+
+                        <div>
+                            <h2></h2>
+                            <jhi-alert></jhi-alert>
+                            <div class="container-fluid">
+                                <h2></h2>
+                                <div class="row">
+
+                                    <div class="col-xs-4 no-padding-right">
+                                        <form name="searchForm" class="form-inline">
+
+                                            <div class="input-group pull-right" >
+                         <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                                                <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                                                <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'qualiMakerApp.formation.home.search' | translate }}">
+
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-xs-3 no-padding-right">
+                                    </div>
+
+                                    <div class="col-xs-5 no-padding-right">
+                                        <div class="row">
+                                            <div class="col-xs-2 no-padding-right">
+
+                                                <button class="btn btn-default" ui-sref="formation.new" >
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                    <span class="hidden-xs-down"  >
+                    </span>
+                                                </button>
+                                            </div>
+
+                                            <div class="col-xs-5 no-padding-right">
+                                                <button class="btn bg-color-redLight txt-color-white" ui-sref="demande-formation.new" >
+                                                    <span class="glyphicon glyphicon-new-window"></span>
+                                                    <span class="hidden-xs-down" > Demande Formation </span>
+                                                </button>
+                                            </div>
+
+                                            <div class="col-xs-5 no-padding-right">
+                                                <button class="btn bg-color-magenta txt-color-white" ui-sref="demande-formation.new" >
+                                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                                    <span class="hidden-xs-down"  > Planification</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                </div>
+
+
+
+
+
+                                <br/>
+                                <div class="table-responsive">
+                                    <table  class="table table-striped table-bordered table-hover" width="100%">
+                                        <thead>
+                                        <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                                            <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="theme"><span data-translate="qualiMakerApp.formation.theme">Theme</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="titre"><span data-translate="qualiMakerApp.formation.titre">Titre</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="dateD"><span data-translate="qualiMakerApp.formation.dateD">Date D</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="dateF"><span data-translate="qualiMakerApp.formation.dateF">Date F</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <!--<th jh-sort-by="lieu"><span data-translate="qualiMakerApp.formation.lieu">Lieu</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="objectif"><span data-translate="qualiMakerApp.formation.objectif">Objectif</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="contenu"><span data-translate="qualiMakerApp.formation.contenu">Contenu</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="coutMat"><span data-translate="qualiMakerApp.formation.coutMat">Cout Mat</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="coutImat"><span data-translate="qualiMakerApp.formation.coutImat">Cout Imat</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="reccurence"><span data-translate="qualiMakerApp.formation.reccurence">Reccurence</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="periode"><span data-translate="qualiMakerApp.formation.periode">Periode</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="finaprs"><span data-translate="qualiMakerApp.formation.finaprs">Finaprs</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="termina"><span data-translate="qualiMakerApp.formation.termina">Termina</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="demandeformation.id"><span data-translate="qualiMakerApp.formation.demandeformation">Demandeformation</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="formationcomp.id"><span data-translate="qualiMakerApp.formation.formationcomp">Formationcomp</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="formateur.id"><span data-translate="qualiMakerApp.formation.formateur">Formateur</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="natureFormation.id"><span data-translate="qualiMakerApp.formation.natureFormation">Nature Formation</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="fichierjoint.id"><span data-translate="qualiMakerApp.formation.fichierjoint">Fichierjoint</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="fichierjoint.id"><span >IDFichierjoint</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="critereevaluation.id"><span data-translate="qualiMakerApp.formation.critereevaluation">Critereevaluation</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                            <th jh-sort-by="jour.id"><span data-translate="qualiMakerApp.formation.jour">Jour</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                           --> <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr ng-repeat="formation in vm.formations track by formation.id">
+                                            <td><a ui-sref="formation-detail({id:formation.id})">{{formation.id}}</a></td>
+                                            <td>{{formation.theme}}</td>
+                                            <td>{{formation.titre}}</td>
+                                            <td>{{formation.dateD | date:'medium'}}</td>
+                                            <td>{{formation.dateF | date:'medium'}}</td>
+                                            <!-- <td>{{formation.lieu}}</td>
+                                             <td>{{formation.objectif}}</td>
+                                             <td>{{formation.contenu}}</td>
+                                             <td>{{formation.coutMat}}</td>
+                                             <td>{{formation.coutImat}}</td>
+                                             <td>{{formation.reccurence}}</td>
+                                             <td>{{formation.periode}}</td>
+                                             <td>{{formation.finaprs}}</td>
+                                             <td>{{formation.termina}}</td>
+                                             <td>
+                                                 <a ui-sref="demande-formation-detail({id:formation.demandeformation.id})">{{formation.demandeformation.id}}</a>
+                                             </td>
+                                             <td>
+                                                 <a ui-sref="formation-comp-detail({id:formation.formationcomp.id})">{{formation.formationcomp.id}}</a>
+                                             </td>
+                                             <td>
+                                                 <a ui-sref="formateur-detail({id:formation.formateur.id})">{{formation.formateur.id}}</a>
+                                             </td>
+                                             <td>
+                                                 <a ui-sref="natureformation-detail({id:formation.natureFormation.id})">{{formation.natureFormation.id}}</a>
+                                             </td>
+                                             <td>
+                                                 <a ui-sref="fichierjoint-detail({id:formation.fichierjoint.id})">{{formation.fichierjoint.nom}}</a>
+                                             </td>
+                                             <td>
+                                                 <a ui-sref="fichierjoint-detail({id:formation.fichierjoint.id})">{{formation.fichierjoint.id}}</a>
+                                             </td>
+                                             <td>
+                                                 <a ui-sref="critereevaluation-detail({id:formation.critereevaluation.id})">{{formation.critereevaluation.id}}</a>
+                                             </td>
+                                             <td>
+                                                 <a ui-sref="jour-detail({id:formation.jour.id})">{{formation.jour.id}}</a>
+                                             </td>-->
+                                            <td class="text-right">
+                                                <div class="btn-group flex-btn-group-container">
+                                                    <div class="row">
+                                                        <button type="submit"
+                                                                ui-sref="formation-detail({id:formation.id})"
+                                                                class="btn btn-info btn-sm">
+                                                            <span class="glyphicon glyphicon-eye-open"></span>
+                                                            <span class="hidden-sm-down" ></span>
+                                                        </button>
+                                                        <button type="submit"
+                                                                ui-sref="formation.edit({id:formation.id})"
+                                                                class="btn btn-primary btn-sm">
+                                                            <span class="glyphicon glyphicon-pencil"></span>
+                                                            <span class="hidden-sm-down"></span>
+                                                        </button>
+                                                        <button type="submit"
+                                                                ui-sref="formation.delete({id:formation.id})"
+                                                                class="btn btn-danger btn-sm">
+                                                            <span class="glyphicon glyphicon-remove-circle"></span>
+                                                            <span class="hidden-sm-down" ></span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="text-center">
+                                    <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+                                    <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </div>

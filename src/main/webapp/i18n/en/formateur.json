@@ -18,8 +18,7 @@
             },
             "nom": "Nom",
             "prenom": "Prenom",
-            "cv": "Cv",
-            "typeformateur": "Typeformateur"
+            "cv": "Cv"
         }
     }
 }

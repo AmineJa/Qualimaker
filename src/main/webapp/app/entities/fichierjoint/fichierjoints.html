@@ -1,15 +1,81 @@
-<div>
-    <h2 data-translate="qualiMakerApp.fichierjoint.home.title">Fichierjoints</h2>
+<div class="well">
+
+    <!-- RIBBON -->
+    <!-- END RIBBON -->
+
+    <!-- MAIN CONTENT -->
+    <div id="content">
+
+        <div class="row">
+            <div >
+                <h1 class="page-title txt-color-blueDark">
+                    <i class="fa fa-cog fa-fw "></i>
+                    Paramètre
+                    <span>>
+                        <b> G.R.H </b> > <i>Fiches joint</i>
+							</span>
+
+                </h1>
+            </div>
+        </div>
+
+        <!-- widget grid -->
+        <section id="widget-grid" class="">
+
+            <!-- row -->
+            <div class="row">
+
+                <!-- NEW WIDGET START -->
+
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-purple" id="wid-id-16" data-widget-editbutton="false">
+                    <!-- widget options:
+                            usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                            data-widget-colorbutton="false"
+                            data-widget-editbutton="false"
+                            data-widget-togglebutton="false"
+                            data-widget-deletebutton="false"
+                            data-widget-fullscreenbutton="false"
+                            data-widget-custombutton="false"
+                            data-widget-collapsed="true"
+                            data-widget-sortable="false"
+
+                            -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Liste des fichiers joint </h2>
+
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+
+                        </div>
+
+
+
+
+                        <div>
+    <h2 > </h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="fichierjoint.new" >
+                <button class="btn btn-default" ui-sref="fichierjoint.new" >
                     <span class="glyphicon glyphicon-plus"></span>
-                    <span class="hidden-xs-down"  data-translate="qualiMakerApp.fichierjoint.home.createLabel">
-                        Create new Fichierjoint
+                    <span class="hidden-xs-down"  >
                     </span>
                 </button>
+                    <button class="btn btn-default"  >
+                        <span class="glyphicon glyphicon-plus"></span>
+                        <span class="hidden-xs-down"  >
+                    </span>
+                    </button>
             </div>
             <div class="col-xs-8 no-padding-right">
                 <form name="searchForm" class="form-inline">
@@ -32,12 +98,13 @@
     </div>
     <br/>
     <div class="table-responsive">
-        <table class="jh-table table table-striped">
+        <table class="table table-striped table-bordered table-hover well " width="100%">
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
                     <th><span data-translate="qualiMakerApp.fichierjoint.nom">Nom</span></th>
                     <th><span data-translate="qualiMakerApp.fichierjoint.commentaire">Commentaire</span></th>
+                    <th><span >Fiche joint</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -46,30 +113,47 @@
                     <td><a ui-sref="fichierjoint-detail({id:fichierjoint.id})">{{fichierjoint.id}}</a></td>
                     <td>{{fichierjoint.nom}}</td>
                     <td>{{fichierjoint.commentaire}}</td>
-                    <td class="text-right">
+                    <td>
+                        <span ng-if="fichierjoint.fichejoint">{{fichierjoint.fichejointContentType}}, {{vm.byteSize(fichierjoint.fichejoint)}}</span>
+                        <a ng-if="fichierjoint.fichejoint" ng-click="vm.openFile(fichierjoint.fichejointContentType, fichierjoint.fichejoint)" data-translate="entity.action.open">open</a>
+
+                    </td>
+
+                    <td class="text-left">
                         <div class="btn-group flex-btn-group-container">
+                            <div class="row">
+                                <div class="col-sm-12">
+
                             <button type="submit"
                                     ui-sref="fichierjoint-detail({id:fichierjoint.id})"
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                                <span class="hidden-sm-down" ></span>
                             </button>
                             <button type="submit"
                                     ui-sref="fichierjoint.edit({id:fichierjoint.id})"
                                     class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                                <span class="hidden-sm-down" ></span>
                             </button>
                             <button type="submit"
                                     ui-sref="fichierjoint.delete({id:fichierjoint.id})"
                                     class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                                <span class="hidden-sm-down" ></span>
                             </button>
+                                </div>
+                            </div>
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </div>

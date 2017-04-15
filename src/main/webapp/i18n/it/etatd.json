@@ -1,0 +1,10 @@
+{
+    "qualiMakerApp": {
+        "Etatd" : {
+            "null": "",
+            "Encours": "Encours",
+            "Valider": "Valider",
+            "Refuser": "Refuser"
+        }
+    }
+}

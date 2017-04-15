@@ -67,7 +67,7 @@ class DemandeFormationGatlingTest extends Simulation {
             .exec(http("Create new demandeFormation")
             .post("/api/demande-formations")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "theme":"SAMPLE_TEXT", "dateDemande":"2020-01-01T00:00:00.000Z", "datesouhaite":"2020-01-01T00:00:00.000Z", "nombresjours":"SAMPLE_TEXT", "description":"SAMPLE_TEXT", "justification":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "theme":"SAMPLE_TEXT", "dateDemande":"2020-01-01T00:00:00.000Z", "datesouhaite":"2020-01-01T00:00:00.000Z", "nombresjours":"SAMPLE_TEXT", "description":"SAMPLE_TEXT", "justification":"SAMPLE_TEXT", "etatD":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_demandeFormation_url"))).exitHereIfFailed
             .pause(10)

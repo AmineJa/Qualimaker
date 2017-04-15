@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
     <!-- endinject -->
     <link rel="stylesheet" href="content/css/vendor.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <!-- endbuild -->
     <!-- build:css content/css/main.css -->
     <link rel="stylesheet" href="content/css/main.css">
@@ -38,6 +39,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="content/css/navbar/smartadmin-rtl.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="content/css/navbar/lockscreen.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="content/css/navbar/invoice.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="content/css/style.css">
 
 
     <!-- We recommend you use "your_style.css" to override SmartAdmin
@@ -49,7 +51,6 @@
     <!-- endinject -->
     <!-- endbuild -->
     <!-- build:css content/css/main.css -->
-    <link rel="stylesheet" href="content/css/main.css">
     <!-- endbuild -->
 </head>
 <body ng-app="qualiMakerApp" ng-strict-di>
@@ -57,7 +58,7 @@
 <div ui-view="navbar" ng-cloak></div>
 
 <div id="main" role="main">
-    <div id="ribbon">
+    <div id="ribbon" style="color: #c82829">
 
 				<span class="ribbon-button-alignment">
 					<span id="refresh" class="btn btn-ribbon" data-action="resetWidgets" data-title="refresh"  rel="tooltip" data-placement="bottom" data-original-title="<i class='text-warning fa fa-warning'></i> Warning! This will reset all your widget settings." data-html="true">
@@ -382,6 +383,13 @@
     <script src="app/entities/evaluation/evaluation.service.js"></script>
     <script src="app/entities/evaluation/evaluation.search.service.js"></script>
     <script src="app/entities/evaluation/evaluation.controller.js"></script>
+    <script src="app/entities/etat-demande/etat-demande-dialog.controller.js"></script>
+    <script src="app/entities/etat-demande/etat-demande-detail.controller.js"></script>
+    <script src="app/entities/etat-demande/etat-demande-delete-dialog.controller.js"></script>
+    <script src="app/entities/etat-demande/etat-demande.state.js"></script>
+    <script src="app/entities/etat-demande/etat-demande.service.js"></script>
+    <script src="app/entities/etat-demande/etat-demande.search.service.js"></script>
+    <script src="app/entities/etat-demande/etat-demande.controller.js"></script>
     <script src="app/entities/etat/etat-dialog.controller.js"></script>
     <script src="app/entities/etat/etat-detail.controller.js"></script>
     <script src="app/entities/etat/etat-delete-dialog.controller.js"></script>

@@ -1,13 +1,6 @@
 {
     "fluentMethods": true,
-    "relationships": [
-        {
-            "relationshipType": "one-to-many",
-            "relationshipName": "typeformateur",
-            "otherEntityName": "typeFormateur",
-            "otherEntityRelationshipName": "formateur"
-        }
-    ],
+    "relationships": [],
     "fields": [
         {
             "fieldName": "nom",
@@ -19,12 +12,13 @@
         },
         {
             "fieldName": "cv",
-            "fieldType": "String"
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
         }
     ],
     "changelogDate": "20170329102953",
-    "entityTableName": "formateur",
     "dto": "no",
-    "pagination": "no",
-    "service": "no"
+    "service": "no",
+    "entityTableName": "formateur",
+    "pagination": "no"
 }

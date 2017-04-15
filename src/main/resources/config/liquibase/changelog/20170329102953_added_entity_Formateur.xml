@@ -29,7 +29,10 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="cv" type="varchar(255)">
+            <column name="cv" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="cv_content_type" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 

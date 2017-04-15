@@ -22,6 +22,7 @@
             "nombresjours": "Nombresjours",
             "description": "Description",
             "justification": "Justification",
+            "etatD": "Etat D",
             "empploye": "Empploye"
         }
     }

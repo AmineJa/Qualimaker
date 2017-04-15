@@ -1,10 +1,70 @@
+
+<div class="well">
+
+    <!-- RIBBON -->
+    <!-- END RIBBON -->
+
+    <!-- MAIN CONTENT -->
+    <div id="content">
+
+        <div class="row">
+            <div >
+                <h1 class="page-title txt-color-pink">
+                    <i class="fa fa-table fa-fw "></i>
+                    G.R.H
+                    <span>>
+								Employés
+							</span>
+                </h1>
+            </div>
+        </div>
+
+        <!-- widget grid -->
+        <section id="widget-grid" class="">
+
+            <!-- row -->
+            <div class="row">
+
+                <!-- NEW WIDGET START -->
+
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-pink" id="wid-id-17" data-widget-editbutton="false">
+                    <!-- widget options:
+                            usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                            data-widget-colorbutton="false"
+                            data-widget-editbutton="false"
+                            data-widget-togglebutton="false"
+                            data-widget-deletebutton="false"
+                            data-widget-fullscreenbutton="false"
+                            data-widget-custombutton="false"
+                            data-widget-collapsed="true"
+                            data-widget-sortable="false"
+
+                            -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Plan de formation </h2>
+
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+
+                        </div>
+
+
 <div>
-    <h2 data-translate="qualiMakerApp.jour.home.title">Jours</h2>
+    <h2></h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="jour.new" >
+                <button class="btn btn-default" ui-sref="jour.new" >
                     <span class="glyphicon glyphicon-plus"></span>
                     <span class="hidden-xs-down"  data-translate="qualiMakerApp.jour.home.createLabel">
                         Create new Jour
@@ -32,12 +92,14 @@
     </div>
     <br/>
     <div class="table-responsive">
-        <table class="jh-table table table-striped">
+        <table class="table table-striped table-bordered table-hover" width="100%">
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
                     <th><span data-translate="qualiMakerApp.jour.jour">Jour</span></th>
-                    <th><span data-translate="qualiMakerApp.jour.programme">Programme</span></th>
+                    <th><span >Programme Matin </span></th>
+                    <th><span >Programme Aprés Midi  </span></th>
+
                     <th></th>
                 </tr>
             </thead>
@@ -46,32 +108,43 @@
                     <td><a ui-sref="jour-detail({id:jour.id})">{{jour.id}}</a></td>
                     <td>{{jour.jour | date:'medium'}}</td>
                     <td>
-                        <a ui-sref="programme-detail({id:jour.programme.id})">{{jour.programme.id}}</a>
+                        <a ui-sref="programme-detail({id:jour.programme.id})">{{jour.programme.matin}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="programme-detail({id:jour.programme.id})">{{jour.programme.apresmidi}}</a>
                     </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
+                            <div class="row">
                             <button type="submit"
                                     ui-sref="jour-detail({id:jour.id})"
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                                <span class="hidden-sm-down" ></span>
                             </button>
                             <button type="submit"
                                     ui-sref="jour.edit({id:jour.id})"
                                     class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                                <span class="hidden-sm-down" ></span>
                             </button>
                             <button type="submit"
                                     ui-sref="jour.delete({id:jour.id})"
                                     class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                                <span class="hidden-sm-down" ></span>
                             </button>
+                            </div>
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </div>

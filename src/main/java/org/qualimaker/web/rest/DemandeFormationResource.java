@@ -18,6 +18,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -56,7 +57,7 @@ public class DemandeFormationResource {
      */
     @PostMapping("/demande-formations")
     @Timed
-    public ResponseEntity<DemandeFormation> createDemandeFormation(@RequestBody DemandeFormation demandeFormation) throws URISyntaxException {
+    public ResponseEntity<DemandeFormation> createDemandeFormation(@Valid @RequestBody DemandeFormation demandeFormation) throws URISyntaxException {
         log.debug("REST request to save DemandeFormation : {}", demandeFormation);
         if (demandeFormation.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new demandeFormation cannot already have an ID")).body(null);
@@ -79,7 +80,7 @@ public class DemandeFormationResource {
      */
     @PutMapping("/demande-formations")
     @Timed
-    public ResponseEntity<DemandeFormation> updateDemandeFormation(@RequestBody DemandeFormation demandeFormation) throws URISyntaxException {
+    public ResponseEntity<DemandeFormation> updateDemandeFormation(@Valid @RequestBody DemandeFormation demandeFormation) throws URISyntaxException {
         log.debug("REST request to update DemandeFormation : {}", demandeFormation);
         if (demandeFormation.getId() == null) {
             return createDemandeFormation(demandeFormation);

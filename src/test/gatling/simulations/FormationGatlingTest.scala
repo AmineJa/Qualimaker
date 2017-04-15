@@ -67,7 +67,7 @@ class FormationGatlingTest extends Simulation {
             .exec(http("Create new formation")
             .post("/api/formations")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "theme":"SAMPLE_TEXT", "titre":"SAMPLE_TEXT", "dateD":"2020-01-01T00:00:00.000Z", "dateF":"2020-01-01T00:00:00.000Z", "lieu":"SAMPLE_TEXT", "objectif":"SAMPLE_TEXT", "contenu":"SAMPLE_TEXT", "coutMat":"SAMPLE_TEXT", "coutImat":"SAMPLE_TEXT", "reccurence":null, "periode":"SAMPLE_TEXT", "finaprs":null, "termina":null}""")).asJSON
+            .body(StringBody("""{"id":null, "theme":"SAMPLE_TEXT", "titre":"SAMPLE_TEXT", "dateD":"2020-01-01T00:00:00.000Z", "dateF":"2020-01-01T00:00:00.000Z", "lieu":"SAMPLE_TEXT", "objectif":"SAMPLE_TEXT", "contenu":"SAMPLE_TEXT", "coutMat":"SAMPLE_TEXT", "coutImat":"SAMPLE_TEXT", "reccurence":null, "periode":"SAMPLE_TEXT", "finaprs":null, "termina":null, "interne":null, "externe":null, "formateurexterne":"SAMPLE_TEXT", "daterec":"2020-01-01T00:00:00.000Z", "occerence":null, "fichjoint":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_formation_url"))).exitHereIfFailed
             .pause(10)

@@ -121,6 +121,34 @@
         {
             "fieldName": "termina",
             "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "interne",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "externe",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "formateurexterne",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "daterec",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "occerence",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "fichjoint",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
         }
     ],
     "changelogDate": "20170329102953",

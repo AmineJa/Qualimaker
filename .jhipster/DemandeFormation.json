@@ -32,11 +32,19 @@
         {
             "fieldName": "justification",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "etatD",
+            "fieldType": "ED",
+            "fieldValues": "Enattente,Valider,Refuser",
+            "fieldValidateRules": [
+                "required"
+            ]
         }
     ],
     "changelogDate": "20170329102953",
-    "entityTableName": "demande_formation",
     "dto": "no",
-    "pagination": "pagination",
-    "service": "no"
+    "service": "no",
+    "entityTableName": "demande_formation",
+    "pagination": "pagination"
 }

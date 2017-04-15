@@ -5,9 +5,12 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.Objects;
+
+import org.qualimaker.domain.enumeration.ED;
 
 /**
  * A DemandeFormation.
@@ -42,6 +45,11 @@ public class DemandeFormation implements Serializable {
 
     @Column(name = "justification")
     private String justification;
+
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    @Column(name = "etat_d", nullable = false)
+    private ED etatD;
 
     @ManyToOne
     private Employe empploye;
@@ -132,6 +140,19 @@ public class DemandeFormation implements Serializable {
         this.justification = justification;
     }
 
+    public ED getEtatD() {
+        return etatD;
+    }
+
+    public DemandeFormation etatD(ED etatD) {
+        this.etatD = etatD;
+        return this;
+    }
+
+    public void setEtatD(ED etatD) {
+        this.etatD = etatD;
+    }
+
     public Employe getEmpploye() {
         return empploye;
     }
@@ -175,6 +196,7 @@ public class DemandeFormation implements Serializable {
             ", nombresjours='" + nombresjours + "'" +
             ", description='" + description + "'" +
             ", justification='" + justification + "'" +
+            ", etatD='" + etatD + "'" +
             '}';
     }
 }

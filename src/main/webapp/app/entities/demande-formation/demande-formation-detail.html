@@ -28,6 +28,10 @@
         <dd>
             <span>{{vm.demandeFormation.justification}}</span>
         </dd>
+        <dt><span data-translate="qualiMakerApp.demandeFormation.etatD">Etat D</span></dt>
+        <dd>
+            <span data-translate="{{'qualiMakerApp.ED.' + vm.demandeFormation.etatD}}">{{vm.demandeFormation.etatD}}</span>
+        </dd>
         <dt><span data-translate="qualiMakerApp.demandeFormation.empploye">Empploye</span></dt>
         <dd>
             <a ui-sref="employe-detail({id:vm.demandeFormation.empploye.id})">{{vm.demandeFormation.empploye.id}}</a>

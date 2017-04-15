@@ -137,6 +137,13 @@
                                 periode: null,
                                 finaprs: null,
                                 termina: null,
+                                interne: null,
+                                externe: null,
+                                formateurexterne: null,
+                                daterec: null,
+                                occerence: null,
+                                fichjoint: null,
+                                fichjointContentType: null,
                                 id: null
                             };
                         }

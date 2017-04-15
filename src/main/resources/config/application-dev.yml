@@ -80,7 +80,7 @@ liquibase:
 #        keyAlias: QualiMaker
 # ===================================================================
 server:
-    port: 8080
+    port: 8880
 
 # ===================================================================
 # JHipster specific properties
@@ -101,7 +101,7 @@ jhipster:
             key: 9055d392bd6a85f23497c9c3e4e69d3870b47270
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: QualiMaker@localhost
-        base-url: http://127.0.0.1:8080
+        base-url: http://127.0.0.1:8880
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
         jmx.enabled: true
         graphite: # Use the "graphite" Maven profile to have the Graphite dependencies

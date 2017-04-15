@@ -32,6 +32,7 @@
     <include file="classpath:config/liquibase/changelog/20170329102953_added_entity_TypeContrat.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170329102953_added_entity_TypeFormateur.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170329102953_added_entity_TypeFormation.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170405134505_added_entity_EtatDemande.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="classpath:config/liquibase/changelog/20170329102953_added_entity_constraints_Formation.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170329102953_added_entity_constraints_Conge.xml" relativeToChangelogFile="false"/>
@@ -42,6 +43,11 @@
     <include file="classpath:config/liquibase/changelog/20170329102953_added_entity_constraints_Carriere.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170329102953_added_entity_constraints_Jour.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170329102953_added_entity_constraints_TypeFormateur.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/20170402025122_changelog.xml" relativeToChangelogFile="false"/>
-    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+
+    <include file="classpath:config/liquibase/changelog/20170406213836_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170412142729_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170412144707_changelog.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170413221252_changelog
+    .xml" relativeToChangelogFile="false"/>
+     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

@@ -72,6 +72,29 @@ public class Formation implements Serializable {
     @Column(name = "termina")
     private Boolean termina;
 
+    @Column(name = "interne")
+    private Boolean interne;
+
+    @Column(name = "externe")
+    private Boolean externe;
+
+    @Column(name = "formateurexterne")
+    private String formateurexterne;
+
+    @NotNull
+    @Column(name = "daterec", nullable = false)
+    private ZonedDateTime daterec;
+
+    @Column(name = "occerence")
+    private Double occerence;
+
+    @Lob
+    @Column(name = "fichjoint")
+    private byte[] fichjoint;
+
+    @Column(name = "fichjoint_content_type")
+    private String fichjointContentType;
+
     @OneToOne
     @JoinColumn(unique = true)
     private DemandeFormation demandeformation;
@@ -96,7 +119,7 @@ public class Formation implements Serializable {
     @ManyToOne
     private Jour jour;
 
-    @ManyToMany(mappedBy = "formations")
+    @ManyToMany(mappedBy ="formations")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Employe> employes = new HashSet<>();
@@ -278,6 +301,97 @@ public class Formation implements Serializable {
         this.termina = termina;
     }
 
+    public Boolean isInterne() {
+        return interne;
+    }
+
+    public Formation interne(Boolean interne) {
+        this.interne = interne;
+        return this;
+    }
+
+    public void setInterne(Boolean interne) {
+        this.interne = interne;
+    }
+
+    public Boolean isExterne() {
+        return externe;
+    }
+
+    public Formation externe(Boolean externe) {
+        this.externe = externe;
+        return this;
+    }
+
+    public void setExterne(Boolean externe) {
+        this.externe = externe;
+    }
+
+    public String getFormateurexterne() {
+        return formateurexterne;
+    }
+
+    public Formation formateurexterne(String formateurexterne) {
+        this.formateurexterne = formateurexterne;
+        return this;
+    }
+
+    public void setFormateurexterne(String formateurexterne) {
+        this.formateurexterne = formateurexterne;
+    }
+
+    public ZonedDateTime getDaterec() {
+        return daterec;
+    }
+
+    public Formation daterec(ZonedDateTime daterec) {
+        this.daterec = daterec;
+        return this;
+    }
+
+    public void setDaterec(ZonedDateTime daterec) {
+        this.daterec = daterec;
+    }
+
+    public Double getOccerence() {
+        return occerence;
+    }
+
+    public Formation occerence(Double occerence) {
+        this.occerence = occerence;
+        return this;
+    }
+
+    public void setOccerence(Double occerence) {
+        this.occerence = occerence;
+    }
+
+    public byte[] getFichjoint() {
+        return fichjoint;
+    }
+
+    public Formation fichjoint(byte[] fichjoint) {
+        this.fichjoint = fichjoint;
+        return this;
+    }
+
+    public void setFichjoint(byte[] fichjoint) {
+        this.fichjoint = fichjoint;
+    }
+
+    public String getFichjointContentType() {
+        return fichjointContentType;
+    }
+
+    public Formation fichjointContentType(String fichjointContentType) {
+        this.fichjointContentType = fichjointContentType;
+        return this;
+    }
+
+    public void setFichjointContentType(String fichjointContentType) {
+        this.fichjointContentType = fichjointContentType;
+    }
+
     public DemandeFormation getDemandeformation() {
         return demandeformation;
     }
@@ -431,6 +545,13 @@ public class Formation implements Serializable {
             ", periode='" + periode + "'" +
             ", finaprs='" + finaprs + "'" +
             ", termina='" + termina + "'" +
+            ", interne='" + interne + "'" +
+            ", externe='" + externe + "'" +
+            ", formateurexterne='" + formateurexterne + "'" +
+            ", daterec='" + daterec + "'" +
+            ", occerence='" + occerence + "'" +
+            ", fichjoint='" + fichjoint + "'" +
+            ", fichjointContentType='" + fichjointContentType + "'" +
             '}';
     }
 }

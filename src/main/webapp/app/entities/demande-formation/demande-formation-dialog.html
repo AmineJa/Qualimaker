@@ -1,5 +1,5 @@
 
-<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
@@ -56,6 +56,20 @@
             <input type="text" class="form-control" name="justification" id="field_justification"
                     ng-model="vm.demandeFormation.justification"
                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.demandeFormation.etatD" for="field_etatD">Etat D</label>
+            <select class="form-control" name="etatD" ng-model="vm.demandeFormation.etatD" id="field_etatD" required>
+                <option value="Enattente" data-translate="qualiMakerApp.ED.Enattente">Enattente</option>
+                <option value="Valider" data-translate="qualiMakerApp.ED.Valider">Valider</option>
+                <option value="Refuser" data-translate="qualiMakerApp.ED.Refuser">Refuser</option>
+            </select>
+            <div ng-show="editForm.etatD.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.etatD.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
         </div>
 
         <div class="form-group">

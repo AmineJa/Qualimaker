@@ -34,6 +34,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import org.qualimaker.domain.enumeration.ED;
 /**
  * Test class for the DemandeFormationResource REST controller.
  *
@@ -60,6 +61,9 @@ public class DemandeFormationResourceIntTest {
 
     private static final String DEFAULT_JUSTIFICATION = "AAAAAAAAAA";
     private static final String UPDATED_JUSTIFICATION = "BBBBBBBBBB";
+
+    private static final ED DEFAULT_ETAT_D = ED.Enattente;
+    private static final ED UPDATED_ETAT_D = ED.Valider;
 
     @Autowired
     private DemandeFormationRepository demandeFormationRepository;
@@ -106,7 +110,8 @@ public class DemandeFormationResourceIntTest {
             .datesouhaite(DEFAULT_DATESOUHAITE)
             .nombresjours(DEFAULT_NOMBRESJOURS)
             .description(DEFAULT_DESCRIPTION)
-            .justification(DEFAULT_JUSTIFICATION);
+            .justification(DEFAULT_JUSTIFICATION)
+            .etatD(DEFAULT_ETAT_D);
         return demandeFormation;
     }
 
@@ -137,6 +142,7 @@ public class DemandeFormationResourceIntTest {
         assertThat(testDemandeFormation.getNombresjours()).isEqualTo(DEFAULT_NOMBRESJOURS);
         assertThat(testDemandeFormation.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
         assertThat(testDemandeFormation.getJustification()).isEqualTo(DEFAULT_JUSTIFICATION);
+        assertThat(testDemandeFormation.getEtatD()).isEqualTo(DEFAULT_ETAT_D);
 
         // Validate the DemandeFormation in Elasticsearch
         DemandeFormation demandeFormationEs = demandeFormationSearchRepository.findOne(testDemandeFormation.getId());
@@ -164,6 +170,24 @@ public class DemandeFormationResourceIntTest {
 
     @Test
     @Transactional
+    public void checkEtatDIsRequired() throws Exception {
+        int databaseSizeBeforeTest = demandeFormationRepository.findAll().size();
+        // set the field null
+        demandeFormation.setEtatD(null);
+
+        // Create the DemandeFormation, which fails.
+
+        restDemandeFormationMockMvc.perform(post("/api/demande-formations")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(demandeFormation)))
+            .andExpect(status().isBadRequest());
+
+        List<DemandeFormation> demandeFormationList = demandeFormationRepository.findAll();
+        assertThat(demandeFormationList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllDemandeFormations() throws Exception {
         // Initialize the database
         demandeFormationRepository.saveAndFlush(demandeFormation);
@@ -178,7 +202,8 @@ public class DemandeFormationResourceIntTest {
             .andExpect(jsonPath("$.[*].datesouhaite").value(hasItem(sameInstant(DEFAULT_DATESOUHAITE))))
             .andExpect(jsonPath("$.[*].nombresjours").value(hasItem(DEFAULT_NOMBRESJOURS.toString())))
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())))
-            .andExpect(jsonPath("$.[*].justification").value(hasItem(DEFAULT_JUSTIFICATION.toString())));
+            .andExpect(jsonPath("$.[*].justification").value(hasItem(DEFAULT_JUSTIFICATION.toString())))
+            .andExpect(jsonPath("$.[*].etatD").value(hasItem(DEFAULT_ETAT_D.toString())));
     }
 
     @Test
@@ -197,7 +222,8 @@ public class DemandeFormationResourceIntTest {
             .andExpect(jsonPath("$.datesouhaite").value(sameInstant(DEFAULT_DATESOUHAITE)))
             .andExpect(jsonPath("$.nombresjours").value(DEFAULT_NOMBRESJOURS.toString()))
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()))
-            .andExpect(jsonPath("$.justification").value(DEFAULT_JUSTIFICATION.toString()));
+            .andExpect(jsonPath("$.justification").value(DEFAULT_JUSTIFICATION.toString()))
+            .andExpect(jsonPath("$.etatD").value(DEFAULT_ETAT_D.toString()));
     }
 
     @Test
@@ -224,7 +250,8 @@ public class DemandeFormationResourceIntTest {
             .datesouhaite(UPDATED_DATESOUHAITE)
             .nombresjours(UPDATED_NOMBRESJOURS)
             .description(UPDATED_DESCRIPTION)
-            .justification(UPDATED_JUSTIFICATION);
+            .justification(UPDATED_JUSTIFICATION)
+            .etatD(UPDATED_ETAT_D);
 
         restDemandeFormationMockMvc.perform(put("/api/demande-formations")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -241,6 +268,7 @@ public class DemandeFormationResourceIntTest {
         assertThat(testDemandeFormation.getNombresjours()).isEqualTo(UPDATED_NOMBRESJOURS);
         assertThat(testDemandeFormation.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
         assertThat(testDemandeFormation.getJustification()).isEqualTo(UPDATED_JUSTIFICATION);
+        assertThat(testDemandeFormation.getEtatD()).isEqualTo(UPDATED_ETAT_D);
 
         // Validate the DemandeFormation in Elasticsearch
         DemandeFormation demandeFormationEs = demandeFormationSearchRepository.findOne(testDemandeFormation.getId());
@@ -304,7 +332,8 @@ public class DemandeFormationResourceIntTest {
             .andExpect(jsonPath("$.[*].datesouhaite").value(hasItem(sameInstant(DEFAULT_DATESOUHAITE))))
             .andExpect(jsonPath("$.[*].nombresjours").value(hasItem(DEFAULT_NOMBRESJOURS.toString())))
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())))
-            .andExpect(jsonPath("$.[*].justification").value(hasItem(DEFAULT_JUSTIFICATION.toString())));
+            .andExpect(jsonPath("$.[*].justification").value(hasItem(DEFAULT_JUSTIFICATION.toString())))
+            .andExpect(jsonPath("$.[*].etatD").value(hasItem(DEFAULT_ETAT_D.toString())));
     }
 
     @Test

@@ -56,6 +56,33 @@
         <dd>
             <span>{{vm.formation.termina}}</span>
         </dd>
+        <dt><span data-translate="qualiMakerApp.formation.interne">Interne</span></dt>
+        <dd>
+            <span>{{vm.formation.interne}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.externe">Externe</span></dt>
+        <dd>
+            <span>{{vm.formation.externe}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.formateurexterne">Formateurexterne</span></dt>
+        <dd>
+            <span>{{vm.formation.formateurexterne}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.daterec">Daterec</span></dt>
+        <dd>
+            <span>{{vm.formation.daterec | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.occerence">Occerence</span></dt>
+        <dd>
+            <span>{{vm.formation.occerence}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.formation.fichjoint">Fichjoint</span></dt>
+        <dd>
+            <div ng-if="vm.formation.fichjoint">
+                <a ng-click="vm.openFile(vm.formation.fichjointContentType, vm.formation.fichjoint)" data-translate="entity.action.open">open</a>
+                {{vm.formation.fichjointContentType}}, {{vm.byteSize(vm.formation.fichjoint)}}
+            </div>
+        </dd>
         <dt><span data-translate="qualiMakerApp.formation.demandeformation">Demandeformation</span></dt>
         <dd>
             <a ui-sref="demande-formation-detail({id:vm.formation.demandeformation.id})">{{vm.formation.demandeformation.id}}</a>

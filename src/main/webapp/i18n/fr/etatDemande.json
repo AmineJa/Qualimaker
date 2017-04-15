@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "etatDemande" : {
+            "home": {
+                "title": "EtatDemandes",
+                "createLabel": "Créer un nouveau Etat Demande",
+                "createOrEditLabel": "Créer ou éditer un Etat Demande",
+                "search": "Recherche pour Etat Demande"
+            },
+            "created": "Un nouveau Etat Demande a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Etat Demande avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Etat Demande avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Etat Demande {{ id }} ?"
+            },
+            "detail": {
+                "title": "Etat Demande"
+            },
+            "etat": "Etat"
+        }
+    }
+}

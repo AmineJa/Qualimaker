@@ -34,6 +34,7 @@
                 "typeContrat": "Type Contrat",
                 "typeFormateur": "Type Formateur",
                 "typeFormation": "Type Formation",
+                "etatDemande": "Etat Demande",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

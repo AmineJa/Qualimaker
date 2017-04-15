@@ -1,10 +1,47 @@
+<section id="widget-grid" class=""  >
 
-<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+    <!-- row -->
+
+
+    <!-- NEW WIDGET START -->
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-teal" id="wid-id-20" data-widget-editbutton="false" data-widget-deletebutton="false">
+        <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+        data-widget-colorbutton="false"
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true"
+        data-widget-sortable="false"
+
+        -->
+        <header>
+
+            <span class="widget-icon"> <i class="fa fa-check"></i> </span>
+            <h2>Ajouter ou Editer un Jour </h2>
+
+        </header>
+
+
+
+
+        <form name="editForm" role="form" novalidate ng-submit="vm.save()">
 
     <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+        <div class="row">
+
+            <div class="col-xs-11">
+            </div>
+            <div class="col-xs-1">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-hidden="true"
                 ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myJourLabel" data-translate="qualiMakerApp.jour.home.createOrEditLabel">Create or edit a Jour</h4>
+            </div>
+    </div>
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
@@ -13,30 +50,49 @@
             <input type="text" class="form-control" id="id" name="id"
                     ng-model="vm.jour.id" readonly />
         </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="qualiMakerApp.jour.jour" for="field_jour">Jour</label>
-                <div class="input-group">
-                    <input id="field_jour" type="text" class="form-control" name="jour" datetime-picker="{{dateformat}}" ng-model="vm.jour.jour" is-open="vm.datePickerOpenStatus.jour"
-                    />
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('jour')"><i class="glyphicon glyphicon-calendar"></i></button>
-                    </span>
-                </div>
-        </div>
 
         <div class="form-group">
-            <label data-translate="qualiMakerApp.jour.programme" for="field_programme">Programme</label>
-            <select class="form-control" id="field_programme" name="programme" ng-model="vm.jour.programme" ng-options="programme as programme.id for programme in vm.programmes | orderBy:'id' track by programme.id">
+
+                <div class="input-group">
+
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default input-lg" ng-click="vm.openCalendar('jour')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                    <input id="field_jour" type="text" class="form-control input-lg" placeholder="Date de Jour" name="jour" datetime-picker="{{dateformat}}" ng-model="vm.jour.jour" is-open="vm.datePickerOpenStatus.jour"
+                    />
+
+                </div>
+        </div>
+ <div class="row">
+     <article class="col-xs-12 col-sm-6 col-md-6 col-lg-11">
+
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa  fa-calendar-o fa-lg fa-fw"></i></span>
+                <select class="form-control input-lg" id="field_programme" name="programme" ng-model="vm.jour.programme" ng-options="programme as programme.id for programme in vm.programmes | orderBy:'id' track by programme.id">
                 <option value=""></option>
             </select>
+            </div>
         </div>
+     </article>
+     <article class="col-xs-12 col-sm-6 col-md-6 col-lg-1">
+         <button class="btn bg-color-green input-lg txt-color-white" ui-sref="programme.new" >
+             <span class="glyphicon glyphicon-plus"></span>
+             <span class="hidden-xs-down"  >
+
+                    </span>
+         </button>
+     </article>
+ </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="vm.clear()">
             <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
         </button>
-        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-success">
             <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
         </button>
     </div>
 </form>
+    </div>
+</section>

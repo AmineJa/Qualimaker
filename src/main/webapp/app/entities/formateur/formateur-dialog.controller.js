@@ -5,15 +5,16 @@
         .module('qualiMakerApp')
         .controller('FormateurDialogController', FormateurDialogController);
 
-    FormateurDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Formateur', 'TypeFormateur'];
+    FormateurDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'DataUtils', 'entity', 'Formateur'];
 
-    function FormateurDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Formateur, TypeFormateur) {
+    function FormateurDialogController ($timeout, $scope, $stateParams, $uibModalInstance, DataUtils, entity, Formateur) {
         var vm = this;
 
         vm.formateur = entity;
         vm.clear = clear;
+        vm.byteSize = DataUtils.byteSize;
+        vm.openFile = DataUtils.openFile;
         vm.save = save;
-        vm.typeformateurs = TypeFormateur.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
@@ -42,6 +43,17 @@
             vm.isSaving = false;
         }
 
+
+        vm.setCv = function ($file, formateur) {
+            if ($file) {
+                DataUtils.toBase64($file, function(base64Data) {
+                    $scope.$apply(function() {
+                        formateur.cv = base64Data;
+                        formateur.cvContentType = $file.type;
+                    });
+                });
+            }
+        };
 
     }
 })();

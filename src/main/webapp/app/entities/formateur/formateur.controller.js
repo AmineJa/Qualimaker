@@ -5,13 +5,15 @@
         .module('qualiMakerApp')
         .controller('FormateurController', FormateurController);
 
-    FormateurController.$inject = ['Formateur', 'FormateurSearch'];
+    FormateurController.$inject = ['DataUtils', 'Formateur', 'FormateurSearch'];
 
-    function FormateurController(Formateur, FormateurSearch) {
+    function FormateurController(DataUtils, Formateur, FormateurSearch) {
 
         var vm = this;
 
         vm.formateurs = [];
+        vm.openFile = DataUtils.openFile;
+        vm.byteSize = DataUtils.byteSize;
         vm.clear = clear;
         vm.search = search;
         vm.loadAll = loadAll;
