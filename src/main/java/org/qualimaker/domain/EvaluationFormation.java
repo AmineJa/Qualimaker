@@ -5,6 +5,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -27,21 +28,31 @@ public class EvaluationFormation implements Serializable {
     @Column(name = "matricuel")
     private Double matricuel;
 
+    @DecimalMin(value = "0")
+    @DecimalMax(value = "5")
     @Column(name = "effectue")
     private Float effectue;
 
+    @DecimalMin(value = "0")
+    @DecimalMax(value = "5")
     @Column(name = "afroid")
     private Float afroid;
 
+    @DecimalMin(value = "0")
+    @DecimalMax(value = "5")
     @Column(name = "achaud")
     private Float achaud;
 
     @Column(name = "evaluerpar")
     private String evaluerpar;
 
+    @DecimalMin(value = "0")
+    @DecimalMax(value = "5")
     @Column(name = "refaire")
     private Float refaire;
 
+    @Min(value = 0)
+    @Max(value = 5)
     @Column(name = "dateprevu")
     private String dateprevu;
 
@@ -51,36 +62,58 @@ public class EvaluationFormation implements Serializable {
     @Column(name = "commentaire")
     private String commentaire;
 
+    @DecimalMin(value = "0")
+    @DecimalMax(value = "5")
     @Column(name = "methodologie")
     private Float methodologie;
 
+    @DecimalMin(value = "0")
+    @DecimalMax(value = "5")
     @Column(name = "competece")
     private Float competece;
 
+    @DecimalMin(value = "0")
+    @DecimalMax(value = "5")
     @Column(name = "supportcours")
     private Float supportcours;
 
+    @DecimalMin(value = "0")
+    @DecimalMax(value = "5")
     @Column(name = "animation")
     private Float animation;
 
+    @DecimalMin(value = "0")
+    @DecimalMax(value = "5")
     @Column(name = "lieu")
     private Float lieu;
 
+    @DecimalMin(value = "0")
+    @DecimalMax(value = "5")
     @Column(name = "respecthoraire")
     private Float respecthoraire;
 
+    @DecimalMin(value = "0")
+    @DecimalMax(value = "5")
     @Column(name = "contnucours")
     private Float contnucours;
 
+    @DecimalMin(value = "0")
+    @DecimalMax(value = "5")
     @Column(name = "traveauxp")
     private Float traveauxp;
 
+    @DecimalMin(value = "0")
+    @DecimalMax(value = "5")
     @Column(name = "objectif")
     private Float objectif;
 
+    @DecimalMin(value = "0")
+    @DecimalMax(value = "5")
     @Column(name = "duree")
     private Float duree;
 
+    @DecimalMin(value = "0")
+    @DecimalMax(value = "5")
     @Column(name = "ambiace")
     private Float ambiace;
 

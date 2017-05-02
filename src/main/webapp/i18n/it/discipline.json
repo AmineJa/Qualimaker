@@ -1,0 +1,27 @@
+{
+    "qualiMakerApp": {
+        "discipline" : {
+            "home": {
+                "title": "Disciplines",
+                "createLabel": "Genera un nuovo Discipline",
+                "createOrEditLabel": "Genera o modifica un Discipline",
+                "search": "Cerca Discipline"
+            },
+            "created": "&Egrave; stato generato un nuovo Discipline con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Discipline identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Discipline con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Discipline {{ id }}?"
+            },
+            "detail": {
+                "title": "Discipline"
+            },
+            "dateD": "Date D",
+            "dateF": "Date F",
+            "duree": "Duree",
+            "commentaire": "Commentaire",
+            "cause": "Cause",
+            "naturediscipline": "Naturediscipline"
+        }
+    }
+}

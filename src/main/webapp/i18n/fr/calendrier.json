@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "calendrier" : {
+            "home": {
+                "title": "Calendriers",
+                "createLabel": "Créer un nouveau Calendrier",
+                "createOrEditLabel": "Créer ou éditer un Calendrier",
+                "search": "Recherche pour Calendrier"
+            },
+            "created": "Un nouveau Calendrier a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Calendrier avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Calendrier avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Calendrier {{ id }} ?"
+            },
+            "detail": {
+                "title": "Calendrier"
+            },
+            "jour": "Jour"
+        }
+    }
+}

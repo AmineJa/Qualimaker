@@ -50,11 +50,24 @@
             "otherEntityField": "id"
         },
         {
-            "relationshipType": "many-to-many",
+            "relationshipName": "events",
+            "otherEntityName": "events",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "formation"
+        },
+        {
             "relationshipName": "employe",
             "otherEntityName": "employe",
-            "ownerSide": false,
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
             "otherEntityRelationshipName": "formation"
+        },
+        {
+            "relationshipName": "formateurintern",
+            "otherEntityName": "employe",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         }
     ],
     "fields": [
@@ -136,10 +149,7 @@
         },
         {
             "fieldName": "daterec",
-            "fieldType": "ZonedDateTime",
-            "fieldValidateRules": [
-                "required"
-            ]
+            "fieldType": "ZonedDateTime"
         },
         {
             "fieldName": "occerence",

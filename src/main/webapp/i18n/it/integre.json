@@ -19,7 +19,11 @@
             "dateD": "Date D",
             "dateF": "Date F",
             "pointfort": "Pointfort",
-            "poitaibl": "Poitaibl"
+            "poitaibl": "Poitaibl",
+            "info": "Info",
+            "etat": "Etat",
+            "employe": "Employe",
+            "responsable": "Responsable"
         }
     }
 }

@@ -2,7 +2,6 @@ package org.qualimaker.web.rest;
 
 import org.qualimaker.QualiMakerApp;
 
-import org.qualimaker.domain.Etat;
 import org.qualimaker.repository.EtatRepository;
 import org.qualimaker.repository.search.EtatSearchRepository;
 import org.qualimaker.web.rest.errors.ExceptionTranslator;

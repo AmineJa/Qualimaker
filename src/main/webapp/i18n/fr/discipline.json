@@ -1,0 +1,27 @@
+{
+    "qualiMakerApp": {
+        "discipline" : {
+            "home": {
+                "title": "Disciplines",
+                "createLabel": "Créer un nouveau Discipline",
+                "createOrEditLabel": "Créer ou éditer un Discipline",
+                "search": "Recherche pour Discipline"
+            },
+            "created": "Un nouveau Discipline a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Discipline avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Discipline avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Discipline {{ id }} ?"
+            },
+            "detail": {
+                "title": "Discipline"
+            },
+            "dateD": " Date de début",
+            "dateF": "Date de  fin",
+            "duree": "Duree",
+            "commentaire": "Commentaire",
+            "cause": "Cause",
+            "naturediscipline": "Nature discipline :"
+        }
+    }
+}

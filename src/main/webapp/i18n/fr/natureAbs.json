@@ -2,19 +2,19 @@
     "qualiMakerApp": {
         "natureAbs" : {
             "home": {
-                "title": "NatureAbs",
-                "createLabel": "Créer un nouveau Nature Abs",
-                "createOrEditLabel": "Créer ou éditer un Nature Abs",
-                "search": "Recherche pour Nature Abs"
+                "title": "Liste des natures d'absence",
+                "createLabel": "Créer un nouveau Nature d'absence",
+                "createOrEditLabel": "Créer ou éditer un Natured'absence",
+                "search": "Recherche pour Nature d'absence"
             },
             "created": "Un nouveau Nature Abs a été créé avec l'identifiant {{ param }}",
             "updated": "Le Nature Abs avec l'identifiant {{ param }} a été mis à jour",
             "deleted": "Le Nature Abs avec l'identifiant {{ param }} a été supprimé",
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le Nature Abs {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer le Nature d'absence{{ id }} ?"
             },
             "detail": {
-                "title": "Nature Abs"
+                "title": "Nature D'absence"
             },
             "nature": "Nature"
         }

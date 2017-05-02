@@ -1,5 +1,6 @@
 package org.qualimaker.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -7,6 +8,8 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -31,6 +34,11 @@ public class Jour implements Serializable {
     @OneToOne
     @JoinColumn(unique = true)
     private Programme programme;
+
+    @OneToMany(mappedBy = "jour")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Calendrier> calendriers = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -64,6 +72,31 @@ public class Jour implements Serializable {
 
     public void setProgramme(Programme programme) {
         this.programme = programme;
+    }
+
+    public Set<Calendrier> getCalendriers() {
+        return calendriers;
+    }
+
+    public Jour calendriers(Set<Calendrier> calendriers) {
+        this.calendriers = calendriers;
+        return this;
+    }
+
+    public Jour addCalendrier(Calendrier calendrier) {
+        this.calendriers.add(calendrier);
+        calendrier.setJour(this);
+        return this;
+    }
+
+    public Jour removeCalendrier(Calendrier calendrier) {
+        this.calendriers.remove(calendrier);
+        calendrier.setJour(null);
+        return this;
+    }
+
+    public void setCalendriers(Set<Calendrier> calendriers) {
+        this.calendriers = calendriers;
     }
 
     @Override

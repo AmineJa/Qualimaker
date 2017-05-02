@@ -18,8 +18,8 @@
             },
             "theme": "Theme",
             "titre": "Titre",
-            "dateD": "Date D",
-            "dateF": "Date F",
+            "dateD": "Début",
+            "dateF": "Fin",
             "lieu": "Lieu",
             "objectif": "Objectif",
             "contenu": "Contenu",
@@ -42,7 +42,9 @@
             "fichierjoint": "Fichierjoint",
             "critereevaluation": "Critereevaluation",
             "jour": "Jour",
-            "employe": "Employe"
+            "events": "Events",
+            "employe": "Employe",
+            "formateurintern": "Formateurintern"
         }
     }
 }

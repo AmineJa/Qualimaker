@@ -1,0 +1,438 @@
+<!--
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myDemandeFormationLabel" data-translate="qualiMakerApp.demandeFormation.home.createOrEditLabel">Create or edit a Demande Formation</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.demandeFormation.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.demandeFormation.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.demandeFormation.theme" for="field_theme">Theme</label>
+            <input type="text" class="form-control" name="theme" id="field_theme"
+                    ng-model="vm.demandeFormation.theme"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.demandeFormation.dateDemande" for="field_dateDemande">Date Demande</label>
+                <div class="input-group">
+                    <input id="field_dateDemande" type="text" class="form-control" name="dateDemande" datetime-picker="{{dateformat}}" ng-model="vm.demandeFormation.dateDemande" is-open="vm.datePickerOpenStatus.dateDemande"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateDemande')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.demandeFormation.datesouhaite" for="field_datesouhaite">Datesouhaite</label>
+                <div class="input-group">
+                    <input id="field_datesouhaite" type="text" class="form-control" name="datesouhaite" datetime-picker="{{dateformat}}" ng-model="vm.demandeFormation.datesouhaite" is-open="vm.datePickerOpenStatus.datesouhaite"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datesouhaite')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.demandeFormation.nombresjours" for="field_nombresjours">Nombresjours</label>
+            <input type="text" class="form-control" name="nombresjours" id="field_nombresjours"
+                    ng-model="vm.demandeFormation.nombresjours"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.demandeFormation.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.demandeFormation.description"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.demandeFormation.justification" for="field_justification">Justification</label>
+            <input type="text" class="form-control" name="justification" id="field_justification"
+                    ng-model="vm.demandeFormation.justification"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.demandeFormation.etatD" for="field_etatD">Etat D</label>
+            <select class="form-control" name="etatD" ng-model="vm.demandeFormation.etatD" id="field_etatD" required>
+                <option value="Enattente" data-translate="qualiMakerApp.ED.Enattente">Enattente</option>
+                <option value="Valider" data-translate="qualiMakerApp.ED.Valider">Valider</option>
+                <option value="Refuser" data-translate="qualiMakerApp.ED.Refuser">Refuser</option>
+            </select>
+            <div ng-show="editForm.etatD.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.etatD.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.demandeFormation.empploye" for="field_empploye">Empploye</label>
+            <select class="form-control" id="field_empploye" name="empploye" ng-model="vm.demandeFormation.empploye" ng-options="employe as employe.id for employe in vm.employes track by employe.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
+-->
+
+
+
+
+
+<section id="widget-grid" class=""  >
+
+    <!-- row -->
+
+
+    <!-- NEW WIDGET START -->
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-teal" id="wid-id-11" data-widget-editbutton="false" data-widget-deletebutton="false">
+        <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+        data-widget-colorbutton="false"
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true"
+        data-widget-sortable="false"
+
+        -->
+        <header>
+            <span class="widget-icon"> <i class="fa fa-check"></i> </span>
+            <h2>Ajouter ou Editer une demande de formation </h2>
+
+        </header>
+
+        <!-- widget div-->
+
+
+        <!-- widget edit box -->
+
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body">
+
+
+
+            <form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                            ng-click="vm.clear()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <jhi-alert-error></jhi-alert-error>
+                    <div class="form-group" ng-show="vm.demandeFormation.id">
+                        <input type="text" class="form-control" id="id" name="id"
+                               ng-model="vm.demandeFormation.id" readonly />
+
+                    </div>
+                    <div  class="well">
+
+
+                        <div class="row">
+                            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-12">
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user fa-lg fa-fw"></i></span>
+
+                                        <select class="form-control input-lg" id="field_empploye"  name="empploye" ng-model="vm.demandeFormation.empploye" ng-options="employe as employe.nom   for employe in vm.employes track by employe.nom ">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-12">
+
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-text-width fa-lg fa-fw"></i></span>
+                                        <input type="text" class="form-control input-lg"placeholder="Thème" name="theme" id="field_theme"
+                                               ng-model="vm.demandeFormation.theme"
+                                        />
+                                    </div>
+                                </div>
+                            </article>
+
+
+
+                            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-sort-numeric-desc fa-lg fa-fw"></i></span>
+                                        <input type="text" class="form-control input-lg" placeholder="Nombre des jours" name="nombresjours" id="field_nombresjours"
+                                               ng-model="vm.demandeFormation.nombresjours"
+                                        />
+                                    </div>
+                                </div>
+
+                            </article>
+                            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                     <span class="input-group-addon">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datesouhaite')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                                        <input id="field_datesouhaite" type="text" class="form-control input-lg" placeholder="Date souhaiter"name="datesouhaite" datetime-picker="{{dateformat}}" ng-model="vm.demandeFormation.datesouhaite" is-open="vm.datePickerOpenStatus.datesouhaite"
+                                        />
+
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-asterisk fa-lg fa-fw"></i></span>
+                                <input type="text" class="form-control input-lg"placeholder="Description" name="description" id="field_description"
+                                       ng-model="vm.demandeFormation.description"
+                                />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-comments-o fa-lg fa-fw"></i></span>
+                                <input type="text" class="form-control input-lg" placeholder="Justification" name="justification" id="field_justification"
+                                       ng-model="vm.demandeFormation.justification"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+
+
+                    <!--    <div class="btn-group" ng-if="vm.demandeFormation.id">
+                            <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                                Action <span class="caret"></span>
+                            </button>
+
+                     <ul class="dropdown-menu">
+                         <li>
+                             <a >Action</a>
+                         </li>
+                         <li>
+                             <a>Sauvgarder</a>
+                         </li>
+                         <li>
+                             <a >Something else here</a>
+                         </li>
+                         <li ></li>
+                         <li>
+                             <a >Separated link</a>
+                         </li>
+                     </ul>
+                 </div>-->
+                    <div class="btn-group" ng-if="vm.demandeFormation.id">
+
+                        <button type="button" class="btn btn-info">Action</button>
+
+                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+
+                            <span class="caret"></span>
+
+                        </button>
+
+                        <ul class="dropdown-menu" role="menu">
+
+
+                            <li><a ng-click="vm.accepter()">Accepter</a></span></li>
+
+                            <li><a  ng-click="vm.refuser()">Refuser</a></span></li>
+
+                        </ul>
+                    </div>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="vm.clear()">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+                    </button>
+
+
+
+
+
+
+
+                    <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-success">
+                        <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+                    </button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript" charset="utf-8">
+
+    $(function () {
+
+        $('.demo').dropkick({
+
+            startSpeed: 400, // the speed of fade in effect. A low value (lowest is probably 100) to stop the effect.
+
+            theme: 'black',
+
+            change: function (value, label) { // callback event
+
+                alert('You picked: ' + label + ':' + value);
+
+            }
+
+        });
+
+
+
+    });
+
+</script>
+
+<script type="text/javascript">
+
+    // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+    $(document).ready(function() {
+
+        pageSetUp();
+
+
+
+        //Bootstrap Wizard Validations
+
+        var $validator = $("#wizard-1").validate({
+
+            rules: {
+
+                field_nom:{
+                    required: true
+
+                },
+                field_prenom:{
+                    required: true
+
+                },
+                fname: {
+                    required: true
+                },
+                lname: {
+                    required: true
+                },
+                country: {
+                    required: true
+                },
+                city: {
+                    required: true
+                },
+                postal: {
+                    required: true,
+                    minlength: 4
+                },
+                wphone: {
+                    required: true,
+                    minlength: 10
+                },
+                hphone: {
+                    required: true,
+                    minlength: 10
+                }
+            },
+
+            messages: {
+                field_nom:"le champ est obligatoire",
+                field_prenom:"le champ est obligatoire",
+
+                fname: "Please specify your First name",
+                lname: "Please specify your Last name",
+                email: {
+                    required: "We need your email address to contact you",
+                    email: "Your email address must be in the format of name@domain.com"
+                }
+            },
+
+            highlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+            },
+            unhighlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+            },
+            errorElement: 'span',
+            errorClass: 'help-block',
+            errorPlacement: function (error, element) {
+                if (element.parent('.input-group').length) {
+                    error.insertAfter(element.parent());
+                } else {
+                    error.insertAfter(element);
+                }
+            }
+        });
+
+        $('#bootstrap-wizard-1').bootstrapWizard({
+            'tabClass': 'form-wizard',
+            'onNext': function (tab, navigation, index) {
+                var $valid = $("#wizard-1").valid();
+                if (!$valid) {
+                    $validator.focusInvalid();
+                    return false;
+                } else {
+                    $('#bootstrap-wizard-1').find('.form-wizard').children('li').eq(index - 1).addClass(
+                        'complete');
+                    $('#bootstrap-wizard-1').find('.form-wizard').children('li').eq(index - 1).find('.step')
+                        .html('<i class="fa fa-check"></i>');
+                }
+            }
+        });
+
+
+        // fuelux wizard
+        var wizard = $('.wizard').wizard();
+
+        wizard.on('finished', function (e, data) {
+            //$("#fuelux-wizard").submit();
+            //console.log("submitted!");
+            $.smallBox({
+                title: "Congratulations! Your form was submitted",
+                content: "<i class='fa fa-clock-o'></i> <i>1 seconds ago...</i>",
+                color: "#5F895F",
+                iconSmall: "fa fa-check bounce animated",
+                timeout: 4000
+            });
+
+        });
+
+
+    })
+
+</script>

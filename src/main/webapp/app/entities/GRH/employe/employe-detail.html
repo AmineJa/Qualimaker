@@ -1,0 +1,298 @@
+<section id="widget-grid" class=""  >
+
+    <!-- row -->
+
+
+    <!-- NEW WIDGET START -->
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-redLight" id="wid-id-160" data-widget-editbutton="false" data-widget-deletebutton="false">
+        <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+        data-widget-colorbutton="false"
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true"
+        data-widget-sortable="false"
+
+        -->
+        <header>
+            <span class="widget-icon"> <i class="fa fa-check"></i> </span>
+            <h2>Detail : {{vm.employe.nom }} {{vm.employe.prenom }} </h2>
+
+        </header>
+
+        <!-- widget div-->
+
+
+        <!-- widget edit box -->
+
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body ">
+
+        <div class="well">
+    <h2></h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <div class="row">
+            <article class="col-md-6">
+                <!--<dt><span data-translate="qualiMakerApp.employe.nom">Nom</span></dt>
+-->
+                <dd>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa    fa-user fa-fw"></i></span>
+                        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="{{'qualiMakerApp.employe.nom' | translate}}"
+                               ng-model="vm.employe.nom" >
+                    </div>
+
+                </dd>
+            </article>
+            <article class="col-md-6">
+               <!-- <dt><span data-translate="qualiMakerApp.employe.prenom">Prenom</span></dt>
+                --><dd>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa    fa-user fa-fw"></i></span>
+                        <input type="text" class="form-control"  name="firstName" placeholder="{{'qualiMakerApp.employe.prenom' | translate}}"
+                               ng-model="vm.employe.prenom" readonly>
+                    </div>
+                </dd>
+            </article>
+
+        </div>
+
+        <div class="row">
+            <article class="col-md-6">
+                <dd>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa    fa-calendar fa-fw"></i></span>
+                        <input type="text" class="form-control"  name="firstName" placeholder="{{'qualiMakerApp.employe.dateN' | translate}}"
+                               ng-model="vm.employe.dateN | date:'medium'" readonly>
+                    </div>
+                </dd>
+            </article>
+            <article class="col-md-6">
+                <dt><span data-translate="qualiMakerApp.employe.cin">Cin</span></dt>
+                <dd>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa    fa-user fa-fw"></i></span>
+                        <input type="text" class="form-control"  name="firstName" placeholder="{{'qualiMakerApp.employe.cin' | translate}}"
+                               ng-model="vm.employe.cin" readonly>
+                    </div>
+                </dd>
+            </article>
+        </div>
+
+        <div class="row">
+            <article class="col-md-6">
+                <dt><span data-translate="qualiMakerApp.employe.sexe">Sexe</span></dt>
+                <dd>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa    fa-user fa-fw"></i></span>
+                        <input type="text" class="form-control"  name="firstName" placeholder="{{'qualiMakerApp.employe.sexe' | translate}}"
+                               ng-model="vm.employe.sexe" readonly>
+                    </div>
+                </dd>
+            </article>
+            <article class="col-md-6">
+                <dt><span data-translate="qualiMakerApp.employe.adress">Adress</span></dt>
+                <dd>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa    fa-location-arrow fa-fw"></i></span>
+                        <input type="text" class="form-control"  name="firstName" placeholder="{{'qualiMakerApp.employe.adress' | translate}}"
+                               ng-model="vm.employe.adress" readonly>
+                    </div>
+                    <span>{{vm.employe.adress}}</span>
+                </dd>
+            </article>
+        </div>
+
+        <div class="row">
+            <article class="col-md-6">
+                <dt><span data-translate="qualiMakerApp.employe.gsm">Gsm</span></dt>
+                <dd>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa    fa-mobile fa-fw"></i></span>
+                        <input type="text" class="form-control"  name="firstName" placeholder="{{'qualiMakerApp.employe.gsm' | translate}}"
+                               ng-model="vm.employe.gsm" readonly>
+                    </div>
+                </dd>
+            </article>
+            <article class="col-md-6">
+                <dt><span data-translate="qualiMakerApp.employe.lieuNais">Lieu Nais</span></dt>
+                <dd>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa    fa-user fa-fw"></i></span>
+                        <input type="text" class="form-control"  name="firstName" placeholder="{{'qualiMakerApp.employe.lieuNais' | translate}}"
+                               ng-model="vm.employe.lieuNais" readonly>
+                    </div>
+                </dd>
+            </article>
+        </div>
+
+        <div class="row">
+            <article class="col-md-6">
+                <dt><span data-translate="qualiMakerApp.employe.telMais">Tel Mais</span></dt>
+                <dd>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa    fa-mobile-phone fa-fw"></i></span>
+                        <input type="text" class="form-control"  name="firstName" placeholder="{{'qualiMakerApp.employe.telMais' | translate}}"
+                               ng-model="vm.employe.telMais" readonly>
+                    </div>
+                </dd>
+            </article>
+            <article class="col-md-6">
+                <dt><span data-translate="qualiMakerApp.employe.teleph">Teleph</span></dt>
+                <dd>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa    fa-mobile-phonefa-fw"></i></span>
+                        <input type="text" class="form-control"  name="firstName" placeholder="{{'qualiMakerApp.employe.teleph' | translate}}"
+                               ng-model="vm.employe.teleph" readonly>
+                    </div>
+                    <span>{{vm.employe.teleph}}</span>
+                </dd>
+            </article>
+        </div>
+
+        <div class="row">
+            <article class="col-md-6">
+                <dt><span data-translate="qualiMakerApp.employe.delivrele">Delivrele</span></dt>
+                <dd>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa    fa-calendar fa-fw"></i></span>
+                        <input type="text" class="form-control"  name="firstName" placeholder="{{'qualiMakerApp.employe.prenom' | translate}}"
+                               ng-model="vm.employe.delivrele | date:'medium'" readonly>
+                    </div>
+                    <span>{{vm.employe.delivrele | date:'medium'}}</span>
+                </dd>
+            </article>
+            <article class="col-md-6">
+            </article>
+        </div>
+
+        <div class="row">
+            <article class="col-md-6">
+            </article>
+            <article class="col-md-6">
+            </article>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <dt><span data-translate="qualiMakerApp.employe.delivrea">Delivrea</span></dt>
+        <dd>
+            <span>{{vm.employe.delivrea}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.email">Email</span></dt>
+        <dd>
+            <span>{{vm.employe.email}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.matricule">Matricule</span></dt>
+        <dd>
+            <span>{{vm.employe.matricule}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.email2">Email 2</span></dt>
+        <dd>
+            <span>{{vm.employe.email2}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.grade">Grade</span></dt>
+        <dd>
+            <span>{{vm.employe.grade}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.rib">Rib</span></dt>
+        <dd>
+            <span>{{vm.employe.rib}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.nsc">Nsc</span></dt>
+        <dd>
+            <span>{{vm.employe.nsc}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.competence">Competence</span></dt>
+        <dd>
+            <span>{{vm.employe.competence}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.diplome">Diplome</span></dt>
+        <dd>
+            <span>{{vm.employe.diplome}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.experience">Experience</span></dt>
+        <dd>
+            <span>{{vm.employe.experience}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.aptphy">Aptphy</span></dt>
+        <dd>
+            <span>{{vm.employe.aptphy}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.image">Image</span></dt>
+        <dd>
+            <div ng-if="vm.employe.image">
+                <a ng-click="vm.openFile(vm.employe.imageContentType, vm.employe.image)">
+                    <img data-ng-src="{{'data:' + vm.employe.imageContentType + ';base64,' + vm.employe.image}}" style="max-width: 100%;" alt="employe image"/>
+                </a>
+                {{vm.employe.imageContentType}}, {{vm.byteSize(vm.employe.image)}}
+            </div>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.cv">Cv</span></dt>
+        <dd>
+            <div ng-if="vm.employe.cv">
+                <a ng-click="vm.openFile(vm.employe.cvContentType, vm.employe.cv)" data-translate="entity.action.open">open</a>
+                {{vm.employe.cvContentType}}, {{vm.byteSize(vm.employe.cv)}}
+            </div>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.carriere">Carriere</span></dt>
+        <dd>
+            <a ui-sref="carriere-detail({id:vm.employe.carriere.id})">{{vm.employe.carriere.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.site">Site</span></dt>
+        <dd>
+            <a ui-sref="sites-detail({id:vm.employe.site.id})">{{vm.employe.site.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.groupe">Groupe</span></dt>
+        <dd>
+            <a ui-sref="groupe-detail({id:vm.employe.groupe.id})">{{vm.employe.groupe.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.service">Service</span></dt>
+        <dd>
+            <a ui-sref="serviice-detail({id:vm.employe.service.id})">{{vm.employe.service.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.formation">Formation</span></dt>
+        <dd>
+            <span ng-repeat="formation in vm.employe.formations">
+                <a ui-sref="formation-detail({id: formation.id})">{{formation.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.employe.fonction">Fonction</span></dt>
+        <dd>
+            <span ng-repeat="fonction in vm.employe.fonctions">
+                <a ui-sref="fonction-detail({id: fonction.id})">{{fonction.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="employe-detail.edit({id:vm.employe.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>
+        </div>
+    </div>
+</section>

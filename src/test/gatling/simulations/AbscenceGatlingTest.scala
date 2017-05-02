@@ -67,7 +67,7 @@ class AbscenceGatlingTest extends Simulation {
             .exec(http("Create new abscence")
             .post("/api/abscences")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "justifier":"SAMPLE_TEXT", "dateD":"2020-01-01T00:00:00.000Z", "dateF":"2020-01-01T00:00:00.000Z", "etat":"SAMPLE_TEXT", "integre":"SAMPLE_TEXT", "commentaire":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "justifier":"SAMPLE_TEXT", "dateD":"2020-01-01T00:00:00.000Z", "dateF":"2020-01-01T00:00:00.000Z", "etat":"SAMPLE_TEXT", "integre":"SAMPLE_TEXT", "commentaire":"SAMPLE_TEXT", "oui":null, "non":null, "doc":null, "com":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_abscence_url"))).exitHereIfFailed
             .pause(10)

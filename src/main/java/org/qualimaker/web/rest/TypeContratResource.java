@@ -1,7 +1,6 @@
 package org.qualimaker.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
-import org.qualimaker.domain.TypeContrat;
 
 import org.qualimaker.repository.TypeContratRepository;
 import org.qualimaker.repository.search.TypeContratSearchRepository;
@@ -22,8 +21,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 import static org.elasticsearch.index.query.QueryBuilders.*;
 
@@ -37,7 +34,7 @@ public class TypeContratResource {
     private final Logger log = LoggerFactory.getLogger(TypeContratResource.class);
 
     private static final String ENTITY_NAME = "typeContrat";
-        
+
     private final TypeContratRepository typeContratRepository;
 
     private final TypeContratSearchRepository typeContratSearchRepository;
@@ -139,7 +136,7 @@ public class TypeContratResource {
      * SEARCH  /_search/type-contrats?query=:query : search for the typeContrat corresponding
      * to the query.
      *
-     * @param query the query of the typeContrat search 
+     * @param query the query of the typeContrat search
      * @param pageable the pagination information
      * @return the result of the search
      */

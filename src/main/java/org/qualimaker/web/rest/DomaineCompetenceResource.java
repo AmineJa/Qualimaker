@@ -1,7 +1,6 @@
 package org.qualimaker.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
-import org.qualimaker.domain.DomaineCompetence;
 
 import org.qualimaker.repository.DomaineCompetenceRepository;
 import org.qualimaker.repository.search.DomaineCompetenceSearchRepository;
@@ -22,8 +21,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 import static org.elasticsearch.index.query.QueryBuilders.*;
 
@@ -37,7 +34,7 @@ public class DomaineCompetenceResource {
     private final Logger log = LoggerFactory.getLogger(DomaineCompetenceResource.class);
 
     private static final String ENTITY_NAME = "domaineCompetence";
-        
+
     private final DomaineCompetenceRepository domaineCompetenceRepository;
 
     private final DomaineCompetenceSearchRepository domaineCompetenceSearchRepository;
@@ -139,7 +136,7 @@ public class DomaineCompetenceResource {
      * SEARCH  /_search/domaine-competences?query=:query : search for the domaineCompetence corresponding
      * to the query.
      *
-     * @param query the query of the domaineCompetence search 
+     * @param query the query of the domaineCompetence search
      * @param pageable the pagination information
      * @return the result of the search
      */

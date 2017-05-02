@@ -1,0 +1,25 @@
+{
+    "qualiMakerApp": {
+        "events" : {
+            "home": {
+                "title": "Events",
+                "createLabel": "Genera un nuovo Events",
+                "createOrEditLabel": "Genera o modifica un Events",
+                "search": "Cerca Events"
+            },
+            "created": "&Egrave; stato generato un nuovo Events con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Events identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Events con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Events {{ id }}?"
+            },
+            "detail": {
+                "title": "Events"
+            },
+            "debut": "Debut",
+            "fin": "Fin",
+            "text": "Text",
+            "formation": "Formation"
+        }
+    }
+}

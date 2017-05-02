@@ -20,6 +20,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Base64Utils;
 
 import javax.persistence.EntityManager;
 import java.time.Instant;
@@ -60,6 +61,20 @@ public class AbscenceResourceIntTest {
 
     private static final String DEFAULT_COMMENTAIRE = "AAAAAAAAAA";
     private static final String UPDATED_COMMENTAIRE = "BBBBBBBBBB";
+
+    private static final Boolean DEFAULT_OUI = false;
+    private static final Boolean UPDATED_OUI = true;
+
+    private static final Boolean DEFAULT_NON = false;
+    private static final Boolean UPDATED_NON = true;
+
+    private static final byte[] DEFAULT_DOC = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_DOC = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_DOC_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_DOC_CONTENT_TYPE = "image/png";
+
+    private static final String DEFAULT_COM = "AAAAAAAAAA";
+    private static final String UPDATED_COM = "BBBBBBBBBB";
 
     @Autowired
     private AbscenceRepository abscenceRepository;
@@ -106,7 +121,12 @@ public class AbscenceResourceIntTest {
             .dateF(DEFAULT_DATE_F)
             .etat(DEFAULT_ETAT)
             .integre(DEFAULT_INTEGRE)
-            .commentaire(DEFAULT_COMMENTAIRE);
+            .commentaire(DEFAULT_COMMENTAIRE)
+            .oui(DEFAULT_OUI)
+            .non(DEFAULT_NON)
+            .doc(DEFAULT_DOC)
+            .docContentType(DEFAULT_DOC_CONTENT_TYPE)
+            .com(DEFAULT_COM);
         return abscence;
     }
 
@@ -137,6 +157,11 @@ public class AbscenceResourceIntTest {
         assertThat(testAbscence.getEtat()).isEqualTo(DEFAULT_ETAT);
         assertThat(testAbscence.getIntegre()).isEqualTo(DEFAULT_INTEGRE);
         assertThat(testAbscence.getCommentaire()).isEqualTo(DEFAULT_COMMENTAIRE);
+        assertThat(testAbscence.isOui()).isEqualTo(DEFAULT_OUI);
+        assertThat(testAbscence.isNon()).isEqualTo(DEFAULT_NON);
+        assertThat(testAbscence.getDoc()).isEqualTo(DEFAULT_DOC);
+        assertThat(testAbscence.getDocContentType()).isEqualTo(DEFAULT_DOC_CONTENT_TYPE);
+        assertThat(testAbscence.getCom()).isEqualTo(DEFAULT_COM);
 
         // Validate the Abscence in Elasticsearch
         Abscence abscenceEs = abscenceSearchRepository.findOne(testAbscence.getId());
@@ -178,7 +203,12 @@ public class AbscenceResourceIntTest {
             .andExpect(jsonPath("$.[*].dateF").value(hasItem(sameInstant(DEFAULT_DATE_F))))
             .andExpect(jsonPath("$.[*].etat").value(hasItem(DEFAULT_ETAT.toString())))
             .andExpect(jsonPath("$.[*].integre").value(hasItem(DEFAULT_INTEGRE.toString())))
-            .andExpect(jsonPath("$.[*].commentaire").value(hasItem(DEFAULT_COMMENTAIRE.toString())));
+            .andExpect(jsonPath("$.[*].commentaire").value(hasItem(DEFAULT_COMMENTAIRE.toString())))
+            .andExpect(jsonPath("$.[*].oui").value(hasItem(DEFAULT_OUI.booleanValue())))
+            .andExpect(jsonPath("$.[*].non").value(hasItem(DEFAULT_NON.booleanValue())))
+            .andExpect(jsonPath("$.[*].docContentType").value(hasItem(DEFAULT_DOC_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].doc").value(hasItem(Base64Utils.encodeToString(DEFAULT_DOC))))
+            .andExpect(jsonPath("$.[*].com").value(hasItem(DEFAULT_COM.toString())));
     }
 
     @Test
@@ -197,7 +227,12 @@ public class AbscenceResourceIntTest {
             .andExpect(jsonPath("$.dateF").value(sameInstant(DEFAULT_DATE_F)))
             .andExpect(jsonPath("$.etat").value(DEFAULT_ETAT.toString()))
             .andExpect(jsonPath("$.integre").value(DEFAULT_INTEGRE.toString()))
-            .andExpect(jsonPath("$.commentaire").value(DEFAULT_COMMENTAIRE.toString()));
+            .andExpect(jsonPath("$.commentaire").value(DEFAULT_COMMENTAIRE.toString()))
+            .andExpect(jsonPath("$.oui").value(DEFAULT_OUI.booleanValue()))
+            .andExpect(jsonPath("$.non").value(DEFAULT_NON.booleanValue()))
+            .andExpect(jsonPath("$.docContentType").value(DEFAULT_DOC_CONTENT_TYPE))
+            .andExpect(jsonPath("$.doc").value(Base64Utils.encodeToString(DEFAULT_DOC)))
+            .andExpect(jsonPath("$.com").value(DEFAULT_COM.toString()));
     }
 
     @Test
@@ -224,7 +259,12 @@ public class AbscenceResourceIntTest {
             .dateF(UPDATED_DATE_F)
             .etat(UPDATED_ETAT)
             .integre(UPDATED_INTEGRE)
-            .commentaire(UPDATED_COMMENTAIRE);
+            .commentaire(UPDATED_COMMENTAIRE)
+            .oui(UPDATED_OUI)
+            .non(UPDATED_NON)
+            .doc(UPDATED_DOC)
+            .docContentType(UPDATED_DOC_CONTENT_TYPE)
+            .com(UPDATED_COM);
 
         restAbscenceMockMvc.perform(put("/api/abscences")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -241,6 +281,11 @@ public class AbscenceResourceIntTest {
         assertThat(testAbscence.getEtat()).isEqualTo(UPDATED_ETAT);
         assertThat(testAbscence.getIntegre()).isEqualTo(UPDATED_INTEGRE);
         assertThat(testAbscence.getCommentaire()).isEqualTo(UPDATED_COMMENTAIRE);
+        assertThat(testAbscence.isOui()).isEqualTo(UPDATED_OUI);
+        assertThat(testAbscence.isNon()).isEqualTo(UPDATED_NON);
+        assertThat(testAbscence.getDoc()).isEqualTo(UPDATED_DOC);
+        assertThat(testAbscence.getDocContentType()).isEqualTo(UPDATED_DOC_CONTENT_TYPE);
+        assertThat(testAbscence.getCom()).isEqualTo(UPDATED_COM);
 
         // Validate the Abscence in Elasticsearch
         Abscence abscenceEs = abscenceSearchRepository.findOne(testAbscence.getId());
@@ -304,7 +349,12 @@ public class AbscenceResourceIntTest {
             .andExpect(jsonPath("$.[*].dateF").value(hasItem(sameInstant(DEFAULT_DATE_F))))
             .andExpect(jsonPath("$.[*].etat").value(hasItem(DEFAULT_ETAT.toString())))
             .andExpect(jsonPath("$.[*].integre").value(hasItem(DEFAULT_INTEGRE.toString())))
-            .andExpect(jsonPath("$.[*].commentaire").value(hasItem(DEFAULT_COMMENTAIRE.toString())));
+            .andExpect(jsonPath("$.[*].commentaire").value(hasItem(DEFAULT_COMMENTAIRE.toString())))
+            .andExpect(jsonPath("$.[*].oui").value(hasItem(DEFAULT_OUI.booleanValue())))
+            .andExpect(jsonPath("$.[*].non").value(hasItem(DEFAULT_NON.booleanValue())))
+            .andExpect(jsonPath("$.[*].docContentType").value(hasItem(DEFAULT_DOC_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].doc").value(hasItem(Base64Utils.encodeToString(DEFAULT_DOC))))
+            .andExpect(jsonPath("$.[*].com").value(hasItem(DEFAULT_COM.toString())));
     }
 
     @Test

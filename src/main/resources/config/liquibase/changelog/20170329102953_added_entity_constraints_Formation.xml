@@ -50,5 +50,22 @@
                                  referencedColumnNames="id"
                                  referencedTableName="jour"/>
 
+        <addForeignKeyConstraint baseColumnNames="formations_id"
+                                 baseTableName="formation_employe"
+                                 constraintName="fk_formation_employe_formations_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="formation"/>
+        <addForeignKeyConstraint baseColumnNames="employes_id"
+                                 baseTableName="formation_employe"
+                                 constraintName="fk_formation_employe_employes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employe"/>
+        
+        <addForeignKeyConstraint baseColumnNames="formateurintern_id"
+                                 baseTableName="formation"
+                                 constraintName="fk_formation_formateurintern_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employe"/>
+
     </changeSet>
 </databaseChangeLog>

@@ -1,7 +1,6 @@
 package org.qualimaker.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
-import org.qualimaker.domain.Etat;
 
 import org.qualimaker.repository.EtatRepository;
 import org.qualimaker.repository.search.EtatSearchRepository;
@@ -31,7 +30,7 @@ public class EtatResource {
     private final Logger log = LoggerFactory.getLogger(EtatResource.class);
 
     private static final String ENTITY_NAME = "etat";
-        
+
     private final EtatRepository etatRepository;
 
     private final EtatSearchRepository etatSearchRepository;
@@ -131,7 +130,7 @@ public class EtatResource {
      * SEARCH  /_search/etats?query=:query : search for the etat corresponding
      * to the query.
      *
-     * @param query the query of the etat search 
+     * @param query the query of the etat search
      * @return the result of the search
      */
     @GetMapping("/_search/etats")

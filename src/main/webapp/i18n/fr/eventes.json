@@ -1,0 +1,27 @@
+{
+    "qualiMakerApp": {
+        "eventes" : {
+            "home": {
+                "title": "Eventes",
+                "createLabel": "Créer un nouveau Eventes",
+                "createOrEditLabel": "Créer ou éditer un Eventes",
+                "search": "Recherche pour Eventes"
+            },
+            "created": "Un nouveau Eventes a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Eventes avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Eventes avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Eventes {{ id }} ?"
+            },
+            "detail": {
+                "title": "Eventes"
+            },
+            "title": "Title",
+            "color": "Color",
+            "startsAt": "Starts At",
+            "endsAt": "Ends At",
+            "draggable": "Draggable",
+            "actions": "Actions"
+        }
+    }
+}

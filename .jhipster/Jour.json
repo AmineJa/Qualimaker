@@ -8,6 +8,12 @@
             "otherEntityField": "id",
             "ownerSide": true,
             "otherEntityRelationshipName": "jour"
+        },
+        {
+            "relationshipName": "calendrier",
+            "otherEntityName": "calendrier",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "jour"
         }
     ],
     "fields": [
@@ -17,8 +23,8 @@
         }
     ],
     "changelogDate": "20170329102953",
-    "entityTableName": "jour",
     "dto": "no",
-    "pagination": "no",
-    "service": "no"
+    "service": "no",
+    "entityTableName": "jour",
+    "pagination": "no"
 }

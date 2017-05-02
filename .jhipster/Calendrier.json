@@ -1,0 +1,17 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "jour",
+            "otherEntityName": "jour",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20170430123239",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "calendrier",
+    "pagination": "pager"
+}

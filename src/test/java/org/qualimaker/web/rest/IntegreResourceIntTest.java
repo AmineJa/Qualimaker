@@ -3,6 +3,8 @@ package org.qualimaker.web.rest;
 import org.qualimaker.QualiMakerApp;
 
 import org.qualimaker.domain.Integre;
+import org.qualimaker.domain.Employe;
+import org.qualimaker.domain.Employe;
 import org.qualimaker.repository.IntegreRepository;
 import org.qualimaker.repository.search.IntegreSearchRepository;
 import org.qualimaker.web.rest.errors.ExceptionTranslator;
@@ -55,6 +57,12 @@ public class IntegreResourceIntTest {
     private static final String DEFAULT_POITAIBL = "AAAAAAAAAA";
     private static final String UPDATED_POITAIBL = "BBBBBBBBBB";
 
+    private static final String DEFAULT_INFO = "AAAAAAAAAA";
+    private static final String UPDATED_INFO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_ETAT = "AAAAAAAAAA";
+    private static final String UPDATED_ETAT = "BBBBBBBBBB";
+
     @Autowired
     private IntegreRepository integreRepository;
 
@@ -98,7 +106,19 @@ public class IntegreResourceIntTest {
             .dateD(DEFAULT_DATE_D)
             .dateF(DEFAULT_DATE_F)
             .pointfort(DEFAULT_POINTFORT)
-            .poitaibl(DEFAULT_POITAIBL);
+            .poitaibl(DEFAULT_POITAIBL)
+            .info(DEFAULT_INFO)
+            .etat(DEFAULT_ETAT);
+        // Add required entity
+        Employe employe = EmployeResourceIntTest.createEntity(em);
+        em.persist(employe);
+        em.flush();
+        integre.setEmploye(employe);
+        // Add required entity
+        Employe responsable = EmployeResourceIntTest.createEntity(em);
+        em.persist(responsable);
+        em.flush();
+        integre.setResponsable(responsable);
         return integre;
     }
 
@@ -127,6 +147,8 @@ public class IntegreResourceIntTest {
         assertThat(testIntegre.getDateF()).isEqualTo(DEFAULT_DATE_F);
         assertThat(testIntegre.getPointfort()).isEqualTo(DEFAULT_POINTFORT);
         assertThat(testIntegre.getPoitaibl()).isEqualTo(DEFAULT_POITAIBL);
+        assertThat(testIntegre.getInfo()).isEqualTo(DEFAULT_INFO);
+        assertThat(testIntegre.getEtat()).isEqualTo(DEFAULT_ETAT);
 
         // Validate the Integre in Elasticsearch
         Integre integreEs = integreSearchRepository.findOne(testIntegre.getId());
@@ -166,7 +188,9 @@ public class IntegreResourceIntTest {
             .andExpect(jsonPath("$.[*].dateD").value(hasItem(sameInstant(DEFAULT_DATE_D))))
             .andExpect(jsonPath("$.[*].dateF").value(hasItem(sameInstant(DEFAULT_DATE_F))))
             .andExpect(jsonPath("$.[*].pointfort").value(hasItem(DEFAULT_POINTFORT.toString())))
-            .andExpect(jsonPath("$.[*].poitaibl").value(hasItem(DEFAULT_POITAIBL.toString())));
+            .andExpect(jsonPath("$.[*].poitaibl").value(hasItem(DEFAULT_POITAIBL.toString())))
+            .andExpect(jsonPath("$.[*].info").value(hasItem(DEFAULT_INFO.toString())))
+            .andExpect(jsonPath("$.[*].etat").value(hasItem(DEFAULT_ETAT.toString())));
     }
 
     @Test
@@ -183,7 +207,9 @@ public class IntegreResourceIntTest {
             .andExpect(jsonPath("$.dateD").value(sameInstant(DEFAULT_DATE_D)))
             .andExpect(jsonPath("$.dateF").value(sameInstant(DEFAULT_DATE_F)))
             .andExpect(jsonPath("$.pointfort").value(DEFAULT_POINTFORT.toString()))
-            .andExpect(jsonPath("$.poitaibl").value(DEFAULT_POITAIBL.toString()));
+            .andExpect(jsonPath("$.poitaibl").value(DEFAULT_POITAIBL.toString()))
+            .andExpect(jsonPath("$.info").value(DEFAULT_INFO.toString()))
+            .andExpect(jsonPath("$.etat").value(DEFAULT_ETAT.toString()));
     }
 
     @Test
@@ -208,7 +234,9 @@ public class IntegreResourceIntTest {
             .dateD(UPDATED_DATE_D)
             .dateF(UPDATED_DATE_F)
             .pointfort(UPDATED_POINTFORT)
-            .poitaibl(UPDATED_POITAIBL);
+            .poitaibl(UPDATED_POITAIBL)
+            .info(UPDATED_INFO)
+            .etat(UPDATED_ETAT);
 
         restIntegreMockMvc.perform(put("/api/integres")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -223,6 +251,8 @@ public class IntegreResourceIntTest {
         assertThat(testIntegre.getDateF()).isEqualTo(UPDATED_DATE_F);
         assertThat(testIntegre.getPointfort()).isEqualTo(UPDATED_POINTFORT);
         assertThat(testIntegre.getPoitaibl()).isEqualTo(UPDATED_POITAIBL);
+        assertThat(testIntegre.getInfo()).isEqualTo(UPDATED_INFO);
+        assertThat(testIntegre.getEtat()).isEqualTo(UPDATED_ETAT);
 
         // Validate the Integre in Elasticsearch
         Integre integreEs = integreSearchRepository.findOne(testIntegre.getId());
@@ -284,7 +314,9 @@ public class IntegreResourceIntTest {
             .andExpect(jsonPath("$.[*].dateD").value(hasItem(sameInstant(DEFAULT_DATE_D))))
             .andExpect(jsonPath("$.[*].dateF").value(hasItem(sameInstant(DEFAULT_DATE_F))))
             .andExpect(jsonPath("$.[*].pointfort").value(hasItem(DEFAULT_POINTFORT.toString())))
-            .andExpect(jsonPath("$.[*].poitaibl").value(hasItem(DEFAULT_POITAIBL.toString())));
+            .andExpect(jsonPath("$.[*].poitaibl").value(hasItem(DEFAULT_POITAIBL.toString())))
+            .andExpect(jsonPath("$.[*].info").value(hasItem(DEFAULT_INFO.toString())))
+            .andExpect(jsonPath("$.[*].etat").value(hasItem(DEFAULT_ETAT.toString())));
     }
 
     @Test

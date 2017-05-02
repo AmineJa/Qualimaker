@@ -37,6 +37,22 @@
                 <constraints nullable="true" />
             </column>
 
+            <column name="info" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="etat" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="employe_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="responsable_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
         <dropDefaultValue tableName="integre" columnName="date_d" columnDataType="datetime"/>

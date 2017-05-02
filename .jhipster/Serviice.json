@@ -1,6 +1,19 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "poste",
+            "otherEntityName": "poste",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "serviice"
+        },
+        {
+            "relationshipName": "servicepost",
+            "otherEntityName": "servicepost",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "serviice"
+        }
+    ],
     "fields": [
         {
             "fieldName": "nom",
@@ -8,8 +21,8 @@
         }
     ],
     "changelogDate": "20170329102953",
-    "entityTableName": "serviice",
     "dto": "no",
-    "pagination": "pagination",
-    "service": "no"
+    "service": "no",
+    "entityTableName": "serviice",
+    "pagination": "pagination"
 }

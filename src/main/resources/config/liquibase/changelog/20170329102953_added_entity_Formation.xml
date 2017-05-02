@@ -86,7 +86,7 @@
             </column>
 
             <column name="daterec" type="timestamp">
-                <constraints nullable="false" />
+                <constraints nullable="true" />
             </column>
 
             <column name="occerence" type="double">
@@ -122,11 +122,26 @@
                 <constraints nullable="true" />
             </column>
 
+            <column name="formateurintern_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
         <dropDefaultValue tableName="formation" columnName="date_d" columnDataType="datetime"/>
         <dropDefaultValue tableName="formation" columnName="date_f" columnDataType="datetime"/>
         <dropDefaultValue tableName="formation" columnName="daterec" columnDataType="datetime"/>
+        
+        <createTable tableName="formation_employe">
+            <column name="employes_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="formations_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="formations_id, employes_id" tableName="formation_employe"/>
         
     </changeSet>
 </databaseChangeLog>

@@ -1,7 +1,6 @@
 package org.qualimaker.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
-import org.qualimaker.domain.Fonction;
 
 import org.qualimaker.repository.FonctionRepository;
 import org.qualimaker.repository.search.FonctionSearchRepository;
@@ -22,8 +21,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 import static org.elasticsearch.index.query.QueryBuilders.*;
 
@@ -37,7 +34,7 @@ public class FonctionResource {
     private final Logger log = LoggerFactory.getLogger(FonctionResource.class);
 
     private static final String ENTITY_NAME = "fonction";
-        
+
     private final FonctionRepository fonctionRepository;
 
     private final FonctionSearchRepository fonctionSearchRepository;
@@ -139,7 +136,7 @@ public class FonctionResource {
      * SEARCH  /_search/fonctions?query=:query : search for the fonction corresponding
      * to the query.
      *
-     * @param query the query of the fonction search 
+     * @param query the query of the fonction search
      * @param pageable the pagination information
      * @return the result of the search
      */

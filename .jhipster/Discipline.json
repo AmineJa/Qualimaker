@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "naturediscipline",
+            "otherEntityName": "naturediscipline",
+            "relationshipType": "many-to-one"
+
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dateD",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dateF",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "duree",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "commentaire",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cause",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170422153631",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "discipline",
+    "pagination": "pagination"
+}

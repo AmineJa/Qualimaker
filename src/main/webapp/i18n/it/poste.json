@@ -1,0 +1,26 @@
+{
+    "qualiMakerApp": {
+        "poste" : {
+            "home": {
+                "title": "Postes",
+                "createLabel": "Genera un nuovo Poste",
+                "createOrEditLabel": "Genera o modifica un Poste",
+                "search": "Cerca Poste"
+            },
+            "created": "&Egrave; stato generato un nuovo Poste con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Poste identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Poste con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Poste {{ id }}?"
+            },
+            "detail": {
+                "title": "Poste"
+            },
+            "post": "Post",
+            "parent": "Parent",
+            "supp": "Supp",
+            "serviice": "Serviice",
+            "servicepost": "Servicepost"
+        }
+    }
+}

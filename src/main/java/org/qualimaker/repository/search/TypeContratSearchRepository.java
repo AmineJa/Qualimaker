@@ -1,6 +1,5 @@
 package org.qualimaker.repository.search;
 
-import org.qualimaker.domain.TypeContrat;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
 /**

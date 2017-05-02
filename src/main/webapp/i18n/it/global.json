@@ -35,6 +35,15 @@
                 "typeFormateur": "Type Formateur",
                 "typeFormation": "Type Formation",
                 "etatDemande": "Etat Demande",
+                "events": "Events",
+                "eventes": "Eventes",
+                "poste": "Poste",
+                "naturediscipline": "Naturediscipline",
+                "discipline": "Discipline",
+                "servicepost": "Servicepost",
+                "servicePost": "Service Post",
+                "doc": "Doc",
+                "calendrier": "Calendrier",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

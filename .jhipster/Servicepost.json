@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "serviice",
+            "otherEntityName": "serviice",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "poste",
+            "otherEntityName": "poste",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "servicepost"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20170425114456",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "servicepost",
+    "pagination": "pagination"
+}

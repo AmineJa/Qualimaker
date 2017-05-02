@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="qualiMakerApp.poste.detail.title">Poste</span> {{vm.poste.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="qualiMakerApp.poste.post">Post</span></dt>
+        <dd>
+            <span>{{vm.poste.post}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.poste.parent">Parent</span></dt>
+        <dd>
+            <span>{{vm.poste.parent}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.poste.supp">Supp</span></dt>
+        <dd>
+            <span>{{vm.poste.supp}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.poste.serviice">Serviice</span></dt>
+        <dd>
+            <a ui-sref="serviice-detail({id:vm.poste.serviice.id})">{{vm.poste.serviice.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="poste-detail.edit({id:vm.poste.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

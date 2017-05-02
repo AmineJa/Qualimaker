@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+   <changeSet author="Jaouadi-Amine (generated)" id="1493046342476-1">
+      <dropForeignKeyConstraint baseTableName="naturediscipline"
+                                constraintName="fkocrfrqvph8iq5cm5hvpdy5gv9"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1493046342476-2">
+      <dropForeignKeyConstraint baseTableName="employe" constraintName="fkta44gd8ts47t36rjmda1mhkgs"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1493046342476-3">
+      <dropTable tableName="eventes"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1493046342476-4">
+      <dropColumn columnName="abscence_id" tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1493046342476-5">
+      <dropColumn columnName="discipline_id" tableName="naturediscipline"/>
+   </changeSet>
+</databaseChangeLog>

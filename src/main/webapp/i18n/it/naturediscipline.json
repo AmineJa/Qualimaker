@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "naturediscipline" : {
+            "home": {
+                "title": "Naturedisciplines",
+                "createLabel": "Genera un nuovo Naturediscipline",
+                "createOrEditLabel": "Genera o modifica un Naturediscipline",
+                "search": "Cerca Naturediscipline"
+            },
+            "created": "&Egrave; stato generato un nuovo Naturediscipline con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Naturediscipline identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Naturediscipline con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Naturediscipline {{ id }}?"
+            },
+            "detail": {
+                "title": "Naturediscipline"
+            },
+            "nature": "Nature"
+        }
+    }
+}

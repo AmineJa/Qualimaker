@@ -78,6 +78,24 @@ public class CacheConfiguration {
             cm.createCache(org.qualimaker.domain.TypeFormation.class.getName(), jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.EtatDemande.class.getName(), jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.EtatDemande.class.getName() + ".demandeFormations", jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Events.class.getName(), jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Formation.class.getName() + ".events", jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Abscence.class.getName() + ".employes", jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Serviice.class.getName() + ".postes", jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Poste.class.getName(), jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Naturediscipline.class.getName(), jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Discipline.class.getName(), jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Employe.class.getName() + ".integres", jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Employe.class.getName() + ".respints", jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Servicepost.class.getName(), jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Servicepost.class.getName() + ".postes", jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Poste.class.getName() + ".serviceposts", jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Serviice.class.getName() + ".serviceposts", jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Servicepost.class.getName() + ".serviices", jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Servicepost.class.getName() + ".sites", jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Calendrier.class.getName(), jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Calendrier.class.getName() + ".jours", jcacheConfiguration);
+            cm.createCache(org.qualimaker.domain.Jour.class.getName() + ".calendriers", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

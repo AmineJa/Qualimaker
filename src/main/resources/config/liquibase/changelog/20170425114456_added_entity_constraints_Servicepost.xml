@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Servicepost.
+    -->
+    <changeSet id="20170425114456-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="serviice_id"
+                                 baseTableName="servicepost"
+                                 constraintName="fk_servicepost_serviice_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="serviice"/>
+
+        <addForeignKeyConstraint baseColumnNames="serviceposts_id"
+                                 baseTableName="servicepost_poste"
+                                 constraintName="fk_servicepost_poste_serviceposts_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="servicepost"/>
+        <addForeignKeyConstraint baseColumnNames="postes_id"
+                                 baseTableName="servicepost_poste"
+                                 constraintName="fk_servicepost_poste_postes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="poste"/>
+        
+    </changeSet>
+</databaseChangeLog>

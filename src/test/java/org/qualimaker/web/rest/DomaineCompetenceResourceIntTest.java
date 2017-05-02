@@ -2,7 +2,6 @@ package org.qualimaker.web.rest;
 
 import org.qualimaker.QualiMakerApp;
 
-import org.qualimaker.domain.DomaineCompetence;
 import org.qualimaker.repository.DomaineCompetenceRepository;
 import org.qualimaker.repository.search.DomaineCompetenceSearchRepository;
 import org.qualimaker.web.rest.errors.ExceptionTranslator;

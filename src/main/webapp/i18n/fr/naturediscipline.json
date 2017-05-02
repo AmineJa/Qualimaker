@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "naturediscipline" : {
+            "home": {
+                "title": "Nature discipline",
+                "createLabel": "Créer un nouveau Naturediscipline",
+                "createOrEditLabel": "Créer ou éditer un Nature discipline",
+                "search": "Recherche pour Naturediscipline"
+            },
+            "created": "Un nouveau Naturediscipline a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Naturediscipline avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Naturediscipline avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Naturediscipline {{ id }} ?"
+            },
+            "detail": {
+                "title": "Nature discipline"
+            },
+            "nature": "Nature"
+        }
+    }
+}

@@ -5,9 +5,9 @@
         .module('qualiMakerApp')
         .controller('JourDialogController', JourDialogController);
 
-    JourDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Jour', 'Programme'];
+    JourDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', '$q', 'entity', 'Jour', 'Programme', 'Calendrier'];
 
-    function JourDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, Jour, Programme) {
+    function JourDialogController ($timeout, $scope, $stateParams, $uibModalInstance, $q, entity, Jour, Programme, Calendrier) {
         var vm = this;
 
         vm.jour = entity;
@@ -24,6 +24,7 @@
         }).then(function(programme) {
             vm.programmes.push(programme);
         });
+        vm.calendriers = Calendrier.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

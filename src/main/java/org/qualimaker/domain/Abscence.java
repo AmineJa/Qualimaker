@@ -43,6 +43,28 @@ public class Abscence implements Serializable {
     @Column(name = "commentaire")
     private String commentaire;
 
+    @Column(name = "oui")
+    private Boolean oui;
+
+    @Column(name = "non")
+    private Boolean non;
+
+    @Lob
+    @Column(name = "doc")
+    private byte[] doc;
+
+    @Column(name = "doc_content_type")
+    private String docContentType;
+
+    @Column(name = "com")
+    private String com;
+
+    @ManyToOne
+    private Employe employe;
+
+    @ManyToOne
+    private NatureAbs natureAbs;
+
     public Long getId() {
         return id;
     }
@@ -129,6 +151,97 @@ public class Abscence implements Serializable {
         this.commentaire = commentaire;
     }
 
+    public Boolean isOui() {
+        return oui;
+    }
+
+    public Abscence oui(Boolean oui) {
+        this.oui = oui;
+        return this;
+    }
+
+    public void setOui(Boolean oui) {
+        this.oui = oui;
+    }
+
+    public Boolean isNon() {
+        return non;
+    }
+
+    public Abscence non(Boolean non) {
+        this.non = non;
+        return this;
+    }
+
+    public void setNon(Boolean non) {
+        this.non = non;
+    }
+
+    public byte[] getDoc() {
+        return doc;
+    }
+
+    public Abscence doc(byte[] doc) {
+        this.doc = doc;
+        return this;
+    }
+
+    public void setDoc(byte[] doc) {
+        this.doc = doc;
+    }
+
+    public String getDocContentType() {
+        return docContentType;
+    }
+
+    public Abscence docContentType(String docContentType) {
+        this.docContentType = docContentType;
+        return this;
+    }
+
+    public void setDocContentType(String docContentType) {
+        this.docContentType = docContentType;
+    }
+
+    public String getCom() {
+        return com;
+    }
+
+    public Abscence com(String com) {
+        this.com = com;
+        return this;
+    }
+
+    public void setCom(String com) {
+        this.com = com;
+    }
+
+    public Employe getEmploye() {
+        return employe;
+    }
+
+    public Abscence employe(Employe employe) {
+        this.employe = employe;
+        return this;
+    }
+
+    public void setEmploye(Employe employe) {
+        this.employe = employe;
+    }
+
+    public NatureAbs getNatureAbs() {
+        return natureAbs;
+    }
+
+    public Abscence natureAbs(NatureAbs natureAbs) {
+        this.natureAbs = natureAbs;
+        return this;
+    }
+
+    public void setNatureAbs(NatureAbs natureAbs) {
+        this.natureAbs = natureAbs;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -159,6 +272,11 @@ public class Abscence implements Serializable {
             ", etat='" + etat + "'" +
             ", integre='" + integre + "'" +
             ", commentaire='" + commentaire + "'" +
+            ", oui='" + oui + "'" +
+            ", non='" + non + "'" +
+            ", doc='" + doc + "'" +
+            ", docContentType='" + docContentType + "'" +
+            ", com='" + com + "'" +
             '}';
     }
 }

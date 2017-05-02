@@ -81,8 +81,7 @@ public class Formation implements Serializable {
     @Column(name = "formateurexterne")
     private String formateurexterne;
 
-    @NotNull
-    @Column(name = "daterec", nullable = false)
+    @Column(name = "daterec")
     private ZonedDateTime daterec;
 
     @Column(name = "occerence")
@@ -119,10 +118,20 @@ public class Formation implements Serializable {
     @ManyToOne
     private Jour jour;
 
-    @ManyToMany(mappedBy ="formations")
+    @OneToMany(mappedBy = "formation")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Events> events = new HashSet<>();
+
+    @ManyToMany
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JoinTable(name = "formation_employe",
+               joinColumns = @JoinColumn(name="formations_id", referencedColumnName="id"),
+               inverseJoinColumns = @JoinColumn(name="employes_id", referencedColumnName="id"))
     private Set<Employe> employes = new HashSet<>();
+
+    @ManyToOne
+    private Employe formateurintern;
 
     public Long getId() {
         return id;
@@ -483,6 +492,31 @@ public class Formation implements Serializable {
         this.jour = jour;
     }
 
+    public Set<Events> getEvents() {
+        return events;
+    }
+
+    public Formation events(Set<Events> events) {
+        this.events = events;
+        return this;
+    }
+
+    public Formation addEvents(Events events) {
+        this.events.add(events);
+        events.setFormation(this);
+        return this;
+    }
+
+    public Formation removeEvents(Events events) {
+        this.events.remove(events);
+        events.setFormation(null);
+        return this;
+    }
+
+    public void setEvents(Set<Events> events) {
+        this.events = events;
+    }
+
     public Set<Employe> getEmployes() {
         return employes;
     }
@@ -506,6 +540,19 @@ public class Formation implements Serializable {
 
     public void setEmployes(Set<Employe> employes) {
         this.employes = employes;
+    }
+
+    public Employe getFormateurintern() {
+        return formateurintern;
+    }
+
+    public Formation formateurintern(Employe employe) {
+        this.formateurintern = employe;
+        return this;
+    }
+
+    public void setFormateurintern(Employe employe) {
+        this.formateurintern = employe;
     }
 
     @Override

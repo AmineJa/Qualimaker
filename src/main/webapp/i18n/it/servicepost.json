@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "servicepost" : {
+            "home": {
+                "title": "Serviceposts",
+                "createLabel": "Genera un nuovo Servicepost",
+                "createOrEditLabel": "Genera o modifica un Servicepost",
+                "search": "Cerca Servicepost"
+            },
+            "created": "&Egrave; stato generato un nuovo Servicepost con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Servicepost identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Servicepost con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Servicepost {{ id }}?"
+            },
+            "detail": {
+                "title": "Servicepost"
+            },
+            "serviice": "Serviice",
+            "poste": "Poste"
+        }
+    }
+}

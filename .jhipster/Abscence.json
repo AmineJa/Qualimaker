@@ -1,6 +1,19 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "employe",
+            "otherEntityName": "employe",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "natureAbs",
+            "otherEntityName": "natureAbs",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
     "fields": [
         {
             "fieldName": "justifier",
@@ -25,11 +38,28 @@
         {
             "fieldName": "commentaire",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "oui",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "non",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "doc",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "com",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20170329102953",
-    "entityTableName": "abscence",
     "dto": "no",
-    "pagination": "pagination",
-    "service": "no"
+    "service": "no",
+    "entityTableName": "abscence",
+    "pagination": "pagination"
 }

@@ -16,7 +16,9 @@
             "detail": {
                 "title": "Serviice"
             },
-            "nom": "Nom"
+            "nom": "Nom",
+            "poste": "Poste",
+            "servicepost": "Servicepost"
         }
     }
 }

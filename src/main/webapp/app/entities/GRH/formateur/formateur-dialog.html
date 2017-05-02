@@ -1,0 +1,116 @@
+<section id="widget-grid" class=""  >
+
+    <!-- row -->
+
+
+    <!-- NEW WIDGET START -->
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-greenLight" id="wid-id-314" data-widget-editbutton="false" data-widget-deletebutton="false">
+        <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+        data-widget-colorbutton="false"
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true"
+        data-widget-sortable="false"
+
+        -->
+        <header>
+            <span class="widget-icon"> <i class="fa fa-check"></i> </span>
+            <h2 class="modal-title" id="myFormateurLabel" data-translate="qualiMakerApp.formateur.home.createOrEditLabel">Create or edit a Formateur</h2>
+
+        </header>
+
+        <!-- widget div-->
+
+
+        <!-- widget edit box -->
+
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body">
+
+            <div class="row">
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 ></h4>
+    </div>
+    <div class="modal-body well">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.formateur.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.formateur.id" readonly />
+        </div>
+
+        <div class="row">
+            <article class="col-md-5">
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user  fa-fw"></i></span>
+            <input type="text" class="form-control" name="nom" id="field_nom"placeholder="{{'qualiMakerApp.formateur.nom'|translate}}"
+                    ng-model="vm.formateur.nom"
+                    />
+            </div>
+        </div>
+            </article>
+                <article class="col-md-5">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-user  fa-fw"></i></span>
+                            <input type="text" class="form-control" name="prenom" id="field_prenom"
+                                   ng-model="vm.formateur.prenom" placeholder="{{'qualiMakerApp.formateur.prenom'|translate}}"
+                            />
+                        </div>
+                    </div>
+                </article>
+                <article class="col-md-2">
+                    <button type="button" ngf-select class="btn btn-info btn-block"
+                            ngf-change="vm.setCv($file, vm.formateur)" data-translate="qualiMakerApp.formateur.cv">
+                        Add blob
+                    </button>
+                </article>
+        </div>
+
+        <div class="form-group" ngf-drop ngf-change="vm.setCv($file, vm.formateur)">
+            <div>
+                <div ng-if="vm.formateur.cv" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.formateur.cvContentType, vm.formateur.cv)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.formateur.cvContentType}}, {{vm.byteSize(vm.formateur.cv)}}</span>
+                    <button type="button" ng-click="vm.formateur.cv=null;vm.formateur.cvContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+
+            </div>
+            <input type="hidden" class="form-control" name="cv" id="field_cv"
+                    ng-model="vm.formateur.cv"
+                    />
+            <input type="hidden" class="form-control" name="cvContentType" id="field_cvContentType"
+                    ng-model="vm.formateur.cvContentType" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-success">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
+            </div>
+        </div>
+    </div>
+</section>

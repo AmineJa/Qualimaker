@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "calendrier" : {
+            "home": {
+                "title": "Calendriers",
+                "createLabel": "Genera un nuovo Calendrier",
+                "createOrEditLabel": "Genera o modifica un Calendrier",
+                "search": "Cerca Calendrier"
+            },
+            "created": "&Egrave; stato generato un nuovo Calendrier con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Calendrier identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Calendrier con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Calendrier {{ id }}?"
+            },
+            "detail": {
+                "title": "Calendrier"
+            },
+            "jour": "Jour"
+        }
+    }
+}

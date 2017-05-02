@@ -17,7 +17,8 @@
                 "title": "Jour"
             },
             "jour": "Jour",
-            "programme": "Programme"
+            "programme": "Programme",
+            "calendrier": "Calendrier"
         }
     }
 }

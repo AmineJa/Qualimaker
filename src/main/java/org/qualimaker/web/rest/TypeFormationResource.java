@@ -1,7 +1,6 @@
 package org.qualimaker.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
-import org.qualimaker.domain.TypeFormation;
 
 import org.qualimaker.repository.TypeFormationRepository;
 import org.qualimaker.repository.search.TypeFormationSearchRepository;
@@ -31,7 +30,7 @@ public class TypeFormationResource {
     private final Logger log = LoggerFactory.getLogger(TypeFormationResource.class);
 
     private static final String ENTITY_NAME = "typeFormation";
-        
+
     private final TypeFormationRepository typeFormationRepository;
 
     private final TypeFormationSearchRepository typeFormationSearchRepository;
@@ -131,7 +130,7 @@ public class TypeFormationResource {
      * SEARCH  /_search/type-formations?query=:query : search for the typeFormation corresponding
      * to the query.
      *
-     * @param query the query of the typeFormation search 
+     * @param query the query of the typeFormation search
      * @return the result of the search
      */
     @GetMapping("/_search/type-formations")

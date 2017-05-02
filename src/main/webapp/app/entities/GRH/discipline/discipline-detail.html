@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="qualiMakerApp.discipline.detail.title">Discipline</span> {{vm.discipline.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="qualiMakerApp.discipline.dateD">Date D</span></dt>
+        <dd>
+            <span>{{vm.discipline.dateD | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.discipline.dateF">Date F</span></dt>
+        <dd>
+            <span>{{vm.discipline.dateF | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.discipline.duree">Duree</span></dt>
+        <dd>
+            <span>{{vm.discipline.duree}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.discipline.commentaire">Commentaire</span></dt>
+        <dd>
+            <span>{{vm.discipline.commentaire}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.discipline.cause">Cause</span></dt>
+        <dd>
+            <span>{{vm.discipline.cause}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.discipline.naturediscipline">Naturediscipline</span></dt>
+        <dd>
+            <a ui-sref="naturediscipline-detail({id:vm.discipline.naturediscipline.id})">{{vm.discipline.naturediscipline.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="discipline-detail.edit({id:vm.discipline.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

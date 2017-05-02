@@ -2,7 +2,6 @@ package org.qualimaker.web.rest;
 
 import org.qualimaker.QualiMakerApp;
 
-import org.qualimaker.domain.TypeContrat;
 import org.qualimaker.repository.TypeContratRepository;
 import org.qualimaker.repository.search.TypeContratSearchRepository;
 import org.qualimaker.web.rest.errors.ExceptionTranslator;

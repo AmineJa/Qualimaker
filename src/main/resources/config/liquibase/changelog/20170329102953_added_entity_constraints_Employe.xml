@@ -26,12 +26,6 @@
                                  referencedColumnNames="id"
                                  referencedTableName="groupe"/>
 
-        <addForeignKeyConstraint baseColumnNames="abscence_id"
-                                 baseTableName="employe"
-                                 constraintName="fk_employe_abscence_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="abscence"/>
-
         <addForeignKeyConstraint baseColumnNames="service_id"
                                  baseTableName="employe"
                                  constraintName="fk_employe_service_id"

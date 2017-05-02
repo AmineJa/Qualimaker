@@ -1,6 +1,25 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "employe",
+            "otherEntityName": "employe",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "responsable",
+            "otherEntityName": "employe",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        }
+    ],
     "fields": [
         {
             "fieldName": "dateD",
@@ -17,11 +36,19 @@
         {
             "fieldName": "poitaibl",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "info",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "etat",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20170329102953",
-    "entityTableName": "integre",
     "dto": "no",
-    "pagination": "no",
-    "service": "no"
+    "service": "no",
+    "entityTableName": "integre",
+    "pagination": "no"
 }

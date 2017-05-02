@@ -5,9 +5,9 @@
         .module('qualiMakerApp')
         .controller('JourDetailController', JourDetailController);
 
-    JourDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Jour', 'Programme'];
+    JourDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Jour', 'Programme', 'Calendrier'];
 
-    function JourDetailController($scope, $rootScope, $stateParams, previousState, entity, Jour, Programme) {
+    function JourDetailController($scope, $rootScope, $stateParams, previousState, entity, Jour, Programme, Calendrier) {
         var vm = this;
 
         vm.jour = entity;

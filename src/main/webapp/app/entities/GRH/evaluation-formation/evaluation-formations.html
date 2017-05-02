@@ -1,0 +1,187 @@
+
+
+
+<div class="well">
+
+    <!-- RIBBON -->
+    <!-- END RIBBON -->
+
+    <!-- MAIN CONTENT -->
+    <div id="content">
+
+        <div class="row">
+            <div >
+                <h1 class="page-title txt-color-blueDark">
+                    <i class="fa fa-gear fa-fw "></i>
+                        Paramètre
+                    <span>>
+							GRH >Evaluation formation
+							</span>
+                </h1>
+            </div>
+        </div>
+
+        <!-- widget grid -->
+        <section id="widget-grid" class="">
+
+            <!-- row -->
+            <div class="row">
+
+                <!-- NEW WIDGET START -->
+
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-red" id="wid-id-155" data-widget-editbutton="false">
+                    <!-- widget options:
+                            usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                            data-widget-colorbutton="false"
+                            data-widget-editbutton="false"
+                            data-widget-togglebutton="false"
+                            data-widget-deletebutton="false"
+                            data-widget-fullscreenbutton="false"
+                            data-widget-custombutton="false"
+                            data-widget-collapsed="true"
+                            data-widget-sortable="false"
+
+                            -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Liste des evaluations  formations</h2>
+
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+
+                        </div>
+
+
+
+
+    <div>
+    <h2></h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-default" ui-sref="evaluation-formation.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down" >
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'qualiMakerApp.evaluationFormation.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table  class="table table-striped table-bordered table-hover" width="100%">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="qualiMakerApp.evaluationFormation.matricuel">Matricuel</span></th>
+                    <th><span data-translate="qualiMakerApp.evaluationFormation.evaluerpar">Evaluerpar</span></th>
+                    <th><span data-translate="qualiMakerApp.evaluationFormation.formation">Formation</span></th>
+                    <!--  <th><span data-translate="qualiMakerApp.evaluationFormation.effectue">Effectue</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.afroid">Afroid</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.achaud">Achaud</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.refaire">Refaire</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.dateprevu">Dateprevu</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.efficace">Efficace</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.commentaire">Commentaire</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.methodologie">Methodologie</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.competece">Competece</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.supportcours">Supportcours</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.animation">Animation</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.lieu">Lieu</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.respecthoraire">Respecthoraire</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.contnucours">Contnucours</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.traveauxp">Traveauxp</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.objectif">Objectif</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.duree">Duree</span></th>
+                     <th><span data-translate="qualiMakerApp.evaluationFormation.ambiace">Ambiace</span></th>
+                    --> <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="evaluationFormation in vm.evaluationFormations track by evaluationFormation.id">
+                    <td><a ui-sref="evaluation-formation-detail({id:evaluationFormation.id})">{{evaluationFormation.id}}</a></td>
+
+                    <td>{{evaluationFormation.matricuel}}</td>
+                    <td>{{evaluationFormation.evaluerpar}}</td>
+
+                    <td>
+                        <a ui-sref="formation-detail({id:evaluationFormation.formation.id})">{{evaluationFormation.formation.id}}</a>
+                    </td>
+                  <!--  <td>{{evaluationFormation.effectue}}</td>
+                    <td>{{evaluationFormation.afroid}}</td>
+                    <td>{{evaluationFormation.achaud}}</td>
+                    <td>{{evaluationFormation.refaire}}</td>
+                    <td>{{evaluationFormation.dateprevu}}</td>
+                    <td>{{evaluationFormation.efficace}}</td>
+                    <td>{{evaluationFormation.commentaire}}</td>
+                    <td>{{evaluationFormation.methodologie}}</td>
+                    <td>{{evaluationFormation.competece}}</td>
+                    <td>{{evaluationFormation.supportcours}}</td>
+                    <td>{{evaluationFormation.animation}}</td>
+                    <td>{{evaluationFormation.lieu}}</td>
+                    <td>{{evaluationFormation.respecthoraire}}</td>
+                    <td>{{evaluationFormation.contnucours}}</td>
+                    <td>{{evaluationFormation.traveauxp}}</td>
+                    <td>{{evaluationFormation.objectif}}</td>
+                    <td>{{evaluationFormation.duree}}</td>
+                    <td>{{evaluationFormation.ambiace}}</td>-->
+
+                    <td class="text-center">
+                        <div class="row">
+                            <button type="submit"
+                                    ui-sref="evaluation-formation-detail({id:evaluationFormation.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" ></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="evaluation-formation.edit({id:evaluationFormation.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" ></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="evaluation-formation.delete({id:evaluationFormation.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" ></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

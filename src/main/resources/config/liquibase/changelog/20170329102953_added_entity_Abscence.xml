@@ -45,6 +45,33 @@
                 <constraints nullable="true" />
             </column>
 
+            <column name="oui" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="non" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="doc" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="doc_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="com" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="employe_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nature_abs_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
         <dropDefaultValue tableName="abscence" columnName="date_d" columnDataType="datetime"/>

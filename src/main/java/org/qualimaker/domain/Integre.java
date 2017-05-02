@@ -5,6 +5,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.Objects;
@@ -36,6 +37,20 @@ public class Integre implements Serializable {
 
     @Column(name = "poitaibl")
     private String poitaibl;
+
+    @Column(name = "info")
+    private String info;
+
+    @Column(name = "etat")
+    private String etat;
+
+    @ManyToOne(optional = false)
+    @NotNull
+    private Employe employe;
+
+    @ManyToOne(optional = false)
+    @NotNull
+    private Employe responsable;
 
     public Long getId() {
         return id;
@@ -97,6 +112,58 @@ public class Integre implements Serializable {
         this.poitaibl = poitaibl;
     }
 
+    public String getInfo() {
+        return info;
+    }
+
+    public Integre info(String info) {
+        this.info = info;
+        return this;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public String getEtat() {
+        return etat;
+    }
+
+    public Integre etat(String etat) {
+        this.etat = etat;
+        return this;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
+    }
+
+    public Employe getEmploye() {
+        return employe;
+    }
+
+    public Integre employe(Employe employe) {
+        this.employe = employe;
+        return this;
+    }
+
+    public void setEmploye(Employe employe) {
+        this.employe = employe;
+    }
+
+    public Employe getResponsable() {
+        return responsable;
+    }
+
+    public Integre responsable(Employe employe) {
+        this.responsable = employe;
+        return this;
+    }
+
+    public void setResponsable(Employe employe) {
+        this.responsable = employe;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -125,6 +192,8 @@ public class Integre implements Serializable {
             ", dateF='" + dateF + "'" +
             ", pointfort='" + pointfort + "'" +
             ", poitaibl='" + poitaibl + "'" +
+            ", info='" + info + "'" +
+            ", etat='" + etat + "'" +
             '}';
     }
 }

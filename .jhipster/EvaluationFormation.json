@@ -15,15 +15,33 @@
         },
         {
             "fieldName": "effectue",
-            "fieldType": "Float"
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": "5"
         },
         {
             "fieldName": "afroid",
-            "fieldType": "Float"
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": "5"
         },
         {
             "fieldName": "achaud",
-            "fieldType": "Float"
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": "5"
         },
         {
             "fieldName": "evaluerpar",
@@ -31,11 +49,23 @@
         },
         {
             "fieldName": "refaire",
-            "fieldType": "Float"
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": "5"
         },
         {
             "fieldName": "dateprevu",
-            "fieldType": "String"
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": "5"
         },
         {
             "fieldName": "efficace",
@@ -47,52 +77,118 @@
         },
         {
             "fieldName": "methodologie",
-            "fieldType": "Float"
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": "5"
         },
         {
             "fieldName": "competece",
-            "fieldType": "Float"
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": "5"
         },
         {
             "fieldName": "supportcours",
-            "fieldType": "Float"
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": "5"
         },
         {
             "fieldName": "animation",
-            "fieldType": "Float"
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": "5"
         },
         {
             "fieldName": "lieu",
-            "fieldType": "Float"
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": "5"
         },
         {
             "fieldName": "respecthoraire",
-            "fieldType": "Float"
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": "5"
         },
         {
             "fieldName": "contnucours",
-            "fieldType": "Float"
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": "5"
         },
         {
             "fieldName": "traveauxp",
-            "fieldType": "Float"
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": "5"
         },
         {
             "fieldName": "objectif",
-            "fieldType": "Float"
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": "5"
         },
         {
             "fieldName": "duree",
-            "fieldType": "Float"
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": "5"
         },
         {
             "fieldName": "ambiace",
-            "fieldType": "Float"
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": "5"
         }
     ],
     "changelogDate": "20170329102953",
-    "entityTableName": "evaluation_formation",
     "dto": "no",
-    "pagination": "no",
-    "service": "no"
+    "service": "no",
+    "entityTableName": "evaluation_formation",
+    "pagination": "no"
 }

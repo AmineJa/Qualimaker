@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -50,7 +51,7 @@ public class EvaluationFormationResource {
      */
     @PostMapping("/evaluation-formations")
     @Timed
-    public ResponseEntity<EvaluationFormation> createEvaluationFormation(@RequestBody EvaluationFormation evaluationFormation) throws URISyntaxException {
+    public ResponseEntity<EvaluationFormation> createEvaluationFormation(@Valid @RequestBody EvaluationFormation evaluationFormation) throws URISyntaxException {
         log.debug("REST request to save EvaluationFormation : {}", evaluationFormation);
         if (evaluationFormation.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new evaluationFormation cannot already have an ID")).body(null);
@@ -73,7 +74,7 @@ public class EvaluationFormationResource {
      */
     @PutMapping("/evaluation-formations")
     @Timed
-    public ResponseEntity<EvaluationFormation> updateEvaluationFormation(@RequestBody EvaluationFormation evaluationFormation) throws URISyntaxException {
+    public ResponseEntity<EvaluationFormation> updateEvaluationFormation(@Valid @RequestBody EvaluationFormation evaluationFormation) throws URISyntaxException {
         log.debug("REST request to update EvaluationFormation : {}", evaluationFormation);
         if (evaluationFormation.getId() == null) {
             return createEvaluationFormation(evaluationFormation);

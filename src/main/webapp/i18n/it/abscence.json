@@ -21,7 +21,13 @@
             "dateF": "Date F",
             "etat": "Etat",
             "integre": "Integre",
-            "commentaire": "Commentaire"
+            "commentaire": "Commentaire",
+            "oui": "Oui",
+            "non": "Non",
+            "doc": "Doc",
+            "com": "Com",
+            "employe": "Employe",
+            "natureAbs": "Nature Abs"
         }
     }
 }

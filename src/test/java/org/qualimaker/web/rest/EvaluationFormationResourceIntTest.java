@@ -41,20 +41,20 @@ public class EvaluationFormationResourceIntTest {
     private static final Double DEFAULT_MATRICUEL = 1D;
     private static final Double UPDATED_MATRICUEL = 2D;
 
-    private static final Float DEFAULT_EFFECTUE = 1F;
-    private static final Float UPDATED_EFFECTUE = 2F;
+    private static final Float DEFAULT_EFFECTUE = 0F;
+    private static final Float UPDATED_EFFECTUE = 1F;
 
-    private static final Float DEFAULT_AFROID = 1F;
-    private static final Float UPDATED_AFROID = 2F;
+    private static final Float DEFAULT_AFROID = 0F;
+    private static final Float UPDATED_AFROID = 1F;
 
-    private static final Float DEFAULT_ACHAUD = 1F;
-    private static final Float UPDATED_ACHAUD = 2F;
+    private static final Float DEFAULT_ACHAUD = 0F;
+    private static final Float UPDATED_ACHAUD = 1F;
 
     private static final String DEFAULT_EVALUERPAR = "AAAAAAAAAA";
     private static final String UPDATED_EVALUERPAR = "BBBBBBBBBB";
 
-    private static final Float DEFAULT_REFAIRE = 1F;
-    private static final Float UPDATED_REFAIRE = 2F;
+    private static final Float DEFAULT_REFAIRE = 0F;
+    private static final Float UPDATED_REFAIRE = 1F;
 
     private static final String DEFAULT_DATEPREVU = "AAAAAAAAAA";
     private static final String UPDATED_DATEPREVU = "BBBBBBBBBB";
@@ -65,38 +65,38 @@ public class EvaluationFormationResourceIntTest {
     private static final String DEFAULT_COMMENTAIRE = "AAAAAAAAAA";
     private static final String UPDATED_COMMENTAIRE = "BBBBBBBBBB";
 
-    private static final Float DEFAULT_METHODOLOGIE = 1F;
-    private static final Float UPDATED_METHODOLOGIE = 2F;
+    private static final Float DEFAULT_METHODOLOGIE = 0F;
+    private static final Float UPDATED_METHODOLOGIE = 1F;
 
-    private static final Float DEFAULT_COMPETECE = 1F;
-    private static final Float UPDATED_COMPETECE = 2F;
+    private static final Float DEFAULT_COMPETECE = 0F;
+    private static final Float UPDATED_COMPETECE = 1F;
 
-    private static final Float DEFAULT_SUPPORTCOURS = 1F;
-    private static final Float UPDATED_SUPPORTCOURS = 2F;
+    private static final Float DEFAULT_SUPPORTCOURS = 0F;
+    private static final Float UPDATED_SUPPORTCOURS = 1F;
 
-    private static final Float DEFAULT_ANIMATION = 1F;
-    private static final Float UPDATED_ANIMATION = 2F;
+    private static final Float DEFAULT_ANIMATION = 0F;
+    private static final Float UPDATED_ANIMATION = 1F;
 
-    private static final Float DEFAULT_LIEU = 1F;
-    private static final Float UPDATED_LIEU = 2F;
+    private static final Float DEFAULT_LIEU = 0F;
+    private static final Float UPDATED_LIEU = 1F;
 
-    private static final Float DEFAULT_RESPECTHORAIRE = 1F;
-    private static final Float UPDATED_RESPECTHORAIRE = 2F;
+    private static final Float DEFAULT_RESPECTHORAIRE = 0F;
+    private static final Float UPDATED_RESPECTHORAIRE = 1F;
 
-    private static final Float DEFAULT_CONTNUCOURS = 1F;
-    private static final Float UPDATED_CONTNUCOURS = 2F;
+    private static final Float DEFAULT_CONTNUCOURS = 0F;
+    private static final Float UPDATED_CONTNUCOURS = 1F;
 
-    private static final Float DEFAULT_TRAVEAUXP = 1F;
-    private static final Float UPDATED_TRAVEAUXP = 2F;
+    private static final Float DEFAULT_TRAVEAUXP = 0F;
+    private static final Float UPDATED_TRAVEAUXP = 1F;
 
-    private static final Float DEFAULT_OBJECTIF = 1F;
-    private static final Float UPDATED_OBJECTIF = 2F;
+    private static final Float DEFAULT_OBJECTIF = 0F;
+    private static final Float UPDATED_OBJECTIF = 1F;
 
-    private static final Float DEFAULT_DUREE = 1F;
-    private static final Float UPDATED_DUREE = 2F;
+    private static final Float DEFAULT_DUREE = 0F;
+    private static final Float UPDATED_DUREE = 1F;
 
-    private static final Float DEFAULT_AMBIACE = 1F;
-    private static final Float UPDATED_AMBIACE = 2F;
+    private static final Float DEFAULT_AMBIACE = 0F;
+    private static final Float UPDATED_AMBIACE = 1F;
 
     @Autowired
     private EvaluationFormationRepository evaluationFormationRepository;

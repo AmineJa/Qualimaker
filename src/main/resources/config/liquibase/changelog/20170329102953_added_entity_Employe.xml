@@ -133,10 +133,6 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="abscence_id" type="bigint">
-                <constraints nullable="true" />
-            </column>
-
             <column name="service_id" type="bigint">
                 <constraints nullable="true" />
             </column>

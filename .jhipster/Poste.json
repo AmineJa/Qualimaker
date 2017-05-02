@@ -1,0 +1,37 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "serviice",
+            "otherEntityName": "serviice",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "servicepost",
+            "otherEntityName": "servicepost",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "poste"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "post",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "parent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "supp",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170422102240",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "poste",
+    "pagination": "pager"
+}

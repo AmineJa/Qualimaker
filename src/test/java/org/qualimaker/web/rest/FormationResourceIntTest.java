@@ -306,24 +306,6 @@ public class FormationResourceIntTest {
 
     @Test
     @Transactional
-    public void checkDaterecIsRequired() throws Exception {
-        int databaseSizeBeforeTest = formationRepository.findAll().size();
-        // set the field null
-        formation.setDaterec(null);
-
-        // Create the Formation, which fails.
-
-        restFormationMockMvc.perform(post("/api/formations")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(formation)))
-            .andExpect(status().isBadRequest());
-
-        List<Formation> formationList = formationRepository.findAll();
-        assertThat(formationList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
     public void getAllFormations() throws Exception {
         // Initialize the database
         formationRepository.saveAndFlush(formation);

@@ -1,0 +1,160 @@
+
+<section id="widget-grid" class=""  >
+
+    <!-- row -->
+
+
+    <!-- NEW WIDGET START -->
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-redLight" id="wid-id-61" data-widget-editbutton="false" data-widget-deletebutton="false">
+        <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+        data-widget-colorbutton="false"
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true"
+        data-widget-sortable="false"
+
+        -->
+        <header>
+            <span class="widget-icon"> <i class="fa fa-check"></i> </span>
+            <h2 class="modal-title" id="myIntegreLabel" data-translate="qualiMakerApp.integre.home.createOrEditLabel">Create or edit a Integre</h2>
+
+        </header>
+
+        <!-- widget div-->
+
+
+        <!-- widget edit box -->
+
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body ">
+
+
+            <form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                            ng-click="vm.clear()">&times;</button>
+                    <h4></h4>
+                </div>
+                <div class="modal-body well">
+                    <jhi-alert-error></jhi-alert-error>
+                    <div class="form-group" ng-show="vm.integre.id">
+                        <label for="id" data-translate="global.field.id">ID</label>
+                        <input type="text" class="form-control" id="id" name="id"
+                               ng-model="vm.integre.id" readonly />
+                    </div>
+
+
+                    <div class="row">
+                        <article class="col-md-2">
+                            <label data-translate="qualiMakerApp.integre.employe" for="field_employe">Employe</label>
+
+                        </article>
+                        <article class="col-md-9">
+                            <div class="form-group">
+                                <select class="form-control" id="field_employe" name="employe" ng-model="vm.integre.employe" ng-options="employe as employe.nom +' '+employe.prenom for employe in vm.employes track by employe.id" required>
+                                    <option value=""></option>
+                                </select>
+                                <div ng-show="editForm.employe.$invalid">
+                                    <p class="help-block"
+                                       ng-show="editForm.employe.$error.required" data-translate="entity.validation.required">
+                                        This field is required.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-md-1">
+
+                            <button class="btn btn-default" ui-sref="employe.new" >
+                                <span class="glyphicon glyphicon-plus"></span>
+                                <span class="hidden-xs-down"  >
+                                    </span>
+                            </button>
+                        </article>
+                    </div>
+                    <div class="row">
+                        <article class="col-md-2">
+                            <label data-translate="qualiMakerApp.integre.responsable" for="field_responsable">Responsable</label>
+
+                        </article>
+                        <article class="col-md-10">
+                            <div class="form-group">
+                                <select class="form-control" id="field_responsable" name="responsable" ng-model="vm.integre.responsable" ng-options="employe as employe.nom +' '+employe.prenom for employe in vm.employes track by employe.id" required>
+                                    <option value=""></option>
+                                </select>
+                                <div ng-show="editForm.employe.$invalid">
+                                    <p class="help-block"
+                                       ng-show="editForm.employe.$error.required" data-translate="entity.validation.required">
+                                        This field is required.
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+
+                    <div class="row">
+                        <article class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input id="field_dateD" type="text" class="form-control" placeholder="{{'qualiMakerApp.integre.dateD'|translate}}" name="dateD" datetime-picker="{{dateformat}}" ng-model="vm.integre.dateD" is-open="vm.datePickerOpenStatus.dateD"
+                                    />
+                                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateD')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-md-6">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input id="field_dateF" type="text" placeholder="{{'qualiMakerApp.integre.dateF'|translate}}"class="form-control" name="dateF" datetime-picker="{{dateformat}}" ng-model="vm.integre.dateF" is-open="vm.datePickerOpenStatus.dateF"
+                                    />
+                                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateF')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+
+                    <div class="form-group">
+            <textarea type="text" class="form-control"  placeholder="{{'qualiMakerApp.integre.pointfort'|translate}}"name="pointfort" id="field_pointfort"
+                      ng-model="vm.integre.pointfort"
+            ></textarea>
+                    </div>
+                    <div class="form-group">
+            <textarea type="text" class="form-control" placeholder="{{'qualiMakerApp.integre.poitaibl'|translate}}"name="poitaibl" id="field_poitaibl"
+                      ng-model="vm.integre.poitaibl"
+            ></textarea>
+                    </div>
+                    <div class="form-group">
+            <textarea type="text" class="form-control" placeholder="{{'qualiMakerApp.integre.info'|translate}}"name="info" id="field_info"
+                      ng-model="vm.integre.info"
+            ></textarea>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="vm.clear()">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+                    </button>
+                    <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-success">
+                        <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

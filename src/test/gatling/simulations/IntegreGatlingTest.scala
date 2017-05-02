@@ -67,7 +67,7 @@ class IntegreGatlingTest extends Simulation {
             .exec(http("Create new integre")
             .post("/api/integres")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "dateD":"2020-01-01T00:00:00.000Z", "dateF":"2020-01-01T00:00:00.000Z", "pointfort":"SAMPLE_TEXT", "poitaibl":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "dateD":"2020-01-01T00:00:00.000Z", "dateF":"2020-01-01T00:00:00.000Z", "pointfort":"SAMPLE_TEXT", "poitaibl":"SAMPLE_TEXT", "info":"SAMPLE_TEXT", "etat":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_integre_url"))).exitHereIfFailed
             .pause(10)

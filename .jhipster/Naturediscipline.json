@@ -1,0 +1,15 @@
+{
+    "fluentMethods": true,
+
+    "fields": [
+        {
+            "fieldName": "nature",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170422153026",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "naturediscipline",
+    "pagination": "pagination"
+}

@@ -1,0 +1,1130 @@
+<!--
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEmployeLabel" data-translate="qualiMakerApp.employe.home.createOrEditLabel">Create or edit a Employe</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.employe.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.employe.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.nom" for="field_nom">Nom</label>
+            <input type="text" class="form-control" name="nom" id="field_nom"
+                    ng-model="vm.employe.nom"
+                    required/>
+            <div ng-show="editForm.nom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nom.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.prenom" for="field_prenom">Prenom</label>
+            <input type="text" class="form-control" name="prenom" id="field_prenom"
+                    ng-model="vm.employe.prenom"
+                    required/>
+            <div ng-show="editForm.prenom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.prenom.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.dateN" for="field_dateN">Date N</label>
+                <div class="input-group">
+                    <input id="field_dateN" type="text" class="form-control" name="dateN" datetime-picker="{{dateformat}}" ng-model="vm.employe.dateN" is-open="vm.datePickerOpenStatus.dateN"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateN')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.dateN.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dateN.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.dateN.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.cin" for="field_cin">Cin</label>
+            <input type="number" class="form-control" name="cin" id="field_cin"
+                    ng-model="vm.employe.cin"
+                    required/>
+            <div ng-show="editForm.cin.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.cin.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.cin.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.sexe" for="field_sexe">Sexe</label>
+            <select class="form-control" name="sexe" ng-model="vm.employe.sexe" id="field_sexe">
+                <option value="HOMME" data-translate="qualiMakerApp.Sexe.HOMME">HOMME</option>
+                <option value="FEMME" data-translate="qualiMakerApp.Sexe.FEMME">FEMME</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.adress" for="field_adress">Adress</label>
+            <input type="text" class="form-control" name="adress" id="field_adress"
+                    ng-model="vm.employe.adress"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.gsm" for="field_gsm">Gsm</label>
+            <input type="number" class="form-control" name="gsm" id="field_gsm"
+                    ng-model="vm.employe.gsm"
+                    required/>
+            <div ng-show="editForm.gsm.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.gsm.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.gsm.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.lieuNais" for="field_lieuNais">Lieu Nais</label>
+            <input type="text" class="form-control" name="lieuNais" id="field_lieuNais"
+                    ng-model="vm.employe.lieuNais"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.telMais" for="field_telMais">Tel Mais</label>
+            <input type="number" class="form-control" name="telMais" id="field_telMais"
+                    ng-model="vm.employe.telMais"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.teleph" for="field_teleph">Teleph</label>
+            <input type="number" class="form-control" name="teleph" id="field_teleph"
+                    ng-model="vm.employe.teleph"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.delivrele" for="field_delivrele">Delivrele</label>
+                <div class="input-group">
+                    <input id="field_delivrele" type="text" class="form-control" name="delivrele" datetime-picker="{{dateformat}}" ng-model="vm.employe.delivrele" is-open="vm.datePickerOpenStatus.delivrele"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('delivrele')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.delivrea" for="field_delivrea">Delivrea</label>
+            <input type="text" class="form-control" name="delivrea" id="field_delivrea"
+                    ng-model="vm.employe.delivrea"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.employe.email"
+                    required/>
+            <div ng-show="editForm.email.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.email.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.matricule" for="field_matricule">Matricule</label>
+            <input type="number" class="form-control" name="matricule" id="field_matricule"
+                    ng-model="vm.employe.matricule"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.email2" for="field_email2">Email 2</label>
+            <input type="text" class="form-control" name="email2" id="field_email2"
+                    ng-model="vm.employe.email2"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.grade" for="field_grade">Grade</label>
+            <input type="text" class="form-control" name="grade" id="field_grade"
+                    ng-model="vm.employe.grade"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.rib" for="field_rib">Rib</label>
+            <input type="number" class="form-control" name="rib" id="field_rib"
+                    ng-model="vm.employe.rib"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.nsc" for="field_nsc">Nsc</label>
+            <input type="number" class="form-control" name="nsc" id="field_nsc"
+                    ng-model="vm.employe.nsc"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.competence" for="field_competence">Competence</label>
+            <input type="text" class="form-control" name="competence" id="field_competence"
+                    ng-model="vm.employe.competence"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.diplome" for="field_diplome">Diplome</label>
+            <input type="text" class="form-control" name="diplome" id="field_diplome"
+                    ng-model="vm.employe.diplome"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.experience" for="field_experience">Experience</label>
+            <input type="text" class="form-control" name="experience" id="field_experience"
+                    ng-model="vm.employe.experience"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.employe.aptphy" for="field_aptphy">Aptphy</label>
+            <input type="text" class="form-control" name="aptphy" id="field_aptphy"
+                    ng-model="vm.employe.aptphy"
+                    />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setImage($file, vm.employe)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="qualiMakerApp.employe.image" for="field_image">Image</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.employe.imageContentType + ';base64,' + vm.employe.image}}" style="max-height: 100px;" ng-if="vm.employe.image" alt="employe image"/>
+                <div ng-if="vm.employe.image" class="help-block clearfix">
+                    <span class="pull-left">{{vm.employe.imageContentType}}, {{vm.byteSize(vm.employe.image)}}</span>
+                    <button type="button" ng-click="vm.employe.image=null;vm.employe.imageContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setImage($file, vm.employe)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="image" id="field_image"
+                    ng-model="vm.employe.image"
+                    />
+            <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                    ng-model="vm.employe.imageContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setCv($file, vm.employe)">
+            <label class="control-label" data-translate="qualiMakerApp.employe.cv" for="field_cv">Cv</label>
+            <div>
+                <div ng-if="vm.employe.cv" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.employe.cvContentType, vm.employe.cv)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.employe.cvContentType}}, {{vm.byteSize(vm.employe.cv)}}</span>
+                    <button type="button" ng-click="vm.employe.cv=null;vm.employe.cvContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setCv($file, vm.employe)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="cv" id="field_cv"
+                    ng-model="vm.employe.cv"
+                    />
+            <input type="hidden" class="form-control" name="cvContentType" id="field_cvContentType"
+                    ng-model="vm.employe.cvContentType" />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.employe.carriere" for="field_carriere">Carriere</label>
+            <select class="form-control" id="field_carriere" name="carriere" ng-model="vm.employe.carriere" ng-options="carriere as carriere.id for carriere in vm.carrieres | orderBy:'id' track by carriere.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.employe.site" for="field_site">Site</label>
+            <select class="form-control" id="field_site" name="site" ng-model="vm.employe.site" ng-options="sites as sites.id for sites in vm.sites track by sites.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.employe.groupe" for="field_groupe">Groupe</label>
+            <select class="form-control" id="field_groupe" name="groupe" ng-model="vm.employe.groupe" ng-options="groupe as groupe.id for groupe in vm.groupes track by groupe.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.employe.abscence" for="field_abscence">Abscence</label>
+            <select class="form-control" id="field_abscence" name="abscence" ng-model="vm.employe.abscence" ng-options="abscence as abscence.id for abscence in vm.abscences track by abscence.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.employe.service" for="field_service">Service</label>
+            <select class="form-control" id="field_service" name="service" ng-model="vm.employe.service" ng-options="serviice as serviice.id for serviice in vm.serviices track by serviice.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.employe.formation" for="field_formation">Formation</label>
+            <select class="form-control" id="field_formation" multiple name="formation" ng-model="vm.employe.formations" ng-options="formation as formation.id for formation in vm.formations track by formation.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.employe.fonction" for="field_fonction">Fonction</label>
+            <select class="form-control" id="field_fonction" multiple name="fonction" ng-model="vm.employe.fonctions" ng-options="fonction as fonction.id for fonction in vm.fonctions track by fonction.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
+-->
+<!-- widget grid -->
+<section id="widget-grid" class=""  >
+
+    <!-- row -->
+
+
+    <!-- NEW WIDGET START -->
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-darken" id="wid-id-11" data-widget-editbutton="false" data-widget-deletebutton="false">
+        <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+        data-widget-colorbutton="false"
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true"
+        data-widget-sortable="false"
+
+        -->
+        <header>
+            <span class="widget-icon"> <i class="fa fa-check"></i> </span>
+            <h2>Ajouter ou Editer un Employé </h2>
+
+        </header>
+
+        <!-- widget div-->
+
+
+        <!-- widget edit box -->
+
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body">
+
+            <div class="row">
+                <div class="modal-header">
+                    <button type="button" class="close btn btn-danger" data-dismiss="modal" aria-hidden="true"
+                            ng-click="vm.clear()">&times;</button>
+                </div>
+                <form id="wizard-1" name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation >
+                    <div id="bootstrap-wizard-1" class="col-sm-12">
+                        <div class="form-bootstrapWizard" >
+                            <ul class="bootstrapWizard form-wizard" >
+                                <li class="active" data-target="#step1">
+                                    <a href="#tab1" data-toggle="tab"> <span class="step">1</span> <span class="title">Profil</span> </a>
+                                </li>
+                                <li data-target="#step2">
+                                    <a href="#tab2" data-toggle="tab"> <span class="step">2</span> <span class="title">Contacts</span> </a>
+                                </li>
+                                <li data-target="#step3">
+                                    <a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Carrière</span> </a>
+                                </li>
+
+                                <li data-target="#step4">
+                                    <a href="#tab4" data-toggle="tab"> <span class="step">4</span> <span class="title">Enregistrer</span> </a>
+                                </li>
+
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tab1">
+                                <br>
+                                <h3><strong> 1 </strong><b> .Profil</b></h3>
+
+                                <div class="well" style="width: 100%; height: 300px;overflow-x:hidden; overflow-y:  scroll;">
+
+
+                                    <div  >
+                                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-5">
+
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-user fa-lg fa-fw"></i></span>
+                                                    <input type="text" class="form-control input-lg " placeholder="Nom" name="nom" id="field_nom"
+                                                           ng-model="vm.employe.nom" required/>
+                                                    <!--required-->
+
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-user fa-lg fa-fw"></i></span>
+                                                    <input type="text" class="form-control  input-lg" placeholder="Prénom" name="prenom" id="field_prenom"
+                                                           ng-model="vm.employe.prenom"
+                                                           required/><!--required-->
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-user fa-lg fa-fw"></i></span>
+                                                    <select class="form-control input-lg" name="sexe"  value=="Sexe" ng-model="vm.employe.sexe" id="field_sexe">
+
+                                                        <option  selected value="HOMME" data-translate="qualiMakerApp.Sexe.HOMME">HOMME</option>
+                                                        <option value="FEMME" data-translate="qualiMakerApp.Sexe.FEMME">FEMME</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                         <span class="input-group-addon">
+                                                                      <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateN')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                                     </span>
+
+                                                    <input id="field_dateN" type="text" class="form-control input-lg" placeholder="Date de Naissance" name="dateN" datetime-picker="{{dateformat}}" ng-model="vm.employe.dateN" is-open="vm.datePickerOpenStatus.dateN"
+                                                           required/><!--required-->
+                                                    <div ng-show="editForm.dateN.$invalid">
+                                                        <p class="help-block"
+                                                           ng-show="editForm.dateN.$error.required" data-translate="entity.validation.required">
+                                                            This field is required.
+                                                        </p>
+                                                        <p class="help-block"
+                                                           ng-show="editForm.dateN.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                                                            This field should be a date and time.
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">
+
+                                                    <span class="input-group-addon"><i class="fa  fa-map-marker fa-lg fa-fw"></i></span>
+                                                    <input type="text" class="form-control input-lg" placeholder="Lieux de Naissance" name="lieuNais" id="field_lieuNais"
+                                                           ng-model="vm.employe.lieuNais"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa  fa-tags fa-lg fa-fw"></i></span>
+                                                    <input type="number" class="form-control input-lg "placeholder="C.I.N" name="cin" id="field_cin"
+                                                           ng-model="vm.employe.cin"
+                                                           required/><!--required-->
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <div class="input-group">
+
+                                                                <span class="input-group-addon">
+                                                                    <button type="button" class="btn btn-default" ng-click="vm.openCalendar('delivrele')"><i class="glyphicon glyphicon-calendar"></i></button>
+
+                                                                  </span>
+                                                    <input id="field_delivrele" type="text" class="form-control input-lg" placeholder="Délivrer le"  name="delivrele" datetime-picker="{{dateformat}}" ng-model="vm.employe.delivrele" is-open="vm.datePickerOpenStatus.delivrele"
+                                                    />
+
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-map-marker fa-lg fa-fw"></i></span>
+
+                                                    <input type="text" class="form-control input-lg" placeholder="Délivrer à" name="delivrea" id="field_delivrea"
+                                                           ng-model="vm.employe.delivrea"
+                                                    />
+                                                </div>
+                                            </div>
+
+
+
+
+
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6  col-lg-6">
+
+
+                                           <!-- <img src="content/images/profileTof.jpg" style="max-height: 200px;" ng-if="vm.employe.image" alt="employe image"/>-->
+
+
+                                            <div ngf-drop ngf-change="vm.setImage($file, vm.employe)" ngf-pattern="'image/*'">
+                                                <!-- <label class="control-label" data-translate="qualiMakerApp.employe.image" for="field_image">Image</label>-->
+                                               <div class="row">
+                                                   <div class="col-xs-2" >
+                                                   </div>
+                                                   <div class="col-xs-8" >
+                                                       <div>
+                                                           <div ng-if="vm.employe.image" class="help-block clearfix">
+                                                               <span class="pull-left">{{vm.employe.imageContentType}}, {{vm.byteSize(vm.employe.image)}}</span>
+                                                               <button type="button" ng-click="vm.employe.image=null;vm.employe.imageContentType=null;"
+                                                                       class="btn btn-danger btn-xs pull-right">
+                                                                   <span class="glyphicon glyphicon-remove"></span>
+                                                               </button>
+                                                           </div>
+                                                           <img  data-ng-src="{{'data:' + vm.employe.imageContentType + ';base64,' + vm.employe.image}}"  src="content/images/profileTof.png" height="250" width="230" />
+
+                                                           <div class="help-block clearfix">
+                                                           </div>
+                                                           <button type="button" ngf-select class="btn btn-info btn-lg btn-block"
+                                                                   ngf-change="vm.setImage($file, vm.employe)" accept="image/*" >
+                                                               <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.addimage">  Add image</span>
+
+                                                           </button>
+                                                       </div>
+                                                       <input type="hidden" class="form-control" name="image" id="field_image"
+                                                              ng-model="vm.employe.image"
+                                                       />
+                                                       <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                                                              ng-model="vm.employe.imageContentType" />
+
+                                                   </div>
+                                                   <div class="col-xs-2" >
+                                                   </div>
+
+
+                                               </div>
+
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <ul class="pager wizard no-margin">
+                                                <!--<li class="previous first disabled">
+                                                <a href="javascript:void(0);" class="btn btn-lg btn-default"> First </a>
+                                                </li>-->
+                                                <li class="previous disabled">
+                                                    <a href="javascript:void(0);" class="btn btn-lg btn-default"> Après </a>
+                                                </li>
+                                                <!--<li class="next last">
+                                                <a href="javascript:void(0);" class="btn btn-lg btn-primary"> Last </a>
+                                                </li>-->
+                                                <li class="next">
+                                                    <a href="javascript:void(0);" class="btn btn-lg txt-color-darken"> Suivant </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane" id="tab2">
+                                <br>
+                                <h3><strong>2</strong>.Contacts</h3>
+<div class="well">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-mobile fa-lg fa-fw"></i></span>
+                                                <input type="number" class="form-control input-lg"  placeholder="GSM" name="gsm" id="field_gsm"
+                                                       ng-model="vm.employe.gsm"
+                                                       required />         <!--required-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa  fa-phone fa-lg fa-fw"></i></span>
+                                                <input type="number" class="form-control input-lg"  placeholder="Telephone"name="teleph" id="field_teleph"
+                                                       ng-model="vm.employe.teleph"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-envelope fa-lg fa-fw"></i></span>
+                                                <input type="text" class="form-control input-lg"  placeholder="Email" name="email" id="field_email"
+                                                       ng-model="vm.employe.email"required/>
+                                                <!--required-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa  fa-envelope fa-lg fa-fw"></i></span>
+                                                <input type="text" class="form-control input-lg"  placeholder="Eail 2"name="email2" id="field_email2"
+                                                       ng-model="vm.employe.email2"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa  fa-map-marker fa-lg fa-fw"></i></span>
+                                                <input type="text" class="form-control input-lg" placeholder="Adresee"name="adress" id="field_adress"
+                                                       ng-model="vm.employe.adress"
+                                                />
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa  fa-phone-square fa-lg fa-fw"></i></span>
+                                                <input type="number" class="form-control input-lg" placeholder="Tephone Fix"name="telMais" id="field_telMais"
+                                                       ng-model="vm.employe.telMais"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+</div>
+
+
+
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <ul class="pager wizard no-margin">
+                                                <!--<li class="previous first disabled">
+                                                <a href="javascript:void(0);" class="btn btn-lg btn-default"> First </a>
+                                                </li>-->
+                                                <li class="previous disabled">
+                                                    <a href="javascript:void(0);" class="btn btn-lg btn-default"> Après </a>
+                                                </li>
+                                                <!--<li class="next last">
+                                                <a href="javascript:void(0);" class="btn btn-lg btn-primary"> Last </a>
+                                                </li>-->
+                                                <li class="next">
+                                                    <a href="javascript:void(0);" class="btn btn-lg txt-color-darken"> Suivant </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="tab-pane" id="tab3">
+                                <br>
+                                <h3><strong>3</strong>.Carrière</h3>
+                                <div class="well" style="width: 100%; height: 300px;overflow-x:hidden; overflow-y:  scroll;">
+
+                                    <div class=row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa   fa-lg fa-fw"></i></span>
+
+                                                    <input type="number" class="form-control input-lg" placeholder="Matricule" name="matricule" id="field_matricule"
+                                                           ng-model="vm.employe.matricule"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa   fa-lg fa-fw"></i></span>
+
+
+                                                    <input type="text" class="form-control input-lg" placeholder="Grade" name="grade" id="field_grade"
+                                                           ng-model="vm.employe.grade"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa   fa-credit-card fa-lg fa-fw"></i></span>
+
+                                                    <input type="number" class="form-control input-lg" placeholder="RIB"name="rib" id="field_rib"
+                                                           ng-model="vm.employe.rib"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa  fa-unlock-alt fa-lg fa-fw"></i></span>
+
+                                                    <input type="number" class="form-control input-lg" placeholder="Numéro de sécurité sociel" name="nsc" id="field_nsc"
+                                                           ng-model="vm.employe.nsc"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-graduation-cap fa-lg fa-fw"></i></span>
+
+                                                    <input type="text" class="form-control input-lg" placeholder="Diplôme" name="diplome" id="field_diplome"
+                                                           ng-model="vm.employe.diplome"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+
+                                            <div class="form-group" ngf-drop ngf-change="vm.setCv($file, vm.employe)">
+                                                <!--  <label class="control-label" data-translate="qualiMakerApp.employe.cv" for="field_cv">Cv</label>-->
+                                                <div>
+                                                    <div ng-if="vm.employe.cv" class="help-block clearfix">
+                                                        <a class="pull-left" ng-click="vm.openFile(vm.employe.cvContentType, vm.employe.cv)" data-translate="entity.action.open">open</a><br>
+                                                        <span class="pull-left">{{vm.employe.cvContentType}}, {{vm.byteSize(vm.employe.cv)}}</span>
+                                                        <button type="button" ng-click="vm.employe.cv=null;vm.employe.cvContentType=null;"
+                                                                class="btn btn-default btn-xs pull-right">
+                                                            <span class="glyphicon glyphicon-remove"></span>
+                                                        </button>
+                                                    </div>
+                                                    <button type="button" ngf-select class="btn btn-info btn-lg btn-block"
+                                                            ngf-change="vm.setCv($file, vm.employe)" data-translate="entity.action.addblob">
+                                                        Ajouter CV
+                                                    </button>
+                                                </div>
+                                                <input type="hidden" class="form-control" name="cv" id="field_cv"
+                                                       ng-model="vm.employe.cv"
+                                                />
+                                                <input type="hidden" class="form-control" name="cvContentType" id="field_cvContentType"
+                                                       ng-model="vm.employe.cvContentType" />
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-graduation-cap fa-lg fa-fw"></i></span>
+                                                    <input type="text" class="form-control input-lg"  placeholder="Compétence"name="competence" id="field_competence"
+                                                           ng-model="vm.employe.competence"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-briefcase fa-lg fa-fw"></i></span>
+
+                                                    <input type="text" class="form-control input-lg"  placeholder="Expérience"name="experience" id="field_experience"
+                                                           ng-model="vm.employe.experience"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-graduation-cap fa-lg fa-fw"></i></span>
+
+
+                                                    <input type="text" class="form-control input-lg" placeholder="Aptitude physique" name="aptphy" id="field_aptphy"
+                                                           ng-model="vm.employe.aptphy"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-actions">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <ul class="pager wizard no-margin">
+                                                <!--<li class="previous first disabled">
+                                                <a href="javascript:void(0);" class="btn btn-lg btn-default"> First </a>
+                                                </li>-->
+                                                <li class="previous disabled">
+                                                    <a href="javascript:void(0);" class="btn btn-lg btn-default"> Après </a>
+                                                </li>
+                                                <!--<li class="next last">
+                                                <a href="javascript:void(0);" class="btn btn-lg btn-primary"> Last </a>
+                                                </li>-->
+                                                <li class="next">
+                                                    <a href="javascript:void(0);" class="btn btn-lg txt-color-darken"> Suivant </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+
+
+                            <div class="tab-pane" id="tab4" >
+                                <br>
+                                <h3><strong> 4</strong> .Enregistrer</h3>
+                                <br>
+                                <h1 class="text-center text-success"><strong><i class="fa fa-check fa-lg"></i> Complète</strong></h1>
+                                <h4 class="text-center">Cliquer Sauvgarder pour terminer </h4>
+                                <br>
+                                <br>
+
+                                <div class="form-actions">
+
+                                    <div class="row" novalidate ng-submit="vm.save()">
+                                        <div class="col-sm-12">
+                                            <ul class="pager wizard no-margin">
+                                                <!--<li class="previous first disabled">
+                                                <a href="javascript:void(0);" class="btn btn-lg btn-default"> First </a>
+                                                </li>-->
+                                                <li class="previous disabled">
+                                                    <a href="javascript:void(0);" class="btn btn-lg btn-default"> Aprés </a>
+                                                </li>
+                                                <!--<li class="next last">
+                                                <a href="javascript:void(0);" class="btn btn-lg btn-primary"> Last </a>
+                                                </li>-->
+                                                <li>
+
+
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="vm.clear()">
+                                                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-success">
+                                                        <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+                                                    </button>
+
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- end widget content -->
+        <!-- end widget div -->
+
+    </div>
+
+</section>
+
+
+<script src="content/js/plugin/msie-fix/jquery.mb.browser.min.js"></script>
+
+<!-- FastClick: For mobile devices -->
+<script src="content/js/plugin/fastclick/fastclick.min.js"></script>
+
+<!--[if IE 8]>
+
+
+<![endif]-->
+
+<!-- Demo purpose only -->
+<script src="content/js/plugin/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+<script src="content/js/plugin/fuelux/wizard/wizard.min.js"></script>
+<script type="text/javascript">
+
+    // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+    $(document).ready(function() {
+
+        pageSetUp();
+
+
+
+        //Bootstrap Wizard Validations
+
+        var $validator = $("#wizard-1").validate({
+
+            rules: {
+
+                field_nom:{
+                    required: true
+
+                },
+                field_prenom:{
+                    required: true
+
+                },
+                fname: {
+                    required: true
+                },
+                lname: {
+                    required: true
+                },
+                country: {
+                    required: true
+                },
+                city: {
+                    required: true
+                },
+                postal: {
+                    required: true,
+                    minlength: 4
+                },
+                wphone: {
+                    required: true,
+                    minlength: 10
+                },
+                hphone: {
+                    required: true,
+                    minlength: 10
+                }
+            },
+
+            messages: {
+                field_nom:"le champ est obligatoire",
+                field_prenom:"le champ est obligatoire",
+
+                fname: "Please specify your First name",
+                lname: "Please specify your Last name",
+                email: {
+                    required: "We need your email address to contact you",
+                    email: "Your email address must be in the format of name@domain.com"
+                }
+            },
+
+            highlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+            },
+            unhighlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+            },
+            errorElement: 'span',
+            errorClass: 'help-block',
+            errorPlacement: function (error, element) {
+                if (element.parent('.input-group').length) {
+                    error.insertAfter(element.parent());
+                } else {
+                    error.insertAfter(element);
+                }
+            }
+        });
+
+        $('#bootstrap-wizard-1').bootstrapWizard({
+            'tabClass': 'form-wizard',
+            'onNext': function (tab, navigation, index) {
+                var $valid = $("#wizard-1").valid();
+                if (!$valid) {
+                    $validator.focusInvalid();
+                    return false;
+                } else {
+                    $('#bootstrap-wizard-1').find('.form-wizard').children('li').eq(index - 1).addClass(
+                        'complete');
+                    $('#bootstrap-wizard-1').find('.form-wizard').children('li').eq(index - 1).find('.step')
+                        .html('<i class="fa fa-check"></i>');
+                }
+            }
+        });
+
+
+        // fuelux wizard
+        var wizard = $('.wizard').wizard();
+
+        wizard.on('finished', function (e, data) {
+            //$("#fuelux-wizard").submit();
+            //console.log("submitted!");
+            $.smallBox({
+                title: "Congratulations! Your form was submitted",
+                content: "<i class='fa fa-clock-o'></i> <i>1 seconds ago...</i>",
+                color: "#5F895F",
+                iconSmall: "fa fa-check bounce animated",
+                timeout: 4000
+            });
+
+        });
+
+
+    })
+
+</script>
+
+<!-- Your GOOGLE ANALYTICS CODE Below -->
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+<script type="text/javascript">
+
+    // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+    $(document).ready(function() {
+
+        pageSetUp();
+
+
+
+        //Bootstrap Wizard Validations
+
+        var $validator = $("#wizard-1").validate({
+
+            rules: {
+
+                field_nom:{
+                    required: true
+
+                },
+                field_prenom:{
+                    required: true
+
+                },
+                fname: {
+                    required: true
+                },
+                lname: {
+                    required: true
+                },
+                country: {
+                    required: true
+                },
+                city: {
+                    required: true
+                },
+                postal: {
+                    required: true,
+                    minlength: 4
+                },
+                wphone: {
+                    required: true,
+                    minlength: 10
+                },
+                hphone: {
+                    required: true,
+                    minlength: 10
+                }
+            },
+
+            messages: {
+                field_nom:"le champ est obligatoire",
+                field_prenom:"le champ est obligatoire",
+
+                fname: "Please specify your First name",
+                lname: "Please specify your Last name",
+                email: {
+                    required: "We need your email address to contact you",
+                    email: "Your email address must be in the format of name@domain.com"
+                }
+            },
+
+            highlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+            },
+            unhighlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+            },
+            errorElement: 'span',
+            errorClass: 'help-block',
+            errorPlacement: function (error, element) {
+                if (element.parent('.input-group').length) {
+                    error.insertAfter(element.parent());
+                } else {
+                    error.insertAfter(element);
+                }
+            }
+        });
+
+        $('#bootstrap-wizard-1').bootstrapWizard({
+            'tabClass': 'form-wizard',
+            'onNext': function (tab, navigation, index) {
+                var $valid = $("#wizard-1").valid();
+                if (!$valid) {
+                    $validator.focusInvalid();
+                    return false;
+                } else {
+                    $('#bootstrap-wizard-1').find('.form-wizard').children('li').eq(index - 1).addClass(
+                        'complete');
+                    $('#bootstrap-wizard-1').find('.form-wizard').children('li').eq(index - 1).find('.step')
+                        .html('<i class="fa fa-check"></i>');
+                }
+            }
+        });
+
+
+        // fuelux wizard
+        var wizard = $('.wizard').wizard();
+
+        wizard.on('finished', function (e, data) {
+            //$("#fuelux-wizard").submit();
+            //console.log("submitted!");
+            $.smallBox({
+                title: "Congratulations! Your form was submitted",
+                content: "<i class='fa fa-clock-o'></i> <i>1 seconds ago...</i>",
+                color: "#5F895F",
+                iconSmall: "fa fa-check bounce animated",
+                timeout: 4000
+            });
+
+        });
+
+
+    })
+
+</script>

@@ -134,9 +134,6 @@ public class Employe implements Serializable {
     private Groupe groupe;
 
     @ManyToOne
-    private Abscence abscence;
-
-    @ManyToOne
     private Serviice service;
 
     @ManyToMany
@@ -561,19 +558,6 @@ public class Employe implements Serializable {
 
     public void setGroupe(Groupe groupe) {
         this.groupe = groupe;
-    }
-
-    public Abscence getAbscence() {
-        return abscence;
-    }
-
-    public Employe abscence(Abscence abscence) {
-        this.abscence = abscence;
-        return this;
-    }
-
-    public void setAbscence(Abscence abscence) {
-        this.abscence = abscence;
     }
 
     public Serviice getService() {

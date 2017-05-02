@@ -117,7 +117,7 @@ public class FormationResource {
     @Timed
     public ResponseEntity<Formation> getFormation(@PathVariable Long id) {
         log.debug("REST request to get Formation : {}", id);
-        Formation formation = formationRepository.findOne(id);
+        Formation formation = formationRepository.findOneWithEagerRelationships(id);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(formation));
     }
 

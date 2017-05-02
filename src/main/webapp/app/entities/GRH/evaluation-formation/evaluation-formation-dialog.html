@@ -1,0 +1,548 @@
+
+<section id="widget-grid" class=""  >
+
+    <!-- row -->
+
+
+    <!-- NEW WIDGET START -->
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-magenta" id="wid-id-58" data-widget-editbutton="false" data-widget-deletebutton="false">
+        <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+        data-widget-colorbutton="false"
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true"
+        data-widget-sortable="false"
+
+        -->
+        <header>
+            <span class="widget-icon"> <i class="fa fa-check"></i> </span>
+            <h2 class="modal-title" id="myEvaluationFormationLabel" data-translate="qualiMakerApp.evaluationFormation.home.createOrEditLabel">Create or edit a Evaluation Formation</h2>
+
+        </header>
+
+        <!-- widget div-->
+
+
+        <!-- widget edit box -->
+
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body ">
+
+
+        <form name="editForm" role="form" novalidate ng-submit="vm.savee()" show-validation ng-switch="vm.isAuthenticated()">
+
+    <div class="modal-header ">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4></h4>
+    </div>
+    <div class="modal-body well" style="width: 100%; height: 300px;overflow-x:hidden; overflow-y:  scroll;">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.evaluationFormation.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.evaluationFormation.id" readonly />
+        </div>
+
+                        <div class="row">
+                            <article class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.matricuel" for="field_matricuel">Matricuel</label>
+                                    <input type="number" class="form-control" name="matricuel" id="field_matricuel"
+                                           ng-model="vm.evaluationFormation.matricuel"
+                                    />
+                                </div>
+                            </article>
+                            <article class="col-md-6">
+                                <div class="form-group">
+                                    <label data-translate="qualiMakerApp.evaluationFormation.formation" for="field_formation">Formation</label>
+                                    <select class="form-control" id="field_formation" name="formation" ng-model="vm.evaluationFormation.formation" ng-options="formation as formation.titre for formation in vm.formations track by formation.id">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="row">
+                                <article class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa  fa-sort-numeric-asc fa-fw"></i></span>
+
+                                            <input type="number" class="form-control" name="refaire" id="field_refaire"
+                                                   placeholder="{{'qualiMakerApp.evaluationFormation.refaire' |translate}}"
+                                               ng-model="vm.evaluationFormation.refaire"
+                                               min="0" max="5"/>
+                                        </div>
+                                        <div ng-show="editForm.refaire.$invalid">
+                                            <p class="help-block"
+                                               ng-show="editForm.refaire.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                                                This field should be at least 0.
+                                            </p>
+                                            <p class="help-block"
+                                               ng-show="editForm.refaire.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                                                This field cannot be more than 5.
+                                            </p>
+                                            <p class="help-block"
+                                               ng-show="editForm.refaire.$error.number" data-translate="entity.validation.number">
+                                                This field should be a number.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="col-md-4">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa  fa-sort-numeric-asc fa-fw"></i></span>
+
+                                        <input type="number" class="form-control" name="afroid" id="field_afroid"
+                                               ng-model="vm.evaluationFormation.afroid"
+                                               placeholder="{{'qualiMakerApp.evaluationFormation.afroid' |translate}}"
+                                               min="0" max="5"/>
+                                        </div>
+                                        <div ng-show="editForm.afroid.$invalid">
+                                            <p class="help-block"
+                                               ng-show="editForm.afroid.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                                                This field should be at least 0.
+                                            </p>
+                                            <p class="help-block"
+                                               ng-show="editForm.afroid.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                                                This field cannot be more than 5.
+                                            </p>
+                                            <p class="help-block"
+                                               ng-show="editForm.afroid.$error.number" data-translate="entity.validation.number">
+                                                This field should be a number.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="col-sm-4">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa  fa-sort-numeric-asc fa-fw"></i></span>
+
+                                            <input type="number" class="form-control" name="achaud" id="field_achaud"
+                                               ng-model="vm.evaluationFormation.achaud"  placeholder="{{'qualiMakerApp.evaluationFormation.achaud' |translate}}"
+                                               min="0" max="5"/>
+                                        </div>
+                                        <div ng-show="editForm.achaud.$invalid">
+                                            <p class="help-block"
+                                               ng-show="editForm.achaud.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                                                This field should be at least 0.
+                                            </p>
+                                            <p class="help-block"
+                                               ng-show="editForm.achaud.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                                                This field cannot be more than 5.
+                                            </p>
+                                            <p class="help-block"
+                                               ng-show="editForm.achaud.$error.number" data-translate="entity.validation.number">
+                                                This field should be a number.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </article>
+
+                            </div>
+                        <div class="row">
+                            <article class="col-md-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa  fa-sort-numeric-asc fa-fw"></i></span>
+                                    <input type="number" class="form-control" name="effectue" id="field_effectue"
+                                           ng-model="vm.evaluationFormation.effectue" placeholder="{{'qualiMakerApp.evaluationFormation.effectue' |translate}}"
+                                           min="0" max="5"/>
+                                    </div>
+                                    <div ng-show="editForm.effectue.$invalid">
+                                        <p class="help-block"
+                                           ng-show="editForm.effectue.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                                            This field should be at least 0.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.effectue.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                                            This field cannot be more than 5.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.effectue.$error.number" data-translate="entity.validation.number">
+                                            This field should be a number.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </article>
+                            <article class="col-md-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa  fa-sort-numeric-asc fa-fw"></i></span>
+                                    <input type="number" class="form-control" name="methodologie" id="field_methodologie"
+                                           ng-model="vm.evaluationFormation.methodologie" placeholder="{{'qualiMakerApp.evaluationFormation.methodologie' |translate}}"
+                                           min="0" max="5"/>
+                                    </div>
+                                    <div ng-show="editForm.methodologie.$invalid">
+                                        <p class="help-block"
+                                           ng-show="editForm.methodologie.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                                            This field should be at least 0.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.methodologie.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                                            This field cannot be more than 5.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.methodologie.$error.number" data-translate="entity.validation.number">
+                                            This field should be a number.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="col-md-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa  fa-sort-numeric-asc fa-fw"></i></span>
+                                    <input type="number" class="form-control" name="competece" id="field_competece"
+                                           ng-model="vm.evaluationFormation.competece" placeholder="{{'qualiMakerApp.evaluationFormation.competece' |translate}}"
+                                           min="0" max="5"/>
+                                    </div>
+                                    <div ng-show="editForm.competece.$invalid">
+                                        <p class="help-block"
+                                           ng-show="editForm.competece.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                                            This field should be at least 0.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.competece.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                                            This field cannot be more than 5.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.competece.$error.number" data-translate="entity.validation.number">
+                                            This field should be a number.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </article>
+                        </div>
+                        <div class="row">
+                            <article class="col-md-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa  fa-sort-numeric-asc fa-fw"></i></span>
+
+                                    <input type="number" class="form-control" name="ambiace" id="field_ambiace"placeholder="{{'qualiMakerApp.evaluationFormation.ambiace' |translate}}"
+                                           ng-model="vm.evaluationFormation.ambiace"
+                                           min="0" max="5"/>
+                                    </div>
+                                    <div ng-show="editForm.ambiace.$invalid">
+                                        <p class="help-block"
+                                           ng-show="editForm.ambiace.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                                            This field should be at least 0.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.ambiace.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                                            This field cannot be more than 5.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.ambiace.$error.number" data-translate="entity.validation.number">
+                                            This field should be a number.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </article>
+                            <article class="col-md-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa  fa-sort-numeric-asc fa-fw"></i></span>
+                                        <input type="number" class="form-control" name="animation" id="field_animation"
+                                           ng-model="vm.evaluationFormation.animation"
+                                           placeholder="{{'qualiMakerApp.evaluationFormation.animation' |translate}}"
+                                           min="0" max="5"/>
+                                    </div>
+                                    <div ng-show="editForm.animation.$invalid">
+                                        <p class="help-block"
+                                           ng-show="editForm.animation.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                                            This field should be at least 0.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.animation.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                                            This field cannot be more than 5.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.animation.$error.number" data-translate="entity.validation.number">
+                                            This field should be a number.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="col-md-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa  fa-sort-numeric-asc fa-fw"></i></span>
+                                        <input type="number" class="form-control" name="lieu" id="field_lieu"placeholder="{{'qualiMakerApp.evaluationFormation.lieu' |translate}}"
+
+                                           ng-model="vm.evaluationFormation.lieu"
+                                           min="0" max="5"/>
+                                    </div>
+                                    <div ng-show="editForm.lieu.$invalid">
+                                        <p class="help-block"
+                                           ng-show="editForm.lieu.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                                            This field should be at least 0.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.lieu.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                                            This field cannot be more than 5.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.lieu.$error.number" data-translate="entity.validation.number">
+                                            This field should be a number.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </article>
+                        </div>
+                        <div class="row">
+                            <article class="col-md-4">
+                            </article>
+                            <article class="col-md-4">
+                            </article>
+                            <article class="col-md-4">
+                            </article>
+                        </div>
+                        <div class="row">
+                            <article class="col-md-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa  fa-sort-numeric-asc fa-fw"></i></span>
+                                    <input type="number" class="form-control" name="supportcours" id="field_supportcours"placeholder="{{'qualiMakerApp.evaluationFormation.supportcours' |translate}}"
+
+                                           ng-model="vm.evaluationFormation.supportcours"
+                                           min="0" max="5"/>
+                                    </div>
+                                    <div ng-show="editForm.supportcours.$invalid">
+                                        <p class="help-block"
+                                           ng-show="editForm.supportcours.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                                            This field should be at least 0.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.supportcours.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                                            This field cannot be more than 5.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.supportcours.$error.number" data-translate="entity.validation.number">
+                                            This field should be a number.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="col-md-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa  fa-sort-numeric-asc fa-fw"></i></span>
+                                        <input type="number" class="form-control" name="contnucours" id="field_contnucours"placeholder="{{'qualiMakerApp.evaluationFormation.contnucours' |translate}}"
+                                           ng-model="vm.evaluationFormation.contnucours"
+                                           min="0" max="5"/>
+                                    </div>
+                                    <div ng-show="editForm.contnucours.$invalid">
+                                        <p class="help-block"
+                                           ng-show="editForm.contnucours.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                                            This field should be at least 0.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.contnucours.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                                            This field cannot be more than 5.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.contnucours.$error.number" data-translate="entity.validation.number">
+                                            This field should be a number.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="col-md-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa  fa-sort-numeric-asc fa-fw"></i></span>
+                                    <input type="number" class="form-control" name="traveauxp" id="field_traveauxp"
+                                           ng-model="vm.evaluationFormation.traveauxp"placeholder="{{'qualiMakerApp.evaluationFormation.traveauxp' |translate}}"
+
+                                           min="0" max="5"/>
+                                    </div>
+                                    <div ng-show="editForm.traveauxp.$invalid">
+                                        <p class="help-block"
+                                           ng-show="editForm.traveauxp.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                                            This field should be at least 0.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.traveauxp.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                                            This field cannot be more than 5.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.traveauxp.$error.number" data-translate="entity.validation.number">
+                                            This field should be a number.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="row">
+                            <article class="col-md-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa  fa-sort-numeric-asc fa-fw"></i></span>
+                                    <input type="number" class="form-control" name="duree" id="field_duree"
+                                           ng-model="vm.evaluationFormation.duree" placeholder="{{'qualiMakerApp.evaluationFormation.duree' |translate}}"
+                                           min="0" max="5"/>
+                                    </div>
+                                    <div ng-show="editForm.duree.$invalid">
+                                        <p class="help-block"
+                                           ng-show="editForm.duree.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                                            This field should be at least 0.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.duree.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                                            This field cannot be more than 5.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.duree.$error.number" data-translate="entity.validation.number">
+                                            This field should be a number.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </article>
+                            <article class="col-md-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa  fa-sort-numeric-asc fa-fw"></i></span>
+                                        <input type="number" class="form-control" name="objectif" id="field_objectif"
+                                           ng-model="vm.evaluationFormation.objectif" placeholder="{{'qualiMakerApp.evaluationFormation.objectif' |translate}}"
+                                           min="0" max="5"/>
+                                    </div>
+                                    <div ng-show="editForm.objectif.$invalid">
+                                        <p class="help-block"
+                                           ng-show="editForm.objectif.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                                            This field should be at least 0.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.objectif.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                                            This field cannot be more than 5.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.objectif.$error.number" data-translate="entity.validation.number">
+                                            This field should be a number.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </article>
+                            <article class="col-md-4">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa  fa-sort-numeric-asc fa-fw"></i></span>
+
+                                    <input type="number" class="form-control" name="respecthoraire" id="field_respecthoraire"
+                                           ng-model="vm.evaluationFormation.respecthoraire" placeholder="{{'qualiMakerApp.evaluationFormation.respecthoraire' |translate}}"
+                                           min="0" max="5"/>
+                                    </div>
+                                    <div ng-show="editForm.respecthoraire.$invalid">
+                                        <p class="help-block"
+                                           ng-show="editForm.respecthoraire.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                                            This field should be at least 0.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.respecthoraire.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                                            This field cannot be more than 5.
+                                        </p>
+                                        <p class="help-block"
+                                           ng-show="editForm.respecthoraire.$error.number" data-translate="entity.validation.number">
+                                            This field should be a number.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </article>
+                        </div>
+
+
+
+
+
+
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.evaluerpar" for="field_evaluerpar">Evaluerpar</label>
+            <input type="text" class="form-control" name="evaluerpar" id="field_evaluerpar"
+
+                    ng-model="vm.evaluationFormation.evaluerpar" min="0" max="5"
+                    />
+        </div>
+
+
+        <div class="row">
+            <article class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.efficace" for="field_efficace">Efficace</label>
+                    <input type="checkbox" name="efficace" id="field_efficace"
+                           ng-model="vm.evaluationFormation.efficace"/>
+                </div>
+            </article>
+            <article class="col-md-8">
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa  fa-sort-numeric-asc fa-fw"></i></span>
+
+                <input type="number" class="form-control" name="dateprevu" id="field_dateprevu"
+                    ng-model="vm.evaluationFormation.dateprevu" placeholder="{{'qualiMakerApp.evaluationFormation.dateprevu'|translate}}"
+                    />
+            </div>
+
+            <div ng-show="editForm.respecthoraire.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.respecthoraire.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.respecthoraire.$error.max" data-translate="entity.validation.max" translate-value-max="5">
+                    This field cannot be more than 5.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.respecthoraire.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+            </article>
+
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.evaluationFormation.commentaire" for="field_commentaire">Commentaire</label>
+            <input type="text" class="form-control" name="commentaire" id="field_commentaire"
+                    ng-model="vm.evaluationFormation.commentaire"
+                    />
+        </div>
+
+
+
+
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-success">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
+        </div>
+    </div>
+</section>

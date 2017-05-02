@@ -1,0 +1,318 @@
+
+<!--
+<div>
+    <h2 data-translate="qualiMakerApp.demandeFormation.home.title">Demande Formations</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="demande-formation.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="qualiMakerApp.demandeFormation.home.createLabel">
+                        Create new Demande Formation
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'qualiMakerApp.demandeFormation.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="theme"><span data-translate="qualiMakerApp.demandeFormation.theme">Theme</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dateDemande"><span data-translate="qualiMakerApp.demandeFormation.dateDemande">Date Demande</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="datesouhaite"><span data-translate="qualiMakerApp.demandeFormation.datesouhaite">Datesouhaite</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="nombresjours"><span data-translate="qualiMakerApp.demandeFormation.nombresjours">Nombresjours</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="description"><span data-translate="qualiMakerApp.demandeFormation.description">Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="justification"><span data-translate="qualiMakerApp.demandeFormation.justification">Justification</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="etatD"><span data-translate="qualiMakerApp.demandeFormation.etatD">Etat D</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="empploye.id"><span data-translate="qualiMakerApp.demandeFormation.empploye">Empploye</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="demandeFormation in vm.demandeFormations track by demandeFormation.id">
+                    <td><a ui-sref="demande-formation-detail({id:demandeFormation.id})">{{demandeFormation.id}}</a></td>
+                    <td>{{demandeFormation.theme}}</td>
+                    <td>{{demandeFormation.dateDemande | date:'medium'}}</td>
+                    <td>{{demandeFormation.datesouhaite | date:'medium'}}</td>
+                    <td>{{demandeFormation.nombresjours}}</td>
+                    <td>{{demandeFormation.description}}</td>
+                    <td>{{demandeFormation.justification}}</td>
+                    <td data-translate="{{'qualiMakerApp.ED.' + demandeFormation.etatD}}">{{demandeFormation.etatD}}</td>
+                    <td>
+                        <a ui-sref="employe-detail({id:demandeFormation.empploye.id})">{{demandeFormation.empploye.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="demande-formation-detail({id:demandeFormation.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="demande-formation.edit({id:demandeFormation.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="demande-formation.delete({id:demandeFormation.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>
+-->
+
+
+<div class="well">
+
+    <!-- RIBBON -->
+    <!-- END RIBBON -->
+
+    <!-- MAIN CONTENT -->
+    <div id="content">
+
+        <div class="row">
+            <div >
+                <h1 class="page-title txt-color-blueDark">
+                    <i class="fa fa-table fa-fw "></i>
+                    G.R.H
+                    <span>>
+								Demande formation
+							</span>
+                </h1>
+            </div>
+        </div>
+
+        <!-- widget grid -->
+        <section id="widget-grid" class="">
+
+            <!-- row -->
+            <div class="row">
+
+                <!-- NEW WIDGET START -->
+
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blue" id="wid-id-40" data-widget-editbutton="false">
+                    <!-- widget options:
+                            usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                            data-widget-colorbutton="false"
+                            data-widget-editbutton="false"
+                            data-widget-togglebutton="false"
+                            data-widget-deletebutton="false"
+                            data-widget-fullscreenbutton="false"
+                            data-widget-custombutton="false"
+                            data-widget-collapsed="true"
+                            data-widget-sortable="false"
+
+                            -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Liste des demandes formations </h2>
+
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+
+                        </div>
+
+                        <div>
+                            <h2></h2>
+                            <jhi-alert></jhi-alert>
+                            <div class="container-fluid">
+
+
+                                <div class="row">
+
+                                    <div class="col-xs-4 no-padding-right">
+                                        <form name="searchForm" class="form-inline">
+                                            <div class="input-group pull-right" >
+                                                <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'qualiMakerApp.demandeFormation.home.search' | translate }}">
+                                                <span  class="input-group-btn width-min" >
+                                                <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                                    <span class="glyphicon glyphicon-search"></span>
+                                                </button>
+
+                                               </span>
+                                                <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                                                        <button class="btn btn-info" ng-click="vm.clear()">
+                                                            <span class="glyphicon glyphicon-trash"></span>
+                                                        </button>
+                                                    </span>
+                                            </div>
+                                        </form>
+
+
+                                    </div>
+                                    <div class="col-xs-3 no-padding-right">
+                                    </div>
+
+                                    <div class="col-xs-5 no-padding-right">
+                                        <div class="row">
+                                            <div class="col-xs-2 no-padding-right">
+
+                                                <button class="btn btn-default" ui-sref="demande-formation.new" >
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                    <span class="hidden-xs-down"  >
+                    </span>
+                                                </button>
+                                            </div>
+
+                                            <div class="col-xs-5 no-padding-right">
+                                                <button class="btn bg-color-redLight txt-color-white" ui-sref="formation" >
+                                                    <span class="glyphicon glyphicon-new-window"></span>
+                                                    <span class="hidden-xs-down" >Listes des Formation </span>
+                                                </button>
+                                            </div>
+
+                                            <div class="col-xs-5 no-padding-right">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                </div>
+
+
+
+                            </div>
+                            <br/>
+                            <div class="table-responsive">
+                                <table  class="table table-striped table-bordered table-hover" width="100%">
+                                    <thead>
+                                    <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                                        <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        <th jh-sort-by="theme"><span data-translate="qualiMakerApp.demandeFormation.theme">Theme</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        <th jh-sort-by="dateDemande"><span data-translate="qualiMakerApp.demandeFormation.dateDemande">Date Demande</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        <th jh-sort-by="datesouhaite"><span data-translate="qualiMakerApp.demandeFormation.datesouhaite">Datesouhaite</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        <th jh-sort-by="nombresjours"><span data-translate="qualiMakerApp.demandeFormation.nombresjours">Nombresjours</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        <!--<th jh-sort-by="description"><span data-translate="qualiMakerApp.demandeFormation.description">Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        <th jh-sort-by="justification"><span data-translate="qualiMakerApp.demandeFormation.justification">Justification</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        --><th jh-sort-by="empploye.id"><span data-translate="qualiMakerApp.demandeFormation.empploye">Empploye</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        <th jh-sort-by="etatDemande.id"><span data-translate="qualiMakerApp.demandeFormation.etatD">Etat Demande</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="demandeFormation in vm.demandeFormations track by demandeFormation.id">
+                                        <td><a ui-sref="demande-formation-detail({id:demandeFormation.id})">{{demandeFormation.id}}</a></td>
+                                        <td>{{demandeFormation.theme}}</td>
+                                        <td>{{demandeFormation.dateDemande | date:'medium'}}</td>
+                                        <td>{{demandeFormation.datesouhaite | date:'medium'}}</td>
+                                        <td>{{demandeFormation.nombresjours}}</td>
+                                        <!-- <td>{{demandeFormation.description}}</td>
+                                         <td>{{demandeFormation.justification}}</td>-->
+
+
+                                        <td>
+                                            <a ui-sref="employe-detail({id:demandeFormation.empploye.id})">{{demandeFormation.empploye.nom}} {{demandeFormation.empploye.prenom}} </a>
+                                        </td>
+                                        <td >
+
+                                            <button ng-if="demandeFormation.etatD == 'Enattente'" type="submit" ui-sref="etat-demande-detail({id:demandeFormation.etatDemande.id})" class="btn btn-info btn-xs">
+
+                                                <span class="hidden-sm-down" >{{demandeFormation.etatD}}</span>
+                                            </button>
+
+                                            <button ng-if="demandeFormation.etatD == 'Valider'"  type="submit" ui-sref="etat-demande-detail({id:demandeFormation.etatDemande.id})" class="btn btn-success btn-xs">
+
+                                                <span class="hidden-sm-down" >{{demandeFormation.etatD}}</span>
+                                            </button>
+                                            <button ng-if="demandeFormation.etatD == 'Refuser'"  type="submit" ui-sref="etat-demande-detail({id:demandeFormation.etatDemande.id})" class="btn btn-danger btn-xs">
+
+                                                <span class="hidden-sm-down" >{{demandeFormation.etatD}}</span>
+                                            </button>
+                                        </td>
+                                        <td class="text-right">
+                                            <div class="btn-group flex-btn-group-container">
+                                                <div calass="row">
+                                                    <button type="submit"
+                                                            ui-sref="demande-formation-detail({id:demandeFormation.id})"
+                                                            class="btn btn-info btn-sm">
+                                                        <span class="glyphicon glyphicon-eye-open"></span>
+                                                        <span class="hidden-sm-down" ></span>
+                                                    </button>
+                                                    <button type="submit"
+                                                            ui-sref="demande-formation.edit({id:demandeFormation.id})"
+                                                            class="btn btn-primary btn-sm">
+                                                        <span class="glyphicon glyphicon-pencil"></span>
+                                                        <span class="hidden-sm-down" ></span>
+                                                    </button>
+                                                    <button type="submit"
+                                                            ui-sref="demande-formation.delete({id:demandeFormation.id})"
+                                                            class="btn btn-danger btn-sm">
+                                                        <span class="glyphicon glyphicon-remove-circle"></span>
+                                                        <span class="hidden-sm-down" ></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center">
+                                <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+                                <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

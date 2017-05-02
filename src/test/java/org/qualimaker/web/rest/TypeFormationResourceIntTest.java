@@ -2,7 +2,6 @@ package org.qualimaker.web.rest;
 
 import org.qualimaker.QualiMakerApp;
 
-import org.qualimaker.domain.TypeFormation;
 import org.qualimaker.repository.TypeFormationRepository;
 import org.qualimaker.repository.search.TypeFormationSearchRepository;
 import org.qualimaker.web.rest.errors.ExceptionTranslator;

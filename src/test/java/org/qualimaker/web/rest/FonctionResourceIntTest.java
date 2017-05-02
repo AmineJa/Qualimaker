@@ -2,7 +2,6 @@ package org.qualimaker.web.rest;
 
 import org.qualimaker.QualiMakerApp;
 
-import org.qualimaker.domain.Fonction;
 import org.qualimaker.repository.FonctionRepository;
 import org.qualimaker.repository.search.FonctionSearchRepository;
 import org.qualimaker.web.rest.errors.ExceptionTranslator;

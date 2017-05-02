@@ -1,0 +1,70 @@
+
+<div>
+    <h2><span data-translate="qualiMakerApp.abscence.detail.title">Abscence</span> {{vm.abscence.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="qualiMakerApp.abscence.justifier">Justifier</span></dt>
+        <dd>
+            <span>{{vm.abscence.justifier}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.abscence.dateD">Date D</span></dt>
+        <dd>
+            <span>{{vm.abscence.dateD | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.abscence.dateF">Date F</span></dt>
+        <dd>
+            <span>{{vm.abscence.dateF | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.abscence.etat">Etat</span></dt>
+        <dd>
+            <span>{{vm.abscence.etat}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.abscence.integre">Integre</span></dt>
+        <dd>
+            <span>{{vm.abscence.integre}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.abscence.commentaire">Commentaire</span></dt>
+        <dd>
+            <span>{{vm.abscence.commentaire}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.abscence.oui">Oui</span></dt>
+        <dd>
+            <span>{{vm.abscence.oui}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.abscence.non">Non</span></dt>
+        <dd>
+            <span>{{vm.abscence.non}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.abscence.doc">Doc</span></dt>
+        <dd>
+            <div ng-if="vm.abscence.doc">
+                <a ng-click="vm.openFile(vm.abscence.docContentType, vm.abscence.doc)" data-translate="entity.action.open">open</a>
+                {{vm.abscence.docContentType}}, {{vm.byteSize(vm.abscence.doc)}}
+            </div>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.abscence.com">Com</span></dt>
+        <dd>
+            <span>{{vm.abscence.com}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.abscence.employe">Employe</span></dt>
+        <dd>
+            <a ui-sref="employe-detail({id:vm.abscence.employe.id})">{{vm.abscence.employe.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.abscence.natureAbs">Nature Abs</span></dt>
+        <dd>
+            <a ui-sref="nature-abs-detail({id:vm.abscence.natureAbs.id})">{{vm.abscence.natureAbs.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="abscence-detail.edit({id:vm.abscence.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

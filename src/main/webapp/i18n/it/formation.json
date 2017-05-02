@@ -42,7 +42,9 @@
             "fichierjoint": "Fichierjoint",
             "critereevaluation": "Critereevaluation",
             "jour": "Jour",
-            "employe": "Employe"
+            "events": "Events",
+            "employe": "Employe",
+            "formateurintern": "Formateurintern"
         }
     }
 }
