@@ -8,12 +8,6 @@
     -->
     <changeSet id="20170329102953-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="carriere_id"
-                                 baseTableName="employe"
-                                 constraintName="fk_employe_carriere_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="carriere"/>
-
         <addForeignKeyConstraint baseColumnNames="site_id"
                                  baseTableName="employe"
                                  constraintName="fk_employe_site_id"
@@ -42,17 +36,6 @@
                                  constraintName="fk_employe_formation_formations_id"
                                  referencedColumnNames="id"
                                  referencedTableName="formation"/>
-        
-        <addForeignKeyConstraint baseColumnNames="employes_id"
-                                 baseTableName="employe_fonction"
-                                 constraintName="fk_employe_fonction_employes_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="employe"/>
-        <addForeignKeyConstraint baseColumnNames="fonctions_id"
-                                 baseTableName="employe_fonction"
-                                 constraintName="fk_employe_fonction_fonctions_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="fonction"/>
         
     </changeSet>
 </databaseChangeLog>

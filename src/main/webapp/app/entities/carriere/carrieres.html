@@ -43,7 +43,6 @@
                     <th jh-sort-by="finINT"><span data-translate="qualiMakerApp.carriere.finINT">Fin INT</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="dateRec"><span data-translate="qualiMakerApp.carriere.dateRec">Date Rec</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="fichCont"><span data-translate="qualiMakerApp.carriere.fichCont">Fich Cont</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="typeContrat.id"><span data-translate="qualiMakerApp.carriere.typeContrat">Type Contrat</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -57,9 +56,6 @@
                     <td>{{carriere.finINT | date:'medium'}}</td>
                     <td>{{carriere.dateRec | date:'medium'}}</td>
                     <td>{{carriere.fichCont}}</td>
-                    <td>
-                        <a ui-sref="type-contrat-detail({id:carriere.typeContrat.id})">{{carriere.typeContrat.id}}</a>
-                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

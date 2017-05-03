@@ -13,10 +13,10 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface EmployeRepository extends JpaRepository<Employe,Long> {
 
-    @Query("select distinct employe from Employe employe left join fetch employe.formations left join fetch employe.fonctions")
+    @Query("select distinct employe from Employe employe left join fetch employe.formations")
     List<Employe> findAllWithEagerRelationships();
 
-    @Query("select employe from Employe employe left join fetch employe.formations left join fetch employe.fonctions where employe.id =:id")
+    @Query("select employe from Employe employe left join fetch employe.formations where employe.id =:id")
     Employe findOneWithEagerRelationships(@Param("id") Long id);
 
 }

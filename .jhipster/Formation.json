@@ -50,12 +50,6 @@
             "otherEntityField": "id"
         },
         {
-            "relationshipName": "events",
-            "otherEntityName": "events",
-            "relationshipType": "one-to-many",
-            "otherEntityRelationshipName": "formation"
-        },
-        {
             "relationshipName": "employe",
             "otherEntityName": "employe",
             "relationshipType": "many-to-many",

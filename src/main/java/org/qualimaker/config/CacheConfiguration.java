@@ -48,17 +48,13 @@ public class CacheConfiguration {
             cm.createCache(org.qualimaker.domain.Conge.class.getName(), jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.Critereevaluation.class.getName(), jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.DemandeFormation.class.getName(), jcacheConfiguration);
-            cm.createCache(org.qualimaker.domain.DomaineCompetence.class.getName(), jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.Employe.class.getName(), jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.Employe.class.getName() + ".conges", jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.Employe.class.getName() + ".formations", jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.Employe.class.getName() + ".fonctions", jcacheConfiguration);
-            cm.createCache(org.qualimaker.domain.Etat.class.getName(), jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.Evaluation.class.getName(), jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.EvaluationFormation.class.getName(), jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.Fichierjoint.class.getName(), jcacheConfiguration);
-            cm.createCache(org.qualimaker.domain.Fonction.class.getName(), jcacheConfiguration);
-            cm.createCache(org.qualimaker.domain.Fonction.class.getName() + ".employees", jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.Formateur.class.getName(), jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.Formateur.class.getName() + ".typeformateurs", jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.Carriere.class.getName(), jcacheConfiguration);
@@ -72,13 +68,9 @@ public class CacheConfiguration {
             cm.createCache(org.qualimaker.domain.Serviice.class.getName(), jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.Sites.class.getName(), jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.TypeConge.class.getName(), jcacheConfiguration);
-            cm.createCache(org.qualimaker.domain.TypeContrat.class.getName(), jcacheConfiguration);
-            cm.createCache(org.qualimaker.domain.TypeContrat.class.getName() + ".carrieres", jcacheConfiguration);
-            cm.createCache(org.qualimaker.domain.TypeFormateur.class.getName(), jcacheConfiguration);
-            cm.createCache(org.qualimaker.domain.TypeFormation.class.getName(), jcacheConfiguration);
+
             cm.createCache(org.qualimaker.domain.EtatDemande.class.getName(), jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.EtatDemande.class.getName() + ".demandeFormations", jcacheConfiguration);
-            cm.createCache(org.qualimaker.domain.Events.class.getName(), jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.Formation.class.getName() + ".events", jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.Abscence.class.getName() + ".employes", jcacheConfiguration);
             cm.createCache(org.qualimaker.domain.Serviice.class.getName() + ".postes", jcacheConfiguration);

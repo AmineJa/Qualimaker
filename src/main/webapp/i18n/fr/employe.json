@@ -40,13 +40,11 @@
             "aptphy": "Aptphy",
             "image": "Image",
             "cv": "Cv",
-            "carriere": "Carriere",
             "conge": "Conge",
             "site": "Site",
             "groupe": "Groupe",
             "service": "Service",
-            "formation": "Formation",
-            "fonction": "Fonction"
+            "formation": "Formation"
         }
     }
 }

@@ -122,9 +122,7 @@
             <column name="cv_content_type" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="carriere_id" type="bigint">
-                <constraints unique="true" nullable="true" />
-            </column>
+
             <column name="site_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -152,17 +150,6 @@
         </createTable>
 
         <addPrimaryKey columnNames="employes_id, formations_id" tableName="employe_formation"/>
-        
-        <createTable tableName="employe_fonction">
-            <column name="fonctions_id" type="bigint">
-                <constraints nullable="false"/>
-            </column>
-            <column name="employes_id" type="bigint">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-
-        <addPrimaryKey columnNames="employes_id, fonctions_id" tableName="employe_fonction"/>
         
     </changeSet>
 </databaseChangeLog>

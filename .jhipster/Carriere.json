@@ -1,13 +1,6 @@
 {
     "fluentMethods": true,
-    "relationships": [
-        {
-            "relationshipName": "typeContrat",
-            "otherEntityName": "typeContrat",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        }
-    ],
+    "relationships": [],
     "fields": [
         {
             "fieldName": "nom",
@@ -39,8 +32,8 @@
         }
     ],
     "changelogDate": "20170329102953",
-    "entityTableName": "carriere",
     "dto": "no",
-    "pagination": "pagination",
-    "service": "no"
+    "service": "no",
+    "entityTableName": "carriere",
+    "pagination": "pagination"
 }

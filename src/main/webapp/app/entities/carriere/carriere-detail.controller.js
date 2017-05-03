@@ -5,9 +5,9 @@
         .module('qualiMakerApp')
         .controller('CarriereDetailController', CarriereDetailController);
 
-    CarriereDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Carriere', 'TypeContrat'];
+    CarriereDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Carriere'];
 
-    function CarriereDetailController($scope, $rootScope, $stateParams, previousState, entity, Carriere, TypeContrat) {
+    function CarriereDetailController($scope, $rootScope, $stateParams, previousState, entity, Carriere) {
         var vm = this;
 
         vm.carriere = entity;

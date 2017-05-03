@@ -5,9 +5,9 @@
         .module('qualiMakerApp')
         .controller('CarriereDialogController', CarriereDialogController);
 
-    CarriereDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Carriere', 'TypeContrat'];
+    CarriereDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Carriere'];
 
-    function CarriereDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Carriere, TypeContrat) {
+    function CarriereDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Carriere) {
         var vm = this;
 
         vm.carriere = entity;
@@ -15,7 +15,6 @@
         vm.datePickerOpenStatus = {};
         vm.openCalendar = openCalendar;
         vm.save = save;
-        vm.typecontrats = TypeContrat.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

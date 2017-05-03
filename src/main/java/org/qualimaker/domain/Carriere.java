@@ -46,9 +46,6 @@ public class Carriere implements Serializable {
     @Column(name = "fich_cont")
     private String fichCont;
 
-    @ManyToOne
-    private TypeContrat typeContrat;
-
     public Long getId() {
         return id;
     }
@@ -146,19 +143,6 @@ public class Carriere implements Serializable {
 
     public void setFichCont(String fichCont) {
         this.fichCont = fichCont;
-    }
-
-    public TypeContrat getTypeContrat() {
-        return typeContrat;
-    }
-
-    public Carriere typeContrat(TypeContrat typeContrat) {
-        this.typeContrat = typeContrat;
-        return this;
-    }
-
-    public void setTypeContrat(TypeContrat typeContrat) {
-        this.typeContrat = typeContrat;
     }
 
     @Override

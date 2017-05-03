@@ -2,14 +2,6 @@
     "fluentMethods": true,
     "relationships": [
         {
-            "relationshipType": "one-to-one",
-            "relationshipName": "carriere",
-            "otherEntityName": "carriere",
-            "otherEntityField": "id",
-            "ownerSide": true,
-            "otherEntityRelationshipName": "employe"
-        },
-        {
             "relationshipType": "one-to-many",
             "relationshipName": "conge",
             "otherEntityName": "conge",
@@ -38,14 +30,6 @@
             "otherEntityRelationshipName": "employe",
             "relationshipName": "formation",
             "otherEntityName": "formation",
-            "otherEntityField": "id",
-            "ownerSide": true
-        },
-        {
-            "relationshipType": "many-to-many",
-            "otherEntityRelationshipName": "employee",
-            "relationshipName": "fonction",
-            "otherEntityName": "fonction",
             "otherEntityField": "id",
             "ownerSide": true
         }

@@ -1,6 +1,5 @@
 package org.qualimaker.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -117,11 +116,6 @@ public class Formation implements Serializable {
 
     @ManyToOne
     private Jour jour;
-
-    @OneToMany(mappedBy = "formation")
-    @JsonIgnore
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Events> events = new HashSet<>();
 
     @ManyToMany
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -490,31 +484,6 @@ public class Formation implements Serializable {
 
     public void setJour(Jour jour) {
         this.jour = jour;
-    }
-
-    public Set<Events> getEvents() {
-        return events;
-    }
-
-    public Formation events(Set<Events> events) {
-        this.events = events;
-        return this;
-    }
-
-    public Formation addEvents(Events events) {
-        this.events.add(events);
-        events.setFormation(this);
-        return this;
-    }
-
-    public Formation removeEvents(Events events) {
-        this.events.remove(events);
-        events.setFormation(null);
-        return this;
-    }
-
-    public void setEvents(Set<Events> events) {
-        this.events = events;
     }
 
     public Set<Employe> getEmployes() {

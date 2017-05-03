@@ -4,7 +4,7 @@ describe('Controller Tests', function() {
 
     describe('Formation Management Detail Controller', function() {
         var $scope, $rootScope;
-        var MockEntity, MockPreviousState, MockFormation, MockDemandeFormation, MockFormationComp, MockFormateur, MockNatureformation, MockFichierjoint, MockCritereevaluation, MockJour, MockEvents, MockEmploye;
+        var MockEntity, MockPreviousState, MockFormation, MockDemandeFormation, MockFormationComp, MockFormateur, MockNatureformation, MockFichierjoint, MockCritereevaluation, MockJour, MockEmploye;
         var createController;
 
         beforeEach(inject(function($injector) {
@@ -20,7 +20,6 @@ describe('Controller Tests', function() {
             MockFichierjoint = jasmine.createSpy('MockFichierjoint');
             MockCritereevaluation = jasmine.createSpy('MockCritereevaluation');
             MockJour = jasmine.createSpy('MockJour');
-            MockEvents = jasmine.createSpy('MockEvents');
             MockEmploye = jasmine.createSpy('MockEmploye');
             
 
@@ -37,7 +36,6 @@ describe('Controller Tests', function() {
                 'Fichierjoint': MockFichierjoint,
                 'Critereevaluation': MockCritereevaluation,
                 'Jour': MockJour,
-                'Events': MockEvents,
                 'Employe': MockEmploye
             };
             createController = function() {

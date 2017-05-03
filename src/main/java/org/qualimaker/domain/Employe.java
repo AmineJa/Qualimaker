@@ -118,10 +118,6 @@ public class Employe implements Serializable {
     @Column(name = "cv_content_type")
     private String cvContentType;
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private Carriere carriere;
-
     @OneToMany(mappedBy = "employe")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -142,13 +138,6 @@ public class Employe implements Serializable {
                joinColumns = @JoinColumn(name="employes_id", referencedColumnName="id"),
                inverseJoinColumns = @JoinColumn(name="formations_id", referencedColumnName="id"))
     private Set<Formation> formations = new HashSet<>();
-
-    @ManyToMany
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    @JoinTable(name = "employe_fonction",
-               joinColumns = @JoinColumn(name="employes_id", referencedColumnName="id"),
-               inverseJoinColumns = @JoinColumn(name="fonctions_id", referencedColumnName="id"))
-    private Set<Fonction> fonctions = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -496,19 +485,6 @@ public class Employe implements Serializable {
         this.cvContentType = cvContentType;
     }
 
-    public Carriere getCarriere() {
-        return carriere;
-    }
-
-    public Employe carriere(Carriere carriere) {
-        this.carriere = carriere;
-        return this;
-    }
-
-    public void setCarriere(Carriere carriere) {
-        this.carriere = carriere;
-    }
-
     public Set<Conge> getConges() {
         return conges;
     }
@@ -596,31 +572,6 @@ public class Employe implements Serializable {
 
     public void setFormations(Set<Formation> formations) {
         this.formations = formations;
-    }
-
-    public Set<Fonction> getFonctions() {
-        return fonctions;
-    }
-
-    public Employe fonctions(Set<Fonction> fonctions) {
-        this.fonctions = fonctions;
-        return this;
-    }
-
-    public Employe addFonction(Fonction fonction) {
-        this.fonctions.add(fonction);
-        fonction.getEmployees().add(this);
-        return this;
-    }
-
-    public Employe removeFonction(Fonction fonction) {
-        this.fonctions.remove(fonction);
-        fonction.getEmployees().remove(this);
-        return this;
-    }
-
-    public void setFonctions(Set<Fonction> fonctions) {
-        this.fonctions = fonctions;
     }
 
     @Override
