@@ -1,0 +1,28 @@
+{
+    "qualiMakerApp": {
+        "enregistrement" : {
+            "home": {
+                "title": "Enregistrements",
+                "createLabel": "Genera un nuovo Enregistrement",
+                "createOrEditLabel": "Genera o modifica un Enregistrement",
+                "search": "Cerca Enregistrement"
+            },
+            "created": "&Egrave; stato generato un nuovo Enregistrement con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Enregistrement identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Enregistrement con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Enregistrement {{ id }}?"
+            },
+            "detail": {
+                "title": "Enregistrement"
+            },
+            "libelle": "Libelle",
+            "titre": "Titre",
+            "fichier": "Fichier",
+            "commentaire": "Commentaire",
+            "motclef": "Motclef",
+            "date": "Date",
+            "employe": "Employe"
+        }
+    }
+}

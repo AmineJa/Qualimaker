@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "processus" : {
+            "home": {
+                "title": "Processuses",
+                "createLabel": "Créer un nouveau Processus",
+                "createOrEditLabel": "Créer ou éditer un Processus",
+                "search": "Recherche pour Processus"
+            },
+            "created": "Un nouveau Processus a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Processus avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Processus avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Processus {{ id }} ?"
+            },
+            "detail": {
+                "title": "Processus"
+            },
+            "libelle": "Libelle",
+            "documentInterne": "Document Interne"
+        }
+    }
+}

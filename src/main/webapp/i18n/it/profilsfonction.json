@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "profilsfonction" : {
+            "home": {
+                "title": "Profilsfonctions",
+                "createLabel": "Genera un nuovo Profilsfonction",
+                "createOrEditLabel": "Genera o modifica un Profilsfonction",
+                "search": "Cerca Profilsfonction"
+            },
+            "created": "&Egrave; stato generato un nuovo Profilsfonction con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Profilsfonction identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Profilsfonction con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Profilsfonction {{ id }}?"
+            },
+            "detail": {
+                "title": "Profilsfonction"
+            },
+            "profil": "Profil",
+            "fonction": "Fonction"
+        }
+    }
+}

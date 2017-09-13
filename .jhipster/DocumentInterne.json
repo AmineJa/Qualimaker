@@ -1,0 +1,132 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "sites",
+            "otherEntityName": "sites",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "processus",
+            "otherEntityName": "processus",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "typeDocumentation",
+            "otherEntityName": "typeDocumentation",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "Superviseur",
+            "otherEntityName": "droitaccesDocument",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "Verificateur",
+            "otherEntityName": "droitaccesDocument",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "Verificateur"
+        },
+        {
+            "relationshipName": "Redacteur",
+            "otherEntityName": "droitaccesDocument",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "Redacteur"
+        },
+        {
+            "relationshipName": "Approubateur",
+            "otherEntityName": "droitaccesDocument",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "Approubateur"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "libelle",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "fichier",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "motif",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "message",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "etat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "v",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "r",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "a",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "typeuser",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "precedent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "suivant",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20170509141150",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "document_interne",
+    "pagination": "pagination"
+}

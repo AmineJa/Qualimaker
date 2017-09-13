@@ -1,0 +1,75 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "employe",
+            "otherEntityName": "employe",
+            "relationshipType": "many-to-many",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "documenExterne"
+        },
+        {
+            "relationshipName": "origine",
+            "otherEntityName": "origine",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "lieuxClassement",
+            "otherEntityName": "lieuxClassement",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "typeDocumentation",
+            "otherEntityName": "typeDocumentation",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "libele",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "daterevision",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "indiceEvolution",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fichier",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "notif",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170508111946",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "documen_externe",
+    "pagination": "pagination"
+}

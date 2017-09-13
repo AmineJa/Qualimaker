@@ -36,8 +36,8 @@
         }
     ],
     "changelogDate": "20170329102953",
-    "entityTableName": "evaluation",
     "dto": "no",
-    "pagination": "no",
-    "service": "no"
+    "service": "no",
+    "entityTableName": "evaluation",
+    "pagination": "no"
 }

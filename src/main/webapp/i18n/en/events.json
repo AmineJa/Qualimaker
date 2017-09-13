@@ -1,0 +1,27 @@
+{
+    "qualiMakerApp": {
+        "events" : {
+            "home": {
+                "title": "Events",
+                "createLabel": "Create a new Events",
+                "createOrEditLabel": "Create or edit a Events",
+                "search": "Search for Events"
+            },
+            "created": "A new Events is created with identifier {{ param }}",
+            "updated": "A Events is updated with identifier {{ param }}",
+            "deleted": "A Events is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Events {{ id }}?"
+            },
+            "detail": {
+                "title": "Events"
+            },
+            "title": "Title",
+            "start": "Start",
+            "description": "Description",
+            "allDay": "All Day",
+            "end": "End",
+            "icon": "Icon"
+        }
+    }
+}

@@ -124,13 +124,15 @@
                     resolve: {
                         entity: function () {
                             return {
-                                nom: null,
-                                etat: null,
                                 integre: null,
                                 debutINt: null,
                                 finINT: null,
                                 dateRec: null,
-                                fichCont: null,
+                                document: null,
+                                documentContentType: null,
+                                actived: null,
+                                contrat: null,
+                                contratContentType: null,
                                 id: null
                             };
                         }

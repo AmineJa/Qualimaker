@@ -16,13 +16,15 @@
             "detail": {
                 "title": "Carriere"
             },
-            "nom": "Nom",
-            "etat": "Etat",
             "integre": "Integre",
             "debutINt": "Debut I Nt",
             "finINT": "Fin INT",
             "dateRec": "Date Rec",
-            "fichCont": "Fich Cont"
+            "document": "Document",
+            "actived": "Actived",
+            "contrat": "Contrat",
+            "employe": "Employe",
+            "typeContrat": "Type Contrat"
         }
     }
 }

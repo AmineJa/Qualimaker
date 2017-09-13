@@ -1,0 +1,31 @@
+{
+    "qualiMakerApp": {
+        "documenExterne" : {
+            "home": {
+                "title": "DocumenExternes",
+                "createLabel": "Créer un nouveau Documen Externe",
+                "createOrEditLabel": "Créer ou éditer un Documen Externe",
+                "search": "Recherche pour Documen Externe"
+            },
+            "created": "Un nouveau Documen Externe a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Documen Externe avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Documen Externe avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Documen Externe {{ id }} ?"
+            },
+            "detail": {
+                "title": "Documen Externe"
+            },
+            "code": "Code",
+            "libele": "Libele",
+            "daterevision": "Daterevision",
+            "indiceEvolution": "Indice Evolution",
+            "fichier": "Fichier",
+            "notif": "Notif",
+            "employe": "Employe",
+            "origine": "Origine",
+            "lieuxClassement": "Lieux Classement",
+            "typeDocumentation": "Type Documentation"
+        }
+    }
+}

@@ -17,8 +17,8 @@
                 "title": "Abscence"
             },
             "justifier": "Justifier",
-            "dateD": "Date Début",
-            "dateF": "Date Fin",
+            "dateD": "Date D",
+            "dateF": "Date F",
             "etat": "Etat",
             "integre": "Integre",
             "commentaire": "Commentaire",
@@ -26,9 +26,8 @@
             "non": "Non",
             "doc": "Doc",
             "com": "Com",
-            "employe": "Employé",
-            "natureAbs": "Nature d'absence",
-            "doc":"Ajouter une document"
+            "employe": "Employe",
+            "natureAbs": "Nature Abs"
         }
     }
 }

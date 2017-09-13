@@ -1,0 +1,128 @@
+<div ng-if="vm.liste =='true'">
+    <h2 data-translate="qualiMakerApp.events.home.title">Events</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="events.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="qualiMakerApp.events.home.createLabel">
+                        Create new Events
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-2 ">
+
+                <button class="btn btn-warning" ng-click="vm.calender('false')">Calendrerier</button>
+            </div>
+            <div class="col-xs-6 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'qualiMakerApp.events.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="title"><span data-translate="qualiMakerApp.events.title">Title</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="start"><span data-translate="qualiMakerApp.events.start">Start</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="fin"><span data-translate="qualiMakerApp.events.end">Fin</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="discription"><span data-translate="qualiMakerApp.events.description">Discription</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="icon"><span data-translate="qualiMakerApp.events.icon">Icon</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="allDay"><span data-translate="qualiMakerApp.events.allDay">All Day</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="events in vm.events track by events.id">
+                    <td><a ui-sref="events-detail({id:events.id})">{{events.id}}</a></td>
+                    <td>{{events.title}}</td>
+                    <td>{{events.start | date:'medium'}}</td>
+                    <td>{{events.end| date:'medium'}}</td>
+                    <td>{{events.description}}</td>
+                    <td>
+                        <a ng-if="events.icon" ng-click="vm.openFile(events.iconContentType, events.icon)">
+                            <img data-ng-src="{{'data:' + events.iconContentType + ';base64,' + events.icon}}" style="max-height: 30px;" alt="events image"/>
+                        </a>
+                        <span ng-if="events.icon">{{events.iconContentType}}, {{vm.byteSize(events.icon)}}</span>
+                    </td>
+                    <td>{{events.allDay}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="events-detail({id:events.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="events.edit({id:events.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="events.delete({id:events.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>
+
+
+
+<!-- MAIN CONTENT -->
+<div ng-if="vm.liste !=='true'">
+<div class="well">
+
+        <button class="btn btn-default btn-lg" ng-click="vm.calender('true')"class="btn btn-danger btn-sm">
+            <span class="glyphicon glyphicon-list"></span></button>
+
+<div id="content">
+    <div class="row">
+        <big-breadcrumbs items="['Home', 'Calendar']" class="col-xs-12 col-sm-7 col-md-7 col-lg-4"></big-breadcrumbs>
+        <div smart-include="app/layout/partials/sub-header.tpl.html"></div>
+    </div>
+
+    <!-- widget grid -->
+    <section id="widget-grid" widget-grid>
+        <!-- row -->
+
+
+
+                <full-calendar id="main-calendar-widget" data-events="events"></full-calendar>
+
+    </section>
+</div>
+</div>
+</div>
+<script src="content/js/plugin/moment/moment.min.js"></script>
+<script src="content/js/plugin/fullcalendar/jquery.fullcalendar.min.js"></script>

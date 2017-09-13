@@ -1,0 +1,11 @@
+{
+    "qualiMakerApp": {
+        "Roles" : {
+            "null": "",
+            "Superviseur": "Superviseur",
+            "Redacteur": "Redacteur",
+            "Verificateur": "Verificateur",
+            "Approuvateur": "Approuvateur"
+        }
+    }
+}

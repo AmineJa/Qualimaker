@@ -1,28 +1,37 @@
+
 {
     "qualiMakerApp": {
         "carriere" : {
             "home": {
-                "title": "Carrieres",
-                "createLabel": "Créer un nouveau Carriere",
-                "createOrEditLabel": "Créer ou éditer un Carriere",
-                "search": "Recherche pour Carriere"
+                "title": "Carrières",
+                "createLabel": "Créer un nouveau Carrière",
+                "createOrEditLabel": "Créer ou éditer un Carrière",
+                "search": "Recherche pour Carrière"
             },
             "created": "Un nouveau Carriere a été créé avec l'identifiant {{ param }}",
-            "updated": "Le Carriere avec l'identifiant {{ param }} a été mis à jour",
-            "deleted": "Le Carriere avec l'identifiant {{ param }} a été supprimé",
+            "updated": "Le Carrière avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Carrière avec l'identifiant {{ param }} a été supprimé",
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le Carriere {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer le Carrière {{ id }} ?"
             },
             "detail": {
-                "title": "Carriere"
+                "title": "Carrière"
             },
             "nom": "Nom",
-            "etat": "Etat",
-            "integre": "Integre",
-            "debutINt": "Debut I Nt",
-            "finINT": "Fin INT",
-            "dateRec": "Date Rec",
-            "fichCont": "Fich Cont"
+            "date":"Date",
+            "actived": "Activer",
+            "integre": "Intégrer",
+            "debutINt": "Debut d'intégration",
+            "finINT": "Fin d'intégration",
+            "dateRec": "Date de recrutement",
+            "fichCont": "Fichier de contrat",
+            "document": "Document",
+            "employe": "Employe",
+            "activated":"Activer",
+            "deactivated":"Désactiver",
+            "typeContrat": "Type de Contrat",
+            "Fichier":"Document",
+            "ajoutercontrat":"Ajouter un contrat"
         }
     }
 }

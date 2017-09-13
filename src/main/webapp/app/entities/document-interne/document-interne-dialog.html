@@ -1,0 +1,594 @@
+<!--
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myDocumentInterneLabel" data-translate="qualiMakerApp.documentInterne.home.createOrEditLabel">Create or edit a Document Interne</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.documentInterne.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.documentInterne.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.documentInterne.code" for="field_code">Code</label>
+            <input type="text" class="form-control" name="code" id="field_code"
+                    ng-model="vm.documentInterne.code"
+                    required/>
+            <div ng-show="editForm.code.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.code.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.documentInterne.libelle" for="field_libelle">Libelle</label>
+            <input type="text" class="form-control" name="libelle" id="field_libelle"
+                    ng-model="vm.documentInterne.libelle"
+                    required/>
+            <div ng-show="editForm.libelle.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.libelle.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setFichier($file, vm.documentInterne)">
+            <label class="control-label" data-translate="qualiMakerApp.documentInterne.fichier" for="field_fichier">Fichier</label>
+            <div>
+                <div ng-if="vm.documentInterne.fichier" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.documentInterne.fichierContentType, vm.documentInterne.fichier)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.documentInterne.fichierContentType}}, {{vm.byteSize(vm.documentInterne.fichier)}}</span>
+                    <button type="button" ng-click="vm.documentInterne.fichier=null;vm.documentInterne.fichierContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setFichier($file, vm.documentInterne)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="fichier" id="field_fichier"
+                    ng-model="vm.documentInterne.fichier"
+                    required/>
+            <input type="hidden" class="form-control" name="fichierContentType" id="field_fichierContentType"
+                    ng-model="vm.documentInterne.fichierContentType" />
+            <div ng-show="editForm.fichier.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fichier.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.documentInterne.motif" for="field_motif">Motif</label>
+            <input type="text" class="form-control" name="motif" id="field_motif"
+                    ng-model="vm.documentInterne.motif"
+                    required/>
+            <div ng-show="editForm.motif.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.motif.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.documentInterne.message" for="field_message">Message</label>
+            <input type="text" class="form-control" name="message" id="field_message"
+                    ng-model="vm.documentInterne.message"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.documentInterne.etat" for="field_etat">Etat</label>
+            <input type="text" class="form-control" name="etat" id="field_etat"
+                    ng-model="vm.documentInterne.etat"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.documentInterne.date" for="field_date">Date</label>
+                <div class="input-group">
+                    <input id="field_date" type="text" class="form-control" name="date" datetime-picker="{{dateformat}}" ng-model="vm.documentInterne.date" is-open="vm.datePickerOpenStatus.date"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('date')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.documentInterne.v" for="field_v">V</label>
+                <input type="checkbox" name="v" id="field_v"
+                          ng-model="vm.documentInterne.v"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.documentInterne.r" for="field_r">R</label>
+                <input type="checkbox" name="r" id="field_r"
+                          ng-model="vm.documentInterne.r"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.documentInterne.a" for="field_a">A</label>
+                <input type="checkbox" name="a" id="field_a"
+                          ng-model="vm.documentInterne.a"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.documentInterne.typeuser" for="field_typeuser">Typeuser</label>
+            <input type="text" class="form-control" name="typeuser" id="field_typeuser"
+                    ng-model="vm.documentInterne.typeuser"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.documentInterne.precedent" for="field_precedent">Precedent</label>
+            <input type="text" class="form-control" name="precedent" id="field_precedent"
+                    ng-model="vm.documentInterne.precedent"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.documentInterne.suivant" for="field_suivant">Suivant</label>
+            <input type="text" class="form-control" name="suivant" id="field_suivant"
+                    ng-model="vm.documentInterne.suivant"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.documentInterne.version" for="field_version">Version</label>
+            <input type="number" class="form-control" name="version" id="field_version"
+                    ng-model="vm.documentInterne.version"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.documentInterne.sites" for="field_sites">Sites</label>
+            <select class="form-control" id="field_sites" name="sites" ng-model="vm.documentInterne.sites" ng-options="sites as sites.id for sites in vm.sites track by sites.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.documentInterne.processus" for="field_processus">Processus</label>
+            <select class="form-control" id="field_processus" name="processus" ng-model="vm.documentInterne.processus" ng-options="processus as processus.id for processus in vm.processuses track by processus.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.documentInterne.typeDocumentation" for="field_typeDocumentation">Type Documentation</label>
+            <select class="form-control" id="field_typeDocumentation" name="typeDocumentation" ng-model="vm.documentInterne.typeDocumentation" ng-options="typeDocumentation as typeDocumentation.id for typeDocumentation in vm.typedocumentations track by typeDocumentation.id" required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.typeDocumentation.$invalid">
+            <p class="help-block"
+                ng-show="editForm.typeDocumentation.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.documentInterne.Superviseur" for="field_Superviseur">Superviseur</label>
+            <select class="form-control" id="field_Superviseur" name="Superviseur" ng-model="vm.documentInterne.superviseur" ng-options="droitaccesDocument as droitaccesDocument.id for droitaccesDocument in vm.droitaccesdocuments track by droitaccesDocument.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.documentInterne.Verificateur" for="field_Verificateur">Verificateur</label>
+            <select class="form-control" id="field_Verificateur" multiple name="Verificateur" ng-model="vm.documentInterne.verificateurs" ng-options="droitaccesDocument as droitaccesDocument.id for droitaccesDocument in vm.droitaccesdocuments track by droitaccesDocument.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.documentInterne.Redacteur" for="field_Redacteur">Redacteur</label>
+            <select class="form-control" id="field_Redacteur" multiple name="Redacteur" ng-model="vm.documentInterne.redacteurs" ng-options="droitaccesDocument as droitaccesDocument.id for droitaccesDocument in vm.droitaccesdocuments track by droitaccesDocument.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.documentInterne.Approubateur" for="field_Approubateur">Approubateur</label>
+            <select class="form-control" id="field_Approubateur" multiple name="Approubateur" ng-model="vm.documentInterne.approubateurs" ng-options="droitaccesDocument as droitaccesDocument.id for droitaccesDocument in vm.droitaccesdocuments track by droitaccesDocument.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
+-->
+
+<section id="widget-grid" class=""  >
+
+    <!-- row -->
+
+
+    <!-- NEW WIDGET START -->
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-pink" id="wid-id-525" data-widget-editbutton="false" data-widget-deletebutton="false">
+        <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+        data-widget-colorbutton="false"
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true"
+        data-widget-sortable="false"
+
+        -->
+        <header>
+            <span class="widget-icon"> <i class="fa fa-check"></i> </span>
+            <h2  class="modal-title" id="myDocumentInterneLabel" data-translate="qualiMakerApp.documentInterne.home.createOrEditLabel">Create or edit a Document Interne</h2>
+
+        </header>
+
+        <!-- widget div-->
+
+
+        <!-- widget edit box -->
+
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body">
+
+
+
+
+            <form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                            ng-click="vm.clear()">&times;</button>
+                    <h4 ></h4>
+                </div>
+                <div class="modal-body well">
+                    <jhi-alert-error></jhi-alert-error>
+
+                    <div class="form-group" ng-show="vm.documentInterne.id">
+                        <label for="id" data-translate="global.field.id">ID</label>
+                        <input type="text" class="form-control" id="id" name="id"
+                               ng-model="vm.documentInterne.id" readonly />
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="qualiMakerApp.documentInterne.Superviseur" for="field_Superviseur">Superviseur</label>
+                        <select  class="form-control" ng-model="vm.documentInterne.superviseur" id="field_Superviseur" name="Superviseur"  ng-class="{active: vm.$state.includes('account')}" ng-option="droitaccesDocument in vm.droitaccesdocuments |filter:{employe:vm.settingsAccount}" >
+
+
+                            <option value="">{{employe.nom}}</option>
+                        </select>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label class="control-label" data-translate="qualiMakerApp.documentInterne.code" for="field_code">code</label>
+
+                        </div>
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="code" id="field_code"
+                                       ng-model="vm.documentInterne.code"
+                                       required/>
+                                <div ng-show="editForm.code.$invalid">
+                                    <p class="help-block"
+                                       ng-show="editForm.code.$error.required" data-translate="entity.validation.required">
+                                        This field is required.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label class="control-label" data-translate="qualiMakerApp.documentInterne.libelle" for="field_libelle">Libelle</label>
+
+                        </div>
+                        <div class="col-md-10">
+                            <div class="form-group">
+            <textarea type="text" class="form-control" name="libelle" id="field_libelle"
+                      ng-model="vm.documentInterne.libelle"
+                      required></textarea>
+                                <div ng-show="editForm.libelle.$invalid">
+                                    <p class="help-block"
+                                       ng-show="editForm.libelle.$error.required" data-translate="entity.validation.required">
+                                        This field is required.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label data-translate="qualiMakerApp.documentInterne.typeDocumentation" for="field_typeDocumentation">Type Documentation</label>
+
+                        </div>
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <select class="form-control" id="field_typeDocumentation" name="typeDocumentation" ng-model="vm.documentInterne.typeDocumentation" ng-options="typeDocumentation as typeDocumentation.type for typeDocumentation in vm.typedocumentations |filter:{nature:'INTERNE'}"required>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <div ng-show="editForm.typeDocumentation.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.typeDocumentation.$error.required" data-translate="entity.validation.required">
+                                    This field is required.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label data-translate="qualiMakerApp.documentInterne.fichier" for="field_fichier">Fiche</label>
+
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" ngf-select class="btn btn-info btn-block"
+                                    ngf-change="vm.setFichier($file, vm.documentInterne)" data-translate="entity.action.addblob">
+                                Add blob
+                            </button>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group" ngf-drop ngf-change="vm.setFichier($file, vm.documentInterne)">
+                                <div>
+                                    <div ng-if="vm.documentInterne.fichier" class="help-block clearfix">
+                                        <a class="pull-left" ng-click="vm.openFile(vm.documentInterne.fichierContentType, vm.documentInterne.fichier)" data-translate="entity.action.open">open</a><br>
+                                        <button type="button" ng-click="vm.documentInterne.fichier=null;vm.documentInterne.fichierContentType=null;"
+                                                class="btn btn-danger btn-xs pull-right">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </button>
+                                        <span class="pull-left">{{vm.documentInterne.fichierContentType}}, {{vm.byteSize(vm.documentInterne.fichier)}}</span>
+
+                                    </div>
+
+                                </div>
+                                <input type="hidden" class="form-control" name="fichier" id="field_fichier"
+                                       ng-model="vm.documentInterne.fichier"
+                                       required/>
+                                <input type="hidden" class="form-control" name="fichierContentType" id="field_fichierContentType"
+                                       ng-model="vm.documentInterne.fichierContentType" />
+                                <div ng-show="editForm.fichier.$invalid">
+                                    <p class="help-block"
+                                       ng-show="editForm.fichier.$error.required" data-translate="entity.validation.required">
+                                        This field is required.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                      <div class="col-md-3">
+                          <div class="form-group">
+    <!--<label class="control-label" data-translate="qualiMakerApp.documentInterne.version" for="field_version">Version</label>-->
+    <input type="number" class="form-control" name="version" id="field_version"
+           ng-model="vm.documentInterne.version" PLACEHOLDER="{{'qualiMakerApp.documentInterne.version'|translate}}"
+    />
+</div>
+                         </div>
+                       <!-- <div class="col-md-3">
+                            <a href="/download-document-{{vm.documentInterne.id}}" class="btn btn-success custom-width">download</a></td>
+
+                        </div>-->
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label data-translate="qualiMakerApp.documentInterne.motif" for="field_motif">Fiche</label>
+
+                        </div>
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="motif" id="field_motif"
+                                       ng-model="vm.documentInterne.motif"
+                                       required/>
+                                <div ng-show="editForm.motif.$invalid">
+                                    <p class="help-block"
+                                       ng-show="editForm.motif.$error.required" data-translate="entity.validation.required">
+                                        This field is required.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label data-translate="qualiMakerApp.documentInterne.processus" for="field_processus">Processus</label>
+
+                        </div>
+
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <select class="form-control" id="field_processus" name="processus" ng-model="vm.documentInterne.processus" ng-options="processus as processus.id for processus in vm.processuses track by processus.id">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label data-translate="qualiMakerApp.documentInterne.sites" for="field_sites">Sites</label>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <select class="form-control" id="field_sites" name="sites" ng-model="vm.documentInterne.sites" ng-options="sites as sites.id for sites in vm.sites track by sites.id">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label class="control-label" data-translate="qualiMakerApp.documentInterne.message" for="field_message">Message</label>
+                        </div>
+                        <div class="col-md-10">
+
+                            <div class="form-group">
+            <textarea type="text" class="form-control" name="message" id="field_message"
+                      ng-model="vm.documentInterne.message"
+            ></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Etat et Date-->
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label class="control-label" data-translate="qualiMakerApp.documentInterne.etat" for="field_etat">Etat</label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="etat" id="field_etat"
+                                       ng-model="vm.documentInterne.etat"
+                                />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input id="field_date" type="text" class="form-control" name="date" datetime-picker="{{dateformat}}" ng-model="vm.documentInterne.date" is-open="vm.datePickerOpenStatus.date"
+                                           placeholder="{{'qualiMakerApp.documentInterne.date'|translate}}"  />
+                                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('date')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label" data-translate="qualiMakerApp.documentInterne.r" for="field_r">R</label>
+                                <input type="checkbox" name="r" id="field_r"
+                                       ng-model="vm.documentInterne.r"/>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label" data-translate="qualiMakerApp.documentInterne.v" for="field_v">V</label>
+                                <input type="checkbox" name="v" id="field_v"
+                                       ng-model="vm.documentInterne.v"/>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label" data-translate="qualiMakerApp.documentInterne.a" for="field_a">A</label>
+                                <input type="checkbox" name="a" id="field_a"
+                                       ng-model="vm.documentInterne.a"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-4" ng-if="vm.documentInterne.r">
+                            <div class="form-group">
+                                <label data-translate="qualiMakerApp.documentInterne.Redacteur" for="field_Redacteur">Redacteur</label>
+                                <select multiple class="form-control" id="field_Redacteur" name="Redacteur" ng-model="vm.documentInterne.redacteurs" ng-options="droitaccesDocument as droitaccesDocument.employe.nom+' '+droitaccesDocument.employe.prenom for droitaccesDocument in vm.droitaccesdocuments |filter:{roles:'Redacteur'} track by droitaccesDocument.id">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-4" ng-if="vm.documentInterne.v">
+                            <div class="form-group">
+                                <label data-translate="qualiMakerApp.documentInterne.Verificateur" for="field_Verificateur">Verificateur</label>
+                                <select multiple class="form-control" id="field_Verificateur" name="Verificateur" ng-model="vm.documentInterne.verificateurs" ng-options="droitaccesDocument as droitaccesDocument.employe.nom+' '+droitaccesDocument.employe.prenom for droitaccesDocument in vm.droitaccesdocuments |filter:{roles:'Verificateur'} track by droitaccesDocument.id">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4" ng-if="vm.documentInterne.a">
+                            <div class="form-group">
+                                <label data-translate="qualiMakerApp.documentInterne.Approubateur" for="field_Approubateur">Approubateur</label>
+                                <select multiple class="form-control" id="field_Approubateur" name="Approubateur" ng-model="vm.documentInterne.approubateurs" ng-options="droitaccesDocument as droitaccesDocument.employe.nom+' '+droitaccesDocument.employe.prenom for droitaccesDocument in vm.droitaccesdocuments |filter:{roles:'Approuvateur'} track by droitaccesDocument.id">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--   <div class="form-group">
+                           <label class="control-label" data-translate="qualiMakerApp.documentInterne.typeuser" for="field_typeuser">Typeuser</label>
+                           <input type="text" class="form-control" name="typeuser" id="field_typeuser"
+                                  ng-model="vm.documentInterne.typeuser"
+                           />
+                       </div>-->
+                    <!--  <div class="form-group">
+                          <label class="control-label" data-translate="qualiMakerApp.documentInterne.precedent" for="field_precedent">Precedent</label>
+                          <input type="text" class="form-control" name="precedent" id="field_precedent"
+                                 ng-model="vm.documentInterne.precedent"
+                          />
+                      </div>
+                      <div class="form-group">
+                          <label class="control-label" data-translate="qualiMakerApp.documentInterne.suivant" for="field_suivant">Suivant</label>
+                          <input type="text" class="form-control" name="suivant" id="field_suivant"
+                                 ng-model="vm.documentInterne.suivant"
+                          />
+                      </div>-->
+
+
+
+
+                </div>
+
+
+                <div class="modal-footer">
+                    <!-- <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn bg-color-orangeDark txt-color-white"  ng-click="vm.EnvoyerSuperviseur()" ng-if="vm.documentInterne.precedent =='R' && vm.documentInterne.suivant =='V'">
+                          <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span >Envoyer au Superviseur</span>
+                      </button>-->
+
+                    <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn bg-color-blue txt-color-white"  ng-click="vm.EnvoyerSupRedacteur()" ng-if="vm.documentInterne.precedent =='S' && vm.documentInterne.suivant =='R'">
+                        <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span >Envoyer au  Redacteur</span>
+
+                    </button>
+                    <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn bg-color-teal txt-color-white"  ng-click="vm.EnvoyerRedacteurSup()" ng-if="vm.documentInterne.precedent =='R' && vm.documentInterne.suivant =='S'">
+                        <span class="glyphicon glyphicon-send"></span>&nbsp;<span >Envoyer au Superviseur</span>
+
+                    </button>
+                    <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn bg-color-orange txt-color-white"  ng-click="vm.EnvoyerSupVerificateur()" ng-if="vm.documentInterne.precedent =='S' && vm.documentInterne.suivant =='V'">
+                        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span >Envoyer au Verificateur</span>
+                    </button>
+                    <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn bg-color-teal txt-color-white"  ng-click="vm.EnvoyerVerificateurSup()" ng-if="vm.documentInterne.precedent =='V' && vm.documentInterne.suivant =='S'">
+                        <span class="glyphicon glyphicon-send"></span>&nbsp;<span >Envoyer au Suprviseur</span>
+
+                    </button>
+                    <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn bg-color-blue txt-color-white"  ng-click="vm.EnvoyerSupApprobateur()" ng-if="vm.documentInterne.precedent =='S' && vm.documentInterne.suivant =='A'">
+                        <span class="glyphicon glyphicon-arrow-right"></span>&nbsp;<span >Envoyer au Approbateur</span>
+                        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn bg-color-teal txt-color-white"  ng-click="vm.EnvoyerApprobateurSup()" ng-if="vm.documentInterne.precedent =='A' && vm.documentInterne.suivant =='S'">
+                            <span class="glyphicon glyphicon-send"></span>&nbsp;<span >Envoyer au Superviseur</span>
+                        </button>
+                    </button>
+
+                    <button  type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary" ng-click="vm.Terminer()" ng-if="vm.documentInterne.precedent =='S' && vm.documentInterne.suivant =='S'">
+                        <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+                    </button>
+                    <button ng-if="!vm.documentInterne.precedent " type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+                    </button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="vm.clear()" >
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+                    </button>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>
+<script src="//cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
+<script src="//cdn.ckeditor.com/4.5.7/full/ckeditor.js"></script>
+<script src="//cdn.ckeditor.com/4.5.7/full/adapters/jquery.js"></script>
+<script>
+    // load extra ckeditor plugins
+    CKEDITOR.plugins.addExternal('simpleuploads', '/js/ckeditor/plugins/simpleuploads/plugin.js');
+    CKEDITOR.plugins.addExternal('imagesfromword', '/js/ckeditor/plugins/imagesfromword/plugin.js');
+</script>

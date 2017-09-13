@@ -67,7 +67,7 @@ class FonctionGatlingTest extends Simulation {
             .exec(http("Create new fonction")
             .post("/api/fonctions")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "nom":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "fonction":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_fonction_url"))).exitHereIfFailed
             .pause(10)

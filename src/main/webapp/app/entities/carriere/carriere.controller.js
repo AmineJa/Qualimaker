@@ -5,13 +5,15 @@
         .module('qualiMakerApp')
         .controller('CarriereController', CarriereController);
 
-    CarriereController.$inject = ['$state', 'Carriere', 'CarriereSearch', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];
+    CarriereController.$inject = ['$state','Principal', 'DataUtils', 'Carriere', 'CarriereSearch', 'ParseLinks', 'AlertService', 'paginationConstants', 'pagingParams'];
 
-    function CarriereController($state, Carriere, CarriereSearch, ParseLinks, AlertService, paginationConstants, pagingParams) {
+    function CarriereController($state,Principal, DataUtils, Carriere, CarriereSearch, ParseLinks, AlertService, paginationConstants, pagingParams) {
 
         var vm = this;
 
         vm.loadPage = loadPage;
+        vm.setActive = setActive;
+
         vm.predicate = pagingParams.predicate;
         vm.reverse = pagingParams.ascending;
         vm.transition = transition;
@@ -21,8 +23,18 @@
         vm.loadAll = loadAll;
         vm.searchQuery = pagingParams.search;
         vm.currentSearch = pagingParams.search;
+        vm.openFile = DataUtils.openFile;
+        vm.byteSize = DataUtils.byteSize;
 
         loadAll();
+        function setActive (carriere, isActivated) {
+            carriere.actived = isActivated;
+            Carriere.update(carriere, function () {
+                vm.loadAll();
+                vm.clear();
+            });
+        }
+
 
         function loadAll () {
             if (pagingParams.search) {
@@ -91,5 +103,45 @@
             vm.currentSearch = null;
             vm.transition();
         }
+
+
+
+
+
+        var copyAccount = function (account) {
+            return {
+                activated: account.activated,
+                email: account.email,
+                firstName: account.firstName,
+                langKey: account.langKey,
+                lastName: account.lastName,
+                login: account.login,
+                authorities:account.authorities
+            };
+        };
+
+        Principal.identity().then(function(account) {
+            vm.settingsAccount = copyAccount(account);
+        });
+
+        function save () {
+            Auth.updateAccount(vm.settingsAccount).then(function() {
+                vm.error = null;
+                vm.success = 'OK';
+                Principal.identity(true).then(function(account) {
+                    vm.settingsAccount = copyAccount(account);
+                });
+                JhiLanguageService.getCurrent().then(function(current) {
+                    if (vm.settingsAccount.langKey !== current) {
+                        $translate.use(vm.settingsAccount.langKey);
+                    }
+                });
+            }).catch(function() {
+                vm.success = null;
+                vm.error = 'ERROR';
+            });
+        }
+
+
     }
 })();

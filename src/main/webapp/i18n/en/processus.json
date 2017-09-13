@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "processus" : {
+            "home": {
+                "title": "Processuses",
+                "createLabel": "Create a new Processus",
+                "createOrEditLabel": "Create or edit a Processus",
+                "search": "Search for Processus"
+            },
+            "created": "A new Processus is created with identifier {{ param }}",
+            "updated": "A Processus is updated with identifier {{ param }}",
+            "deleted": "A Processus is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Processus {{ id }}?"
+            },
+            "detail": {
+                "title": "Processus"
+            },
+            "libelle": "Libelle",
+            "documentInterne": "Document Interne"
+        }
+    }
+}

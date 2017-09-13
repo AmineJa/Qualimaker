@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "servicepost" : {
+            "home": {
+                "title": "Serviceposts",
+                "createLabel": "Create a new Servicepost",
+                "createOrEditLabel": "Create or edit a Servicepost",
+                "search": "Search for Servicepost"
+            },
+            "created": "A new Servicepost is created with identifier {{ param }}",
+            "updated": "A Servicepost is updated with identifier {{ param }}",
+            "deleted": "A Servicepost is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Servicepost {{ id }}?"
+            },
+            "detail": {
+                "title": "Servicepost"
+            },
+            "serviice": "Serviice",
+            "poste": "Poste"
+        }
+    }
+}

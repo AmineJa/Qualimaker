@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "competences" : {
+            "home": {
+                "title": "Competences",
+                "createLabel": "Genera un nuovo Competences",
+                "createOrEditLabel": "Genera o modifica un Competences",
+                "search": "Cerca Competences"
+            },
+            "created": "&Egrave; stato generato un nuovo Competences con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Competences identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Competences con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Competences {{ id }}?"
+            },
+            "detail": {
+                "title": "Competences"
+            },
+            "file": "File",
+            "employe": "Employe"
+        }
+    }
+}

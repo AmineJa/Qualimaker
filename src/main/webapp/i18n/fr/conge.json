@@ -16,12 +16,11 @@
             "detail": {
                 "title": "Conge"
             },
-            "typeconges":"Type des congés",
             "statut": "Statut",
-            "dateD": "Début",
-            "dateF": "Fin",
-            "employe": "Employé",
-            "typeconge": "Type"
+            "dateD": "Date D",
+            "dateF": "Date F",
+            "employe": "Employe",
+            "typeconge": "Typeconge"
         }
     }
 }

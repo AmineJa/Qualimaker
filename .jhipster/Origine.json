@@ -1,0 +1,16 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "origine",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170508111946",
+    "javadoc": "not an ignored comment",
+    "entityTableName": "origine",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

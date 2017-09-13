@@ -2,10 +2,10 @@
     "qualiMakerApp": {
         "servicepost" : {
             "home": {
-                "title": "Service",
-                "createLabel": "Créer un nouveau Service",
-                "createOrEditLabel": "Créer ou éditer un Service",
-                "search": "Recherche pour Service"
+                "title": "Serviceposts",
+                "createLabel": "Créer un nouveau Servicepost",
+                "createOrEditLabel": "Créer ou éditer un Servicepost",
+                "search": "Recherche pour Servicepost"
             },
             "created": "Un nouveau Servicepost a été créé avec l'identifiant {{ param }}",
             "updated": "Le Servicepost avec l'identifiant {{ param }} a été mis à jour",
@@ -14,9 +14,9 @@
                 "question": "Etes-vous certain de vouloir supprimer le Servicepost {{ id }} ?"
             },
             "detail": {
-                "title": "Service"
+                "title": "Servicepost"
             },
-            "serviice": "Service",
+            "serviice": "Serviice",
             "poste": "Poste"
         }
     }

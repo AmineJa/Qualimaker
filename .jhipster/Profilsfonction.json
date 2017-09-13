@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "fonction",
+            "otherEntityName": "fonction",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "profil",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170517155350",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "profilsfonction",
+    "pagination": "pagination"
+}

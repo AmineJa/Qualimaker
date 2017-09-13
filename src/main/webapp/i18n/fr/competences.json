@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "competences" : {
+            "home": {
+                "title": "Competences",
+                "createLabel": "Créer un nouveau Competences",
+                "createOrEditLabel": "Créer ou éditer un Competences",
+                "search": "Recherche pour Competences"
+            },
+            "created": "Un nouveau Competences a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Competences avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Competences avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Competences {{ id }} ?"
+            },
+            "detail": {
+                "title": "Competences"
+            },
+            "file": "File",
+            "employe": "Employe"
+        }
+    }
+}

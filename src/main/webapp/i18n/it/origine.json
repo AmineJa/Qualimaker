@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "origine" : {
+            "home": {
+                "title": "Origines",
+                "createLabel": "Genera un nuovo Origine",
+                "createOrEditLabel": "Genera o modifica un Origine",
+                "search": "Cerca Origine"
+            },
+            "created": "&Egrave; stato generato un nuovo Origine con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Origine identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Origine con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Origine {{ id }}?"
+            },
+            "detail": {
+                "title": "Origine"
+            },
+            "origine": "Origine"
+        }
+    }
+}

@@ -37,5 +37,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="formation"/>
         
+        <addForeignKeyConstraint baseColumnNames="profilsfonction_id"
+                                 baseTableName="employe"
+                                 constraintName="fk_employe_profilsfonction_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profilsfonction"/>
+
     </changeSet>
 </databaseChangeLog>

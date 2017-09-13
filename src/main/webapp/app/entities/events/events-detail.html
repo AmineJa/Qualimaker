@@ -1,0 +1,48 @@
+
+<div>
+    <h2><span data-translate="qualiMakerApp.events.detail.title">Events</span> {{vm.events.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="qualiMakerApp.events.title">Title</span></dt>
+        <dd>
+            <span>{{vm.events.title}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.events.start">Start</span></dt>
+        <dd>
+            <span>{{vm.events.start | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.events.description">Description</span></dt>
+        <dd>
+            <span>{{vm.events.description}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.events.allDay">All Day</span></dt>
+        <dd>
+            <span>{{vm.events.allDay}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.events.end">End</span></dt>
+        <dd>
+            <span>{{vm.events.end | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.events.icon">Icon</span></dt>
+        <dd>
+            <div ng-if="vm.events.icon">
+                <a ng-click="vm.openFile(vm.events.iconContentType, vm.events.icon)">
+                    <img data-ng-src="{{'data:' + vm.events.iconContentType + ';base64,' + vm.events.icon}}" style="max-width: 100%;" alt="events image"/>
+                </a>
+                {{vm.events.iconContentType}}, {{vm.byteSize(vm.events.icon)}}
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="events-detail.edit({id:vm.events.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

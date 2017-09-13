@@ -1,0 +1,26 @@
+{
+    "qualiMakerApp": {
+        "remplacer" : {
+            "home": {
+                "title": "Remplacers",
+                "createLabel": "Genera un nuovo Remplacer",
+                "createOrEditLabel": "Genera o modifica un Remplacer",
+                "search": "Cerca Remplacer"
+            },
+            "created": "&Egrave; stato generato un nuovo Remplacer con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Remplacer identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Remplacer con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Remplacer {{ id }}?"
+            },
+            "detail": {
+                "title": "Remplacer"
+            },
+            "debut": "Debut",
+            "fin": "Fin",
+            "employe": "Employe",
+            "nouveau": "Nouveau",
+            "profilsfonction": "Profilsfonction"
+        }
+    }
+}

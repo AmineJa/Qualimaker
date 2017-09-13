@@ -1,0 +1,29 @@
+{
+    "qualiMakerApp": {
+        "typeDocumentation" : {
+            "home": {
+                "title": "TypeDocumentations",
+                "createLabel": "Créer un nouveau Type Documentation",
+                "createOrEditLabel": "Créer ou éditer un Type Documentation",
+                "search": "Recherche pour Type Documentation"
+            },
+            "created": "Un nouveau Type Documentation a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Type Documentation avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Type Documentation avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Type Documentation {{ id }} ?"
+            },
+            "detail": {
+                "title": "Type Documentation"
+            },
+            "type": "Type",
+            "pDf": "P Df",
+            "securise": "Securise",
+            "abreviation": "Abreviation",
+            "nature": "Nature",
+            "notif": "Notif",
+            "employe": "Employe",
+            "documenExterne": "Documen Externe"
+        }
+    }
+}

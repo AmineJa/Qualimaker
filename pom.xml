@@ -101,6 +101,7 @@
 
 
     <dependencies>
+
         <dependency>
             <groupId>io.github.jhipster</groupId>
             <artifactId>jhipster</artifactId>

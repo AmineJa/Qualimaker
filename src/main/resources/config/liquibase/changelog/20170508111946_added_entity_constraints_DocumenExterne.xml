@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity DocumenExterne.
+    -->
+    <changeSet id="20170508111946-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="documen_externes_id"
+                                 baseTableName="documen_externe_employe"
+                                 constraintName="fk_documen_externe_employe_documen_externes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="documen_externe"/>
+        <addForeignKeyConstraint baseColumnNames="employes_id"
+                                 baseTableName="documen_externe_employe"
+                                 constraintName="fk_documen_externe_employe_employes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employe"/>
+        
+        <addForeignKeyConstraint baseColumnNames="origine_id"
+                                 baseTableName="documen_externe"
+                                 constraintName="fk_documen_externe_origine_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="origine"/>
+
+        <addForeignKeyConstraint baseColumnNames="lieux_classement_id"
+                                 baseTableName="documen_externe"
+                                 constraintName="fk_documen_externe_lieux_classement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="lienx_classement"/>
+
+        <addForeignKeyConstraint baseColumnNames="type_documentation_id"
+                                 baseTableName="documen_externe"
+                                 constraintName="fk_documen_externe_type_documentation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="type_documentation"/>
+
+    </changeSet>
+</databaseChangeLog>

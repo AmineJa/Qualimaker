@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "lieuxClassement" : {
+            "home": {
+                "title": "Lieux Classements",
+                "createLabel": "Create a new Lieux Classement",
+                "createOrEditLabel": "Create or edit a Lieux Classement",
+                "search": "Search for Lieux Classement"
+            },
+            "created": "A new Lieux Classement is created with identifier {{ param }}",
+            "updated": "A Lieux Classement is updated with identifier {{ param }}",
+            "deleted": "A Lieux Classement is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Lieux Classement {{ id }}?"
+            },
+            "detail": {
+                "title": "Lieux Classement"
+            },
+            "lieux": "Lieux"
+        }
+    }
+}

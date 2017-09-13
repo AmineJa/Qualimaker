@@ -17,6 +17,18 @@ spring:
     profiles:
         active: dev
         include: swagger
+
+    mail:
+                        host: smtp.zoho.com
+                        port: 587
+                        username: qualimaker@zoho.com   #Replace this field with your Zoho username.
+                        password: jhipster2017          #Replace this field with your Zoho password.
+                        protocol: smtp
+                        tls: true
+                        properties.mail.smtp:
+                            auth: true
+                            starttls.enable: true
+                            ssl.trust: smtp.zoho.com
     devtools:
         restart:
             enabled: true
@@ -49,11 +61,8 @@ spring:
                 path:
                   logs: target/elasticsearch/log
                   data: target/elasticsearch/data
-    mail:
-        host: localhost
-        port: 25
-        username:
-        password:
+
+
     messages:
         cache-seconds: 1
     thymeleaf:

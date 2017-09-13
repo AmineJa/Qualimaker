@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Remplacer.
+    -->
+    <changeSet id="20170518101222-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="employe_id"
+                                 baseTableName="remplacer"
+                                 constraintName="fk_remplacer_employe_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employe"/>
+
+        <addForeignKeyConstraint baseColumnNames="nouveau_id"
+                                 baseTableName="remplacer"
+                                 constraintName="fk_remplacer_nouveau_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employe"/>
+
+        <addForeignKeyConstraint baseColumnNames="profilsfonction_id"
+                                 baseTableName="remplacer"
+                                 constraintName="fk_remplacer_profilsfonction_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="profilsfonction"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -74,7 +74,7 @@
             </article>
         <article class="col-md-9">
             <div class="form-group">
-                <select class="form-control" id="field_natureAbs" name="natureAbs" ng-model="vm.abscence.natureAbs" ng-options="natureAbs as natureAbs.nature for natureAbs in vm.natureabs track by natureAbs.id">
+                <select class="form-control" id="field_natureAbs" name="natureAbs" ng-model="vm.abscence.natureAbs" ng-options="natureAbs as natureAbs.nature for natureAbs in vm.natureabs track by natureAbs.id" ><!--data-ng-change="vm.updateNatureAbs()">-->
                     <option value=""></option>
                 </select>
             </div>

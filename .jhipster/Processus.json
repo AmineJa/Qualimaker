@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "documentInterne",
+            "otherEntityName": "documentInterne",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "processus"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "libelle",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170510091049",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "processus",
+    "pagination": "pagination"
+}

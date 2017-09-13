@@ -2,7 +2,7 @@
     "qualiMakerApp": {
         "typeConge" : {
             "home": {
-                "title": "Type des congés",
+                "title": "TypeConges",
                 "createLabel": "Créer un nouveau Type Conge",
                 "createOrEditLabel": "Créer ou éditer un Type Conge",
                 "search": "Recherche pour Type Conge"

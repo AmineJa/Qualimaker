@@ -40,11 +40,20 @@
             "aptphy": "Aptphy",
             "image": "Image",
             "cv": "Cv",
+            "etatDoc": "Etat Doc",
+            "signature": "Signature",
             "conge": "Conge",
             "site": "Site",
             "groupe": "Groupe",
             "service": "Service",
-            "formation": "Formation"
+            "formation": "Formation",
+            "DocumenExternes": "Documen Externes",
+            "remplacer": "Remplacer",
+            "remplacernv": "Remplacernv",
+            "droitaccesDocument": "Droitacces Document",
+            "carriere": "Carriere",
+            "profilsfonction": "Profilsfonction",
+            "competences": "Competences"
         }
     }
 }

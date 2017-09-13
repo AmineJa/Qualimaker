@@ -1,0 +1,27 @@
+{
+    "qualiMakerApp": {
+        "droitaccesDocument" : {
+            "home": {
+                "title": "Droitacces Documents",
+                "createLabel": "Create a new Droitacces Document",
+                "createOrEditLabel": "Create or edit a Droitacces Document",
+                "search": "Search for Droitacces Document"
+            },
+            "created": "A new Droitacces Document is created with identifier {{ param }}",
+            "updated": "A Droitacces Document is updated with identifier {{ param }}",
+            "deleted": "A Droitacces Document is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Droitacces Document {{ id }}?"
+            },
+            "detail": {
+                "title": "Droitacces Document"
+            },
+            "roles": "Roles",
+            "employe": "Employe",
+            "Verificateur": "Verificateur",
+            "Redacteur": "Redacteur",
+            "Superviseur": "Superviseur",
+            "Approubateur": "Approubateur"
+        }
+    }
+}

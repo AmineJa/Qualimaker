@@ -16,10 +16,12 @@
             "detail": {
                 "title": "Events"
             },
-            "debut": "Debut",
-            "fin": "Fin",
-            "text": "Text",
-            "formation": "Formation"
+            "title": "Title",
+            "start": "Start",
+            "description": "Description",
+            "allDay": "All Day",
+            "end": "End",
+            "icon": "Icon"
         }
     }
 }

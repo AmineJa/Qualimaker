@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "lieuxClassement" : {
+            "home": {
+                "title": "LieuxClassements",
+                "createLabel": "Créer un nouveau Lieux Classement",
+                "createOrEditLabel": "Créer ou éditer un Lieux Classement",
+                "search": "Recherche pour Lieux Classement"
+            },
+            "created": "Un nouveau Lieux Classement a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Lieux Classement avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Lieux Classement avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Lieux Classement {{ id }} ?"
+            },
+            "detail": {
+                "title": "Lieux Classement"
+            },
+            "lieux": "Lieux"
+        }
+    }
+}

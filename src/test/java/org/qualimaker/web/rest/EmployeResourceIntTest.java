@@ -121,6 +121,14 @@ public class EmployeResourceIntTest {
     private static final String DEFAULT_CV_CONTENT_TYPE = "image/jpg";
     private static final String UPDATED_CV_CONTENT_TYPE = "image/png";
 
+    private static final String DEFAULT_ETAT_DOC = "AAAAAAAAAA";
+    private static final String UPDATED_ETAT_DOC = "BBBBBBBBBB";
+
+    private static final byte[] DEFAULT_SIGNATURE = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_SIGNATURE = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_SIGNATURE_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_SIGNATURE_CONTENT_TYPE = "image/png";
+
     @Autowired
     private EmployeRepository employeRepository;
 
@@ -186,7 +194,10 @@ public class EmployeResourceIntTest {
             .image(DEFAULT_IMAGE)
             .imageContentType(DEFAULT_IMAGE_CONTENT_TYPE)
             .cv(DEFAULT_CV)
-            .cvContentType(DEFAULT_CV_CONTENT_TYPE);
+            .cvContentType(DEFAULT_CV_CONTENT_TYPE)
+            .etatDoc(DEFAULT_ETAT_DOC)
+            .signature(DEFAULT_SIGNATURE)
+            .signatureContentType(DEFAULT_SIGNATURE_CONTENT_TYPE);
         return employe;
     }
 
@@ -237,6 +248,9 @@ public class EmployeResourceIntTest {
         assertThat(testEmploye.getImageContentType()).isEqualTo(DEFAULT_IMAGE_CONTENT_TYPE);
         assertThat(testEmploye.getCv()).isEqualTo(DEFAULT_CV);
         assertThat(testEmploye.getCvContentType()).isEqualTo(DEFAULT_CV_CONTENT_TYPE);
+        assertThat(testEmploye.getEtatDoc()).isEqualTo(DEFAULT_ETAT_DOC);
+        assertThat(testEmploye.getSignature()).isEqualTo(DEFAULT_SIGNATURE);
+        assertThat(testEmploye.getSignatureContentType()).isEqualTo(DEFAULT_SIGNATURE_CONTENT_TYPE);
 
         // Validate the Employe in Elasticsearch
         Employe employeEs = employeSearchRepository.findOne(testEmploye.getId());
@@ -406,7 +420,10 @@ public class EmployeResourceIntTest {
             .andExpect(jsonPath("$.[*].imageContentType").value(hasItem(DEFAULT_IMAGE_CONTENT_TYPE)))
             .andExpect(jsonPath("$.[*].image").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGE))))
             .andExpect(jsonPath("$.[*].cvContentType").value(hasItem(DEFAULT_CV_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].cv").value(hasItem(Base64Utils.encodeToString(DEFAULT_CV))));
+            .andExpect(jsonPath("$.[*].cv").value(hasItem(Base64Utils.encodeToString(DEFAULT_CV))))
+            .andExpect(jsonPath("$.[*].etatDoc").value(hasItem(DEFAULT_ETAT_DOC.toString())))
+            .andExpect(jsonPath("$.[*].signatureContentType").value(hasItem(DEFAULT_SIGNATURE_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].signature").value(hasItem(Base64Utils.encodeToString(DEFAULT_SIGNATURE))));
     }
 
     @Test
@@ -445,7 +462,10 @@ public class EmployeResourceIntTest {
             .andExpect(jsonPath("$.imageContentType").value(DEFAULT_IMAGE_CONTENT_TYPE))
             .andExpect(jsonPath("$.image").value(Base64Utils.encodeToString(DEFAULT_IMAGE)))
             .andExpect(jsonPath("$.cvContentType").value(DEFAULT_CV_CONTENT_TYPE))
-            .andExpect(jsonPath("$.cv").value(Base64Utils.encodeToString(DEFAULT_CV)));
+            .andExpect(jsonPath("$.cv").value(Base64Utils.encodeToString(DEFAULT_CV)))
+            .andExpect(jsonPath("$.etatDoc").value(DEFAULT_ETAT_DOC.toString()))
+            .andExpect(jsonPath("$.signatureContentType").value(DEFAULT_SIGNATURE_CONTENT_TYPE))
+            .andExpect(jsonPath("$.signature").value(Base64Utils.encodeToString(DEFAULT_SIGNATURE)));
     }
 
     @Test
@@ -492,7 +512,10 @@ public class EmployeResourceIntTest {
             .image(UPDATED_IMAGE)
             .imageContentType(UPDATED_IMAGE_CONTENT_TYPE)
             .cv(UPDATED_CV)
-            .cvContentType(UPDATED_CV_CONTENT_TYPE);
+            .cvContentType(UPDATED_CV_CONTENT_TYPE)
+            .etatDoc(UPDATED_ETAT_DOC)
+            .signature(UPDATED_SIGNATURE)
+            .signatureContentType(UPDATED_SIGNATURE_CONTENT_TYPE);
 
         restEmployeMockMvc.perform(put("/api/employes")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -529,6 +552,9 @@ public class EmployeResourceIntTest {
         assertThat(testEmploye.getImageContentType()).isEqualTo(UPDATED_IMAGE_CONTENT_TYPE);
         assertThat(testEmploye.getCv()).isEqualTo(UPDATED_CV);
         assertThat(testEmploye.getCvContentType()).isEqualTo(UPDATED_CV_CONTENT_TYPE);
+        assertThat(testEmploye.getEtatDoc()).isEqualTo(UPDATED_ETAT_DOC);
+        assertThat(testEmploye.getSignature()).isEqualTo(UPDATED_SIGNATURE);
+        assertThat(testEmploye.getSignatureContentType()).isEqualTo(UPDATED_SIGNATURE_CONTENT_TYPE);
 
         // Validate the Employe in Elasticsearch
         Employe employeEs = employeSearchRepository.findOne(testEmploye.getId());
@@ -612,7 +638,10 @@ public class EmployeResourceIntTest {
             .andExpect(jsonPath("$.[*].imageContentType").value(hasItem(DEFAULT_IMAGE_CONTENT_TYPE)))
             .andExpect(jsonPath("$.[*].image").value(hasItem(Base64Utils.encodeToString(DEFAULT_IMAGE))))
             .andExpect(jsonPath("$.[*].cvContentType").value(hasItem(DEFAULT_CV_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].cv").value(hasItem(Base64Utils.encodeToString(DEFAULT_CV))));
+            .andExpect(jsonPath("$.[*].cv").value(hasItem(Base64Utils.encodeToString(DEFAULT_CV))))
+            .andExpect(jsonPath("$.[*].etatDoc").value(hasItem(DEFAULT_ETAT_DOC.toString())))
+            .andExpect(jsonPath("$.[*].signatureContentType").value(hasItem(DEFAULT_SIGNATURE_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].signature").value(hasItem(Base64Utils.encodeToString(DEFAULT_SIGNATURE))));
     }
 
     @Test

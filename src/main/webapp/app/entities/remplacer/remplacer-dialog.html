@@ -1,0 +1,170 @@
+<section id="widget-grid" class=""  >
+
+    <!-- row -->
+
+
+    <!-- NEW WIDGET START -->
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-magenta" id="wid-id-58" data-widget-editbutton="false" data-widget-deletebutton="false">
+        <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+        data-widget-colorbutton="false"
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true"
+        data-widget-sortable="false"
+
+        -->
+        <header>
+            <span class="widget-icon"> <i class="fa fa-check"></i> </span>
+            <h2 class="modal-title" id="myRemplacerLabel" data-translate="qualiMakerApp.remplacer.home.createOrEditLabel">Create or edit a Remplacer</h2>
+
+        </header>
+
+        <!-- widget div-->
+
+
+        <!-- widget edit box -->
+
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body ">
+
+
+
+        <form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 ></h4>
+    </div>
+    <div class="modal-body well">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.remplacer.id">
+
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.remplacer.id" readonly />
+        </div>
+        <div class="row">
+            <article class="col-md-2">
+                <label data-translate="qualiMakerApp.remplacer.employe" for="field_employe">Employe</label>
+
+            </article>
+            <article class="col-md-10">
+                <div class="form-group">
+                    <select class="form-control" id="field_employe" name="employe" ng-model="vm.remplacer.employe" ng-options="employe as employe.nom+' '+employe.prenom for employe in vm.employes track by employe.id" required>
+                        <option value=""></option>
+                    </select>
+                </div>
+
+            </article>
+        </div>
+        <div class="row">
+            <article class="col-md-2">
+                <label data-translate="qualiMakerApp.remplacer.nouveau" for="field_nouveau">Nouveau</label>
+
+            </article>
+            <article class="col-md-10">
+                <div class="form-group">
+                    <select class="form-control" id="field_nouveau" name="nouveau" ng-model="vm.remplacer.nouveau" ng-options="employe as employe.nom+' '+employe.prenom for employe in vm.employes track by employe.id" required>
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div ng-show="editForm.nouveau.$invalid">
+                    <p class="help-block"
+                       ng-show="editForm.nouveau.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
+                </div>
+            </article>
+        </div>
+        <div class="row">
+            <article class="col-md-2">
+                <label data-translate="qualiMakerApp.remplacer.profilsfonction" for="field_profilsfonction">Profilsfonction</label>
+
+            </article>
+            <article class="col-md-10">
+                <div class="form-group">
+                    <select class="form-control" id="field_profilsfonction" name="profilsfonction" ng-model="vm.remplacer.profilsfonction" ng-options="profilsfonction as profilsfonction.profil for profilsfonction in vm.profilsfonctions track by profilsfonction.id" required>
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div ng-show="editForm.profilsfonction.$invalid">
+                    <p class="help-block"
+                       ng-show="editForm.profilsfonction.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
+                </div>
+            </article>
+        </div>
+
+        <div class="row">
+            <article class="col-md-2">
+                <label class="control-label" data-translate="qualiMakerApp.remplacer.debut" for="field_debut">Debut</label>
+            </article>
+            <article class="col-md-4">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input id="field_debut" type="text" class="form-control" name="debut" datetime-picker="{{dateformat}}" ng-model="vm.remplacer.debut" is-open="vm.datePickerOpenStatus.debut"
+                               required/>
+                        <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('debut')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                    </div>
+                    <div ng-show="editForm.debut.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.debut.$error.required" data-translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                        <p class="help-block"
+                           ng-show="editForm.debut.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <article class="col-md-1">
+            <label class="control-label" data-translate="qualiMakerApp.remplacer.fin" for="field_fin">Fin</label>
+            </article>
+            <article class="col-md-5">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input id="field_fin" type="text" class="form-control" name="fin" datetime-picker="{{dateformat}}" ng-model="vm.remplacer.fin" is-open="vm.datePickerOpenStatus.fin"
+                        />
+                        <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('fin')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                    </div>
+                </div>
+
+                <div ng-show="editForm.employe.$invalid">
+                    <p class="help-block"
+                       ng-show="editForm.employe.$error.required" data-translate="entity.validation.required">
+                        This field is required.
+                    </p>
+                </div>
+            </article>
+        </div>
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-success">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
+        </div>
+    </div>
+</section>

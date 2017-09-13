@@ -1,0 +1,41 @@
+{
+    "qualiMakerApp": {
+        "documentInterne" : {
+            "home": {
+                "title": "DocumentInternes",
+                "createLabel": "Genera un nuovo Document Interne",
+                "createOrEditLabel": "Genera o modifica un Document Interne",
+                "search": "Cerca Document Interne"
+            },
+            "created": "&Egrave; stato generato un nuovo Document Interne con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Document Interne identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Document Interne con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Document Interne {{ id }}?"
+            },
+            "detail": {
+                "title": "Document Interne"
+            },
+            "code": "Code",
+            "libelle": "Libelle",
+            "fichier": "Fichier",
+            "motif": "Motif",
+            "message": "Message",
+            "etat": "Etat",
+            "date": "Date",
+            "v": "V",
+            "r": "R",
+            "a": "A",
+            "typeuser": "Typeuser",
+            "precedent": "Precedent",
+            "suivant": "Suivant",
+            "sites": "Sites",
+            "processus": "Processus",
+            "typeDocumentation": "Type Documentation",
+            "Superviseur": "Superviseur",
+            "Verificateur": "Verificateur",
+            "Redacteur": "Redacteur",
+            "Approubateur": "Approubateur"
+        }
+    }
+}

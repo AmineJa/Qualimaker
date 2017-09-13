@@ -118,6 +118,16 @@ public class Employe implements Serializable {
     @Column(name = "cv_content_type")
     private String cvContentType;
 
+    @Column(name = "etat_doc")
+    private String etatDoc;
+
+    @Lob
+    @Column(name = "signature")
+    private byte[] signature;
+
+    @Column(name = "signature_content_type")
+    private String signatureContentType;
+
     @OneToMany(mappedBy = "employe")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -138,6 +148,39 @@ public class Employe implements Serializable {
                joinColumns = @JoinColumn(name="employes_id", referencedColumnName="id"),
                inverseJoinColumns = @JoinColumn(name="formations_id", referencedColumnName="id"))
     private Set<Formation> formations = new HashSet<>();
+
+    @ManyToMany(mappedBy = "employes")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<DocumenExterne> documenExternes = new HashSet<>();
+
+    @OneToMany(mappedBy = "employe")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Remplacer> remplacers = new HashSet<>();
+
+    @OneToMany(mappedBy = "nouveau")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Remplacer> remplacernvs = new HashSet<>();
+
+    @OneToMany(mappedBy = "employe")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<DroitaccesDocument> droitaccesDocuments = new HashSet<>();
+
+    @OneToMany(mappedBy = "employe")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Carriere> carrieres = new HashSet<>();
+
+    @ManyToOne
+    private Profilsfonction profilsfonction;
+
+    @OneToMany(mappedBy = "employe")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Competences> competences = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -485,6 +528,45 @@ public class Employe implements Serializable {
         this.cvContentType = cvContentType;
     }
 
+    public String getEtatDoc() {
+        return etatDoc;
+    }
+
+    public Employe etatDoc(String etatDoc) {
+        this.etatDoc = etatDoc;
+        return this;
+    }
+
+    public void setEtatDoc(String etatDoc) {
+        this.etatDoc = etatDoc;
+    }
+
+    public byte[] getSignature() {
+        return signature;
+    }
+
+    public Employe signature(byte[] signature) {
+        this.signature = signature;
+        return this;
+    }
+
+    public void setSignature(byte[] signature) {
+        this.signature = signature;
+    }
+
+    public String getSignatureContentType() {
+        return signatureContentType;
+    }
+
+    public Employe signatureContentType(String signatureContentType) {
+        this.signatureContentType = signatureContentType;
+        return this;
+    }
+
+    public void setSignatureContentType(String signatureContentType) {
+        this.signatureContentType = signatureContentType;
+    }
+
     public Set<Conge> getConges() {
         return conges;
     }
@@ -574,6 +656,169 @@ public class Employe implements Serializable {
         this.formations = formations;
     }
 
+    public Set<DocumenExterne> getDocumenExternes() {
+        return documenExternes;
+    }
+
+    public Employe documenExternes(Set<DocumenExterne> documenExternes) {
+        this.documenExternes = documenExternes;
+        return this;
+    }
+
+    public Employe addDocumenExternes(DocumenExterne documenExterne) {
+        this.documenExternes.add(documenExterne);
+        documenExterne.getEmployes().add(this);
+        return this;
+    }
+
+    public Employe removeDocumenExternes(DocumenExterne documenExterne) {
+        this.documenExternes.remove(documenExterne);
+        documenExterne.getEmployes().remove(this);
+        return this;
+    }
+
+    public void setDocumenExternes(Set<DocumenExterne> documenExternes) {
+        this.documenExternes = documenExternes;
+    }
+
+    public Set<Remplacer> getRemplacers() {
+        return remplacers;
+    }
+
+    public Employe remplacers(Set<Remplacer> remplacers) {
+        this.remplacers = remplacers;
+        return this;
+    }
+
+    public Employe addRemplacer(Remplacer remplacer) {
+        this.remplacers.add(remplacer);
+        remplacer.setEmploye(this);
+        return this;
+    }
+
+    public Employe removeRemplacer(Remplacer remplacer) {
+        this.remplacers.remove(remplacer);
+        remplacer.setEmploye(null);
+        return this;
+    }
+
+    public void setRemplacers(Set<Remplacer> remplacers) {
+        this.remplacers = remplacers;
+    }
+
+    public Set<Remplacer> getRemplacernvs() {
+        return remplacernvs;
+    }
+
+    public Employe remplacernvs(Set<Remplacer> remplacers) {
+        this.remplacernvs = remplacers;
+        return this;
+    }
+
+    public Employe addRemplacernv(Remplacer remplacer) {
+        this.remplacernvs.add(remplacer);
+        remplacer.setNouveau(this);
+        return this;
+    }
+
+    public Employe removeRemplacernv(Remplacer remplacer) {
+        this.remplacernvs.remove(remplacer);
+        remplacer.setNouveau(null);
+        return this;
+    }
+
+    public void setRemplacernvs(Set<Remplacer> remplacers) {
+        this.remplacernvs = remplacers;
+    }
+
+    public Set<DroitaccesDocument> getDroitaccesDocuments() {
+        return droitaccesDocuments;
+    }
+
+    public Employe droitaccesDocuments(Set<DroitaccesDocument> droitaccesDocuments) {
+        this.droitaccesDocuments = droitaccesDocuments;
+        return this;
+    }
+
+    public Employe addDroitaccesDocument(DroitaccesDocument droitaccesDocument) {
+        this.droitaccesDocuments.add(droitaccesDocument);
+        droitaccesDocument.setEmploye(this);
+        return this;
+    }
+
+    public Employe removeDroitaccesDocument(DroitaccesDocument droitaccesDocument) {
+        this.droitaccesDocuments.remove(droitaccesDocument);
+        droitaccesDocument.setEmploye(null);
+        return this;
+    }
+
+    public void setDroitaccesDocuments(Set<DroitaccesDocument> droitaccesDocuments) {
+        this.droitaccesDocuments = droitaccesDocuments;
+    }
+
+    public Set<Carriere> getCarrieres() {
+        return carrieres;
+    }
+
+    public Employe carrieres(Set<Carriere> carrieres) {
+        this.carrieres = carrieres;
+        return this;
+    }
+
+    public Employe addCarriere(Carriere carriere) {
+        this.carrieres.add(carriere);
+        carriere.setEmploye(this);
+        return this;
+    }
+
+    public Employe removeCarriere(Carriere carriere) {
+        this.carrieres.remove(carriere);
+        carriere.setEmploye(null);
+        return this;
+    }
+
+    public void setCarrieres(Set<Carriere> carrieres) {
+        this.carrieres = carrieres;
+    }
+
+    public Profilsfonction getProfilsfonction() {
+        return profilsfonction;
+    }
+
+    public Employe profilsfonction(Profilsfonction profilsfonction) {
+        this.profilsfonction = profilsfonction;
+        return this;
+    }
+
+    public void setProfilsfonction(Profilsfonction profilsfonction) {
+        this.profilsfonction = profilsfonction;
+    }
+
+    public Set<Competences> getCompetences() {
+        return competences;
+    }
+
+    public Employe competences(Set<Competences> competences) {
+        this.competences = competences;
+        return this;
+    }
+
+    public Employe addCompetences(Competences competences) {
+        this.competences.add(competences);
+        competences.setEmploye(this);
+        return this;
+    }
+
+    public Employe removeCompetences(Competences competences) {
+        this.competences.remove(competences);
+        competences.setEmploye(null);
+        return this;
+    }
+
+    public void setCompetences(Set<Competences> competences) {
+        this.competences = competences;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -624,6 +869,9 @@ public class Employe implements Serializable {
             ", imageContentType='" + imageContentType + "'" +
             ", cv='" + cv + "'" +
             ", cvContentType='" + cvContentType + "'" +
+            ", etatDoc='" + etatDoc + "'" +
+            ", signature='" + signature + "'" +
+            ", signatureContentType='" + signatureContentType + "'" +
             '}';
     }
 }

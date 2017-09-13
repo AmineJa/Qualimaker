@@ -1,0 +1,50 @@
+
+<div>
+    <h2><span data-translate="qualiMakerApp.enregistrement.detail.title">Enregistrement</span> {{vm.enregistrement.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="qualiMakerApp.enregistrement.libelle">Libelle</span></dt>
+        <dd>
+            <span>{{vm.enregistrement.libelle}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.enregistrement.titre">Titre</span></dt>
+        <dd>
+            <span>{{vm.enregistrement.titre}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.enregistrement.fichier">Fichier</span></dt>
+        <dd>
+            <div ng-if="vm.enregistrement.fichier">
+                <a ng-click="vm.openFile(vm.enregistrement.fichierContentType, vm.enregistrement.fichier)" data-translate="entity.action.open">open</a>
+                {{vm.enregistrement.fichierContentType}}, {{vm.byteSize(vm.enregistrement.fichier)}}
+            </div>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.enregistrement.commentaire">Commentaire</span></dt>
+        <dd>
+            <span>{{vm.enregistrement.commentaire}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.enregistrement.motclef">Motclef</span></dt>
+        <dd>
+            <span>{{vm.enregistrement.motclef}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.enregistrement.date">Date</span></dt>
+        <dd>
+            <span>{{vm.enregistrement.date | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.enregistrement.employe">Employe</span></dt>
+        <dd>
+            <span>{{vm.enregistrement.employe}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="enregistrement-detail.edit({id:vm.enregistrement.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

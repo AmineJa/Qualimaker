@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "lieuxClassement" : {
+            "home": {
+                "title": "LieuxClassements",
+                "createLabel": "Genera un nuovo Lieux Classement",
+                "createOrEditLabel": "Genera o modifica un Lieux Classement",
+                "search": "Cerca Lieux Classement"
+            },
+            "created": "&Egrave; stato generato un nuovo Lieux Classement con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Lieux Classement identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Lieux Classement con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Lieux Classement {{ id }}?"
+            },
+            "detail": {
+                "title": "Lieux Classement"
+            },
+            "lieux": "Lieux"
+        }
+    }
+}

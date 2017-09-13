@@ -1,0 +1,195 @@
+<section id="widget-grid" class=""  >
+
+    <!-- row -->
+
+
+    <!-- NEW WIDGET START -->
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-green" id="wid-id-25" data-widget-editbutton="false" data-widget-deletebutton="false">
+        <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+        data-widget-colorbutton="false"
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true"
+        data-widget-sortable="false"
+
+        -->
+        <header>
+            <span class="widget-icon"> <i class="fa fa-check"></i> </span>
+            <h2 class="modal-title" id="myEventsLabel" data-translate="qualiMakerApp.events.home.createOrEditLabel">Create or edit a Events </h2>
+
+        </header>
+
+        <!-- widget div-->
+
+
+        <!-- widget edit box -->
+
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body">
+
+
+
+
+        <form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 ></h4>
+    </div>
+    <div class="modal-body well">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.events.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   ng-model="vm.events.id" readonly />
+        </div>
+        <!--<div class="widget-body">
+            <!-- content goes here -->
+
+
+
+        <!--    <div class="form-group">
+                <label>Select Event Icon</label>
+                <div class="btn-group btn-group-sm btn-group-justified" data-toggle="buttons" > <!--  -->
+             <!--       <label class="btn btn-default active">
+                        <input type="radio" name="iconselect" id="icon-1" value="fa-info" radio-toggle ng-model="vm.events.icon">
+                        <i class="fa fa-info text-muted"></i> </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="iconselect" id="icon-2" value="fa-warning" radio-toggle  ng-model="vm.events.icon">
+                        <i class="fa fa-warning text-muted"></i> </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="iconselect" id="icon-3" value="fa-check" radio-toggle  ng-model="vm.events.icon">
+                        <i class="fa fa-check text-muted"></i> </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="iconselect" id="icon-4" value="fa-user" radio-toggle  ng-model="vm.events.icon">
+                        <i class="fa fa-user text-muted"></i> </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="iconselect" id="icon-5" value="fa-lock" radio-toggle  ng-model="vm.events.icon">
+                        <i class="fa fa-lock text-muted"></i> </label>
+                    <label class="btn btn-default">
+                        <input type="radio" name="iconselect" id="icon-6" value="fa-clock-o" radio-toggle  ng-model="vm.events.icon">
+                        <i class="fa fa-clock-o text-muted"></i> </label>
+                </div>
+            </div>
+-->
+<!--
+            <div class="form-group">
+                <label>Select Event Color</label>
+                <div class="btn-group btn-group-justified btn-select-tick" data-toggle="buttons" >
+                    <label class="btn bg-color-darken active">
+                        <input   ng-model="newEvent.className" radio-toggle   type="radio" name="priority" id="option1" value="bg-color-darken txt-color-white" >
+                        <i class="fa fa-check txt-color-white"></i> </label>
+                    <label class="btn bg-color-blue">
+                        <input  ng-model="newEvent.className" radio-toggle   type="radio" name="priority" id="option2" value="bg-color-blue txt-color-white">
+                        <i class="fa fa-check txt-color-white"></i> </label>
+                    <label class="btn bg-color-orange">
+                        <input  ng-model="newEvent.className" radio-toggle   type="radio" name="priority" id="option3" value="bg-color-orange txt-color-white">
+                        <i class="fa fa-check txt-color-white"></i> </label>
+                    <label class="btn bg-color-greenLight">
+                        <input  ng-model="newEvent.className" radio-toggle   type="radio" name="priority" id="option4" value="bg-color-greenLight txt-color-white">
+                        <i class="fa fa-check txt-color-white"></i> </label>
+                    <label class="btn bg-color-blueLight">
+                        <input  ng-model="newEvent.className" radio-toggle   type="radio" name="priority" id="option5" value="bg-color-blueLight txt-color-white">
+                        <i class="fa fa-check txt-color-white"></i> </label>
+                    <label class="btn bg-color-red">
+                        <input  ng-model="newEvent.className" radio-toggle   type="radio" name="priority" id="option6" value="bg-color-red txt-color-white">
+                        <i class="fa fa-check txt-color-white"></i> </label>
+                </div>
+            </div>
+
+-->
+
+            <!-- end content -->
+        <!--</div>-->
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.events.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                   ng-model="vm.events.title"
+            />
+        </div>
+
+    <div class="row">
+        <div class="col-md-6">
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.events.start" for="field_start">Start</label>
+            <div class="input-group">
+                <input id="field_start" type="text" class="form-control" name="start" datetime-picker="{{dateformat}}" ng-model="vm.events.start" is-open="vm.datePickerOpenStatus.start"
+                />
+                <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('start')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-6">
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.events.end" for="field_end">End</label>
+            <div class="input-group">
+                <input id="field_end" type="text" class="form-control" name="end" datetime-picker="{{dateformat}}" ng-model="vm.events.end" is-open="vm.datePickerOpenStatus.end"
+                />
+                <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('end')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+        <div class="form-group">
+            <textarea type="text" class="form-control" name="description" id="field_description" placeholder="{{'qualiMakerApp.events.description'|translate}}"
+                   ng-model="vm.events.description"
+            ></textarea>
+        </div>
+      <!--  <div class="form-group" ngf-drop ngf-change="vm.setIcon($file, vm.events)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="qualiMakerApp.events.icon" for="field_icon">Icon</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.events.iconContentType + ';base64,' + vm.events.icon}}" style="max-height: 100px;" ng-if="vm.events.icon" alt="events image"/>
+                <div ng-if="vm.events.icon" class="help-block clearfix">
+                    <span class="pull-left">{{vm.events.iconContentType}}, {{vm.byteSize(vm.events.icon)}}</span>
+                    <button type="button" ng-click="vm.events.icon=null;vm.events.iconContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setIcon($file, vm.events)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="icon" id="field_icon"
+                   ng-model="vm.events.icon"
+            />
+            <input type="hidden" class="form-control" name="iconContentType" id="field_iconContentType"
+                   ng-model="vm.events.iconContentType" />
+        </div>-->
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.events.allDay" for="field_allDay">All Day</label>
+            <input type="checkbox" name="allDay" id="field_allDay"
+                   ng-model="vm.events.allDay"/>
+        </div>
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,23 @@
+{
+    "qualiMakerApp": {
+        "profilsfonction" : {
+            "home": {
+                "title": "Profilsfonctions",
+                "createLabel": "Créer un nouveau Profilsfonction",
+                "createOrEditLabel": "Créer ou éditer un Profilsfonction",
+                "search": "Recherche pour Profilsfonction"
+            },
+            "created": "Un nouveau Profilsfonction a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Profilsfonction avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Profilsfonction avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Profilsfonction {{ id }} ?"
+            },
+            "detail": {
+                "title": "Profilsfonction"
+            },
+            "profil": "Profil",
+            "fonction": "Fonction"
+        }
+    }
+}

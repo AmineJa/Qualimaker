@@ -12,9 +12,9 @@
             <div >
                 <h1 class="page-title txt-color-blueDark">
                     <i class="fa fa-table fa-fw "></i>
-                    G.R.H
+                    <span data-translate="global.menu.GRH">G.R.H</span>
                     <span>>
-								Congés
+                        <span data-translate="global.menu.entities.conge" >Congés</span>
 							</span>
                 </h1>
             </div>
@@ -56,7 +56,7 @@
                         <div class="jarviswidget-editbox">
                             <!-- This area used as dropdown edit box -->
 
-                        </div>
+  </div>
 <div ng-switch="vm.isAuthenticated()">
     <h2 ></h2>
     <jhi-alert></jhi-alert>
@@ -76,12 +76,12 @@
                     </article>
                     <article class="col-sm-12 col-md-12 col-lg-4">
 
-                    <button class="btn bg-color-redLight txt-color-white" ui-sref="type-conge" >
+                  <!--  <button class="btn bg-color-redLight txt-color-white" ui-sref="type-conge" >
                             <span class="glyphicon glyphicon-new-window"></span>
                             <span class="hidden-xs-down"  data-translate="qualiMakerApp.conge.typeconges">Type des congés
 
                     </span>
-                        </button>
+                        </button>-->
                     </article>
 
                     <article class="col-sm-12 col-md-12 col-lg-6">
@@ -128,7 +128,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="conge in vm.conges track by conge.id" ><!--ng-class="{active: vm.$state.includes('account') }" ng-if="conge.employe.email ==vm.settingsAccount.email" -->
+                <tr ng-repeat="conge in vm.conges track by conge.id" ng-class="{active: vm.$state.includes('account')}" ng-if="conge.employe.email ==vm.settingsAccount.email"><!--ng-class="{active: vm.$state.includes('account') }" ng-if="conge.employe.email ==vm.settingsAccount.email" -->
 
                     <td><a ui-sref="conge-detail({id:conge.id})">{{conge.id}}</a></td>
                     <td>

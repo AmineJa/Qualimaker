@@ -67,7 +67,7 @@ class EmployeGatlingTest extends Simulation {
             .exec(http("Create new employe")
             .post("/api/employes")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "nom":"SAMPLE_TEXT", "prenom":"SAMPLE_TEXT", "dateN":"2020-01-01T00:00:00.000Z", "cin":null, "sexe":null, "adress":"SAMPLE_TEXT", "gsm":null, "lieuNais":"SAMPLE_TEXT", "telMais":null, "teleph":null, "delivrele":"2020-01-01T00:00:00.000Z", "delivrea":"SAMPLE_TEXT", "email":"SAMPLE_TEXT", "matricule":null, "email2":"SAMPLE_TEXT", "grade":"SAMPLE_TEXT", "rib":null, "nsc":null, "competence":"SAMPLE_TEXT", "diplome":"SAMPLE_TEXT", "experience":"SAMPLE_TEXT", "aptphy":"SAMPLE_TEXT", "image":null, "cv":null}""")).asJSON
+            .body(StringBody("""{"id":null, "nom":"SAMPLE_TEXT", "prenom":"SAMPLE_TEXT", "dateN":"2020-01-01T00:00:00.000Z", "cin":null, "sexe":null, "adress":"SAMPLE_TEXT", "gsm":null, "lieuNais":"SAMPLE_TEXT", "telMais":null, "teleph":null, "delivrele":"2020-01-01T00:00:00.000Z", "delivrea":"SAMPLE_TEXT", "email":"SAMPLE_TEXT", "matricule":null, "email2":"SAMPLE_TEXT", "grade":"SAMPLE_TEXT", "rib":null, "nsc":null, "competence":"SAMPLE_TEXT", "diplome":"SAMPLE_TEXT", "experience":"SAMPLE_TEXT", "aptphy":"SAMPLE_TEXT", "image":null, "cv":null, "etatDoc":"SAMPLE_TEXT", "signature":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_employe_url"))).exitHereIfFailed
             .pause(10)

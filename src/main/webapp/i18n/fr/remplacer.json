@@ -1,0 +1,26 @@
+{
+    "qualiMakerApp": {
+        "remplacer" : {
+            "home": {
+                "title": "liste des Remplacements",
+                "createLabel": "Créer un nouveau Remplacier",
+                "createOrEditLabel": "Créer ou éditer un Remplacier",
+                "search": "Recherche pour Remplacer"
+            },
+            "created": "Un nouveau Remplacer a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Remplacer avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Remplacer avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Remplacer {{ id }} ?"
+            },
+            "detail": {
+                "title": "Remplacier"
+            },
+            "debut": "Date",
+            "fin": "jusqu'à",
+            "employe": "Employe",
+            "nouveau": "Remplacer par ",
+            "profilsfonction": "Profil de fonction"
+        }
+    }
+}

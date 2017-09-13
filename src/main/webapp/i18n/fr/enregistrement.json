@@ -1,0 +1,28 @@
+{
+    "qualiMakerApp": {
+        "enregistrement" : {
+            "home": {
+                "title": "Enregistrements",
+                "createLabel": "Créer un nouveau Enregistrement",
+                "createOrEditLabel": "Créer ou éditer un Enregistrement",
+                "search": "Recherche pour Enregistrement"
+            },
+            "created": "Un nouveau Enregistrement a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Enregistrement avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Enregistrement avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Enregistrement {{ id }} ?"
+            },
+            "detail": {
+                "title": "Enregistrement"
+            },
+            "libelle": "Libelle",
+            "titre": "Titre",
+            "fichier": "Fichier",
+            "commentaire": "Commentaire",
+            "motclef": "Mot clef",
+            "date": "Enregistrer à",
+            "employe": "Employé"
+        }
+    }
+}

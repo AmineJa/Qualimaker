@@ -18,6 +18,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -56,7 +57,7 @@ public class CarriereResource {
      */
     @PostMapping("/carrieres")
     @Timed
-    public ResponseEntity<Carriere> createCarriere(@RequestBody Carriere carriere) throws URISyntaxException {
+    public ResponseEntity<Carriere> createCarriere(@Valid @RequestBody Carriere carriere) throws URISyntaxException {
         log.debug("REST request to save Carriere : {}", carriere);
         if (carriere.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new carriere cannot already have an ID")).body(null);
@@ -79,7 +80,7 @@ public class CarriereResource {
      */
     @PutMapping("/carrieres")
     @Timed
-    public ResponseEntity<Carriere> updateCarriere(@RequestBody Carriere carriere) throws URISyntaxException {
+    public ResponseEntity<Carriere> updateCarriere(@Valid @RequestBody Carriere carriere) throws URISyntaxException {
         log.debug("REST request to update Carriere : {}", carriere);
         if (carriere.getId() == null) {
             return createCarriere(carriere);

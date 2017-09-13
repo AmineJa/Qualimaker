@@ -32,6 +32,49 @@
             "otherEntityName": "formation",
             "otherEntityField": "id",
             "ownerSide": true
+        },
+        {
+            "relationshipName": "DocumenExternes",
+            "otherEntityName": "documenExterne",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "employe"
+        },
+        {
+            "relationshipName": "remplacer",
+            "otherEntityName": "remplacer",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "employe"
+        },
+        {
+            "relationshipName": "remplacernv",
+            "otherEntityName": "remplacer",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "nouveau"
+        },
+        {
+            "relationshipName": "droitaccesDocument",
+            "otherEntityName": "droitaccesDocument",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "employe"
+        },
+        {
+            "relationshipName": "carriere",
+            "otherEntityName": "carriere",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "employe"
+        },
+        {
+            "relationshipName": "profilsfonction",
+            "otherEntityName": "profilsfonction",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "competences",
+            "otherEntityName": "competences",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "employe"
         }
     ],
     "fields": [
@@ -151,6 +194,15 @@
             "fieldName": "cv",
             "fieldType": "byte[]",
             "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "etatDoc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "signature",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
         }
     ],
     "changelogDate": "20170329102953",

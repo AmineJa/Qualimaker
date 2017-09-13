@@ -3,6 +3,7 @@ package org.qualimaker.web.rest;
 import org.qualimaker.QualiMakerApp;
 
 import org.qualimaker.domain.Carriere;
+import org.qualimaker.domain.TypeContrat;
 import org.qualimaker.repository.CarriereRepository;
 import org.qualimaker.repository.search.CarriereSearchRepository;
 import org.qualimaker.web.rest.errors.ExceptionTranslator;
@@ -20,6 +21,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Base64Utils;
 
 import javax.persistence.EntityManager;
 import java.time.Instant;
@@ -43,14 +45,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = QualiMakerApp.class)
 public class CarriereResourceIntTest {
 
-    private static final String DEFAULT_NOM = "AAAAAAAAAA";
-    private static final String UPDATED_NOM = "BBBBBBBBBB";
-
-    private static final String DEFAULT_ETAT = "AAAAAAAAAA";
-    private static final String UPDATED_ETAT = "BBBBBBBBBB";
-
-    private static final String DEFAULT_INTEGRE = "AAAAAAAAAA";
-    private static final String UPDATED_INTEGRE = "BBBBBBBBBB";
+    private static final Boolean DEFAULT_INTEGRE = false;
+    private static final Boolean UPDATED_INTEGRE = true;
 
     private static final ZonedDateTime DEFAULT_DEBUT_I_NT = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
     private static final ZonedDateTime UPDATED_DEBUT_I_NT = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
@@ -61,8 +57,18 @@ public class CarriereResourceIntTest {
     private static final ZonedDateTime DEFAULT_DATE_REC = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
     private static final ZonedDateTime UPDATED_DATE_REC = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
 
-    private static final String DEFAULT_FICH_CONT = "AAAAAAAAAA";
-    private static final String UPDATED_FICH_CONT = "BBBBBBBBBB";
+    private static final byte[] DEFAULT_DOCUMENT = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_DOCUMENT = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_DOCUMENT_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_DOCUMENT_CONTENT_TYPE = "image/png";
+
+    private static final Boolean DEFAULT_ACTIVED = false;
+    private static final Boolean UPDATED_ACTIVED = true;
+
+    private static final byte[] DEFAULT_CONTRAT = TestUtil.createByteArray(1, "0");
+    private static final byte[] UPDATED_CONTRAT = TestUtil.createByteArray(2, "1");
+    private static final String DEFAULT_CONTRAT_CONTENT_TYPE = "image/jpg";
+    private static final String UPDATED_CONTRAT_CONTENT_TYPE = "image/png";
 
     @Autowired
     private CarriereRepository carriereRepository;
@@ -104,13 +110,20 @@ public class CarriereResourceIntTest {
      */
     public static Carriere createEntity(EntityManager em) {
         Carriere carriere = new Carriere()
-            .nom(DEFAULT_NOM)
-            .etat(DEFAULT_ETAT)
             .integre(DEFAULT_INTEGRE)
             .debutINt(DEFAULT_DEBUT_I_NT)
             .finINT(DEFAULT_FIN_INT)
             .dateRec(DEFAULT_DATE_REC)
-            .fichCont(DEFAULT_FICH_CONT);
+            .document(DEFAULT_DOCUMENT)
+            .documentContentType(DEFAULT_DOCUMENT_CONTENT_TYPE)
+            .actived(DEFAULT_ACTIVED)
+            .contrat(DEFAULT_CONTRAT)
+            .contratContentType(DEFAULT_CONTRAT_CONTENT_TYPE);
+        // Add required entity
+        TypeContrat typeContrat = TypeContratResourceIntTest.createEntity(em);
+        em.persist(typeContrat);
+        em.flush();
+        carriere.setTypeContrat(typeContrat);
         return carriere;
     }
 
@@ -135,13 +148,15 @@ public class CarriereResourceIntTest {
         List<Carriere> carriereList = carriereRepository.findAll();
         assertThat(carriereList).hasSize(databaseSizeBeforeCreate + 1);
         Carriere testCarriere = carriereList.get(carriereList.size() - 1);
-        assertThat(testCarriere.getNom()).isEqualTo(DEFAULT_NOM);
-        assertThat(testCarriere.getEtat()).isEqualTo(DEFAULT_ETAT);
-        assertThat(testCarriere.getIntegre()).isEqualTo(DEFAULT_INTEGRE);
+        assertThat(testCarriere.isIntegre()).isEqualTo(DEFAULT_INTEGRE);
         assertThat(testCarriere.getDebutINt()).isEqualTo(DEFAULT_DEBUT_I_NT);
         assertThat(testCarriere.getFinINT()).isEqualTo(DEFAULT_FIN_INT);
         assertThat(testCarriere.getDateRec()).isEqualTo(DEFAULT_DATE_REC);
-        assertThat(testCarriere.getFichCont()).isEqualTo(DEFAULT_FICH_CONT);
+        assertThat(testCarriere.getDocument()).isEqualTo(DEFAULT_DOCUMENT);
+        assertThat(testCarriere.getDocumentContentType()).isEqualTo(DEFAULT_DOCUMENT_CONTENT_TYPE);
+        assertThat(testCarriere.isActived()).isEqualTo(DEFAULT_ACTIVED);
+        assertThat(testCarriere.getContrat()).isEqualTo(DEFAULT_CONTRAT);
+        assertThat(testCarriere.getContratContentType()).isEqualTo(DEFAULT_CONTRAT_CONTENT_TYPE);
 
         // Validate the Carriere in Elasticsearch
         Carriere carriereEs = carriereSearchRepository.findOne(testCarriere.getId());
@@ -178,13 +193,15 @@ public class CarriereResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(carriere.getId().intValue())))
-            .andExpect(jsonPath("$.[*].nom").value(hasItem(DEFAULT_NOM.toString())))
-            .andExpect(jsonPath("$.[*].etat").value(hasItem(DEFAULT_ETAT.toString())))
-            .andExpect(jsonPath("$.[*].integre").value(hasItem(DEFAULT_INTEGRE.toString())))
+            .andExpect(jsonPath("$.[*].integre").value(hasItem(DEFAULT_INTEGRE.booleanValue())))
             .andExpect(jsonPath("$.[*].debutINt").value(hasItem(sameInstant(DEFAULT_DEBUT_I_NT))))
             .andExpect(jsonPath("$.[*].finINT").value(hasItem(sameInstant(DEFAULT_FIN_INT))))
             .andExpect(jsonPath("$.[*].dateRec").value(hasItem(sameInstant(DEFAULT_DATE_REC))))
-            .andExpect(jsonPath("$.[*].fichCont").value(hasItem(DEFAULT_FICH_CONT.toString())));
+            .andExpect(jsonPath("$.[*].documentContentType").value(hasItem(DEFAULT_DOCUMENT_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].document").value(hasItem(Base64Utils.encodeToString(DEFAULT_DOCUMENT))))
+            .andExpect(jsonPath("$.[*].actived").value(hasItem(DEFAULT_ACTIVED.booleanValue())))
+            .andExpect(jsonPath("$.[*].contratContentType").value(hasItem(DEFAULT_CONTRAT_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].contrat").value(hasItem(Base64Utils.encodeToString(DEFAULT_CONTRAT))));
     }
 
     @Test
@@ -198,13 +215,15 @@ public class CarriereResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(carriere.getId().intValue()))
-            .andExpect(jsonPath("$.nom").value(DEFAULT_NOM.toString()))
-            .andExpect(jsonPath("$.etat").value(DEFAULT_ETAT.toString()))
-            .andExpect(jsonPath("$.integre").value(DEFAULT_INTEGRE.toString()))
+            .andExpect(jsonPath("$.integre").value(DEFAULT_INTEGRE.booleanValue()))
             .andExpect(jsonPath("$.debutINt").value(sameInstant(DEFAULT_DEBUT_I_NT)))
             .andExpect(jsonPath("$.finINT").value(sameInstant(DEFAULT_FIN_INT)))
             .andExpect(jsonPath("$.dateRec").value(sameInstant(DEFAULT_DATE_REC)))
-            .andExpect(jsonPath("$.fichCont").value(DEFAULT_FICH_CONT.toString()));
+            .andExpect(jsonPath("$.documentContentType").value(DEFAULT_DOCUMENT_CONTENT_TYPE))
+            .andExpect(jsonPath("$.document").value(Base64Utils.encodeToString(DEFAULT_DOCUMENT)))
+            .andExpect(jsonPath("$.actived").value(DEFAULT_ACTIVED.booleanValue()))
+            .andExpect(jsonPath("$.contratContentType").value(DEFAULT_CONTRAT_CONTENT_TYPE))
+            .andExpect(jsonPath("$.contrat").value(Base64Utils.encodeToString(DEFAULT_CONTRAT)));
     }
 
     @Test
@@ -226,13 +245,15 @@ public class CarriereResourceIntTest {
         // Update the carriere
         Carriere updatedCarriere = carriereRepository.findOne(carriere.getId());
         updatedCarriere
-            .nom(UPDATED_NOM)
-            .etat(UPDATED_ETAT)
             .integre(UPDATED_INTEGRE)
             .debutINt(UPDATED_DEBUT_I_NT)
             .finINT(UPDATED_FIN_INT)
             .dateRec(UPDATED_DATE_REC)
-            .fichCont(UPDATED_FICH_CONT);
+            .document(UPDATED_DOCUMENT)
+            .documentContentType(UPDATED_DOCUMENT_CONTENT_TYPE)
+            .actived(UPDATED_ACTIVED)
+            .contrat(UPDATED_CONTRAT)
+            .contratContentType(UPDATED_CONTRAT_CONTENT_TYPE);
 
         restCarriereMockMvc.perform(put("/api/carrieres")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -243,13 +264,15 @@ public class CarriereResourceIntTest {
         List<Carriere> carriereList = carriereRepository.findAll();
         assertThat(carriereList).hasSize(databaseSizeBeforeUpdate);
         Carriere testCarriere = carriereList.get(carriereList.size() - 1);
-        assertThat(testCarriere.getNom()).isEqualTo(UPDATED_NOM);
-        assertThat(testCarriere.getEtat()).isEqualTo(UPDATED_ETAT);
-        assertThat(testCarriere.getIntegre()).isEqualTo(UPDATED_INTEGRE);
+        assertThat(testCarriere.isIntegre()).isEqualTo(UPDATED_INTEGRE);
         assertThat(testCarriere.getDebutINt()).isEqualTo(UPDATED_DEBUT_I_NT);
         assertThat(testCarriere.getFinINT()).isEqualTo(UPDATED_FIN_INT);
         assertThat(testCarriere.getDateRec()).isEqualTo(UPDATED_DATE_REC);
-        assertThat(testCarriere.getFichCont()).isEqualTo(UPDATED_FICH_CONT);
+        assertThat(testCarriere.getDocument()).isEqualTo(UPDATED_DOCUMENT);
+        assertThat(testCarriere.getDocumentContentType()).isEqualTo(UPDATED_DOCUMENT_CONTENT_TYPE);
+        assertThat(testCarriere.isActived()).isEqualTo(UPDATED_ACTIVED);
+        assertThat(testCarriere.getContrat()).isEqualTo(UPDATED_CONTRAT);
+        assertThat(testCarriere.getContratContentType()).isEqualTo(UPDATED_CONTRAT_CONTENT_TYPE);
 
         // Validate the Carriere in Elasticsearch
         Carriere carriereEs = carriereSearchRepository.findOne(testCarriere.getId());
@@ -308,13 +331,15 @@ public class CarriereResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(carriere.getId().intValue())))
-            .andExpect(jsonPath("$.[*].nom").value(hasItem(DEFAULT_NOM.toString())))
-            .andExpect(jsonPath("$.[*].etat").value(hasItem(DEFAULT_ETAT.toString())))
-            .andExpect(jsonPath("$.[*].integre").value(hasItem(DEFAULT_INTEGRE.toString())))
+            .andExpect(jsonPath("$.[*].integre").value(hasItem(DEFAULT_INTEGRE.booleanValue())))
             .andExpect(jsonPath("$.[*].debutINt").value(hasItem(sameInstant(DEFAULT_DEBUT_I_NT))))
             .andExpect(jsonPath("$.[*].finINT").value(hasItem(sameInstant(DEFAULT_FIN_INT))))
             .andExpect(jsonPath("$.[*].dateRec").value(hasItem(sameInstant(DEFAULT_DATE_REC))))
-            .andExpect(jsonPath("$.[*].fichCont").value(hasItem(DEFAULT_FICH_CONT.toString())));
+            .andExpect(jsonPath("$.[*].documentContentType").value(hasItem(DEFAULT_DOCUMENT_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].document").value(hasItem(Base64Utils.encodeToString(DEFAULT_DOCUMENT))))
+            .andExpect(jsonPath("$.[*].actived").value(hasItem(DEFAULT_ACTIVED.booleanValue())))
+            .andExpect(jsonPath("$.[*].contratContentType").value(hasItem(DEFAULT_CONTRAT_CONTENT_TYPE)))
+            .andExpect(jsonPath("$.[*].contrat").value(hasItem(Base64Utils.encodeToString(DEFAULT_CONTRAT))));
     }
 
     @Test

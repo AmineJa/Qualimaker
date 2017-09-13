@@ -13,7 +13,7 @@
         vm.settingsAccount = null;
         vm.success = null;
 
-
+        vm.refresh=refresh;
         vm.conge = entity;
         vm.accepter=accepter;
         vm.refuser=refuser;
@@ -37,11 +37,15 @@
             if (vm.conge.id !== null) {
                 Conge.update(vm.conge, onSaveSuccess, onSaveError);
             } else {
-                vm.conge.statut="Enattente"
+                vm.conge.statut = "Enattente"
                 Conge.save(vm.conge, onSaveSuccess, onSaveError);
 
             }
         }
+
+            function refresh() {
+                  vm.loadAll();
+        vm.clear();}
         function accepter () {
             vm.isSaving = true;
 
@@ -77,7 +81,7 @@
         vm.settingsAccount = null;
         vm.success = null;
 
-    }
+
 
 
 
@@ -114,5 +118,6 @@
             vm.success = null;
             vm.error = 'ERROR';
         });
+    }
     }
 })();

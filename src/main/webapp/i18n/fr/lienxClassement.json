@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "lienxClassement" : {
+            "home": {
+                "title": "LienxClassements",
+                "createLabel": "Créer un nouveau Lienx Classement",
+                "createOrEditLabel": "Créer ou éditer un Lienx Classement",
+                "search": "Recherche pour Lienx Classement"
+            },
+            "created": "Un nouveau Lienx Classement a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Lienx Classement avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Lienx Classement avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Lienx Classement {{ id }} ?"
+            },
+            "detail": {
+                "title": "Lienx Classement"
+            },
+            "lieux": "Lieux"
+        }
+    }
+}

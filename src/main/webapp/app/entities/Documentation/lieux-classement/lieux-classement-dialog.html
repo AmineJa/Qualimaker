@@ -1,0 +1,80 @@
+<section id="widget-grid" class=""  >
+
+    <!-- row -->
+
+
+    <!-- NEW WIDGET START -->
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-green" id="wid-id-425" data-widget-editbutton="false" data-widget-deletebutton="false">
+        <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+        data-widget-colorbutton="false"
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true"
+        data-widget-sortable="false"
+
+        -->
+        <header>
+            <span class="widget-icon"> <i class="fa fa-check"></i> </span>
+            <h2 class="modal-title" id="myLieuxClassementLabel" data-translate="qualiMakerApp.lieuxClassement.home.createOrEditLabel">Create or edit a Lieux Classement </h2>
+
+        </header>
+
+        <!-- widget div-->
+
+
+        <!-- widget edit box -->
+
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body">
+
+
+
+
+
+        <form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 ></h4>
+    </div>
+    <div class="modal-body well">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.lieuxClassement.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.lieuxClassement.id" readonly />
+
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
+            <input type="text" class="form-control" name="lieux" id="field_lieux" placeholder="{{'qualiMakerApp.lieuxClassement.lieux'|translate}}"
+                    ng-model="vm.lieuxClassement.lieux"
+                    />
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-success">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
+        </div>
+    </div>
+</section>

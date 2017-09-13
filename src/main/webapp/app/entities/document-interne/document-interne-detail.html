@@ -1,0 +1,108 @@
+
+<div>
+    <h2><span data-translate="qualiMakerApp.documentInterne.detail.title">Document Interne</span> {{vm.documentInterne.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="qualiMakerApp.documentInterne.code">Code</span></dt>
+        <dd>
+            <span>{{vm.documentInterne.code}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.libelle">Libelle</span></dt>
+        <dd>
+            <span>{{vm.documentInterne.libelle}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.fichier">Fichier</span></dt>
+        <dd>
+            <div ng-if="vm.documentInterne.fichier">
+                <a ng-click="vm.openFile(vm.documentInterne.fichierContentType, vm.documentInterne.fichier)" data-translate="entity.action.open">open</a>
+                {{vm.documentInterne.fichierContentType}}, {{vm.byteSize(vm.documentInterne.fichier)}}
+            </div>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.motif">Motif</span></dt>
+        <dd>
+            <span>{{vm.documentInterne.motif}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.message">Message</span></dt>
+        <dd>
+            <span>{{vm.documentInterne.message}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.etat">Etat</span></dt>
+        <dd>
+            <span>{{vm.documentInterne.etat}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.date">Date</span></dt>
+        <dd>
+            <span>{{vm.documentInterne.date | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.v">V</span></dt>
+        <dd>
+            <span>{{vm.documentInterne.v}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.r">R</span></dt>
+        <dd>
+            <span>{{vm.documentInterne.r}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.a">A</span></dt>
+        <dd>
+            <span>{{vm.documentInterne.a}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.typeuser">Typeuser</span></dt>
+        <dd>
+            <span>{{vm.documentInterne.typeuser}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.precedent">Precedent</span></dt>
+        <dd>
+            <span>{{vm.documentInterne.precedent}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.suivant">Suivant</span></dt>
+        <dd>
+            <span>{{vm.documentInterne.suivant}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.sites">Sites</span></dt>
+        <dd>
+            <a ui-sref="sites-detail({id:vm.documentInterne.sites.id})">{{vm.documentInterne.sites.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.processus">Processus</span></dt>
+        <dd>
+            <a ui-sref="processus-detail({id:vm.documentInterne.processus.id})">{{vm.documentInterne.processus.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.typeDocumentation">Type Documentation</span></dt>
+        <dd>
+            <a ui-sref="type-documentation-detail({id:vm.documentInterne.typeDocumentation.id})">{{vm.documentInterne.typeDocumentation.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.Superviseur">Superviseur</span></dt>
+        <dd>
+            <a ui-sref="droitacces-document-detail({id:vm.documentInterne.superviseur.id})">{{vm.documentInterne.superviseur.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.Verificateur">Verificateur</span></dt>
+        <dd>
+            <span ng-repeat="verificateur in vm.documentInterne.verificateurs">
+                <a ui-sref="droitacces-document-detail({id: verificateur.id})">{{verificateur.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.Redacteur">Redacteur</span></dt>
+        <dd>
+            <span ng-repeat="redacteur in vm.documentInterne.redacteurs">
+                <a ui-sref="droitacces-document-detail({id: redacteur.id})">{{redacteur.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documentInterne.Approubateur">Approubateur</span></dt>
+        <dd>
+            <span ng-repeat="approubateur in vm.documentInterne.approubateurs">
+                <a ui-sref="droitacces-document-detail({id: approubateur.id})">{{approubateur.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="document-interne-detail.edit({id:vm.documentInterne.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

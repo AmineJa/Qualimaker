@@ -1,7 +1,52 @@
-<div>
+<div class="well">
+
+    <!-- RIBBON -->
+    <!-- END RIBBON -->
+
+    <!-- MAIN CONTENT -->
+    <div id="content">
+ <section id="widget-grid" class="">
+
+            <!-- row -->
+            <div class="row">
+
+                <!-- NEW WIDGET START -->
+
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-pink" id="wid-id-10" data-widget-editbutton="false">
+                    <!-- widget options:
+                            usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                            data-widget-colorbutton="false"
+                            data-widget-editbutton="false"
+                            data-widget-togglebutton="false"
+                            data-widget-deletebutton="false"
+                            data-widget-fullscreenbutton="false"
+                            data-widget-custombutton="false"
+                            data-widget-collapsed="true"
+                            data-widget-sortable="false"
+
+                            -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2 data-translate="register.title">Registration</h2>
+
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+
+                        </div>
+
+
+<div class="well">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <h1 data-translate="register.title">Registration</h1>
+            <h1></h1>
 
             <div class="alert alert-success" ng-show="vm.success" data-translate="register.messages.success">
                 <strong>Registration saved!</strong> Please check your email for confirmation.
@@ -27,9 +72,12 @@
             <form ng-show="!vm.success" name="form" role="form" novalidate ng-submit="vm.register()" show-validation>
 
                 <div class="form-group">
-                    <label class="control-label" for="login" data-translate="global.form.username">Username</label>
-                    <input type="text" class="form-control" id="login" name="login" placeholder="{{'global.form.username.placeholder' | translate}}"
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
+                    <input type="text" class="form-control input-lg" id="login"  name="login" placeholder="{{'global.form.username.placeholder' | translate}}"
                            ng-model="vm.registerAccount.login" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z0-9-]*$/" required>
+
+                    </div>
                     <div ng-show="form.login.$dirty && form.login.$invalid">
                         <p class="help-block"
                                ng-show="form.login.$error.required" data-translate="register.messages.validate.login.required">
@@ -50,9 +98,11 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="email" data-translate="global.form.email">E-mail</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="{{'global.form.email.placeholder' | translate}}"
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope-o fa-lg"></i></span>
+                    <input type="email" class="form-control input-lg" id="email" name="email" placeholder="{{'global.form.email.placeholder' | translate}}"
                            ng-model="vm.registerAccount.email" ng-minlength=5 ng-maxlength=100 required>
+                    </div>
                     <div ng-show="form.email.$dirty && form.email.$invalid">
                         <p class="help-block"
                                ng-show="form.email.$error.required" data-translate="global.messages.validate.email.required">
@@ -73,9 +123,11 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="password" data-translate="global.form.newpassword">New password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="{{'global.form.newpassword.placeholder' | translate}}"
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock fa-lg"></i></span>
+                    <input type="password" class="form-control input-lg" id="password" name="password" placeholder="{{'global.form.newpassword.placeholder' | translate}}"
                            ng-model="vm.registerAccount.password" ng-minlength=4 ng-maxlength=50 required>
+                    </div>
                     <div ng-show="form.password.$dirty && form.password.$invalid">
                         <p class="help-block"
                                ng-show="form.password.$error.required" data-translate="global.messages.validate.newpassword.required">
@@ -93,9 +145,11 @@
                     <password-strength-bar password-to-check="vm.registerAccount.password"></password-strength-bar>
                 </div>
                 <div class="form-group">
-                    <label class="control-label" for="confirmPassword" data-translate="global.form.confirmpassword">New password confirmation</label>
-                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="{{'global.form.confirmpassword.placeholder' | translate}}"
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock fa-lg"></i></span>
+                    <input type="password" class="form-control input-lg" id="confirmPassword" name="confirmPassword" placeholder="{{'global.form.confirmpassword.placeholder' | translate}}"
                            ng-model="vm.confirmPassword" ng-minlength=4 ng-maxlength=50 required>
+                    </div>
                     <div ng-show="form.confirmPassword.$dirty && form.confirmPassword.$invalid">
                         <p class="help-block"
                                ng-show="form.confirmPassword.$error.required" data-translate="global.messages.validate.confirmpassword.required">
@@ -112,12 +166,18 @@
                     </div>
                 </div>
 
-                <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary" data-translate="register.form.button">Register</button>
+                <button type="submit" ng-disabled="form.$invalid" class="btn btn-info" data-translate="register.form.button">Register</button>
             </form>
             <p></p>
-            <div class="alert alert-warning" data-translate="global.messages.info.authenticated" translate-compile>
+          <!--  <div class="alert alert-warning" data-translate="global.messages.info.authenticated" translate-compile>
                 If you want to <a class="alert-link" href="" ng-click="vm.login()">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
-            </div>
+            </div>-->
         </div>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </div>

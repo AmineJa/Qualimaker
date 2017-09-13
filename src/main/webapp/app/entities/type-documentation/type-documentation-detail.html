@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="qualiMakerApp.typeDocumentation.detail.title">Type Documentation</span> {{vm.typeDocumentation.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="qualiMakerApp.typeDocumentation.type">Type</span></dt>
+        <dd>
+            <span>{{vm.typeDocumentation.type}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.typeDocumentation.pDf">P Df</span></dt>
+        <dd>
+            <span>{{vm.typeDocumentation.pDf}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.typeDocumentation.securise">Securise</span></dt>
+        <dd>
+            <span>{{vm.typeDocumentation.securise}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.typeDocumentation.abreviation">Abreviation</span></dt>
+        <dd>
+            <span>{{vm.typeDocumentation.abreviation}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.typeDocumentation.nature">Nature</span></dt>
+        <dd>
+            <span data-translate="{{'qualiMakerApp.NatureDoc.' + vm.typeDocumentation.nature}}">{{vm.typeDocumentation.nature}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.typeDocumentation.notif">Notif</span></dt>
+        <dd>
+            <span>{{vm.typeDocumentation.notif}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.typeDocumentation.employe">Employe</span></dt>
+        <dd>
+            <a ui-sref="employe-detail({id:vm.typeDocumentation.employe.id})">{{vm.typeDocumentation.employe.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="type-documentation-detail.edit({id:vm.typeDocumentation.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

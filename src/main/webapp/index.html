@@ -16,10 +16,9 @@
     <!-- bower:css -->
 
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css content/css/vendor.css -->
-    <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
+
+
     <!-- endinject -->
     <link rel="stylesheet" href="content/css/vendor.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -88,7 +87,7 @@
 
     <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="content" class="" >
 
-        <div  ui-view="content">
+        <div  ui-view="content" data-autoscroll="true">
 
 
             <!-- Angular views -->
@@ -114,12 +113,12 @@
 <div class="page-footer">
     <div class="row">
         <div class="col-xs-12 col-sm-6">
-            <span class="txt-color-white">SmartAdmin 1.8.2 <span class="hidden-xs"> - Web Application Framework</span> © 2014-2015</span>
+            <span class="txt-color-white">QualiMaker 1.0.0 <span class="hidden-xs"> - Web Application Framework</span> © 2016-2017</span>
         </div>
 
         <div class="col-xs-6 col-sm-6 text-right hidden-xs">
             <div class="txt-color-white inline-block">
-                <i class="txt-color-blueLight hidden-mobile">Last account activity <i class="fa fa-clock-o"></i> <strong>52 mins ago &nbsp;</strong> </i>
+                <i class="txt-color-blueLight hidden-mobile"><i class="fa fa-clock-o"></i> <strong>52 mins ago &nbsp;</strong> </i>
                 <div class="btn-group dropup">
                     <button class="btn btn-xs dropdown-toggle bg-color-blue txt-color-white" data-toggle="dropdown">
                         <i class="fa fa-link"></i> <span class="caret"></span>
@@ -192,18 +191,6 @@
 </script>-->
 
 <!-- build:js app/vendor.js -->    <!-- bower:js -->
-    <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
-    <script>
-        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-        e.src='//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-        ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>-->
-
-    <!-- build:js app/vendor.js -->
-    <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/messageformat/messageformat.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>
@@ -246,18 +233,46 @@
     <script src="app/services/auth/auth.service.js"></script>
     <script src="app/services/auth/activate.service.js"></script>
     <script src="app/services/auth/account.service.js"></script>
+    <script src="app/notification/notification-dialog.controller.js"></script>
+    <script src="app/notification/notification-detail.controller.js"></script>
+    <script src="app/notification/notification-delete-dialog.controller.js"></script>
+    <script src="app/notification/notification.state.js"></script>
+    <script src="app/notification/notification.service.js"></script>
+    <script src="app/notification/notification.search.service.js"></script>
+    <script src="app/notification/notification.controller.js"></script>
     <script src="app/layouts/navbar/navbar.controller.js"></script>
     <script src="app/layouts/navbar/active-menu.directive.js"></script>
     <script src="app/layouts/error/error.state.js"></script>
     <script src="app/home/home.state.js"></script>
     <script src="app/home/home.controller.js"></script>
-    <script src="app/entities/type-formation/type-formation-dialog.controller.js"></script>
-    <script src="app/entities/type-formation/type-formation-detail.controller.js"></script>
-    <script src="app/entities/type-formation/type-formation-delete-dialog.controller.js"></script>
-    <script src="app/entities/type-formation/type-formation.state.js"></script>
-    <script src="app/entities/type-formation/type-formation.service.js"></script>
-    <script src="app/entities/type-formation/type-formation.search.service.js"></script>
-    <script src="app/entities/type-formation/type-formation.controller.js"></script>
+    <script src="app/entities/type-documentation/type-documentation-dialog.controller.js"></script>
+    <script src="app/entities/type-documentation/type-documentation-detail.controller.js"></script>
+    <script src="app/entities/type-documentation/type-documentation-delete-dialog.controller.js"></script>
+    <script src="app/entities/type-documentation/type-documentation.state.js"></script>
+    <script src="app/entities/type-documentation/type-documentation.service.js"></script>
+    <script src="app/entities/type-documentation/type-documentation.search.service.js"></script>
+    <script src="app/entities/type-documentation/type-documentation.controller.js"></script>
+    <script src="app/entities/type-contrat/type-contrat-dialog.controller.js"></script>
+    <script src="app/entities/type-contrat/type-contrat-detail.controller.js"></script>
+    <script src="app/entities/type-contrat/type-contrat-delete-dialog.controller.js"></script>
+    <script src="app/entities/type-contrat/type-contrat.state.js"></script>
+    <script src="app/entities/type-contrat/type-contrat.service.js"></script>
+    <script src="app/entities/type-contrat/type-contrat.search.service.js"></script>
+    <script src="app/entities/type-contrat/type-contrat.controller.js"></script>
+    <script src="app/entities/sites/sites-dialog.controller.js"></script>
+    <script src="app/entities/sites/sites-detail.controller.js"></script>
+    <script src="app/entities/sites/sites-delete-dialog.controller.js"></script>
+    <script src="app/entities/sites/sites.state.js"></script>
+    <script src="app/entities/sites/sites.service.js"></script>
+    <script src="app/entities/sites/sites.search.service.js"></script>
+    <script src="app/entities/sites/sites.controller.js"></script>
+    <script src="app/entities/remplacer/remplacer-dialog.controller.js"></script>
+    <script src="app/entities/remplacer/remplacer-detail.controller.js"></script>
+    <script src="app/entities/remplacer/remplacer-delete-dialog.controller.js"></script>
+    <script src="app/entities/remplacer/remplacer.state.js"></script>
+    <script src="app/entities/remplacer/remplacer.service.js"></script>
+    <script src="app/entities/remplacer/remplacer.search.service.js"></script>
+    <script src="app/entities/remplacer/remplacer.controller.js"></script>
     <script src="app/entities/programme/programme-dialog.controller.js"></script>
     <script src="app/entities/programme/programme-detail.controller.js"></script>
     <script src="app/entities/programme/programme-delete-dialog.controller.js"></script>
@@ -265,6 +280,13 @@
     <script src="app/entities/programme/programme.service.js"></script>
     <script src="app/entities/programme/programme.search.service.js"></script>
     <script src="app/entities/programme/programme.controller.js"></script>
+    <script src="app/entities/profilsfonction/profilsfonction-dialog.controller.js"></script>
+    <script src="app/entities/profilsfonction/profilsfonction-detail.controller.js"></script>
+    <script src="app/entities/profilsfonction/profilsfonction-delete-dialog.controller.js"></script>
+    <script src="app/entities/profilsfonction/profilsfonction.state.js"></script>
+    <script src="app/entities/profilsfonction/profilsfonction.service.js"></script>
+    <script src="app/entities/profilsfonction/profilsfonction.search.service.js"></script>
+    <script src="app/entities/profilsfonction/profilsfonction.controller.js"></script>
     <script src="app/entities/natureformation/natureformation-dialog.controller.js"></script>
     <script src="app/entities/natureformation/natureformation-detail.controller.js"></script>
     <script src="app/entities/natureformation/natureformation-delete-dialog.controller.js"></script>
@@ -286,13 +308,6 @@
     <script src="app/entities/GRH/type-conge/type-conge.service.js"></script>
     <script src="app/entities/GRH/type-conge/type-conge.search.service.js"></script>
     <script src="app/entities/GRH/type-conge/type-conge.controller.js"></script>
-    <script src="app/entities/GRH/sites/sites-dialog.controller.js"></script>
-    <script src="app/entities/GRH/sites/sites-detail.controller.js"></script>
-    <script src="app/entities/GRH/sites/sites-delete-dialog.controller.js"></script>
-    <script src="app/entities/GRH/sites/sites.state.js"></script>
-    <script src="app/entities/GRH/sites/sites.service.js"></script>
-    <script src="app/entities/GRH/sites/sites.search.service.js"></script>
-    <script src="app/entities/GRH/sites/sites.controller.js"></script>
     <script src="app/entities/GRH/serviice/serviice-dialog.controller.js"></script>
     <script src="app/entities/GRH/serviice/serviice-detail.controller.js"></script>
     <script src="app/entities/GRH/serviice/serviice-delete-dialog.controller.js"></script>
@@ -370,13 +385,6 @@
     <script src="app/entities/GRH/evaluation-formation/evaluation-formation.service.js"></script>
     <script src="app/entities/GRH/evaluation-formation/evaluation-formation.search.service.js"></script>
     <script src="app/entities/GRH/evaluation-formation/evaluation-formation.controller.js"></script>
-    <script src="app/entities/GRH/employe/employe-dialog.controller.js"></script>
-    <script src="app/entities/GRH/employe/employe-detail.controller.js"></script>
-    <script src="app/entities/GRH/employe/employe-delete-dialog.controller.js"></script>
-    <script src="app/entities/GRH/employe/employe.state.js"></script>
-    <script src="app/entities/GRH/employe/employe.service.js"></script>
-    <script src="app/entities/GRH/employe/employe.search.service.js"></script>
-    <script src="app/entities/GRH/employe/employe.controller.js"></script>
     <script src="app/entities/GRH/discipline/discipline-dialog.controller.js"></script>
     <script src="app/entities/GRH/discipline/discipline-detail.controller.js"></script>
     <script src="app/entities/GRH/discipline/discipline-delete-dialog.controller.js"></script>
@@ -412,6 +420,20 @@
     <script src="app/entities/formation-comp/formation-comp.service.js"></script>
     <script src="app/entities/formation-comp/formation-comp.search.service.js"></script>
     <script src="app/entities/formation-comp/formation-comp.controller.js"></script>
+    <script src="app/entities/fonction/fonction-dialog.controller.js"></script>
+    <script src="app/entities/fonction/fonction-detail.controller.js"></script>
+    <script src="app/entities/fonction/fonction-delete-dialog.controller.js"></script>
+    <script src="app/entities/fonction/fonction.state.js"></script>
+    <script src="app/entities/fonction/fonction.service.js"></script>
+    <script src="app/entities/fonction/fonction.search.service.js"></script>
+    <script src="app/entities/fonction/fonction.controller.js"></script>
+    <script src="app/entities/events/events-dialog.controller.js"></script>
+    <script src="app/entities/events/events-detail.controller.js"></script>
+    <script src="app/entities/events/events-delete-dialog.controller.js"></script>
+    <script src="app/entities/events/events.state.js"></script>
+    <script src="app/entities/events/events.service.js"></script>
+    <script src="app/entities/events/events.search.service.js"></script>
+    <script src="app/entities/events/events.controller.js"></script>
     <script src="app/entities/evaluation/evaluation-dialog.controller.js"></script>
     <script src="app/entities/evaluation/evaluation-detail.controller.js"></script>
     <script src="app/entities/evaluation/evaluation-delete-dialog.controller.js"></script>
@@ -419,7 +441,70 @@
     <script src="app/entities/evaluation/evaluation.service.js"></script>
     <script src="app/entities/evaluation/evaluation.search.service.js"></script>
     <script src="app/entities/evaluation/evaluation.controller.js"></script>
+    <script src="app/entities/etat-demande/etat-demande-dialog.controller.js"></script>
+    <script src="app/entities/etat-demande/etat-demande-detail.controller.js"></script>
+    <script src="app/entities/etat-demande/etat-demande-delete-dialog.controller.js"></script>
+    <script src="app/entities/etat-demande/etat-demande.state.js"></script>
+    <script src="app/entities/etat-demande/etat-demande.service.js"></script>
+    <script src="app/entities/etat-demande/etat-demande.search.service.js"></script>
+    <script src="app/entities/etat-demande/etat-demande.controller.js"></script>
     <script src="app/entities/entity.state.js"></script>
+    <script src="app/entities/employe/employe-dialog.controller.js"></script>
+    <script src="app/entities/employe/employe-detail.controller.js"></script>
+    <script src="app/entities/employe/employe-delete-dialog.controller.js"></script>
+    <script src="app/entities/employe/employe.state.js"></script>
+    <script src="app/entities/employe/employe.service.js"></script>
+    <script src="app/entities/employe/employe.search.service.js"></script>
+    <script src="app/entities/employe/employe.controller.js"></script>
+    <script src="app/entities/droitacces-document/droitacces-document-dialog.controller.js"></script>
+    <script src="app/entities/droitacces-document/droitacces-document-detail.controller.js"></script>
+    <script src="app/entities/droitacces-document/droitacces-document-delete-dialog.controller.js"></script>
+    <script src="app/entities/droitacces-document/droitacces-document.state.js"></script>
+    <script src="app/entities/droitacces-document/droitacces-document.service.js"></script>
+    <script src="app/entities/droitacces-document/droitacces-document.search.service.js"></script>
+    <script src="app/entities/droitacces-document/droitacces-document.controller.js"></script>
+    <script src="app/entities/Documentation/processus/processus-dialog.controller.js"></script>
+    <script src="app/entities/Documentation/processus/processus-detail.controller.js"></script>
+    <script src="app/entities/Documentation/processus/processus-delete-dialog.controller.js"></script>
+    <script src="app/entities/Documentation/processus/processus.state.js"></script>
+    <script src="app/entities/Documentation/processus/processus.service.js"></script>
+    <script src="app/entities/Documentation/processus/processus.search.service.js"></script>
+    <script src="app/entities/Documentation/processus/processus.controller.js"></script>
+    <script src="app/entities/Documentation/origine/origine-dialog.controller.js"></script>
+    <script src="app/entities/Documentation/origine/origine-detail.controller.js"></script>
+    <script src="app/entities/Documentation/origine/origine-delete-dialog.controller.js"></script>
+    <script src="app/entities/Documentation/origine/origine.state.js"></script>
+    <script src="app/entities/Documentation/origine/origine.service.js"></script>
+    <script src="app/entities/Documentation/origine/origine.search.service.js"></script>
+    <script src="app/entities/Documentation/origine/origine.controller.js"></script>
+    <script src="app/entities/Documentation/lieux-classement/lieux-classement-dialog.controller.js"></script>
+    <script src="app/entities/Documentation/lieux-classement/lieux-classement-detail.controller.js"></script>
+    <script src="app/entities/Documentation/lieux-classement/lieux-classement-delete-dialog.controller.js"></script>
+    <script src="app/entities/Documentation/lieux-classement/lieux-classement.state.js"></script>
+    <script src="app/entities/Documentation/lieux-classement/lieux-classement.service.js"></script>
+    <script src="app/entities/Documentation/lieux-classement/lieux-classement.search.service.js"></script>
+    <script src="app/entities/Documentation/lieux-classement/lieux-classement.controller.js"></script>
+    <script src="app/entities/Documentation/enregistrement/enregistrement-dialog.controller.js"></script>
+    <script src="app/entities/Documentation/enregistrement/enregistrement-detail.controller.js"></script>
+    <script src="app/entities/Documentation/enregistrement/enregistrement-delete-dialog.controller.js"></script>
+    <script src="app/entities/Documentation/enregistrement/enregistrement.state.js"></script>
+    <script src="app/entities/Documentation/enregistrement/enregistrement.service.js"></script>
+    <script src="app/entities/Documentation/enregistrement/enregistrement.search.service.js"></script>
+    <script src="app/entities/Documentation/enregistrement/enregistrement.controller.js"></script>
+    <script src="app/entities/Documentation/documen-externe/documen-externe-dialog.controller.js"></script>
+    <script src="app/entities/Documentation/documen-externe/documen-externe-detail.controller.js"></script>
+    <script src="app/entities/Documentation/documen-externe/documen-externe-delete-dialog.controller.js"></script>
+    <script src="app/entities/Documentation/documen-externe/documen-externe.state.js"></script>
+    <script src="app/entities/Documentation/documen-externe/documen-externe.service.js"></script>
+    <script src="app/entities/Documentation/documen-externe/documen-externe.search.service.js"></script>
+    <script src="app/entities/Documentation/documen-externe/documen-externe.controller.js"></script>
+    <script src="app/entities/document-interne/document-interne-dialog.controller.js"></script>
+    <script src="app/entities/document-interne/document-interne-detail.controller.js"></script>
+    <script src="app/entities/document-interne/document-interne-delete-dialog.controller.js"></script>
+    <script src="app/entities/document-interne/document-interne.state.js"></script>
+    <script src="app/entities/document-interne/document-interne.service.js"></script>
+    <script src="app/entities/document-interne/document-interne.search.service.js"></script>
+    <script src="app/entities/document-interne/document-interne.controller.js"></script>
     <script src="app/entities/critereevaluation/critereevaluation-dialog.controller.js"></script>
     <script src="app/entities/critereevaluation/critereevaluation-detail.controller.js"></script>
     <script src="app/entities/critereevaluation/critereevaluation-delete-dialog.controller.js"></script>
@@ -427,6 +512,13 @@
     <script src="app/entities/critereevaluation/critereevaluation.service.js"></script>
     <script src="app/entities/critereevaluation/critereevaluation.search.service.js"></script>
     <script src="app/entities/critereevaluation/critereevaluation.controller.js"></script>
+    <script src="app/entities/competences/competences-dialog.controller.js"></script>
+    <script src="app/entities/competences/competences-detail.controller.js"></script>
+    <script src="app/entities/competences/competences-delete-dialog.controller.js"></script>
+    <script src="app/entities/competences/competences.state.js"></script>
+    <script src="app/entities/competences/competences.service.js"></script>
+    <script src="app/entities/competences/competences.search.service.js"></script>
+    <script src="app/entities/competences/competences.controller.js"></script>
     <script src="app/entities/carriere/carriere-dialog.controller.js"></script>
     <script src="app/entities/carriere/carriere-detail.controller.js"></script>
     <script src="app/entities/carriere/carriere-delete-dialog.controller.js"></script>

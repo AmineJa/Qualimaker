@@ -1,4 +1,4 @@
-<div class="modal-header">
+<!--<div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
             ng-click="vm.cancel()">&times;</button>
     <h4 ></h4>
@@ -51,3 +51,142 @@
         </div>
     </div>
 </div>
+-->
+
+<header id="header">
+
+    <div id="logo-group">
+        <span id="logo"> <img src="content/images/img/quali.jpg" alt="QualiMaker"> </span>
+    </div>
+
+    <span id="extr-page-header-space"> <span class="hidden-mobile hiddex-xs">Need an account?</span>
+        <a ng-click="vm.register()" class="btn btn-danger">Create account</a> </span>
+
+</header>
+
+<!--<div id="main" role="main">
+
+    <!-- MAIN CONTENT -->
+<!-- <div class="content" >-->
+<div class="modal-body"  >
+
+        <div class="row">
+            <div class="row" style="color: #1b6d85" >
+                <div class="col-md-1 col-md-offset-4">
+                    <h1 ></h1>
+                </div>
+                <div class="col-md-10 col-md-offset-2">
+                    <div class="alert alert-danger" ng-show="vm.authenticationError" data-translate="login.messages.error.authentication">
+                        <strong>Failed to sign in!</strong> Please check your credentials and try again.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="well no-padding">
+                    <form role="form" ng-submit="vm.login($event)" class="smart-form client-form">
+                        <header>
+                            Sign In
+                        </header>
+
+                        <fieldset>
+
+                            <section>
+                                <label class="label">Login</label>
+                                <label class="input"> <i class="icon-append fa fa-user"></i>
+                                    <input type="text"  id="username" placeholder="{{'global.form.username.placeholder' | translate}}" ng-model="vm.username">
+
+                                    <b class="tooltip tooltip-top-right" data-translate="login.nom.login"><i class="fa fa-user txt-color-teal" ></i> Please enter username</b></label>
+                            </section>
+
+                            <section>
+                                <label class="label">Password</label>
+                                <label class="input"> <i class="icon-append fa fa-lock"></i>
+                                    <input type="password"  id="password" placeholder="{{'login.form.password.placeholder' | translate}}"
+                                           ng-model="vm.password">
+                                    <b class="tooltip tooltip-top-right" data-translate="login.nom.pwd"><i class="fa fa-lock txt-color-teal"></i> Enter your password</b> </label>
+                                <div class="note">
+                                    <a ng-click="vm.requestResetPassword()">Forgot password?</a>
+                                </div>
+                            </section>
+
+                            <section>
+                                <label class="checkbox">
+                                    <input type="checkbox" name="remember" checked="">
+                                    <i></i>Stay signed in</label>
+                            </section>
+                        </fieldset>
+                        <footer>
+                            <button type="submit" class="btn btn-primary" data-translate="login.form.button">Sign in</button>
+                        </footer>
+                    </form>
+
+                </div>
+
+                <!--<h5 class="text-center"> - Or sign in using -</h5>
+
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="javascript:void(0);" class="btn btn-primary btn-circle"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="btn btn-info btn-circle"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="btn btn-warning btn-circle"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>-->
+
+            </div>
+        </div>
+
+</div>
+<!--================================================== -->
+
+
+<!--[if IE 8]>
+
+<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+
+<![endif]-->
+
+<!-- MAIN APP JS FILE -->
+<script src="content/js/app.min.js"></script>
+
+<script type="text/javascript">
+    runAllForms();
+
+    $(function() {
+        // Validation
+        $("#login-form").validate({
+            // Rules for form validation
+            rules : {
+                email : {
+                    required : true,
+                    email : true
+                },
+                password : {
+                    required : true,
+                    minlength : 3,
+                    maxlength : 20
+                }
+            },
+
+            // Messages for form validation
+            messages : {
+                email : {
+                    required : 'Please enter your email address',
+                    email : 'Please enter a VALID email address'
+                },
+                password : {
+                    required : 'Please enter your password'
+                }
+            },
+
+            // Do not change code below
+            errorPlacement : function(error, element) {
+                error.insertAfter(element.parent());
+            }
+        });
+    });
+</script>
+

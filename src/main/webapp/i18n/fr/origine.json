@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "origine" : {
+            "home": {
+                "title": "Origines",
+                "createLabel": "Créer un nouveau Origine",
+                "createOrEditLabel": "Créer ou éditer un Origine",
+                "search": "Recherche pour Origine"
+            },
+            "created": "Un nouveau Origine a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Origine avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Origine avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Origine {{ id }} ?"
+            },
+            "detail": {
+                "title": "Origine"
+            },
+            "origine": "Origine"
+        }
+    }
+}

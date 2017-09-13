@@ -1,0 +1,29 @@
+{
+    "qualiMakerApp": {
+        "typeDocumentation" : {
+            "home": {
+                "title": "TypeDocumentations",
+                "createLabel": "Genera un nuovo Type Documentation",
+                "createOrEditLabel": "Genera o modifica un Type Documentation",
+                "search": "Cerca Type Documentation"
+            },
+            "created": "&Egrave; stato generato un nuovo Type Documentation con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Type Documentation identificato da {{ param }}",
+            "deleted": "&Egrave; stato eliminato Type Documentation con identificatore {{ param }}",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Type Documentation {{ id }}?"
+            },
+            "detail": {
+                "title": "Type Documentation"
+            },
+            "type": "Type",
+            "pDf": "P Df",
+            "securise": "Securise",
+            "abreviation": "Abreviation",
+            "nature": "Nature",
+            "notif": "Notif",
+            "employe": "Employe",
+            "documenExterne": "Documen Externe"
+        }
+    }
+}

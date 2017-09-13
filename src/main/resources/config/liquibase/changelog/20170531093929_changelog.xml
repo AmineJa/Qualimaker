@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-1">
+      <dropForeignKeyConstraint baseTableName="document_interne"
+                                constraintName="fk17pldwgikga3k92ka8r45p1pr"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-2">
+      <dropForeignKeyConstraint baseTableName="employe_fonction"
+                                constraintName="fk3b7h9j9l6u8y68u7alwi44rht"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-3">
+      <dropForeignKeyConstraint baseTableName="servicepost_serviices"
+                                constraintName="fk6g09csufv13dqp2dhpd94xd9c"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-4">
+      <dropForeignKeyConstraint baseTableName="poste_serviceposts"
+                                constraintName="fk6t15sndj6fd2lnu7b92eortu2"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-5">
+      <dropForeignKeyConstraint baseTableName="type_formateur"
+                                constraintName="fk9gopbpus2yxu9ubu0v9p66a7e"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-6">
+      <dropForeignKeyConstraint baseTableName="document_interne"
+                                constraintName="fk9trf6orh49a93u4qvjglejmsi"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-7">
+      <dropForeignKeyConstraint baseTableName="droitacces_document_employe"
+                                constraintName="fk9vkilamno6c71fjocgmevt85k"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-8">
+      <dropForeignKeyConstraint baseTableName="droitacces_document_employe"
+                                constraintName="fke49foo2emubupspissvmvo3u9"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-9">
+      <dropForeignKeyConstraint baseTableName="document_interne"
+                                constraintName="fke7hpd1r515kmfcq4um6fgwvt0"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-10">
+      <dropForeignKeyConstraint baseTableName="document_interne_approuvateur"
+                                constraintName="fke9r2th34aanrk0jd1g4tvkye8"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-11">
+      <dropForeignKeyConstraint baseTableName="employe" constraintName="fkg9nilef043e0ty3auhuv7mys0"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-12">
+      <dropForeignKeyConstraint baseTableName="servicepost_postes"
+                                constraintName="fkij0rcshp67tlriej09dp1mxyq"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-13">
+      <dropForeignKeyConstraint baseTableName="document_interne_approuvateur"
+                                constraintName="fkj2noa0kfjk8e3di9mx8icxm47"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-14">
+      <dropForeignKeyConstraint baseTableName="poste_serviceposts"
+                                constraintName="fkj4rvq5xqpgtik1j4lqqtur65x"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-15">
+      <dropForeignKeyConstraint baseTableName="servicepost"
+                                constraintName="fkjwfim7s726pl00ib8ejw2pu22"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-16">
+      <dropForeignKeyConstraint baseTableName="poste_serviceposts"
+                                constraintName="fkkp7twanrty5qrryrxd1ve55bp"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-17">
+      <dropForeignKeyConstraint baseTableName="employe_fonction"
+                                constraintName="fkl9wnylnawruvw885xo6ra1gp2"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-18">
+      <dropForeignKeyConstraint baseTableName="fonction" constraintName="fklv4cg8oh5efh4ecojiy8k07e5"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-19">
+      <dropForeignKeyConstraint baseTableName="servicepost_serviices"
+                                constraintName="fko8uyw11q5skaqki4154l8ijos"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-20">
+      <dropForeignKeyConstraint baseTableName="servicepost_postes"
+                                constraintName="fko9fpdoi2dhyw0f4li2ysk3x31"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-21">
+      <dropForeignKeyConstraint baseTableName="naturediscipline"
+                                constraintName="fkocrfrqvph8iq5cm5hvpdy5gv9"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-22">
+      <dropForeignKeyConstraint baseTableName="employe" constraintName="fkqfes29rm9xo50l2t96ljjqlps"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-23">
+      <dropForeignKeyConstraint baseTableName="document_interne"
+                                constraintName="fksdcxondll11xjx74or7j54vtq"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-24">
+      <dropForeignKeyConstraint baseTableName="employe" constraintName="fkta44gd8ts47t36rjmda1mhkgs"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-25">
+      <dropUniqueConstraint constraintName="uk_8xhxe9qk4b2ouopkijn1j5mhd" tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-26">
+      <dropTable tableName="document_interne_approuvateur"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-27">
+      <dropTable tableName="domaine_competence"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-28">
+      <dropTable tableName="droitacces_document_employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-29">
+      <dropTable tableName="employe_fonction"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-30">
+      <dropTable tableName="etat"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-31">
+      <dropTable tableName="poste_serviceposts"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-32">
+      <dropTable tableName="servicepost_postes"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-33">
+      <dropTable tableName="servicepost_serviices"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-34">
+      <dropTable tableName="type_formateur"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-35">
+      <dropTable tableName="type_formation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-36">
+      <dropColumn columnName="abscence_id" tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-37">
+      <dropColumn columnName="approubateur_id" tableName="document_interne"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-38">
+      <dropColumn columnName="carriere_id" tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-39">
+      <dropColumn columnName="discipline_id" tableName="naturediscipline"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-40">
+      <dropColumn columnName="etat" tableName="carriere"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-41">
+      <dropColumn columnName="fich_cont" tableName="carriere"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-42">
+      <dropColumn columnName="fich_cont_content_type" tableName="carriere"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-43">
+      <dropColumn columnName="nom" tableName="carriere"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-44">
+      <dropColumn columnName="nom" tableName="fonction"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-45">
+      <dropColumn columnName="poste_id" tableName="servicepost"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-46">
+      <dropColumn columnName="profilsfonction_id" tableName="fonction"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-47">
+      <dropColumn columnName="redacteur_id" tableName="document_interne"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-48">
+      <dropColumn columnName="respintg_id" tableName="employe"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-49">
+      <dropColumn columnName="type" tableName="notification"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-50">
+      <dropColumn columnName="verificateur_id" tableName="document_interne"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-51">
+      <dropNotNullConstraint columnDataType="bytea" columnName="daterec" tableName="formation"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-52">
+      <addNotNullConstraint columnDataType="bigint"
+                            columnName="employe_id"
+                            tableName="droitacces_document"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-53">
+      <dropNotNullConstraint columnDataType="bigint"
+                             columnName="profilsfonction_id"
+                             tableName="remplacer"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-54">
+      <addNotNullConstraint columnDataType="bigint"
+                            columnName="responsable_id"
+                            tableName="integre"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-55">
+      <addNotNullConstraint columnDataType="varchar(255)"
+                            columnName="type"
+                            tableName="type_contrat"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-56">
+      <addNotNullConstraint columnDataType="bigint"
+                            columnName="type_contrat_id"
+                            tableName="carriere"/>
+   </changeSet>
+   <changeSet author="Jaouadi-Amine (generated)" id="1496223627630-57">
+      <addNotNullConstraint columnDataType="bigint"
+                            columnName="type_documentation_id"
+                            tableName="document_interne"/>
+   </changeSet>
+</databaseChangeLog>

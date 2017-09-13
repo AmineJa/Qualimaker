@@ -65,6 +65,10 @@
         function save () {
             vm.isSaving = true;
             if (vm.discipline.id !== null) {
+                var diff = vm.discipline.dateF.getTime() - vm.discipline.dateD.getTime();
+                var oneDay = 24* 60 * 60 * 1000;
+                var diffDays = Math.abs(diff / (oneDay));
+                vm.discipline.duree = diffDays;
                 Discipline.update(vm.discipline, onSaveSuccess, onSaveError);
             } else {
 

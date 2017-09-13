@@ -4,14 +4,6 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
-        <dt><span data-translate="qualiMakerApp.carriere.nom">Nom</span></dt>
-        <dd>
-            <span>{{vm.carriere.nom}}</span>
-        </dd>
-        <dt><span data-translate="qualiMakerApp.carriere.etat">Etat</span></dt>
-        <dd>
-            <span>{{vm.carriere.etat}}</span>
-        </dd>
         <dt><span data-translate="qualiMakerApp.carriere.integre">Integre</span></dt>
         <dd>
             <span>{{vm.carriere.integre}}</span>
@@ -28,9 +20,31 @@
         <dd>
             <span>{{vm.carriere.dateRec | date:'medium'}}</span>
         </dd>
-        <dt><span data-translate="qualiMakerApp.carriere.fichCont">Fich Cont</span></dt>
+        <dt><span data-translate="qualiMakerApp.carriere.document">Document</span></dt>
         <dd>
-            <span>{{vm.carriere.fichCont}}</span>
+            <div ng-if="vm.carriere.document">
+                <a ng-click="vm.openFile(vm.carriere.documentContentType, vm.carriere.document)" data-translate="entity.action.open">open</a>
+                {{vm.carriere.documentContentType}}, {{vm.byteSize(vm.carriere.document)}}
+            </div>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.carriere.actived">Actived</span></dt>
+        <dd>
+            <span>{{vm.carriere.actived}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.carriere.contrat">Contrat</span></dt>
+        <dd>
+            <div ng-if="vm.carriere.contrat">
+                <a ng-click="vm.openFile(vm.carriere.contratContentType, vm.carriere.contrat)" data-translate="entity.action.open">open</a>
+                {{vm.carriere.contratContentType}}, {{vm.byteSize(vm.carriere.contrat)}}
+            </div>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.carriere.employe">Employe</span></dt>
+        <dd>
+            <a ui-sref="employe-detail({id:vm.carriere.employe.id})">{{vm.carriere.employe.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.carriere.typeContrat">Type Contrat</span></dt>
+        <dd>
+            <a ui-sref="type-contrat-detail({id:vm.carriere.typeContrat.id})">{{vm.carriere.typeContrat.id}}</a>
         </dd>
     </dl>
 

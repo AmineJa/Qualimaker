@@ -1,89 +1,196 @@
-<div>
-    <h2 data-translate="qualiMakerApp.carriere.home.title">Carrieres</h2>
-    <jhi-alert></jhi-alert>
-    <div class="container-fluid">
+
+
+
+<div class="well">
+
+    <!-- RIBBON -->
+    <!-- END RIBBON -->
+
+    <!-- MAIN CONTENT -->
+    <div id="content">
+
         <div class="row">
-            <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="carriere.new" >
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <span class="hidden-xs-down"  data-translate="qualiMakerApp.carriere.home.createLabel">
-                        Create new Carriere
-                    </span>
-                </button>
-            </div>
-            <div class="col-xs-8 no-padding-right">
-                <form name="searchForm" class="form-inline">
-                    <div class="input-group pull-right" >
-                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'qualiMakerApp.carriere.home.search' | translate }}">
-                        <span  class="input-group-btn width-min" >
-                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
-                            <button class="btn btn-info" ng-click="vm.clear()">
-                                <span class="glyphicon glyphicon-trash"></span>
-                            </button>
-                        </span>
-                    </div>
-                </form>
+            <div >
+                <h1 class="page-title txt-color-blueDark"  >
+                    <i class="fa fa-table fa-fw "></i>
+                    <span class="menu-item-parent">G.R.H</span>                    <span>>
+                                   <span data-translate="qualiMakerApp.carriere.home.title"></span>
+                        							</span>
+                </h1>
             </div>
         </div>
-    </div>
-    <br/>
-    <div class="table-responsive">
-        <table class="jh-table table table-striped">
-            <thead>
-                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
-                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="nom"><span data-translate="qualiMakerApp.carriere.nom">Nom</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="etat"><span data-translate="qualiMakerApp.carriere.etat">Etat</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="integre"><span data-translate="qualiMakerApp.carriere.integre">Integre</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="debutINt"><span data-translate="qualiMakerApp.carriere.debutINt">Debut I Nt</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="finINT"><span data-translate="qualiMakerApp.carriere.finINT">Fin INT</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dateRec"><span data-translate="qualiMakerApp.carriere.dateRec">Date Rec</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="fichCont"><span data-translate="qualiMakerApp.carriere.fichCont">Fich Cont</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="carriere in vm.carrieres track by carriere.id">
-                    <td><a ui-sref="carriere-detail({id:carriere.id})">{{carriere.id}}</a></td>
-                    <td>{{carriere.nom}}</td>
-                    <td>{{carriere.etat}}</td>
-                    <td>{{carriere.integre}}</td>
-                    <td>{{carriere.debutINt | date:'medium'}}</td>
-                    <td>{{carriere.finINT | date:'medium'}}</td>
-                    <td>{{carriere.dateRec | date:'medium'}}</td>
-                    <td>{{carriere.fichCont}}</td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="carriere-detail({id:carriere.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="carriere.edit({id:carriere.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="carriere.delete({id:carriere.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
-                            </button>
+
+        <!-- widget grid -->
+        <section id="widget-grid" class="">
+
+            <!-- row -->
+            <div class="row">
+
+                <!-- NEW WIDGET START -->
+
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueLight" id="wid-id-455" data-widget-editbutton="false">
+                    <!-- widget options:
+                            usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                            data-widget-colorbutton="false"
+                            data-widget-editbutton="false"
+                            data-widget-togglebutton="false"
+                            data-widget-deletebutton="false"
+                            data-widget-fullscreenbutton="false"
+                            data-widget-custombutton="false"
+                            data-widget-collapsed="true"
+                            data-widget-sortable="false"
+
+                            -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2 data-translate="qualiMakerApp.carriere.home.title">Carrieres
+                            </span>
+                        </h2>
+
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+
                         </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="text-center">
-        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
-        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+
+
+
+
+                        <div>
+                            <h2></h2>
+                            <jhi-alert></jhi-alert>
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-xs-4 no-padding-left">
+                                        <button class="btn btn-primary" ui-sref="carriere.new" >
+                                            <span class="glyphicon glyphicon-plus"></span>
+                                            <span class="hidden-xs-down" >
+
+                                </span>
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-8 no-padding-right">
+                                        <form name="searchForm" class="form-inline">
+                                            <div class="input-group pull-right" >
+                                                <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'qualiMakerApp.carriere.home.search' | translate }}">
+                                                <span  class="input-group-btn width-min" >
+                                        <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                                <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                                        <button class="btn btn-info" ng-click="vm.clear()">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </button>
+                                    </span>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="table-responsive">
+                                <table  class="table table-striped table-bordered table-hover" width="100%">
+                                    <thead>
+                                    <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                                        <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        <th>image</th>
+                                        <th jh-sort-by="employe.id"><span data-translate="qualiMakerApp.carriere.employe">Employe</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        <th jh-sort-by="typeContrat.id"><span data-translate="qualiMakerApp.carriere.typeContrat">Type Contrat</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        <th jh-sort-by="fichCont"><span data-translate="qualiMakerApp.carriere.fichCont">Fich Cont</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        <th jh-sort-by="dateRec"><span data-translate="qualiMakerApp.carriere.dateRec">Date Rec</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        <th jh-sort-by="actived"><span data-translate="qualiMakerApp.carriere.actived">Actived</span> <span class="glyphicon glyphicon-sort"></span></th>
+
+                                        <!-- <th jh-sort-by="nom"><span data-translate="qualiMakerApp.carriere.nom">Nom</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        <th jh-sort-by="integre"><span data-translate="qualiMakerApp.carriere.integre">Integre</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        <th jh-sort-by="debutINt"><span data-translate="qualiMakerApp.carriere.debutINt">Debut I Nt</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        <th jh-sort-by="finINT"><span data-translate="qualiMakerApp.carriere.finINT">Fin INT</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        -->
+                                        <!--<th jh-sort-by="document"><span data-translate="qualiMakerApp.carriere.document">Document</span> <span class="glyphicon glyphicon-sort"></span></th>
+                                        -->
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="carriere in vm.carrieres track by carriere.id"  ng-if="carriere.employe.email ==vm.settingsAccount.email">
+                                        <td><a ui-sref="carriere-detail({id:carriere.id})">{{carriere.id}}</a></td>
+                                        <td>
+                                            <div ng-if="carriere.employe.image">
+                                                <a ng-click="vm.openFile(carriere.employe.imageContentType, carriere.employe.image)">
+                                                    <img data-ng-src="{{'data:' + carriere.employe.imageContentType + ';base64,' + carriere.employe.image}}" style="max-width: 100%;" alt="employe image" height="70" width="70" class="img-circle"/>
+                                                </a></div>
+                                        </td>
+                                        <td>
+                                            <a ui-sref="employe-detail({id:carriere.employe.id})">{{carriere.employe.nom}} {{carriere.employe.prenom}}</a>
+                                        </td>
+                                        <td>
+                                            <a ui-sref="type-contrat-detail({id:carriere.typeContrat.id})">{{carriere.typeContrat.type}}</a>
+                                        </td>
+
+                                        <td>
+                                            <a ng-if="carriere.contrat" ng-click="vm.openFile(carriere.contratContentType, carriere.contrat)" data-translate="entity.action.open">open</a>
+                                           <!-- <span ng-if="carriere.contrat">{{carriere.contratContentType}}, {{vm.byteSize(carriere.contrat)}}</span>
+                                       --> </td>
+                                        <td>{{carriere.dateRec | date:'medium'}}</td>
+                                        <td>
+                                            <button class="btn btn-danger btn-xs" ng-click="vm.setActive(carriere, true)" ng-show="!carriere.actived"
+                                                    data-translate="qualiMakerApp.carriere.deactivated">Deactivated</button>
+                                            <button class="btn btn-success btn-xs" ng-click="vm.setActive(carriere, false)" ng-show="carriere.actived"
+                                                    data-translate="qualiMakerApp.carriere.activated">Activated</button>
+                                        </td>
+                                        <!--
+                                                                        <td>{{carriere.nom}}</td>
+                                                                        <td>{{carriere.integre}}</td>
+                                                                        <td>{{carriere.debutINt | date:'medium'}}</td>
+                                                                        <td>{{carriere.finINT | date:'medium'}}</td>
+
+                                                                        <td>
+                                                                            <a ng-if="carriere.document" ng-click="vm.openFile(carriere.documentContentType, carriere.document)" data-translate="entity.action.open">open</a>
+                                                                            <span ng-if="carriere.document">{{carriere.documentContentType}}, {{vm.byteSize(carriere.document)}}</span>
+                                                                        </td>
+                                                                        -->
+
+                                        <td class="text-center">
+                                            <div class="row">
+                                                <button type="submit"
+                                                        ui-sref="carriere-detail({id:carriere.id})"
+                                                        class="btn btn-info btn-sm">
+                                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                                    <span class="hidden-sm-down" ></span>
+                                                </button>
+                                                <button type="submit"
+                                                        ui-sref="carriere.edit({id:carriere.id})"
+                                                        class="btn btn-primary btn-sm">
+                                                    <span class="glyphicon glyphicon-pencil"></span>
+                                                    <span class="hidden-sm-down" ></span>
+                                                </button>
+                                                <button type="submit"
+                                                        ui-sref="carriere.delete({id:carriere.id})"
+                                                        class="btn btn-danger btn-sm">
+                                                    <span class="glyphicon glyphicon-remove-circle"></span>
+                                                    <span class="hidden-sm-down"></span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center">
+                                <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+                                <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </div>

@@ -1,6 +1,13 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "documentInterne",
+            "otherEntityName": "documentInterne",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "sites"
+        }
+    ],
     "fields": [
         {
             "fieldName": "nom",
@@ -8,8 +15,8 @@
         }
     ],
     "changelogDate": "20170329102953",
-    "entityTableName": "sites",
     "dto": "no",
-    "pagination": "pagination",
-    "service": "no"
+    "service": "no",
+    "entityTableName": "sites",
+    "pagination": "pagination"
 }

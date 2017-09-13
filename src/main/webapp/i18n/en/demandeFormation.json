@@ -1,0 +1,29 @@
+{
+    "qualiMakerApp": {
+        "demandeFormation" : {
+            "home": {
+                "title": "Demande Formations",
+                "createLabel": "Create a new Demande Formation",
+                "createOrEditLabel": "Create or edit a Demande Formation",
+                "search": "Search for Demande Formation"
+            },
+            "created": "A new Demande Formation is created with identifier {{ param }}",
+            "updated": "A Demande Formation is updated with identifier {{ param }}",
+            "deleted": "A Demande Formation is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Demande Formation {{ id }}?"
+            },
+            "detail": {
+                "title": "Demande Formation"
+            },
+            "theme": "Theme",
+            "dateDemande": "Date Demande",
+            "datesouhaite": "Datesouhaite",
+            "nombresjours": "Nombresjours",
+            "description": "Description",
+            "justification": "Justification",
+            "etatD": "Etat D",
+            "empploye": "Empploye"
+        }
+    }
+}

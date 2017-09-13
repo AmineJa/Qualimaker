@@ -1,0 +1,304 @@
+
+<section id="widget-grid" class=""  >
+
+    <!-- row -->
+
+
+    <!-- NEW WIDGET START -->
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-pink" id="wid-id-525" data-widget-editbutton="false" data-widget-deletebutton="false">
+        <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+        data-widget-colorbutton="false"
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true"
+        data-widget-sortable="false"
+
+        -->
+        <header>
+            <span class="widget-icon"> <i class="fa fa-check"></i> </span>
+            <h2  class="modal-title" id="myEnregistrementLabel" data-translate="qualiMakerApp.enregistrement.home.createOrEditLabel">Create or edit a Enregistrement</h2>
+
+        </header>
+
+        <!-- widget div-->
+
+
+        <!-- widget edit box -->
+
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body">
+
+
+
+            <form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                            ng-click="vm.clear()">&times;</button>
+                    <h4 ></h4>
+                </div>
+                <div class="modal-body well">
+                    <jhi-alert-error></jhi-alert-error>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label for="id" data-translate="global.field.id">ID</label>
+                        </div>
+                        <div class="col-md-10">   <div class="form-group" ng-show="vm.enregistrement.id">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-map-key fa-fw"></i></span>
+                                <!---->
+                                <input type="text" class="form-control" id="id" name="id"
+                                       ng-model="vm.enregistrement.id" readonly />
+                            </div>
+                        </div></div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label class="control-label" data-translate="qualiMakerApp.enregistrement.date" for="field_date">Date</label>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="form-group" ng-show="vm.enregistrement.id">
+                            <div class="input-group">
+                                <input id="field_date" type="text" class="form-control" name="date" datetime-picker="{{dateformat}}" ng-model="vm.enregistrement.date" is-open="vm.datePickerOpenStatus.date"
+                                       readonly/>
+                                <span class="input-group-btn" >
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('date')"><i class="glyphicon glyphicon-calendar" readonly></i></button>
+                    </span>
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label class="control-label" data-translate="qualiMakerApp.enregistrement.employe" for="field_employe">Employe</label>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="form-group" ng-show="vm.enregistrement.id">
+                            <input type="text" class="form-control" name="employe" id="field_employe"
+                                   ng-model="vm.enregistrement.emp"
+                                   readonly />
+                        </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-tags fa-fw"></i></span>
+                            <input type="text" class="form-control" name="titre" id="field_titre" placeholder="{{'qualiMakerApp.enregistrement.titre'|translate}}"
+                                   ng-model="vm.enregistrement.titre"
+                                   required/>
+                        </div>
+                        <div ng-show="editForm.titre.$invalid">
+                            <p class="help-block"
+                               ng-show="editForm.titre.$error.required" data-translate="entity.validation.required">
+                                This field is required.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-bookmark fa-fw"></i></span>
+                            <textarea type="text" class="form-control" name="libelle" id="field_libelle" placeholder="{{'qualiMakerApp.enregistrement.libelle'|translate}}"
+                                      ng-model="vm.enregistrement.libelle"
+                                      required></textarea>
+                        </div>
+                        <div ng-show="editForm.libelle.$invalid">
+                            <p class="help-block"
+                               ng-show="editForm.libelle.$error.required" data-translate="entity.validation.required">
+                                This field is required.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <article class="col-md-3">
+                            <button type="button" ngf-select class="btn btn-info btn-block"
+                                    ngf-change="vm.setFichier($file, vm.enregistrement)">
+
+                    <span class="glyphicon glyphicon-paperclip
+                     "></span>&nbsp;<span  data-translate="entity.action.addblob"> Add blob</span>
+                            </button>
+                        </article>
+                        <article class="col-md-5">
+                            <div class="form-group" ngf-drop ngf-change="vm.setFichier($file, vm.enregistrement)">
+                                <!--<label class="control-label" data-translate="qualiMakerApp.enregistrement.fichier" for="field_fichier">Fichier</label>
+                                --><div>
+                                <div ng-if="vm.enregistrement.fichier" class="help-block clearfix">
+                                    <a class="pull-left" ng-click="vm.openFile(vm.enregistrement.fichierContentType, vm.enregistrement.fichier)" data-translate="entity.action.open">open</a><br>
+                                    <span class="pull-left">{{vm.enregistrement.fichierContentType}}, {{vm.byteSize(vm.enregistrement.fichier)}}</span>
+                                    <button type="button" ng-click="vm.enregistrement.fichier=null;vm.enregistrement.fichierContentType=null;"
+                                            class="btn btn-default btn-xs pull-right">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </button>
+                                </div>
+
+                            </div>
+                                <input type="hidden" class="form-control" name="fichier" id="field_fichier"
+                                       ng-model="vm.enregistrement.fichier"
+                                       required/>
+                                <input type="hidden" class="form-control" name="fichierContentType" id="field_fichierContentType"
+                                       ng-model="vm.enregistrement.fichierContentType" />
+                                <div ng-show="editForm.fichier.$invalid">
+                                    <p class="help-block"
+                                       ng-show="editForm.fichier.$error.required" data-translate="entity.validation.required">
+                                        This field is required.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </article>
+                        <article class="col-md-4">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                                    <input type="text" class="form-control" name="motclef" id="field_motclef"  placeholder="{{'qualiMakerApp.enregistrement.motclef'|translate}}"
+                                           ng-model="vm.enregistrement.motclef"
+                                    />
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-comment-o fa-fw"></i></span>
+                            <textarea type="text" class="form-control" name="commentaire" id="field_commentaire"
+                                      ng-model="vm.enregistrement.commentaire"   placeholder="{{'qualiMakerApp.enregistrement.commentaire'|translate}}"
+                            ></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="vm.clear()">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+                    </button>
+                    <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-success">
+                        <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!--<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEnregistrementLabel" data-translate="qualiMakerApp.enregistrement.home.createOrEditLabel">Create or edit a Enregistrement</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.enregistrement.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.enregistrement.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.enregistrement.libelle" for="field_libelle">Libelle</label>
+            <input type="text" class="form-control" name="libelle" id="field_libelle"
+                    ng-model="vm.enregistrement.libelle"
+                    required/>
+            <div ng-show="editForm.libelle.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.libelle.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.enregistrement.titre" for="field_titre">Titre</label>
+            <input type="text" class="form-control" name="titre" id="field_titre"
+                    ng-model="vm.enregistrement.titre"
+                    required/>
+            <div ng-show="editForm.titre.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.titre.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setFichier($file, vm.enregistrement)">
+            <label class="control-label" data-translate="qualiMakerApp.enregistrement.fichier" for="field_fichier">Fichier</label>
+            <div>
+                <div ng-if="vm.enregistrement.fichier" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.enregistrement.fichierContentType, vm.enregistrement.fichier)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.enregistrement.fichierContentType}}, {{vm.byteSize(vm.enregistrement.fichier)}}</span>
+                    <button type="button" ng-click="vm.enregistrement.fichier=null;vm.enregistrement.fichierContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setFichier($file, vm.enregistrement)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="fichier" id="field_fichier"
+                    ng-model="vm.enregistrement.fichier"
+                    required/>
+            <input type="hidden" class="form-control" name="fichierContentType" id="field_fichierContentType"
+                    ng-model="vm.enregistrement.fichierContentType" />
+            <div ng-show="editForm.fichier.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.fichier.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.enregistrement.commentaire" for="field_commentaire">Commentaire</label>
+            <input type="text" class="form-control" name="commentaire" id="field_commentaire"
+                    ng-model="vm.enregistrement.commentaire"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.enregistrement.motclef" for="field_motclef">Motclef</label>
+            <input type="text" class="form-control" name="motclef" id="field_motclef"
+                    ng-model="vm.enregistrement.motclef"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="qualiMakerApp.enregistrement.date" for="field_date">Date</label>
+                <div class="input-group">
+                    <input id="field_date" type="text" class="form-control" name="date" datetime-picker="{{dateformat}}" ng-model="vm.enregistrement.date" is-open="vm.datePickerOpenStatus.date"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('date')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.enregistrement.employe" for="field_employe">Employe</label>
+            <select class="form-control" id="field_employe" name="employe" ng-model="vm.enregistrement.employe" ng-options="employe as employe.y for employe in vm.employes track by employe.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
+-->

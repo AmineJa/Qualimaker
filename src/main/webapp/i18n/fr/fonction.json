@@ -16,8 +16,8 @@
             "detail": {
                 "title": "Fonction"
             },
-            "nom": "Nom",
-            "employee": "Employee"
+            "fonction": "Fonction",
+            "profilsfonction": "Profilsfonction"
         }
     }
 }

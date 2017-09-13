@@ -1,0 +1,15 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "lieux",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170508111946",
+    "entityTableName": "lienx_classement",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no"
+}

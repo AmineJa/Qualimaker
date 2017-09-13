@@ -4,7 +4,7 @@ describe('Controller Tests', function() {
 
     describe('Employe Management Detail Controller', function() {
         var $scope, $rootScope;
-        var MockEntity, MockPreviousState, MockEmploye, MockConge, MockSites, MockGroupe, MockServiice, MockFormation;
+        var MockEntity, MockPreviousState, MockEmploye, MockConge, MockSites, MockGroupe, MockServiice, MockFormation, MockDocumenExterne, MockRemplacer, MockDroitaccesDocument, MockCarriere, MockProfilsfonction, MockCompetences;
         var createController;
 
         beforeEach(inject(function($injector) {
@@ -18,6 +18,12 @@ describe('Controller Tests', function() {
             MockGroupe = jasmine.createSpy('MockGroupe');
             MockServiice = jasmine.createSpy('MockServiice');
             MockFormation = jasmine.createSpy('MockFormation');
+            MockDocumenExterne = jasmine.createSpy('MockDocumenExterne');
+            MockRemplacer = jasmine.createSpy('MockRemplacer');
+            MockDroitaccesDocument = jasmine.createSpy('MockDroitaccesDocument');
+            MockCarriere = jasmine.createSpy('MockCarriere');
+            MockProfilsfonction = jasmine.createSpy('MockProfilsfonction');
+            MockCompetences = jasmine.createSpy('MockCompetences');
             
 
             var locals = {
@@ -30,7 +36,13 @@ describe('Controller Tests', function() {
                 'Sites': MockSites,
                 'Groupe': MockGroupe,
                 'Serviice': MockServiice,
-                'Formation': MockFormation
+                'Formation': MockFormation,
+                'DocumenExterne': MockDocumenExterne,
+                'Remplacer': MockRemplacer,
+                'DroitaccesDocument': MockDroitaccesDocument,
+                'Carriere': MockCarriere,
+                'Profilsfonction': MockProfilsfonction,
+                'Competences': MockCompetences
             };
             createController = function() {
                 $injector.get('$controller')("EmployeDetailController", locals);

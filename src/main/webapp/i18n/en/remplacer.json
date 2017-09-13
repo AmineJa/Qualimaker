@@ -1,0 +1,26 @@
+{
+    "qualiMakerApp": {
+        "remplacer" : {
+            "home": {
+                "title": "Remplacers",
+                "createLabel": "Create a new Remplacer",
+                "createOrEditLabel": "Create or edit a Remplacer",
+                "search": "Search for Remplacer"
+            },
+            "created": "A new Remplacer is created with identifier {{ param }}",
+            "updated": "A Remplacer is updated with identifier {{ param }}",
+            "deleted": "A Remplacer is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Remplacer {{ id }}?"
+            },
+            "detail": {
+                "title": "Remplacer"
+            },
+            "debut": "Debut",
+            "fin": "Fin",
+            "employe": "Employe",
+            "nouveau": "Nouveau",
+            "profilsfonction": "Profilsfonction"
+        }
+    }
+}

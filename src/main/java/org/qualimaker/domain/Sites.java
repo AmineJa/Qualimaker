@@ -1,11 +1,14 @@
 package org.qualimaker.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -27,6 +30,11 @@ public class Sites implements Serializable {
     @Column(name = "nom")
     private String nom;
 
+    @OneToMany(mappedBy = "sites")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<DocumentInterne> documentInternes = new HashSet<>();
+
     public Long getId() {
         return id;
     }
@@ -46,6 +54,31 @@ public class Sites implements Serializable {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public Set<DocumentInterne> getDocumentInternes() {
+        return documentInternes;
+    }
+
+    public Sites documentInternes(Set<DocumentInterne> documentInternes) {
+        this.documentInternes = documentInternes;
+        return this;
+    }
+
+    public Sites addDocumentInterne(DocumentInterne documentInterne) {
+        this.documentInternes.add(documentInterne);
+        documentInterne.setSites(this);
+        return this;
+    }
+
+    public Sites removeDocumentInterne(DocumentInterne documentInterne) {
+        this.documentInternes.remove(documentInterne);
+        documentInterne.setSites(null);
+        return this;
+    }
+
+    public void setDocumentInternes(Set<DocumentInterne> documentInternes) {
+        this.documentInternes = documentInternes;
     }
 
     @Override

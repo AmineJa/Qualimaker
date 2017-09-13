@@ -67,7 +67,7 @@ class CarriereGatlingTest extends Simulation {
             .exec(http("Create new carriere")
             .post("/api/carrieres")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "nom":"SAMPLE_TEXT", "etat":"SAMPLE_TEXT", "integre":"SAMPLE_TEXT", "debutINt":"2020-01-01T00:00:00.000Z", "finINT":"2020-01-01T00:00:00.000Z", "dateRec":"2020-01-01T00:00:00.000Z", "fichCont":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "integre":null, "debutINt":"2020-01-01T00:00:00.000Z", "finINT":"2020-01-01T00:00:00.000Z", "dateRec":"2020-01-01T00:00:00.000Z", "document":null, "actived":null, "contrat":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_carriere_url"))).exitHereIfFailed
             .pause(10)

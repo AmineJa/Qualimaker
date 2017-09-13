@@ -1,18 +1,26 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "employe",
+            "otherEntityName": "employe",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "typeContrat",
+            "otherEntityName": "typeContrat",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        }
+    ],
     "fields": [
         {
-            "fieldName": "nom",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "etat",
-            "fieldType": "String"
-        },
-        {
             "fieldName": "integre",
-            "fieldType": "String"
+            "fieldType": "Boolean"
         },
         {
             "fieldName": "debutINt",
@@ -27,8 +35,18 @@
             "fieldType": "ZonedDateTime"
         },
         {
-            "fieldName": "fichCont",
-            "fieldType": "String"
+            "fieldName": "document",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
+        },
+        {
+            "fieldName": "actived",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "contrat",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "any"
         }
     ],
     "changelogDate": "20170329102953",

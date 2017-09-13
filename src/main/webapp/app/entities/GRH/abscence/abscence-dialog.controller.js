@@ -19,6 +19,7 @@
         vm.save = save;
         vm.employes = Employe.query();
         vm.natureabs = NatureAbs.query();
+        vm.updateNatureAbs=updateNatureAbs;
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
@@ -64,5 +65,16 @@
         function openCalendar (date) {
             vm.datePickerOpenStatus[date] = true;
         }
+
+
+       /* function updateNatureAbs  () {
+            $scope.availableStates = [];
+
+            angular.forEach(vm.natureabs, function (value) {
+                if (value.id == vm.natureabs.id) {
+                    vm.availableStates.push(value);
+                }
+            });
+        }*/
     }
 })();

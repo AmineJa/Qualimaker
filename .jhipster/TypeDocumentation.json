@@ -1,0 +1,55 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "employe",
+            "otherEntityName": "employe",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "documenExterne",
+            "otherEntityName": "documenExterne",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "typeDocumentation"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "pDf",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "securise",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "abreviation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nature",
+            "fieldType": "NatureDoc",
+            "fieldValues": "INTERNE,EXTERNE"
+        },
+        {
+            "fieldName": "notif",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170508111946",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "type_documentation",
+    "pagination": "pagination"
+}

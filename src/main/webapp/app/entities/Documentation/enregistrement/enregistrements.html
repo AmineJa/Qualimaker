@@ -1,0 +1,156 @@
+
+<div class="well">
+
+    <!-- RIBBON -->
+    <!-- END RIBBON -->
+
+    <!-- MAIN CONTENT -->
+    <div id="content">
+
+        <div class="row">
+           <!-- <div >
+                <h1 class="page-title txt-color-blueDark">
+                    <i class="fa fa-table fa-fw "></i>
+                    <span data-translate="global.menu.GRH">G.R.H</span>
+                    > <span data-translate="global.menu.entities.employe"> Employee</span>
+
+                </h1>
+            </div>-->
+        </div>
+
+        <!-- widget grid -->
+        <section id="widget-grid" class="">
+
+            <!-- row -->
+            <div class="row">
+
+                <!-- NEW WIDGET START -->
+
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-redLight" id="wid-id-180" data-widget-editbutton="false">
+                    <!-- widget options:
+                            usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                            data-widget-colorbutton="false"
+                            data-widget-editbutton="false"
+                            data-widget-togglebutton="false"
+                            data-widget-deletebutton="false"
+                            data-widget-fullscreenbutton="false"
+                            data-widget-custombutton="false"
+                            data-widget-collapsed="true"
+                            data-widget-sortable="false"
+
+                            -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2 data-translate="qualiMakerApp.enregistrement.home.title">Enregistrements </h2>
+
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                        </div>
+
+<div>
+    <h2 ></h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-default" ui-sref="enregistrement.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="qualiMakerApp.enregistrement.home.createLabel">
+                        Create new Enregistrement
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'qualiMakerApp.enregistrement.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+        <table  class="table table-striped table-bordered table-hover" width="100%">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="titre"><span data-translate="qualiMakerApp.enregistrement.titre">Titre</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="libelle"><span data-translate="qualiMakerApp.enregistrement.libelle">Libelle</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="fichier"><span data-translate="qualiMakerApp.enregistrement.fichier">Fichier</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="commentaire"><span data-translate="qualiMakerApp.enregistrement.commentaire">Commentaire</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="motclef"><span data-translate="qualiMakerApp.enregistrement.motclef">Motclef</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="date"><span data-translate="qualiMakerApp.enregistrement.date">Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="employe.y"><span data-translate="qualiMakerApp.enregistrement.employe">Employe</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="enregistrement in vm.enregistrements track by enregistrement.id">
+                    <td><a ui-sref="enregistrement-detail({id:enregistrement.id})">{{enregistrement.id}}</a></td>
+                    <td>{{enregistrement.libelle}}</td>
+                    <td>{{enregistrement.titre}}</td>
+                    <td>
+                        <a ng-if="enregistrement.fichier" ng-click="vm.openFile(enregistrement.fichierContentType, enregistrement.fichier)" data-translate="entity.action.open">open</a>
+                        <!--<span ng-if="enregistrement.fichier">{{enregistrement.fichierContentType}}, {{vm.byteSize(enregistrement.fichier)}}</span>-->
+                    </td>
+                    <td>{{enregistrement.commentaire}}</td>
+                    <td>{{enregistrement.motclef}}</td>
+                    <td>{{enregistrement.date | date:'medium'}}</td>
+                    <td>
+                        <a >{{enregistrement.emp}}</a>
+                    </td>
+                    <td class="text-center">
+                        <div class="row">
+                            <button type="submit"
+                                    ui-sref="enregistrement-detail({id:enregistrement.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" ></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="enregistrement.edit({id:enregistrement.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" ></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="enregistrement.delete({id:enregistrement.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" ></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>
+                        </div>
+                    </div>
+
+
+        </section>
+    </div>
+</div>

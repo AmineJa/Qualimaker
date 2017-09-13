@@ -1,0 +1,220 @@
+<section id="widget-grid" class=""  >
+
+    <!-- row -->
+
+
+    <!-- NEW WIDGET START -->
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-pink" id="wid-id-525" data-widget-editbutton="false" data-widget-deletebutton="false">
+        <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+        data-widget-colorbutton="false"
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true"
+        data-widget-sortable="false"
+
+        -->
+        <header>
+            <span class="widget-icon"> <i class="fa fa-check"></i> </span>
+            <h2  class="modal-title" id="myDocumenExterneLabel" data-translate="qualiMakerApp.documenExterne.home.createOrEditLabel">Create or edit a Documen Externe</h2>
+
+        </header>
+
+        <!-- widget div-->
+
+
+        <!-- widget edit box -->
+
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body">
+
+
+
+
+        <form name="editForm" id="wizard-1" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4></h4>
+    </div>
+    <div class="modal-body well">
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row">
+            <article class="col-md-12">
+                <div class="form-group" ng-show="vm.documenExterne.id">
+                    <input type="text" class="form-control" id="id" name="id" placeholder="{{'global.field.id'|translate}}"
+                           ng-model="vm.documenExterne.id" readonly />
+                </div>
+            </article>
+            <article class="col-md-12">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                           ng-model="vm.documenExterne.code" placeholder="{{'qualiMakerApp.documenExterne.code'|translate}}"
+                           required/>
+                    </div>
+                    <div ng-show="editForm.code.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.code.$error.required" data-translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>
+                </div>
+
+            </article>
+            <article class="col-md-12">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
+                    <textarea type="text" class="form-control" name="libele" id="field_libele"
+                           ng-model="vm.documenExterne.libele" placeholder="{{'qualiMakerApp.documenExterne.libele'|translate}}"
+                              required></textarea>
+                    </div>
+
+                </div>
+            </article>
+            <!-- fichier-->
+            <article class="col-md-6">
+                <button type="button" ngf-select class="btn btn-info btn-block"
+                        ngf-change="vm.setFichier($file, vm.documenExterne)" data-translate="qualiMakerApp.documenExterne.fichier">
+                    Add blob
+                </button>
+            </article>
+            <article class="col-md-6">
+                <div class="form-group" ngf-drop ngf-change="vm.setFichier($file, vm.documenExterne)">
+                    <div>
+                        <div ng-if="!vm.documenExterne.fichier" class="help-block clearfix">
+                            <h5>Aucune fichier</h5>
+
+                        </div>
+                        <div ng-if="vm.documenExterne.fichier" class="help-block clearfix">
+                            <a class="pull-left" ng-click="vm.openFile(vm.documenExterne.fichierContentType, vm.documenExterne.fichier)" data-translate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{vm.documenExterne.fichierContentType}}, {{vm.byteSize(vm.documenExterne.fichier)}}</span>
+                            <button type="button" ng-click="vm.documenExterne.fichier=null;vm.documenExterne.fichierContentType=null;"
+                                    class="btn btn-default btn-xs pull-right">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </div>
+
+                    </div>
+                    <input type="hidden" class="form-control" name="fichier" id="field_fichier"
+                           ng-model="vm.documenExterne.fichier"
+                    />
+                    <input type="hidden" class="form-control" name="fichierContentType" id="field_fichierContentType"
+                           ng-model="vm.documenExterne.fichierContentType" />
+                </div>
+
+            </article>
+            <!--end fichier-->
+            <article class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group">
+                        <input id="field_daterevision" type="text" class="form-control" name="daterevision" datetime-picker="{{dateformat}}" ng-model="vm.documenExterne.daterevision" is-open="vm.datePickerOpenStatus.daterevision"
+                               placeholder="{{'qualiMakerApp.documenExterne.daterevision'|translate}}" />
+                        <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('daterevision')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                    </div>
+                </div>
+
+            </article>
+            <article class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
+                        <input type="text" class="form-control" name="indiceEvolution" id="field_indiceEvolution"
+                               ng-model="vm.documenExterne.indiceEvolution" placeholder="{{'qualiMakerApp.documenExterne.indiceEvolution'|translate}}"
+                        />
+                    </div>
+                </div>
+
+            </article>
+            <!--type Documentation-->
+            <article class="col-md-3">
+                <label data-translate="qualiMakerApp.documenExterne.typeDocumentation" for="field_typeDocumentation">Type Documentation</label>
+
+            </article>
+            <article class="col-md-8">
+                <div class="form-group"><!--ng-repeat="typeDocumentation  in vm.typedocumentations " value="{{typeDocumentation.type}}" ng-class="{active: vm.$state.includes('account')}" ng-if="typeDocumentation.nature == 'EXTERNE' && typeDocumentation.employe.email ==vm.settingsAccount.email"//ng-options="typeDocumentation as typeDocumentation.type for typeDocumentation in vm.typedocumentations track by typeDocumentation.id"-->
+                    <select   class="form-control" id="field_typeDocumentation" name="typeDocumentation" ng-class="{active: vm.$state.includes('account')}"ng-model="vm.documenExterne.typeDocumentation" ng-options="typeDocumentation as typeDocumentation.type for typeDocumentation in vm.typedocumentations |filter:{nature :'EXTERNE' }|filter :{email:'vm.settingsAccount.email'} track by typeDocumentation.id"   required>
+                        <option value=""  ></option>
+
+                    </select>
+                    <div ng-show="editForm.typeDocumentation.$invalid">
+                        <p class="help-block"
+                           ng-show="editForm.typeDocumentation.$error.required" data-translate="entity.validation.required">
+                            This field is required.
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <!--fin-->
+            <!--origine-->
+            <article class="col-md-3">
+                <label data-translate="qualiMakerApp.documenExterne.origine" for="field_origine">Origine</label>
+
+            </article>
+            <article class="col-md-8">
+                <div class="form-group">
+                    <select class="form-control" id="field_origine" name="origine" ng-model="vm.documenExterne.origine" ng-options="origine as origine.origine for origine in vm.origines track by origine.id">
+                        <option value=""></option>
+                    </select>
+                </div>
+
+            </article>
+            <!--fin-->
+          <!--lieux-->
+            <article class="col-md-3">
+                <label data-translate="qualiMakerApp.documenExterne.lieuxClassement" for="field_lieuxClassement">Lieux Classement</label>
+
+            </article>
+            <article class="col-md-8">
+                <div class="form-group">
+                    <select class="form-control" id="field_lieuxClassement" name="lieuxClassement" ng-model="vm.documenExterne.lieuxClassement" ng-options="lieuxClassement as lieuxClassement.lieux for lieuxClassement in vm.lieuxclassements track by lieuxClassement.id">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </article>
+           <!-- fin-->
+
+        </div>
+
+
+        <div class="form-group">
+            <label data-translate="qualiMakerApp.documenExterne.employe" for="field_employe">Employe</label>
+            <select class="form-control" id="field_employe"  name="employe" ng-model="vm.documenExterne.employes" ng-options="employe as employe.nom +' '+employe.prenom  for employe in vm.employes track by employe.id" ></select>
+        </div>
+   <!--     <div ng-show="editForm.employe.$invalid">
+            <p class="help-block"
+                ng-show="editForm.employe.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>-->
+
+
+
+    </div>
+    <div class="modal-footer">
+
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
+        </div>
+    </div>
+</section>

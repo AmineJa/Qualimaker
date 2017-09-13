@@ -1,0 +1,41 @@
+{
+    "qualiMakerApp": {
+        "documentInterne" : {
+            "home": {
+                "title": "Document Internes",
+                "createLabel": "Create a new Document Interne",
+                "createOrEditLabel": "Create or edit a Document Interne",
+                "search": "Search for Document Interne"
+            },
+            "created": "A new Document Interne is created with identifier {{ param }}",
+            "updated": "A Document Interne is updated with identifier {{ param }}",
+            "deleted": "A Document Interne is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Document Interne {{ id }}?"
+            },
+            "detail": {
+                "title": "Document Interne"
+            },
+            "code": "Code",
+            "libelle": "Libelle",
+            "fichier": "Fichier",
+            "motif": "Motif",
+            "message": "Message",
+            "etat": "Etat",
+            "date": "Date",
+            "v": "V",
+            "r": "R",
+            "a": "A",
+            "typeuser": "Typeuser",
+            "precedent": "Precedent",
+            "suivant": "Suivant",
+            "sites": "Sites",
+            "processus": "Processus",
+            "typeDocumentation": "Type Documentation",
+            "Superviseur": "Superviseur",
+            "Verificateur": "Verificateur",
+            "Redacteur": "Redacteur",
+            "Approubateur": "Approubateur"
+        }
+    }
+}

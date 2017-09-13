@@ -1,0 +1,64 @@
+
+<div>
+    <h2><span data-translate="qualiMakerApp.documenExterne.detail.title">Documen Externe</span> {{vm.documenExterne.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="qualiMakerApp.documenExterne.code">Code</span></dt>
+        <dd>
+            <span>{{vm.documenExterne.code}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documenExterne.libele">Libele</span></dt>
+        <dd>
+            <span>{{vm.documenExterne.libele}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documenExterne.daterevision">Daterevision</span></dt>
+        <dd>
+            <span>{{vm.documenExterne.daterevision | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documenExterne.indiceEvolution">Indice Evolution</span></dt>
+        <dd>
+            <span>{{vm.documenExterne.indiceEvolution}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documenExterne.fichier">Fichier</span></dt>
+        <dd>
+            <div ng-if="vm.documenExterne.fichier">
+                <a ng-click="vm.openFile(vm.documenExterne.fichierContentType, vm.documenExterne.fichier)" data-translate="entity.action.open">open</a>
+                {{vm.documenExterne.fichierContentType}}, {{vm.byteSize(vm.documenExterne.fichier)}}
+            </div>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documenExterne.notif">Notif</span></dt>
+        <dd>
+            <span>{{vm.documenExterne.notif}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documenExterne.employe">Employe</span></dt>
+        <dd>
+            <span ng-repeat="employe in vm.documenExterne.employes">
+                <a ui-sref="employe-detail({id: employe.id})">{{employe.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documenExterne.origine">Origine</span></dt>
+        <dd>
+            <a ui-sref="origine-detail({id:vm.documenExterne.origine.id})">{{vm.documenExterne.origine.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documenExterne.lieuxClassement">Lieux Classement</span></dt>
+        <dd>
+            <a ui-sref="lieux-classement-detail({id:vm.documenExterne.lieuxClassement.id})">{{vm.documenExterne.lieuxClassement.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.documenExterne.typeDocumentation">Type Documentation</span></dt>
+        <dd>
+            <a ui-sref="type-documentation-detail({id:vm.documenExterne.typeDocumentation.id})">{{vm.documenExterne.typeDocumentation.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="documen-externe-detail.edit({id:vm.documenExterne.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

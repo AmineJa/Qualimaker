@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity DroitaccesDocument.
+    -->
+    <changeSet id="20170509113642-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="employe_id"
+                                 baseTableName="droitacces_document"
+                                 constraintName="fk_droitacces_document_employe_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="employe"/>
+
+        <addForeignKeyConstraint baseColumnNames="droitacces_documents_id"
+                                 baseTableName="droitacces_document_approubateur"
+                                 constraintName="fk_droitacces_document_approubateur_droitacces_documents_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="droitacces_document"/>
+        <addForeignKeyConstraint baseColumnNames="approubateurs_id"
+                                 baseTableName="droitacces_document_approubateur"
+                                 constraintName="fk_droitacces_document_approubateur_approubateurs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="document_interne"/>
+        
+    </changeSet>
+</databaseChangeLog>

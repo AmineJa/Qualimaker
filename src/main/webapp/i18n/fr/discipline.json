@@ -16,12 +16,12 @@
             "detail": {
                 "title": "Discipline"
             },
-            "dateD": " Date de début",
-            "dateF": "Date de  fin",
+            "dateD": "Date D",
+            "dateF": "Date F",
             "duree": "Duree",
             "commentaire": "Commentaire",
             "cause": "Cause",
-            "naturediscipline": "Nature discipline :"
+            "naturediscipline": "Naturediscipline"
         }
     }
 }

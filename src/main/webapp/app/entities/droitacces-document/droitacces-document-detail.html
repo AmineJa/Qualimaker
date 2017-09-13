@@ -1,0 +1,33 @@
+
+<div>
+    <h2><span data-translate="qualiMakerApp.droitaccesDocument.detail.title">Droitacces Document</span> {{vm.droitaccesDocument.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="qualiMakerApp.droitaccesDocument.roles">Roles</span></dt>
+        <dd>
+            <span data-translate="{{'qualiMakerApp.Roles.' + vm.droitaccesDocument.roles}}">{{vm.droitaccesDocument.roles}}</span>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.droitaccesDocument.employe">Employe</span></dt>
+        <dd>
+            <a ui-sref="employe-detail({id:vm.droitaccesDocument.employe.id})">{{vm.droitaccesDocument.employe.id}}</a>
+        </dd>
+        <dt><span data-translate="qualiMakerApp.droitaccesDocument.Approubateur">Approubateur</span></dt>
+        <dd>
+            <span ng-repeat="approubateur in vm.droitaccesDocument.approubateurs">
+                <a ui-sref="document-interne-detail({id: approubateur.id})">{{approubateur.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="droitacces-document-detail.edit({id:vm.droitaccesDocument.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

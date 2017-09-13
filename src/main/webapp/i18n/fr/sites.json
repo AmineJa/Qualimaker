@@ -16,7 +16,8 @@
             "detail": {
                 "title": "Sites"
             },
-            "nom": "Nom"
+            "nom": "Nom",
+            "documentInterne": "Document Interne"
         }
     }
 }

@@ -39,7 +39,7 @@ public class Poste implements Serializable {
     @ManyToOne
     private Serviice serviice;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "postes")
     @JsonIgnore
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Servicepost> serviceposts = new HashSet<>();

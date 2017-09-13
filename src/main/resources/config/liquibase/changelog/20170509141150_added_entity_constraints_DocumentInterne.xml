@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity DocumentInterne.
+    -->
+    <changeSet id="20170509141150-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="sites_id"
+                                 baseTableName="document_interne"
+                                 constraintName="fk_document_interne_sites_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sites"/>
+
+        <addForeignKeyConstraint baseColumnNames="processus_id"
+                                 baseTableName="document_interne"
+                                 constraintName="fk_document_interne_processus_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="processus"/>
+
+        <addForeignKeyConstraint baseColumnNames="type_documentation_id"
+                                 baseTableName="document_interne"
+                                 constraintName="fk_document_interne_type_documentation_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="type_documentation"/>
+
+        <addForeignKeyConstraint baseColumnNames="superviseur_id"
+                                 baseTableName="document_interne"
+                                 constraintName="fk_document_interne_superviseur_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="droitacces_document"/>
+
+        <addForeignKeyConstraint baseColumnNames="document_internes_id"
+                                 baseTableName="document_interne_verificateur"
+                                 constraintName="fk_document_interne_verificateur_document_internes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="document_interne"/>
+        <addForeignKeyConstraint baseColumnNames="verificateurs_id"
+                                 baseTableName="document_interne_verificateur"
+                                 constraintName="fk_document_interne_verificateur_verificateurs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="droitacces_document"/>
+        
+        <addForeignKeyConstraint baseColumnNames="document_internes_id"
+                                 baseTableName="document_interne_redacteur"
+                                 constraintName="fk_document_interne_redacteur_document_internes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="document_interne"/>
+        <addForeignKeyConstraint baseColumnNames="redacteurs_id"
+                                 baseTableName="document_interne_redacteur"
+                                 constraintName="fk_document_interne_redacteur_redacteurs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="droitacces_document"/>
+        
+        <addForeignKeyConstraint baseColumnNames="document_internes_id"
+                                 baseTableName="document_interne_approubateur"
+                                 constraintName="fk_document_interne_approubateur_document_internes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="document_interne"/>
+        <addForeignKeyConstraint baseColumnNames="approubateurs_id"
+                                 baseTableName="document_interne_approubateur"
+                                 constraintName="fk_document_interne_approubateur_approubateurs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="droitacces_document"/>
+        
+    </changeSet>
+</databaseChangeLog>

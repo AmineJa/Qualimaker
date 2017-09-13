@@ -1,0 +1,22 @@
+{
+    "qualiMakerApp": {
+        "etatDemande" : {
+            "home": {
+                "title": "Etat Demandes",
+                "createLabel": "Create a new Etat Demande",
+                "createOrEditLabel": "Create or edit a Etat Demande",
+                "search": "Search for Etat Demande"
+            },
+            "created": "A new Etat Demande is created with identifier {{ param }}",
+            "updated": "A Etat Demande is updated with identifier {{ param }}",
+            "deleted": "A Etat Demande is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Etat Demande {{ id }}?"
+            },
+            "detail": {
+                "title": "Etat Demande"
+            },
+            "etat": "Etat"
+        }
+    }
+}

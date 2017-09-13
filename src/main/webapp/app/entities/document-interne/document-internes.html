@@ -1,0 +1,147 @@
+<div>
+    <h2 data-translate="qualiMakerApp.documentInterne.home.title">Document Internes</h2>
+    <jhi-alert></jhi-alert>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="document-interne.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs-down"  data-translate="qualiMakerApp.documentInterne.home.createLabel">
+                        Create new Document Interne
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'qualiMakerApp.documentInterne.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="code"><span data-translate="qualiMakerApp.documentInterne.code">Code</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="libelle"><span data-translate="qualiMakerApp.documentInterne.libelle">Libelle</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="fichier"><span data-translate="qualiMakerApp.documentInterne.fichier">Fichier</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="motif"><span data-translate="qualiMakerApp.documentInterne.motif">Motif</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="message"><span data-translate="qualiMakerApp.documentInterne.message">Message</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="etat"><span data-translate="qualiMakerApp.documentInterne.etat">Etat</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="date"><span data-translate="qualiMakerApp.documentInterne.date">Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <!--<th jh-sort-by="v"><span data-translate="qualiMakerApp.documentInterne.v">V</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="r"><span data-translate="qualiMakerApp.documentInterne.r">R</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="a"><span data-translate="qualiMakerApp.documentInterne.a">A</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="typeuser"><span data-translate="qualiMakerApp.documentInterne.typeuser">Typeuser</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    --><th jh-sort-by="precedent"><span data-translate="qualiMakerApp.documentInterne.precedent">Precedent</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <!--<th jh-sort-by="suivant"><span data-translate="qualiMakerApp.documentInterne.suivant">Suivant</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="version"><span data-translate="qualiMakerApp.documentInterne.version">Version</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="sites.id"><span data-translate="qualiMakerApp.documentInterne.sites">Sites</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="processus.id"><span data-translate="qualiMakerApp.documentInterne.processus">Processus</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    --><th jh-sort-by="typeDocumentation.id"><span data-translate="qualiMakerApp.documentInterne.typeDocumentation">Type Documentation</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="Superviseur.id"><span data-translate="qualiMakerApp.documentInterne.Superviseur">Superviseur</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                    <th></th>
+
+    </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="documentInterne in vm.documentInternes track by documentInterne.id"ng-init="vm.listverificateur(documentInterne.id)=='true'"ng-class="{active: vm.$state.includes('account')}"  >
+                    <td><a ui-sref="document-interne-detail({id:documentInterne.id})">{{documentInterne.id}}</a></td>
+                    <td>{{documentInterne.code}}</td>
+                    <td>{{documentInterne.libelle}}</td>
+                    <td>
+                        <a ng-if="documentInterne.fichier" ng-click="vm.openFile(documentInterne.fichierContentType, documentInterne.fichier)" data-translate="entity.action.open">open</a>
+                        <span ng-if="documentInterne.fichier"><!--{{documentInterne.fichierContentType}}, {{vm.byteSize(documentInterne.fichier)}}--></span>
+                    </td>
+                    <td>{{documentInterne.motif}}</td>
+                    <td>{{documentInterne.message}}</td>
+                    <td>{{documentInterne.etat}}</td>
+                    <td>{{documentInterne.date | date:'medium'}}</td>
+                  <!--  <td>{{documentInterne.v}}</td>
+                    <td>{{documentInterne.r}}</td>
+                    <td>{{documentInterne.a}}</td>
+                    <td>{{documentInterne.typeuser}}</td>-->
+                    <!--<td>{{documentInterne.precedent}}</td>
+                    <td>{{documentInterne.suivant}}</td>-->
+                    <td>{{documentInterne.version}}</td>
+                    <!-- <td>
+                         <a ui-sref="sites-detail({id:documentInterne.sites.id})">{{documentInterne.sites.id}}</a>
+                     </td>
+                     <td>
+                         <a ui-sref="processus-detail({id:documentInterne.processus.id})">{{documentInterne.processus.id}}</a>
+                     </td>-->
+
+                     <td>
+                         <a ui-sref="type-documentation-detail({id:documentInterne.typeDocumentation.id})">{{documentInterne.typeDocumentation.id}}</a>
+                     </td>
+                     <td>
+                         <a ui-sref="droitacces-document-detail({id:documentInterne.superviseur.id})">{{documentInterne.superviseur.id}}</a>
+                     </td>
+
+
+
+
+                     <td class="text-center">
+                         <div class="row">
+                             <button type="submit"
+                                     ui-sref="document-interne-detail({id:documentInterne.id})"
+                                     class="btn btn-info btn-sm">
+                                 <span class="glyphicon glyphicon-eye-open"></span>
+                                 <span class="hidden-sm-down" ></span>
+                             </button>
+                             <button type="submit"
+                                     ui-sref="document-interne.edit({id:documentInterne.id})"
+                                     class="btn btn-primary btn-sm">
+                                 <span class="glyphicon glyphicon-pencil"></span>
+                                 <span class="hidden-sm-down" ></span>
+                             </button>
+                             <button type="submit"
+                                     ui-sref="document-interne.delete({id:documentInterne.id})"
+                                     class="btn btn-danger btn-sm">
+                                 <span class="glyphicon glyphicon-remove-circle"></span>
+                                 <span class="hidden-sm-down" ></span>
+                             </button>
+                             <!--  <button type="submit"
+                                      href="/download/{documentInterne.id}.html"
+                                      class="btn btn-danger btn-sm">
+                                  <span class="glyphicon glyphicon-save"></span>
+                                  <span class="hidden-sm-down" ></span>
+                              </button>
+                             <a href="${pageContext.request.contextPath}/download/${document.id}.html"></a>-->
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>
+<div  ng-repeat="doc in vm.documentInternes">
+    <div ng-repeat="redecteur in doc.redacteurs">
+        <td> {{redecteur.id}}</td>
+    </div>
+
+</div>
+
+

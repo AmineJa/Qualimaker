@@ -1,80 +1,230 @@
 
-<form name="editForm" role="form" novalidate ng-submit="vm.save()">
 
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-                ng-click="vm.clear()">&times;</button>
-        <h4 class="modal-title" id="myCarriereLabel" data-translate="qualiMakerApp.carriere.home.createOrEditLabel">Create or edit a Carriere</h4>
-    </div>
-    <div class="modal-body">
-        <jhi-alert-error></jhi-alert-error>
-        <div class="form-group" ng-show="vm.carriere.id">
-            <label for="id" data-translate="global.field.id">ID</label>
-            <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.carriere.id" readonly />
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="qualiMakerApp.carriere.nom" for="field_nom">Nom</label>
-            <input type="text" class="form-control" name="nom" id="field_nom"
-                    ng-model="vm.carriere.nom"
-                    />
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="qualiMakerApp.carriere.etat" for="field_etat">Etat</label>
-            <input type="text" class="form-control" name="etat" id="field_etat"
-                    ng-model="vm.carriere.etat"
-                    />
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="qualiMakerApp.carriere.integre" for="field_integre">Integre</label>
-            <input type="text" class="form-control" name="integre" id="field_integre"
-                    ng-model="vm.carriere.integre"
-                    />
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="qualiMakerApp.carriere.debutINt" for="field_debutINt">Debut I Nt</label>
-                <div class="input-group">
-                    <input id="field_debutINt" type="text" class="form-control" name="debutINt" datetime-picker="{{dateformat}}" ng-model="vm.carriere.debutINt" is-open="vm.datePickerOpenStatus.debutINt"
-                    />
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('debutINt')"><i class="glyphicon glyphicon-calendar"></i></button>
-                    </span>
+<!--
+<div class="form-group">
+<label class="control-label" data-translate="qualiMakerApp.carriere.actived" for="field_actived">Actived</label>
+<input type="checkbox" name="actived" id="field_actived"
+     ng-model="vm.carriere.actived"/>
+</div>-->
+
+
+
+
+<section id="widget-grid" class=""  >
+
+    <!-- row -->
+
+
+    <!-- NEW WIDGET START -->
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-green" id="wid-id-25" data-widget-editbutton="false" data-widget-deletebutton="false">
+        <!-- widget options:
+        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+        data-widget-colorbutton="false"
+        data-widget-editbutton="false"
+        data-widget-togglebutton="false"
+        data-widget-deletebutton="false"
+        data-widget-fullscreenbutton="false"
+        data-widget-custombutton="false"
+        data-widget-collapsed="true"
+        data-widget-sortable="false"
+
+        -->
+        <header>
+            <span class="widget-icon"> <i class="fa fa-check"></i> </span>
+            <h2 class="modal-title" id="myCarriereLabel" data-translate="qualiMakerApp.carriere.home.createOrEditLabel">Create or edit a Carriere</h2>
+
+        </header>
+
+        <!-- widget div-->
+
+
+        <!-- widget edit box -->
+
+        <!-- end widget edit box -->
+
+        <!-- widget content -->
+        <div class="widget-body">
+
+            <form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                            ng-click="vm.clear()">&times;</button>
+                    <h4 ></h4>
                 </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="qualiMakerApp.carriere.finINT" for="field_finINT">Fin INT</label>
-                <div class="input-group">
-                    <input id="field_finINT" type="text" class="form-control" name="finINT" datetime-picker="{{dateformat}}" ng-model="vm.carriere.finINT" is-open="vm.datePickerOpenStatus.finINT"
-                    />
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('finINT')"><i class="glyphicon glyphicon-calendar"></i></button>
-                    </span>
-                </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="qualiMakerApp.carriere.dateRec" for="field_dateRec">Date Rec</label>
-                <div class="input-group">
-                    <input id="field_dateRec" type="text" class="form-control" name="dateRec" datetime-picker="{{dateformat}}" ng-model="vm.carriere.dateRec" is-open="vm.datePickerOpenStatus.dateRec"
-                    />
-                    <span class="input-group-btn">
+                <div class="modal-body well">
+                    <jhi-alert-error></jhi-alert-error>
+                    <div class="form-group" ng-show="vm.carriere.id">
+                        <label for="id" data-translate="global.field.id">ID</label>
+                        <input type="text" class="form-control" id="id" name="id"
+                               ng-model="vm.carriere.id" readonly />
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label data-translate="qualiMakerApp.carriere.employe" for="field_employe">Employe</label>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <select class="form-control" id="field_employe" name="employe" ng-model="vm.carriere.employe" ng-options="employe as employe.nom+' '+employe.prenom for employe in vm.employes track by employe.id">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input id="field_dateRec" type="text" class="form-control" name="dateRec" datetime-picker="{{dateformat}}" ng-model="vm.carriere.dateRec" is-open="vm.datePickerOpenStatus.dateRec"
+                                           placeholder="{{'qualiMakerApp.carriere.dateRec'|translate}}"/>
+                                    <span class="input-group-btn">
                         <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateRec')"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
-                </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="qualiMakerApp.carriere.fichCont" for="field_fichCont">Fich Cont</label>
-            <input type="text" class="form-control" name="fichCont" id="field_fichCont"
-                    ng-model="vm.carriere.fichCont"
-                    />
-        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="control-label" data-translate="qualiMakerApp.carriere.actived" for="field_Actived">Actived</label>
 
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <input type="checkbox" name="actived" id="field_actived"
+                                       ng-model="vm.carriere.actived"/>                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label data-translate="qualiMakerApp.carriere.typeContrat" for="field_typeContrat">Type Contrat</label>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <select class="form-control" id="field_typeContrat" name="typeContrat" ng-model="vm.carriere.typeContrat" ng-options="typeContrat as typeContrat.type for typeContrat in vm.typecontrats track by typeContrat.id" required>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="button" ngf-select class="btn btn-war btn-block"
+                                    ngf-change="vm.setContrat($file, vm.carriere)"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;<span  data-translate="entity.action.addblob">
+                            Add blob</span>
+                            </button>
+
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group" ngf-drop ngf-change="vm.setContrat($file, vm.carriere)">
+                                <div>
+                                    <div ng-if="vm.carriere.contrat" class="help-block clearfix">
+                                        <a class="pull-left" ng-click="vm.openFile(vm.carriere.contratContentType, vm.carriere.contrat)" data-translate="entity.action.open">open</a><br>
+                                        <span class="pull-left">{{vm.carriere.contratContentType}}</span>
+                                        <button type="button" ng-click="vm.carriere.contrat=null;vm.carriere.contratContentType=null;"
+                                                class="btn btn-default btn-xs pull-right">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </button>
+                                    </div>
+
+                                </div>
+                                <input type="hidden" class="form-control" name="contrat" id="field_contrat"
+                                       ng-model="vm.carriere.contrat"
+                                />
+                                <input type="hidden" class="form-control" name="contratContentType" id="field_contratContentType"
+                                       ng-model="vm.carriere.contratContentType" />
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label class="control-label" data-translate="qualiMakerApp.carriere.integre" for="field_integre">Integre</label>
+
+                        </div>
+
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <input type="checkbox" name="integre" id="field_integre"
+                                       ng-model="vm.carriere.integre"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" ng-if="vm.carriere.integre">
+                        <div class="col-md-2">
+                            <label class="control-label" data-translate="qualiMakerApp.carriere.date" for="field_document">Document</label>
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input id="field_debutINt" type="text" class="form-control" name="debutINt" datetime-picker="{{dateformat}}" ng-model="vm.carriere.debutINt" is-open="vm.datePickerOpenStatus.debutINt"
+                                           placeholder="{{'qualiMakerApp.carriere.debutINt'|translate}}" />
+                                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('debutINt')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input id="field_finINT" type="text" class="form-control" name="finINT" datetime-picker="{{dateformat}}" ng-model="vm.carriere.finINT" is-open="vm.datePickerOpenStatus.finINT"
+                                           placeholder="{{'qualiMakerApp.carriere.finINT'|translate}}" />
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('finINT')"><i class="glyphicon glyphicon-calendar"></i></button>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group" ngf-drop ngf-change="vm.setDocument($file, vm.carriere)">
+                                <label class="control-label" data-translate="qualiMakerApp.carriere.document" for="field_document">Document</label>
+                                <div>
+                                    <div ng-if="vm.carriere.document" class="help-block clearfix">
+                                        <a class="pull-left" ng-click="vm.openFile(vm.carriere.documentContentType, vm.carriere.document)" data-translate="entity.action.open">open</a><br>
+                                        <span class="pull-left">{{vm.carriere.documentContentType}}, {{vm.byteSize(vm.carriere.document)}}</span>
+                                        <button type="button" ng-click="vm.carriere.document=null;vm.carriere.documentContentType=null;"
+                                                class="btn btn-default btn-xs pull-right">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </button>
+                                        <button type="button" ngf-select class="btn btn-warning btn-block"
+                                                ngf-change="vm.setsetDocument($file, vm.carriere)"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;<span  data-translate="entity.action.addblob">
+                            Add blob</span>
+                                        </button>
+                                    </div>
+
+                                </div>
+                                <input type="hidden" class="form-control" name="document" id="field_document"
+                                       ng-model="vm.carriere.document"
+                                />
+                                <input type="hidden" class="form-control" name="documentContentType" id="field_documentContentType"
+                                       ng-model="vm.carriere.documentContentType" />
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="vm.clear()">
+                        <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+                    </button>
+                    <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-success">
+                        <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
-            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
-        </button>
-        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
-            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
-        </button>
-    </div>
-</form>
+</section>

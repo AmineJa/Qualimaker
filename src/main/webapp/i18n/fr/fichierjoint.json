@@ -18,7 +18,7 @@
             },
             "nom": "Nom",
             "commentaire": "Commentaire",
-            "fichejoint": " Ajouter un Fiche joint"
+            "fichejoint": "Fichejoint"
         }
     }
 }

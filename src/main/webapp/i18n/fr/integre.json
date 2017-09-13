@@ -2,10 +2,10 @@
     "qualiMakerApp": {
         "integre" : {
             "home": {
-                "title": "Intégration",
-                "createLabel": "Créer un nouveau Intégration",
-                "createOrEditLabel": "Créer ou éditer un Intégration",
-                "search": "Recherche pour Integre"
+                "title": "Integres",
+                "createLabel": "Créer un nouveau Integre",
+                "createOrEditLabel": "Créer ou éditer un Integre",
+                "search": "Recherche pour Intégre"
             },
             "created": "Un nouveau Integre a été créé avec l'identifiant {{ param }}",
             "updated": "Le Integre avec l'identifiant {{ param }} a été mis à jour",
@@ -14,15 +14,15 @@
                 "question": "Etes-vous certain de vouloir supprimer le Integre {{ id }} ?"
             },
             "detail": {
-                "title": "Integre"
+                "title": "Intégre"
             },
-            "dateD": "Début",
-            "dateF": "Fin",
-            "pointfort": "Point Fort",
-            "poitaibl": "Point Faible",
+            "dateD": "Date début",
+            "dateF": "Date fin",
+            "pointfort": "Points fort",
+            "poitaibl": "Points faible",
             "info": "Information",
             "etat": "Etat",
-            "employe": "Employe",
+            "employe": "Employé",
             "responsable": "Responsable"
         }
     }

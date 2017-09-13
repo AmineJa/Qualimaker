@@ -123,6 +123,17 @@
                 <constraints nullable="true" />
             </column>
 
+            <column name="etat_doc" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="signature" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="signature_content_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
             <column name="site_id" type="bigint">
                 <constraints nullable="true" />
             </column>
@@ -132,6 +143,10 @@
             </column>
 
             <column name="service_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="profilsfonction_id" type="bigint">
                 <constraints nullable="true" />
             </column>
 

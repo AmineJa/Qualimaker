@@ -1,0 +1,57 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "employe",
+            "otherEntityName": "employe",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "Verificateur",
+            "otherEntityName": "documentInterne",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "Verificateurs"
+        },
+        {
+            "relationshipName": "Redacteur",
+            "otherEntityName": "documentInterne",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "Redacteurs"
+        },
+        {
+            "relationshipName": "Superviseur",
+            "otherEntityName": "documentInterne",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "Superviseur"
+        },
+        {
+            "relationshipName": "Approubateur",
+            "otherEntityName": "documentInterne",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "Approubateurs"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "roles",
+            "fieldType": "Roles",
+            "fieldValues": "Superviseur,Redacteur,Verificateur,Approuvateur",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20170509113642",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "droitacces_document",
+    "pagination": "pagination"
+}
